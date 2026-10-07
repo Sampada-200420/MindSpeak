@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mentor Chat | MindSpeak</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- Existing styles -->
+    <link rel="stylesheet" href="../../navbar.css">
+    <link rel="stylesheet" href="../../footer.css">
+
+    <!-- Chat styles -->
+    <link rel="stylesheet" href="mentor-chat.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <div id="navbar"></div>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="mentor-chat-page">
+
+        <div class="mentor-chat-container">
+
+            <!-- =================================================
+                 BACK
+            ================================================== -->
+
+            <a
+                href="mentor-conversations.html"
+                class="back-link"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Conversations
+            </a>
+
+
+            <!-- =================================================
+                 CHAT CARD
+            ================================================== -->
+
+            <section class="chat-card">
+
+                <!-- =================================================
+                     CHAT HEADER
+                ================================================== -->
+
+                <header class="chat-header">
+
+                    <div class="chat-person">
+
+                        <div
+                            class="chat-avatar"
+                            id="chatAvatar"
+                        >
+                            🌿
+                        </div>
+
+                        <div class="chat-person-info">
+
+                            <h1 id="chatPersonName">
+                                Mentor
+                            </h1>
+
+                            <div class="chat-status">
+                                <span
+                                    class="chat-status-dot"
+                                    id="chatStatusDot"
+                                ></span>
+
+                                <span id="chatStatusText">
+                                    Loading...
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="chat-header-actions">
+
+                        <span class="private-label">
+                            <i class="fa-solid fa-lock"></i>
+                            Private
+                        </span>
+
+                    </div>
+
+                </header>
+
+
+                <!-- =================================================
+                     LOADING
+                ================================================== -->
+
+                <div
+                    id="chatLoading"
+                    class="chat-loading"
+                >
+                    <div class="loading-spinner"></div>
+
+                    <p>
+                        Loading conversation...
+                    </p>
+                </div>
+
+
+                <!-- =================================================
+                     ERROR
+                ================================================== -->
+
+                <div
+                    id="chatError"
+                    class="chat-error"
+                    hidden
+                >
+
+                    <div class="chat-state-icon">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                    </div>
+
+                    <h2>
+                        Unable to load conversation
+                    </h2>
+
+                    <p id="chatErrorMessage">
+                        Something went wrong.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="chatRetryBtn"
+                        class="chat-retry-btn"
+                    >
+                        <i class="fa-solid fa-rotate-right"></i>
+                        Try Again
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     MESSAGES
+                ================================================== -->
+
+                <div
+                    id="chatContent"
+                    class="chat-content"
+                    hidden
+                >
+
+                    <div
+                        id="messagesContainer"
+                        class="messages-container"
+                    >
+                        <!-- Messages loaded by JavaScript -->
+                    </div>
+
+
+                    <!-- =================================================
+                         MESSAGE INPUT
+                    ================================================== -->
+
+                    <form
+                        id="messageForm"
+                        class="message-form"
+                    >
+
+                        <div class="message-input-wrapper">
+
+                            <textarea
+                                id="messageInput"
+                                rows="1"
+                                maxlength="2000"
+                                placeholder="Write a message..."
+                                aria-label="Message"
+                            ></textarea>
+
+                            <span
+                                id="characterCount"
+                                class="character-count"
+                            >
+                                0 / 2000
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            id="sendMessageBtn"
+                            class="send-message-btn"
+                            aria-label="Send message"
+                        >
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+
+                    </form>
+
+
+                    <p class="chat-privacy-text">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Please avoid sharing passwords, phone numbers,
+                        addresses, or other sensitive personal information.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <div id="footer"></div>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <script src="../js/mentor-chat.js"></script>
+
+</body>
+
+</html>

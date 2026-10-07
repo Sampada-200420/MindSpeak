@@ -1,0 +1,644 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Request private peer support from a MindSpeak mentor."
+    >
+
+    <title>Request Support | MindSpeak</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Existing MindSpeak styles -->
+    <link rel="stylesheet" href="../../navbar.css">
+    <link rel="stylesheet" href="../../footer.css">
+
+    <!-- Request page styles -->
+    <link rel="stylesheet" href="mentor-request.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <div id="navbar-container"></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="mentor-request-page">
+
+        <div class="mentor-request-container">
+
+            <!-- =================================================
+                 BACK NAVIGATION
+            ================================================== -->
+
+            <a
+                href="#"
+                class="request-back-link"
+                id="backToMentorProfile"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back to Mentor Profile</span>
+            </a>
+
+
+            <!-- =================================================
+                 PAGE INTRODUCTION
+            ================================================== -->
+
+            <section class="request-introduction">
+
+                <span class="request-eyebrow">
+                    <i class="fa-regular fa-hand"></i>
+                    Peer Support
+                </span>
+
+                <h1>Request Support</h1>
+
+                <p>
+                    You don't have to figure everything out alone.
+                    Share what you'd like to talk about and your
+                    mentor can decide whether they're available
+                    to support you.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 MAIN REQUEST LAYOUT
+            ================================================== -->
+
+            <div class="request-layout">
+
+
+                <!-- =================================================
+                     LEFT / MAIN FORM
+                ================================================== -->
+
+                <section class="request-form-card">
+
+                    <div class="request-card-header">
+
+                        <div>
+                            <span class="section-step">
+                                Step 1
+                            </span>
+
+                            <h2>
+                                Tell us what you need
+                            </h2>
+                        </div>
+
+                        <div class="request-header-icon">
+                            <i class="fa-regular fa-message"></i>
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         TOPIC
+                    ================================================== -->
+
+                    <div class="form-group">
+
+                        <label for="supportTopic">
+                            What would you like to talk about?
+                            <span class="required">*</span>
+                        </label>
+
+                        <p class="field-description">
+                            Choose the topic that feels closest
+                            to what's on your mind.
+                        </p>
+
+                        <div class="select-wrapper">
+
+                            <select
+                                id="supportTopic"
+                                name="topic"
+                                required
+                            >
+
+                                <option value="">
+                                    Select a topic
+                                </option>
+
+                                <option value="Stress">
+                                    Stress
+                                </option>
+
+                                <option value="Anxiety">
+                                    Anxiety
+                                </option>
+
+                                <option value="Studies">
+                                    Studies &amp; Academics
+                                </option>
+
+                                <option value="Relationships">
+                                    Relationships
+                                </option>
+
+                                <option value="Family">
+                                    Family
+                                </option>
+
+                                <option value="Loneliness">
+                                    Loneliness
+                                </option>
+
+                                <option value="Motivation">
+                                    Motivation
+                                </option>
+
+                                <option value="Self-confidence">
+                                    Self-confidence
+                                </option>
+
+                                <option value="Life changes">
+                                    Life changes
+                                </option>
+
+                                <option value="Other">
+                                    Something else
+                                </option>
+
+                            </select>
+
+                            <i class="fa-solid fa-chevron-down"></i>
+
+                        </div>
+
+                        <span
+                            class="field-error"
+                            id="topicError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         MESSAGE
+                    ================================================== -->
+
+                    <div class="form-group">
+
+                        <div class="field-label-row">
+
+                            <label for="supportMessage">
+                                Tell your mentor a little more
+                            </label>
+
+                            <span
+                                class="optional-label"
+                            >
+                                Optional
+                            </span>
+
+                        </div>
+
+                        <p class="field-description">
+                            You can share a little context so your
+                            mentor knows what you'd like to discuss.
+                            Only share what you're comfortable with.
+                        </p>
+
+                        <textarea
+                            id="supportMessage"
+                            name="message"
+                            rows="7"
+                            maxlength="500"
+                            placeholder="What's on your mind?"
+                        ></textarea>
+
+                        <div class="textarea-footer">
+
+                            <span class="privacy-hint">
+                                <i class="fa-solid fa-lock"></i>
+                                You choose what to share.
+                            </span>
+
+                            <span
+                                class="character-count"
+                                id="characterCount"
+                            >
+                                0 / 500
+                            </span>
+
+                        </div>
+
+                        <span
+                            class="field-error"
+                            id="messageError"
+                        ></span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         SAFETY NOTICE
+                    ================================================== -->
+
+                    <div class="form-safety-notice">
+
+                        <div class="safety-icon">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+
+                        <div class="safety-content">
+
+                            <h3>
+                                Keep your information safe
+                            </h3>
+
+                            <p>
+                                Please don't include passwords,
+                                phone numbers, home addresses,
+                                financial information, or other
+                                highly sensitive personal details.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         FORM ERROR
+                    ================================================== -->
+
+                    <div
+                        class="request-form-error"
+                        id="requestFormError"
+                        role="alert"
+                        aria-live="polite"
+                    >
+
+                        <i class="fa-solid fa-circle-exclamation"></i>
+
+                        <span id="requestFormErrorText">
+                            Something went wrong. Please try again.
+                        </span>
+
+                    </div>
+
+
+                    <!-- =================================================
+                         SUBMIT
+                    ================================================== -->
+
+                    <button
+                        type="button"
+                        class="send-request-btn"
+                        id="sendSupportRequestBtn"
+                    >
+
+                        <span
+                            class="button-text"
+                            id="sendButtonText"
+                        >
+                            Send Support Request
+                        </span>
+
+                        <i
+                            class="fa-solid fa-paper-plane"
+                            id="sendButtonIcon"
+                        ></i>
+
+                        <span
+                            class="button-spinner"
+                            id="sendButtonSpinner"
+                        >
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                        </span>
+
+                    </button>
+
+                    <p class="submit-note">
+                        Your request will be sent privately to
+                        this mentor.
+                    </p>
+
+                </section>
+
+
+                <!-- =================================================
+                     RIGHT SIDEBAR
+                ================================================== -->
+
+                <aside class="request-sidebar">
+
+
+                    <!-- =================================================
+                         MENTOR PREVIEW
+                    ================================================== -->
+
+                    <section
+                        class="mentor-preview-card"
+                        id="mentorPreviewCard"
+                    >
+
+                        <div class="preview-label">
+                            You're reaching out to
+                        </div>
+
+                        <div class="mentor-preview-content">
+
+                            <div class="preview-avatar-wrapper">
+
+                                <img
+                                    id="requestMentorAvatar"
+                                    class="preview-avatar"
+                                    src=""
+                                    alt=""
+                                >
+
+                                <div
+                                    class="preview-avatar-placeholder"
+                                    id="requestMentorAvatarPlaceholder"
+                                >
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+
+                                <span
+                                    class="preview-status-dot"
+                                    id="requestMentorStatusDot"
+                                ></span>
+
+                            </div>
+
+                            <div class="preview-identity">
+
+                                <h3 id="requestMentorName">
+                                    Loading...
+                                </h3>
+
+                                <p>
+                                    Peer Support Mentor
+                                </p>
+
+                                <span
+                                    class="preview-status"
+                                    id="requestMentorStatus"
+                                >
+                                    Checking availability...
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div
+                            class="preview-response"
+                            id="requestMentorResponse"
+                        >
+                            <i class="fa-regular fa-clock"></i>
+
+                            <span>
+                                Response time unavailable
+                            </span>
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         WHAT HAPPENS NEXT
+                    ================================================== -->
+
+                    <section class="next-steps-card">
+
+                        <div class="sidebar-heading">
+
+                            <div class="sidebar-heading-icon">
+                                <i class="fa-solid fa-route"></i>
+                            </div>
+
+                            <h2>
+                                What happens next?
+                            </h2>
+
+                        </div>
+
+
+                        <div class="step-list">
+
+                            <div class="next-step">
+
+                                <span class="step-number">
+                                    1
+                                </span>
+
+                                <div>
+                                    <h3>
+                                        Send your request
+                                    </h3>
+
+                                    <p>
+                                        Your message is sent
+                                        privately to the mentor.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="next-step">
+
+                                <span class="step-number">
+                                    2
+                                </span>
+
+                                <div>
+                                    <h3>
+                                        Your mentor responds
+                                    </h3>
+
+                                    <p>
+                                        They can accept or decline
+                                        depending on their availability.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="next-step">
+
+                                <span class="step-number">
+                                    3
+                                </span>
+
+                                <div>
+                                    <h3>
+                                        Start your conversation
+                                    </h3>
+
+                                    <p>
+                                        If accepted, you'll be able
+                                        to continue privately.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         PRIVACY CARD
+                    ================================================== -->
+
+                    <section class="privacy-card">
+
+                        <div class="privacy-card-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Your privacy matters
+                            </h3>
+
+                            <p>
+                                Your support request is intended
+                                only for the mentor you select.
+                                You remain in control of what
+                                you share.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- =================================================
+                         URGENT HELP
+                    ================================================== -->
+
+                    <section class="urgent-help-card">
+
+                        <div class="urgent-help-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Need urgent help?
+                            </h3>
+
+                            <p>
+                                MindSpeak mentors provide peer
+                                support and are not a replacement
+                                for professional or emergency
+                                services.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+                </aside>
+
+            </div>
+
+
+            <!-- =================================================
+                 SUCCESS STATE
+            ================================================== -->
+
+            <section
+                class="request-success"
+                id="requestSuccess"
+                aria-live="polite"
+            >
+
+                <div class="success-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <span class="success-eyebrow">
+                    Request Sent
+                </span>
+
+                <h2>
+                    Your support request is on its way.
+                </h2>
+
+                <p id="successMessage">
+                    Your mentor has received your request.
+                    We'll let you know when they respond.
+                </p>
+
+                <div class="success-actions">
+
+                    <a
+                        href="mentor-support.html"
+                        class="success-secondary-btn"
+                    >
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Mentors
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+  <div id="footer"></div>
+
+
+    <!-- =====================================================
+         EXISTING SCRIPTS
+    ====================================================== -->
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <!-- Request page script -->
+    <script src="../js/mentor-request.js"></script>
+
+</body>
+</html>

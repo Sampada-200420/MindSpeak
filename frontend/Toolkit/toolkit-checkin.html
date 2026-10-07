@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Toolkit Check-In | MindSpeak</title>
+
+    <!-- Shared styles -->
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="toolkit-checkin.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+    <!-- Shared Navbar -->
+    <div id="navbar-container"></div>
+
+
+    <main>
+
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
+
+        <section class="checkin-hero">
+
+            <div class="checkin-container">
+
+                <a href="toolkit.html" class="back-to-toolkit">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Toolkit
+                </a>
+
+                <div class="checkin-hero-content">
+
+                    <span class="hero-eyebrow">
+                        YOUR NEXT STEP
+                    </span>
+
+                    <h1>
+                        Let's find what<br>
+                        feels right for you.
+                    </h1>
+
+                    <p>
+                        You don't need to know exactly what you need.
+                        Answer a few simple questions and we'll help you
+                        find a MindSpeak Toolkit area to explore.
+                    </p>
+
+                    <div class="hero-message">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                        <span>
+                            There are no right or wrong answers.
+                            Just choose what feels closest to you today.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CHECK-IN
+             ===================================================== -->
+
+        <section class="checkin-section">
+
+            <div class="checkin-container">
+
+                <div class="checkin-heading">
+
+                    <span class="section-eyebrow">
+                        QUICK CHECK-IN
+                    </span>
+
+                    <h2>
+                        What are you going through right now?
+                    </h2>
+
+                    <p>
+                        Take a moment and choose the answers that feel
+                        most like your experience.
+                    </p>
+
+                </div>
+
+
+                <div class="checkin-progress">
+
+                    <div class="progress-step active">
+                        <span>1</span>
+                        <p>How you feel</p>
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                    <div class="progress-step">
+                        <span>2</span>
+                        <p>What's affecting you</p>
+                    </div>
+
+                    <div class="progress-line"></div>
+
+                    <div class="progress-step">
+                        <span>3</span>
+                        <p>What you need</p>
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUESTION 1
+                     ================================================= -->
+
+                <div class="checkin-question" id="question-1">
+
+                    <div class="question-number">
+                        01
+                    </div>
+
+                    <div class="question-content">
+
+                        <h3>
+                            How have you been feeling lately?
+                        </h3>
+
+                        <p class="question-help">
+                            Choose the option that feels closest.
+                        </p>
+
+                        <div class="answer-grid">
+
+                            <label class="answer-card">
+                                <input
+                                    type="radio"
+                                    name="feeling"
+                                    value="anxiety"
+                                >
+
+                                <span class="answer-icon">
+                                    <i class="fa-solid fa-wind"></i>
+                                </span>
+
+                                <span class="answer-text">
+                                    <strong>
+                                        Anxious or worried
+                                    </strong>
+
+                                    <small>
+                                        My mind feels busy or uneasy.
+                                    </small>
+                                </span>
+                            </label>
+
+
+                            <label class="answer-card">
+                                <input
+                                    type="radio"
+                                    name="feeling"
+                                    value="stress"
+                                >
+
+                                <span class="answer-icon">
+                                    <i class="fa-solid fa-bolt"></i>
+                                </span>
+
+                                <span class="answer-text">
+                                    <strong>
+                                        Stressed or overwhelmed
+                                    </strong>
+
+                                    <small>
+                                        I feel like I have too much going on.
+                                    </small>
+                                </span>
+                            </label>
+
+
+                            <label class="answer-card">
+                                <input
+                                    type="radio"
+                                    name="feeling"
+                                    value="low-mood"
+                                >
+
+                                <span class="answer-icon">
+                                    <i class="fa-regular fa-cloud"></i>
+                                </span>
+
+                                <span class="answer-text">
+                                    <strong>
+                                        Low or down
+                                    </strong>
+
+                                    <small>
+                                        I've been feeling less like myself.
+                                    </small>
+                                </span>
+                            </label>
+
+
+                            <label class="answer-card">
+                                <input
+                                    type="radio"
+                                    name="feeling"
+                                    value="sleep"
+                                >
+
+                                <span class="answer-icon">
+                                    <i class="fa-solid fa-moon"></i>
+                                </span>
+
+                                <span class="answer-text">
+                                    <strong>
+                                        Tired or struggling with sleep
+                                    </strong>
+
+                                    <small>
+                                        My sleep or energy has been difficult.
+                                    </small>
+                                </span>
+                            </label>
+
+
+                            <label class="answer-card">
+                                <input
+                                    type="radio"
+                                    name="feeling"
+                                    value="study-work"
+                                >
+
+                                <span class="answer-icon">
+                                    <i class="fa-solid fa-book-open"></i>
+                                </span>
+
+                                <span class="answer-text">
+                                    <strong>
+                                        Struggling with study or work
+                                    </strong>
+
+                                    <small>
+                                        Focus, motivation or workload is hard.
+                                    </small>
+                                </span>
+                            </label>
+
+
+                            <label class="answer-card">
+                                <input
+                                    type="radio"
+                                    name="feeling"
+                                    value="comparison"
+                                >
+
+                                <span class="answer-icon">
+                                    <i class="fa-solid fa-user"></i>
+                                </span>
+
+                                <span class="answer-text">
+                                    <strong>
+                                        Comparing myself
+                                    </strong>
+
+                                    <small>
+                                        I'm struggling with confidence or self-worth.
+                                    </small>
+                                </span>
+                            </label>
+
+
+                            <label class="answer-card">
+                                <input
+                                    type="radio"
+                                    name="feeling"
+                                    value="habits"
+                                >
+
+                                <span class="answer-icon">
+                                    <i class="fa-solid fa-arrows-rotate"></i>
+                                </span>
+
+                                <span class="answer-text">
+                                    <strong>
+                                        A habit I want to change
+                                    </strong>
+
+                                    <small>
+                                        Something keeps repeating and I want change.
+                                    </small>
+                                </span>
+                            </label>
+
+
+                            <label class="answer-card">
+                                <input
+                                    type="radio"
+                                    name="feeling"
+                                    value="unsure"
+                                >
+
+                                <span class="answer-icon">
+                                    <i class="fa-regular fa-compass"></i>
+                                </span>
+
+                                <span class="answer-text">
+                                    <strong>
+                                        I'm not sure
+                                    </strong>
+
+                                    <small>
+                                        I just know something doesn't feel right.
+                                    </small>
+                                </span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUESTION 2
+                     ================================================= -->
+
+                <div class="checkin-question" id="question-2">
+
+                    <div class="question-number blue-number">
+                        02
+                    </div>
+
+                    <div class="question-content">
+
+                        <h3>
+                            What has been affecting you the most?
+                        </h3>
+
+                        <p class="question-help">
+                            Think about what's taking up the most space
+                            in your mind right now.
+                        </p>
+
+                        <div class="simple-answer-grid">
+
+                            <label class="simple-answer">
+                                <input
+                                    type="radio"
+                                    name="impact"
+                                    value="thoughts"
+                                >
+
+                                <span>
+                                    My thoughts and worries
+                                </span>
+                            </label>
+
+
+                            <label class="simple-answer">
+                                <input
+                                    type="radio"
+                                    name="impact"
+                                    value="responsibilities"
+                                >
+
+                                <span>
+                                    Responsibilities and pressure
+                                </span>
+                            </label>
+
+
+                            <label class="simple-answer">
+                                <input
+                                    type="radio"
+                                    name="impact"
+                                    value="energy"
+                                >
+
+                                <span>
+                                    My energy and motivation
+                                </span>
+                            </label>
+
+
+                            <label class="simple-answer">
+                                <input
+                                    type="radio"
+                                    name="impact"
+                                    value="sleep"
+                                >
+
+                                <span>
+                                    Sleep and rest
+                                </span>
+                            </label>
+
+
+                            <label class="simple-answer">
+                                <input
+                                    type="radio"
+                                    name="impact"
+                                    value="relationships"
+                                >
+
+                                <span>
+                                    Relationships or loneliness
+                                </span>
+                            </label>
+
+
+                            <label class="simple-answer">
+                                <input
+                                    type="radio"
+                                    name="impact"
+                                    value="habits"
+                                >
+
+                                <span>
+                                    A habit or behaviour
+                                </span>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     QUESTION 3
+                     ================================================= -->
+
+                <div class="checkin-question" id="question-3">
+
+                    <div class="question-number yellow-number">
+                        03
+                    </div>
+
+                    <div class="question-content">
+
+                        <h3>
+                            What would feel most helpful right now?
+                        </h3>
+
+                        <p class="question-help">
+                            Choose what you would like to get from the Toolkit.
+                        </p>
+
+                        <div class="help-grid">
+
+                            <label class="help-card">
+                                <input
+                                    type="radio"
+                                    name="help"
+                                    value="understand"
+                                >
+
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                </span>
+
+                                <strong>
+                                    Understand myself
+                                </strong>
+
+                                <small>
+                                    Make sense of what I'm experiencing.
+                                </small>
+                            </label>
+
+
+                            <label class="help-card">
+                                <input
+                                    type="radio"
+                                    name="help"
+                                    value="practical"
+                                >
+
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-hand-holding-heart"></i>
+                                </span>
+
+                                <strong>
+                                    Try something practical
+                                </strong>
+
+                                <small>
+                                    Find simple things I can do today.
+                                </small>
+                            </label>
+
+
+                            <label class="help-card">
+                                <input
+                                    type="radio"
+                                    name="help"
+                                    value="support"
+                                >
+
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-users"></i>
+                                </span>
+
+                                <strong>
+                                    Find support
+                                </strong>
+
+                                <small>
+                                    Connect with people who can support me.
+                                </small>
+                            </label>
+
+
+                            <label class="help-card">
+                                <input
+                                    type="radio"
+                                    name="help"
+                                    value="unsure"
+                                >
+
+                                <span class="help-icon">
+                                    <i class="fa-regular fa-circle-question"></i>
+                                </span>
+
+                                <strong>
+                                    I'm not sure yet
+                                </strong>
+
+                                <small>
+                                    Help me figure out where to start.
+                                </small>
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     SUBMIT
+                     ================================================= -->
+
+                <div class="checkin-submit-area">
+
+                    <p>
+                        Take your time. You can change any answer before continuing.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="find-toolkit-btn"
+                        class="find-toolkit-btn">
+
+                        Find My Toolkit
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     RESULT
+                     ================================================= -->
+
+                <div
+                    id="toolkit-recommendation"
+                    class="toolkit-recommendation">
+
+                    <div class="recommendation-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div class="recommendation-content">
+
+                        <span class="recommendation-label">
+                            YOUR RECOMMENDATION
+                        </span>
+
+                        <h2 id="recommendation-title">
+                            Your Toolkit
+                        </h2>
+
+                        <p id="recommendation-text">
+                            Based on your answers, we'll suggest a place
+                            to begin.
+                        </p>
+
+                        <a
+                            href="#"
+                            id="recommendation-link"
+                            class="recommendation-button">
+
+                            Explore This Toolkit
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     NOT SURE
+                     ================================================= -->
+
+                <div class="not-sure-box">
+
+                    <div class="not-sure-icon">
+                        <i class="fa-regular fa-compass"></i>
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Still not sure where to begin?
+                        </h3>
+
+                        <p>
+                            That's completely okay. You can return to the
+                            Toolkit and explore the topics at your own pace.
+                        </p>
+
+                        <a href="toolkit.html">
+                            Explore All Toolkit Topics
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SUPPORT MESSAGE
+             ===================================================== -->
+
+        <section class="checkin-support">
+
+            <div class="checkin-container">
+
+                <div class="support-message">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <div>
+                        <h2>
+                            You don't have to figure everything out today.
+                        </h2>
+
+                        <p>
+                            Start with one small step. Understanding what
+                            you're experiencing is already a step forward.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Shared Footer -->
+    <div id="footer"></div>
+
+
+    <!-- Shared scripts -->
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <!-- Page script -->
+    <script src="toolkit-checkin.js"></script>
+
+</body>
+</html>

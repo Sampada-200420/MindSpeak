@@ -1,0 +1,1907 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Volunteer Application | MindSpeak</title>
+
+    <!-- Shared MindSpeak Styles -->
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+        /* ==================================================
+           RESET
+        ================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", Arial, sans-serif;
+            background: #f7f8f6;
+            color: #10263e;
+            line-height: 1.6;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .application-hero {
+            background: #10263e;
+            color: white;
+            min-height: 430px;
+            padding: 85px 7% 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .application-hero::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 50%;
+            right: -80px;
+            bottom: -130px;
+        }
+
+        .application-hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #a9d5bd;
+            margin-bottom: 16px;
+        }
+
+        .application-hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.02;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+        }
+
+        .application-hero h1 em {
+            color: #8fc6a8;
+            font-style: normal;
+        }
+
+        .application-hero p {
+            max-width: 650px;
+            color: #d9e3eb;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px 21px;
+            background: white;
+            color: #10263e;
+            border: 1px solid white;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .hero-button:hover {
+            background: #dff0e6;
+            border-color: #dff0e6;
+            transform: translateY(-2px);
+        }
+
+        .application-hero-note {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 48px;
+            color: #c8d7e2;
+            font-size: 14px;
+        }
+
+        .application-hero-note i {
+            color: #8fc6a8;
+        }
+
+
+        /* ==================================================
+           COMMON SECTION
+        ================================================== */
+
+        .application-intro,
+        .volunteer-areas,
+        .application-section {
+            padding: 85px 7%;
+        }
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #6d7b88;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            margin-bottom: 38px;
+        }
+
+        .section-label span {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #cbd4d0;
+            display: grid;
+            place-items: center;
+            color: #2f7b5d;
+            font-size: 11px;
+        }
+
+
+        /* ==================================================
+           INTRO
+        ================================================== */
+
+        .application-intro {
+            background: white;
+            border-bottom: 1px solid #dfe5e1;
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1150px;
+        }
+
+        .intro-heading h2 {
+            font-size: clamp(32px, 4vw, 50px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+        }
+
+        .intro-heading h2 span {
+            color: #2f7b5d;
+        }
+
+        .intro-text {
+            color: #5d6b77;
+            font-size: 16px;
+        }
+
+        .intro-text p + p {
+            margin-top: 20px;
+        }
+
+
+        /* ==================================================
+           HELP AREAS
+        ================================================== */
+
+        .volunteer-areas {
+            background: #f7f8f6;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .area-card {
+            background: white;
+            border: 1px solid #dbe2de;
+            padding: 28px 24px;
+            min-height: 225px;
+            transition: 0.2s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-3px);
+            border-color: #9dbbab;
+            box-shadow: 0 10px 25px rgba(16,38,62,0.07);
+        }
+
+        .area-icon {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            background: #e8f3ed;
+            color: #2f7b5d;
+            margin-bottom: 24px;
+        }
+
+        .area-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .area-card p {
+            color: #687581;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+
+        /* ==================================================
+           APPLICATION SECTION
+        ================================================== */
+
+        .application-section {
+            background: #eef3f0;
+        }
+
+        .application-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .form-intro {
+            padding-top: 10px;
+        }
+
+        .form-kicker {
+            color: #2f7b5d;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .form-intro h2 {
+            font-size: clamp(34px, 4vw, 52px);
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin: 16px 0 20px;
+        }
+
+        .form-intro h2 span {
+            color: #2f7b5d;
+        }
+
+        .form-intro > p {
+            color: #62707a;
+            font-size: 15px;
+            max-width: 440px;
+        }
+
+        .form-info-list {
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-info-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .form-info-item > i {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            background: white;
+            border: 1px solid #d7e0db;
+            color: #2f7b5d;
+        }
+
+        .form-info-item div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-info-item strong {
+            font-size: 13px;
+        }
+
+        .form-info-item span {
+            color: #77838c;
+            font-size: 12px;
+        }
+
+
+        /* ==================================================
+           FORM CARD
+        ================================================== */
+
+        .application-form-card {
+            background: white;
+            border: 1px solid #d5ded9;
+            padding: 38px;
+            box-shadow: 0 12px 35px rgba(16,38,62,0.06);
+        }
+
+        .form-group {
+            margin-bottom: 23px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .form-group label > span {
+            color: #c55c5c;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            border: 1px solid #ccd6d1;
+            background: #fbfcfb;
+            color: #10263e;
+            padding: 12px 14px;
+            outline: none;
+            border-radius: 0;
+            transition: 0.2s ease;
+        }
+
+        .form-group input,
+        .form-group select {
+            height: 46px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #2f7b5d;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(47,123,93,0.08);
+        }
+
+        .form-group input.invalid,
+        .form-group textarea.invalid,
+        .form-group select.invalid {
+            border-color: #c55c5c;
+        }
+
+        .field-error {
+            display: block;
+            color: #b54d4d;
+            font-size: 11px;
+            margin-top: 5px;
+            min-height: 0;
+        }
+
+        .textarea-footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 5px;
+            color: #89939a;
+            font-size: 11px;
+        }
+
+        .textarea-footer .field-error {
+            flex: 1;
+        }
+
+
+        /* ==================================================
+           CONSENT
+        ================================================== */
+
+        .form-consent {
+            margin: 10px 0 20px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-label input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .custom-checkbox {
+            width: 19px;
+            height: 19px;
+            min-width: 19px;
+            border: 1px solid #bcc8c1;
+            background: white;
+            margin-top: 2px;
+            position: relative;
+        }
+
+        .checkbox-label input:checked + .custom-checkbox {
+            background: #2f7b5d;
+            border-color: #2f7b5d;
+        }
+
+        .checkbox-label input:checked + .custom-checkbox::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            left: 3px;
+            top: -1px;
+        }
+
+        .consent-text {
+            color: #66727b;
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+
+        /* ==================================================
+           FORM MESSAGE
+        ================================================== */
+
+        .form-message {
+            display: none;
+            padding: 13px 15px;
+            margin-bottom: 18px;
+            font-size: 13px;
+            border: 1px solid transparent;
+        }
+
+        .form-message.show {
+            display: block;
+        }
+
+        .form-message.success {
+            background: #e7f3ec;
+            border-color: #b7d7c4;
+            color: #246346;
+        }
+
+        .form-message.error {
+            background: #faecec;
+            border-color: #e2baba;
+            color: #984747;
+        }
+
+
+        /* ==================================================
+           SUBMIT BUTTON
+        ================================================== */
+
+        .submit-button {
+            width: 100%;
+            min-height: 50px;
+            border: none;
+            background: #2f7b5d;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: 0.2s ease;
+        }
+
+        .submit-button:hover:not(:disabled) {
+            background: #256449;
+        }
+
+        .submit-button:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .button-loading {
+            display: none;
+        }
+
+        .submit-button.loading .button-text,
+        .submit-button.loading .button-arrow {
+            display: none;
+        }
+
+        .submit-button.loading .button-loading {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+
+        /* ==================================================
+           BOTTOM NOTE
+        ================================================== */
+
+        .application-note {
+            margin: 0 7%;
+            padding: 32px;
+            background: #dfeee6;
+            border: 1px solid #c5ddd0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .note-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: white;
+            color: #2f7b5d;
+            display: grid;
+            place-items: center;
+        }
+
+        .application-note h3 {
+            font-size: 17px;
+            margin-bottom: 3px;
+        }
+
+        .application-note p {
+            color: #61756b;
+            font-size: 13px;
+        }
+
+
+        /* ==================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 1000px) {
+
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .application-layout {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .form-intro > p {
+                max-width: 700px;
+            }
+        }
+
+
+        @media (max-width: 750px) {
+
+            .application-hero,
+            .application-intro,
+            .volunteer-areas,
+            .application-section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .application-note {
+                margin: 0 5%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+
+        @media (max-width: 550px) {
+
+            .application-hero {
+                min-height: 390px;
+                padding-top: 65px;
+            }
+
+            .application-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .application-hero p {
+                font-size: 15px;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .application-form-card {
+                padding: 24px 18px;
+            }
+
+            .application-note {
+                padding: 24px;
+                align-items: flex-start;
+            }
+
+            .section-label {
+                margin-bottom: 28px;
+            }
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ==================================================
+         NAVBAR
+    ================================================== -->
+
+    <div id="navbar-container"></div>
+
+
+    <!-- ==================================================
+         MAIN
+    ================================================== -->
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="application-hero">
+
+            <div class="application-hero-content">
+
+                <span class="hero-eyebrow">
+                    JOIN MINDSPEAK
+                </span>
+
+                <h1>
+                    Become a
+                    <em>Volunteer.</em>
+                </h1>
+
+                <p>
+                    Help us create a space where people feel heard,
+                    supported, and connected. Every contribution matters.
+                </p>
+
+                <a
+                    href="#application-form"
+                    class="hero-button"
+                >
+                    Start Application
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+
+            </div>
+
+            <div class="application-hero-note">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <span>
+                    You don't need to have all the answers.
+                    You just need to care.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- INTRODUCTION -->
+
+        <section class="application-intro">
+
+            <div class="section-label">
+                <span>01</span>
+                ABOUT THE ROLE
+            </div>
+
+            <div class="intro-content">
+
+                <div class="intro-heading">
+
+                    <h2>
+                        Make a difference,
+                        <span>one connection at a time.</span>
+                    </h2>
+
+                </div>
+
+                <div class="intro-text">
+
+                    <p>
+                        MindSpeak volunteers help us build a supportive
+                        and welcoming community. Depending on your interests,
+                        you may help with community activities, awareness
+                        initiatives, events, content, outreach, or other
+                        projects.
+                    </p>
+
+                    <p>
+                        Tell us a little about yourself and how you would
+                        like to contribute. We'll review your application
+                        and get back to you.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- VOLUNTEER AREAS -->
+
+        <section class="volunteer-areas">
+
+            <div class="section-label">
+                <span>02</span>
+                WHERE YOU CAN HELP
+            </div>
+
+            <div class="areas-grid">
+
+                <article class="area-card">
+
+                    <div class="area-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <h3>Community Support</h3>
+
+                    <p>
+                        Help create welcoming spaces and encourage
+                        meaningful connections.
+                    </p>
+
+                </article>
+
+
+                <article class="area-card">
+
+                    <div class="area-icon">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <h3>Events</h3>
+
+                    <p>
+                        Support MindSpeak events, sessions, activities,
+                        and community initiatives.
+                    </p>
+
+                </article>
+
+
+                <article class="area-card">
+
+                    <div class="area-icon">
+                        <i class="fa-solid fa-bullhorn"></i>
+                    </div>
+
+                    <h3>Outreach</h3>
+
+                    <p>
+                        Help spread awareness and make MindSpeak
+                        accessible to more people.
+                    </p>
+
+                </article>
+
+
+                <article class="area-card">
+
+                    <div class="area-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h3>Projects & Ideas</h3>
+
+                    <p>
+                        Bring your skills, creativity, and ideas to
+                        projects that support the community.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- APPLICATION -->
+
+        <section
+            class="application-section"
+            id="application-form"
+        >
+
+            <div class="section-label">
+                <span>03</span>
+                VOLUNTEER APPLICATION
+            </div>
+
+            <div class="application-layout">
+
+                <!-- LEFT SIDE -->
+
+                <div class="form-intro">
+
+                    <span class="form-kicker">
+                        LET'S GET TO KNOW YOU
+                    </span>
+
+                    <h2>
+                        Tell us about
+                        <span>yourself.</span>
+                    </h2>
+
+                    <p>
+                        Please complete the form as accurately as you can.
+                        There are no perfect answers — we simply want to
+                        understand your interests and how you might like
+                        to contribute.
+                    </p>
+
+                    <div class="form-info-list">
+
+                        <div class="form-info-item">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            <div>
+                                <strong>About 5 minutes</strong>
+                                <span>to complete</span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-info-item">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <div>
+                                <strong>Your information</strong>
+                                <span>is handled responsibly</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT SIDE -->
+
+                <div class="application-form-card">
+
+                    <form
+                        id="volunteerApplicationForm"
+                        novalidate
+                    >
+
+                        <input
+                            type="hidden"
+                            name="application_type"
+                            value="volunteer"
+                        >
+
+
+                        <!-- NAME -->
+
+                        <div class="form-group">
+
+                            <label for="volunteerName">
+                                Full Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="volunteerName"
+                                name="name"
+                                placeholder="Your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- EMAIL / PHONE -->
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="volunteerEmail">
+                                    Email Address <span>*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="volunteerEmail"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                                <small class="field-error"></small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="volunteerPhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="volunteerPhone"
+                                    name="phone"
+                                    placeholder="Optional"
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- AVAILABILITY -->
+
+                        <div class="form-group">
+
+                            <label for="volunteerAvailability">
+                                Availability
+                            </label>
+
+                            <select
+                                id="volunteerAvailability"
+                                name="availability"
+                            >
+
+                                <option value="">
+                                    Select your availability
+                                </option>
+
+                                <option value="1-2 hours per week">
+                                    1–2 hours per week
+                                </option>
+
+                                <option value="3-5 hours per week">
+                                    3–5 hours per week
+                                </option>
+
+                                <option value="5-10 hours per week">
+                                    5–10 hours per week
+                                </option>
+
+                                <option value="10+ hours per week">
+                                    10+ hours per week
+                                </option>
+
+                                <option value="Flexible">
+                                    Flexible
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- EXPERIENCE -->
+
+                        <div class="form-group">
+
+                            <label for="volunteerExperience">
+                                Relevant Experience
+                            </label>
+
+                            <textarea
+                                id="volunteerExperience"
+                                name="experience"
+                                rows="4"
+                                maxlength="1500"
+                                placeholder="Tell us about any volunteering, community work, projects, or other relevant experience..."
+                            ></textarea>
+
+                            <div class="textarea-footer">
+
+                                <small>
+                                    Formal or informal experience is welcome.
+                                </small>
+
+                                <span>
+                                    <strong id="experienceCount">0</strong>/1500
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- SKILLS -->
+
+                        <div class="form-group">
+
+                            <label for="volunteerSkills">
+                                Skills & Interests
+                            </label>
+
+                            <textarea
+                                id="volunteerSkills"
+                                name="skills"
+                                rows="4"
+                                maxlength="1500"
+                                placeholder="What skills, interests, or strengths would you like to contribute?"
+                            ></textarea>
+
+                            <div class="textarea-footer">
+
+                                <small>
+                                    Communication, design, writing,
+                                    technology, outreach, etc.
+                                </small>
+
+                                <span>
+                                    <strong id="skillsCount">0</strong>/1500
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MOTIVATION -->
+
+                        <div class="form-group">
+
+                            <label for="volunteerMotivation">
+                                Why would you like to volunteer with MindSpeak?
+                                <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="volunteerMotivation"
+                                name="motivation"
+                                rows="5"
+                                maxlength="2000"
+                                placeholder="Tell us what motivates you to be part of MindSpeak..."
+                                required
+                            ></textarea>
+
+                            <div class="textarea-footer">
+
+                                <small class="field-error"></small>
+
+                                <span>
+                                    <strong id="motivationCount">0</strong>/2000
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ADDITIONAL -->
+
+                        <div class="form-group">
+
+                            <label for="volunteerAdditional">
+                                Anything else you'd like us to know?
+                            </label>
+
+                            <textarea
+                                id="volunteerAdditional"
+                                name="additional_information"
+                                rows="4"
+                                maxlength="1500"
+                                placeholder="Anything else you'd like to share..."
+                            ></textarea>
+
+                            <div class="textarea-footer">
+
+                                <span></span>
+
+                                <span>
+                                    <strong id="additionalCount">0</strong>/1500
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONSENT -->
+
+                        <div class="form-consent">
+
+                            <label class="checkbox-label">
+
+                                <input
+                                    type="checkbox"
+                                    id="volunteerConsent"
+                                >
+
+                                <span class="custom-checkbox"></span>
+
+                                <span class="consent-text">
+                                    I confirm that the information I have
+                                    provided is accurate and I agree to be
+                                    contacted regarding my volunteer application.
+                                </span>
+
+                            </label>
+
+                            <small
+                                id="consentError"
+                                class="field-error"
+                            ></small>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div
+                            id="volunteerFormMessage"
+                            class="form-message"
+                            role="alert"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="submit-button"
+                            id="volunteerSubmitButton"
+                        >
+
+                            <span class="button-text">
+                                Submit Application
+                            </span>
+
+                            <span class="button-loading">
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+                                Submitting...
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right button-arrow"></i>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTTOM NOTE -->
+
+        <section class="application-note">
+
+            <div class="note-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    Small actions can create meaningful change.
+                </h3>
+
+                <p>
+                    Thank you for considering becoming part of the
+                    MindSpeak community.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <div id="footer"></div>
+
+
+    <!-- Shared Scripts -->
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+
+
+    <!-- ==================================================
+         PAGE JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+            const API_BASE = "http://127.0.0.1:8000";
+
+                const form =
+                    document.getElementById(
+                        "volunteerApplicationForm"
+                    );
+
+                const submitButton =
+                    document.getElementById(
+                        "volunteerSubmitButton"
+                    );
+
+                const formMessage =
+                    document.getElementById(
+                        "volunteerFormMessage"
+                    );
+
+                const consent =
+                    document.getElementById(
+                        "volunteerConsent"
+                    );
+
+                const consentError =
+                    document.getElementById(
+                        "consentError"
+                    );
+
+
+                /* ==================================================
+                   CHARACTER COUNTERS
+                ================================================== */
+
+                function setupCounter(
+                    textareaId,
+                    counterId
+                ) {
+
+                    const textarea =
+                        document.getElementById(
+                            textareaId
+                        );
+
+                    const counter =
+                        document.getElementById(
+                            counterId
+                        );
+
+                    if (!textarea || !counter) {
+                        return;
+                    }
+
+                    function updateCounter() {
+
+                        counter.textContent =
+                            textarea.value.length;
+
+                    }
+
+                    textarea.addEventListener(
+                        "input",
+                        updateCounter
+                    );
+
+                    updateCounter();
+                }
+
+
+                setupCounter(
+                    "volunteerExperience",
+                    "experienceCount"
+                );
+
+                setupCounter(
+                    "volunteerSkills",
+                    "skillsCount"
+                );
+
+                setupCounter(
+                    "volunteerMotivation",
+                    "motivationCount"
+                );
+
+                setupCounter(
+                    "volunteerAdditional",
+                    "additionalCount"
+                );
+
+
+                /* ==================================================
+                   EMAIL VALIDATION
+                ================================================== */
+
+                function isValidEmail(email) {
+
+                    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                        .test(email);
+
+                }
+
+
+                /* ==================================================
+                   ERROR HELPERS
+                ================================================== */
+
+                function clearErrors() {
+
+                    form.querySelectorAll(
+                        ".invalid"
+                    ).forEach(function (element) {
+
+                        element.classList.remove(
+                            "invalid"
+                        );
+
+                    });
+
+                    form.querySelectorAll(
+                        ".field-error"
+                    ).forEach(function (element) {
+
+                        element.textContent = "";
+
+                    });
+
+                    consentError.textContent = "";
+
+                }
+
+
+                function setFieldError(
+                    field,
+                    message
+                ) {
+
+                    field.classList.add(
+                        "invalid"
+                    );
+
+                    const error =
+                        field
+                            .closest(".form-group")
+                            ?.querySelector(
+                                ".field-error"
+                            );
+
+                    if (error) {
+                        error.textContent = message;
+                    }
+
+                }
+
+
+                /* ==================================================
+                   FORM MESSAGE
+                ================================================== */
+
+                function showMessage(
+                    message,
+                    type
+                ) {
+
+                    formMessage.textContent =
+                        message;
+
+                    formMessage.className =
+                        "form-message show " +
+                        type;
+
+                }
+
+
+                /* ==================================================
+                   SUBMIT
+                ================================================== */
+
+                form.addEventListener(
+                    "submit",
+                    async function (event) {
+
+                        event.preventDefault();
+
+                        clearErrors();
+
+                        formMessage.className =
+                            "form-message";
+
+                        const name =
+                            document
+                                .getElementById(
+                                    "volunteerName"
+                                )
+                                .value.trim();
+
+                        const email =
+                            document
+                                .getElementById(
+                                    "volunteerEmail"
+                                )
+                                .value.trim();
+
+                        const phone =
+                            document
+                                .getElementById(
+                                    "volunteerPhone"
+                                )
+                                .value.trim();
+
+                        const availability =
+                            document
+                                .getElementById(
+                                    "volunteerAvailability"
+                                )
+                                .value;
+
+                        const experience =
+                            document
+                                .getElementById(
+                                    "volunteerExperience"
+                                )
+                                .value.trim();
+
+                        const skills =
+                            document
+                                .getElementById(
+                                    "volunteerSkills"
+                                )
+                                .value.trim();
+
+                        const motivation =
+                            document
+                                .getElementById(
+                                    "volunteerMotivation"
+                                )
+                                .value.trim();
+
+                        const additionalInformation =
+                            document
+                                .getElementById(
+                                    "volunteerAdditional"
+                                )
+                                .value.trim();
+
+
+                        /* ==========================================
+                           VALIDATION
+                        ========================================== */
+
+                        let valid = true;
+
+                        const nameField =
+                            document.getElementById(
+                                "volunteerName"
+                            );
+
+                        const emailField =
+                            document.getElementById(
+                                "volunteerEmail"
+                            );
+
+                        const motivationField =
+                            document.getElementById(
+                                "volunteerMotivation"
+                            );
+
+
+                        if (!name) {
+
+                            setFieldError(
+                                nameField,
+                                "Please enter your name."
+                            );
+
+                            valid = false;
+
+                        }
+
+
+                        if (!email) {
+
+                            setFieldError(
+                                emailField,
+                                "Please enter your email."
+                            );
+
+                            valid = false;
+
+                        }
+                        else if (
+                            !isValidEmail(email)
+                        ) {
+
+                            setFieldError(
+                                emailField,
+                                "Please enter a valid email address."
+                            );
+
+                            valid = false;
+
+                        }
+
+
+                        if (!motivation) {
+
+                            setFieldError(
+                                motivationField,
+                                "Please tell us why you would like to volunteer."
+                            );
+
+                            valid = false;
+
+                        }
+
+
+                        if (!consent.checked) {
+
+                            consentError.textContent =
+                                "Please confirm the information above.";
+
+                            valid = false;
+
+                        }
+
+
+                        if (!valid) {
+
+                            showMessage(
+                                "Please check the highlighted fields.",
+                                "error"
+                            );
+
+                            return;
+
+                        }
+
+
+                        /* ==========================================
+   GET LOGGED-IN USER
+========================================== */
+
+let userId = null;
+
+try {
+
+    // First try the main user object
+    const storedUser = localStorage.getItem("user");
+
+    if (storedUser) {
+
+        const user = JSON.parse(storedUser);
+
+        userId = user.id || null;
+    }
+
+    // Fallback if the project stores user_id separately
+    if (!userId) {
+
+        const storedUserId =
+            localStorage.getItem("user_id");
+
+        if (storedUserId) {
+            userId = storedUserId;
+        }
+    }
+
+}
+catch (error) {
+
+    console.warn(
+        "Could not read stored user.",
+        error
+    );
+
+}
+
+                        /* ==========================================
+                           REQUEST DATA
+                        ========================================== */
+
+                        const applicationData = {
+
+                            application_type:
+                                "volunteer",
+
+                            user_id:
+                                userId,
+
+                            name:
+                                name,
+
+                            email:
+                                email,
+
+                            phone:
+                                phone || null,
+
+                            organization:
+                                null,
+
+                            motivation:
+                                motivation,
+
+                            experience:
+                                experience || null,
+
+                            skills:
+                                skills || null,
+
+                            availability:
+                                availability || null,
+
+                            additional_information:
+                                additionalInformation || null
+
+                        };
+
+
+                        /* ==========================================
+                           LOADING
+                        ========================================== */
+
+                        submitButton.disabled = true;
+
+                        submitButton.classList.add(
+                            "loading"
+                        );
+
+
+                        try {
+
+                            const response =
+                                await fetch(
+                                     `${API_BASE}/api/contact/applications`,
+                                    {
+                                        method: "POST",
+
+                                        headers: {
+                                            "Content-Type":
+                                                "application/json"
+                                        },
+
+                                        body:
+                                            JSON.stringify(
+                                                applicationData
+                                            )
+                                    }
+                                );
+
+
+                            const data =
+                                await response.json();
+
+
+                            if (!response.ok) {
+
+                                throw new Error(
+                                    data.error ||
+                                    data.detail ||
+                                    "Unable to submit application."
+                                );
+
+                            }
+
+
+                            if (data.error) {
+
+                                throw new Error(
+                                    data.error
+                                );
+
+                            }
+
+
+                            /* ======================================
+                               SUCCESS
+                            ====================================== */
+
+                            showMessage(
+                                "Thank you! Your volunteer application has been submitted successfully. We will review it and get back to you.",
+                                "success"
+                            );
+
+                            form.reset();
+
+                            document
+                                .querySelectorAll(
+                                    ".textarea-footer strong"
+                                )
+                                .forEach(
+                                    function (counter) {
+                                        counter.textContent = "0";
+                                    }
+                                );
+
+                            formMessage.scrollIntoView({
+                                behavior: "smooth",
+                                block: "center"
+                            });
+
+
+                        }
+                        catch (error) {
+
+                            console.error(
+                                "Volunteer application error:",
+                                error
+                            );
+
+                            showMessage(
+                                error.message ||
+                                "Something went wrong while submitting your application. Please try again.",
+                                "error"
+                            );
+
+                        }
+                        finally {
+
+                            submitButton.disabled =
+                                false;
+
+                            submitButton.classList.remove(
+                                "loading"
+                            );
+
+                        }
+
+                    }
+                );
+
+
+                /* ==================================================
+                   REMOVE ERROR WHEN USER EDITS FIELD
+                ================================================== */
+
+                form.querySelectorAll(
+                    "input, textarea, select"
+                ).forEach(function (field) {
+
+                    field.addEventListener(
+                        "input",
+                        function () {
+
+                            field.classList.remove(
+                                "invalid"
+                            );
+
+                            const error =
+                                field
+                                    .closest(".form-group")
+                                    ?.querySelector(
+                                        ".field-error"
+                                    );
+
+                            if (error) {
+                                error.textContent = "";
+                            }
+
+                        }
+                    );
+
+                    field.addEventListener(
+                        "change",
+                        function () {
+
+                            field.classList.remove(
+                                "invalid"
+                            );
+
+                        }
+                    );
+
+                });
+
+
+                consent.addEventListener(
+                    "change",
+                    function () {
+
+                        if (consent.checked) {
+                            consentError.textContent = "";
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>

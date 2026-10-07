@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MindSpeak — Verify Email</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: 'Poppins', sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #F1EAD8 0%,
+                    #BEC5A4 100%
+                );
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+
+        }
+
+
+        .auth-box {
+
+            background: white;
+
+            border-radius: 24px;
+
+            padding: 50px 45px;
+
+            width: 100%;
+
+            max-width: 440px;
+
+            box-shadow:
+                0 20px 60px
+                rgba(104, 96, 77, 0.2);
+
+            text-align: center;
+
+        }
+
+
+        /* ==================================================
+           LOGO
+        ================================================== */
+
+        .logo-area {
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .logo-area img {
+
+            width: 100px;
+
+            height: 100px;
+
+            object-fit: contain;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .logo-text {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 22px;
+
+            font-weight: 700;
+
+            color: #3a4a2e;
+
+        }
+
+
+        /* ==================================================
+           LOADING
+        ================================================== */
+
+        .loading-state {
+
+            display: block;
+
+        }
+
+
+        .loading-icon {
+
+            width: 55px;
+
+            height: 55px;
+
+            border: 5px solid #e8e0d0;
+
+            border-top-color: #5a6b4a;
+
+            border-radius: 50%;
+
+            animation:
+                spin 1s linear infinite;
+
+            margin:
+                0 auto 20px;
+
+        }
+
+
+        @keyframes spin {
+
+            to {
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+        /* ==================================================
+           SUCCESS
+        ================================================== */
+
+        .success-state {
+
+            display: none;
+
+        }
+
+
+        .success-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        h2 {
+
+            font-family:
+                'Playfair Display',
+                serif;
+
+            font-size: 24px;
+
+            font-weight: 700;
+
+            color: #3a3a2e;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .subtitle {
+
+            font-size: 13px;
+
+            color: #8A8E75;
+
+            line-height: 1.7;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        /* ==================================================
+           ERROR
+        ================================================== */
+
+        .error-state {
+
+            display: none;
+
+        }
+
+
+        .error-icon {
+
+            font-size: 55px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* ==================================================
+           BUTTON
+        ================================================== */
+
+        .btn-main {
+
+            display: inline-block;
+
+            width: 100%;
+
+            padding: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8A8E75,
+                    #5a6b4a
+                );
+
+            color: white;
+
+            border: none;
+
+            border-radius: 10px;
+
+            font-family:
+                'Poppins',
+                sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            transition:
+                all 0.3s ease;
+
+        }
+
+
+        .btn-main:hover {
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 25px
+                rgba(90, 107, 74, 0.35);
+
+        }
+
+
+        /* ==================================================
+           FOOTER
+        ================================================== */
+
+        .auth-footer {
+
+            margin-top: 22px;
+
+            font-size: 13px;
+
+            color: #8A8E75;
+
+        }
+
+
+        .auth-footer a {
+
+            color: #5a6b4a;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+        }
+
+
+        .auth-footer a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* ==================================================
+           MOBILE
+        ================================================== */
+
+        @media (max-width: 500px) {
+
+            .auth-box {
+
+                padding:
+                    40px 25px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="auth-box">
+
+
+        <!-- ==================================================
+             LOGO
+        ================================================== -->
+
+        <div class="logo-area">
+
+            <img
+                src="/frontend/images/mindspeak.jpg"
+                alt="MindSpeak"
+            >
+
+            <div class="logo-text">
+                MindSpeak
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             LOADING STATE
+        ================================================== -->
+
+        <div
+            class="loading-state"
+            id="loadingState"
+        >
+
+            <div class="loading-icon"></div>
+
+            <h2>
+                Verifying your email...
+            </h2>
+
+            <p class="subtitle">
+                Please wait while we confirm
+                your MindSpeak account.
+            </p>
+
+        </div>
+
+
+        <!-- ==================================================
+             SUCCESS STATE
+        ================================================== -->
+
+        <div
+            class="success-state"
+            id="successState"
+        >
+
+            <div class="success-icon">
+                ✅
+            </div>
+
+            <h2>
+                Email Verified!
+            </h2>
+
+            <p class="subtitle">
+                Your MindSpeak account has been
+                successfully verified.
+                <br><br>
+                You can now log in and start using
+                MindSpeak.
+            </p>
+
+            <a
+                href="login.html"
+                class="btn-main"
+            >
+                Go to Login
+            </a>
+
+        </div>
+
+
+        <!-- ==================================================
+             ERROR STATE
+        ================================================== -->
+
+        <div
+            class="error-state"
+            id="errorState"
+        >
+
+            <div class="error-icon">
+                ❌
+            </div>
+
+            <h2>
+                Verification Failed
+            </h2>
+
+            <p
+                class="subtitle"
+                id="errorMessage"
+            >
+                This verification link is invalid
+                or has already been used.
+            </p>
+
+            <a
+                href="login.html"
+                class="btn-main"
+            >
+                Back to Login
+            </a>
+
+        </div>
+
+
+        <div class="auth-footer">
+
+            Need help?
+
+            <a href="contact/contact.html">
+                Contact MindSpeak
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        const API =
+            "http://127.0.0.1:8000";
+
+
+        // --------------------------------------------------
+        // GET TOKEN FROM URL
+        // --------------------------------------------------
+
+        const urlParams =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const token =
+            urlParams.get("token");
+
+
+        // --------------------------------------------------
+        // ELEMENTS
+        // --------------------------------------------------
+
+        const loadingState =
+            document.getElementById(
+                "loadingState"
+            );
+
+
+        const successState =
+            document.getElementById(
+                "successState"
+            );
+
+
+        const errorState =
+            document.getElementById(
+                "errorState"
+            );
+
+
+        const errorMessage =
+            document.getElementById(
+                "errorMessage"
+            );
+
+
+        // --------------------------------------------------
+        // VERIFY EMAIL
+        // --------------------------------------------------
+
+        async function verifyEmail() {
+
+            if (!token) {
+
+                showError(
+                    "No verification token was found. Please use the verification link sent to your email."
+                );
+
+                return;
+
+            }
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        `${API}/auth/verify/${encodeURIComponent(token)}`
+                    );
+
+
+                const data =
+                    await response.json();
+
+
+                if (data.error) {
+
+                    showError(
+                        data.error
+                    );
+
+                    return;
+
+                }
+
+
+                showSuccess();
+
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "EMAIL VERIFICATION ERROR:",
+                    error
+                );
+
+
+                showError(
+                    "Unable to connect to MindSpeak. Please make sure the server is running and try again."
+                );
+
+            }
+
+        }
+
+
+        // --------------------------------------------------
+        // SHOW SUCCESS
+        // --------------------------------------------------
+
+        function showSuccess() {
+
+            loadingState.style.display =
+                "none";
+
+
+            errorState.style.display =
+                "none";
+
+
+            successState.style.display =
+                "block";
+
+        }
+
+
+        // --------------------------------------------------
+        // SHOW ERROR
+        // --------------------------------------------------
+
+        function showError(message) {
+
+            loadingState.style.display =
+                "none";
+
+
+            successState.style.display =
+                "none";
+
+
+            errorState.style.display =
+                "block";
+
+
+            errorMessage.textContent =
+                message;
+
+        }
+
+
+        // --------------------------------------------------
+        // START VERIFICATION
+        // --------------------------------------------------
+
+        verifyEmail();
+
+    </script>
+
+
+</body>
+
+</html>

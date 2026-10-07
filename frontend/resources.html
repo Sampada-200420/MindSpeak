@@ -1,0 +1,1576 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="navbar.css">
+<link rel="stylesheet" href="resources.css">
+<link rel="stylesheet" href="footer.css">
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+   
+
+<!-- =========================================================
+     01. WATCH, LISTEN & READ
+     ========================================================= -->
+
+<section class="resource-library" id="resources">
+
+    <!-- SECTION HEADER -->
+    <div class="section-heading">
+
+        <span class="section-number">01</span>
+
+        <h2>Watch, Listen & Read</h2>
+
+        <p>
+            Explore carefully selected resources for stress,
+            anxiety, mindfulness, personal growth, and wellbeing.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+    <div class="resource-search">
+
+        <label for="resourceSearch" class="sr-only">
+            Search resources
+        </label>
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="search"
+            id="resourceSearch"
+            placeholder="Search videos, books, audiobooks..."
+            autocomplete="off"
+        >
+
+    </div>
+
+
+    <!-- FILTER TABS -->
+    <div class="resource-filters" role="tablist">
+
+        <button
+            class="filter-btn active"
+            type="button"
+            data-filter="video"
+            role="tab"
+            aria-selected="true">
+
+            <i class="fa-solid fa-play"></i>
+            Videos
+
+        </button>
+
+
+        <button
+            class="filter-btn"
+            type="button"
+            data-filter="book"
+            role="tab"
+            aria-selected="false">
+
+            <i class="fa-solid fa-book"></i>
+            Books
+
+        </button>
+
+
+        <button
+            class="filter-btn"
+            type="button"
+            data-filter="audiobook"
+            role="tab"
+            aria-selected="false">
+
+            <i class="fa-solid fa-headphones"></i>
+            Audiobooks
+
+        </button>
+
+
+        <button
+            class="filter-btn"
+            type="button"
+            data-filter="meditation"
+            role="tab"
+            aria-selected="false">
+
+            <i class="fa-solid fa-leaf"></i>
+            Meditation & Music
+
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         RESOURCE GRID
+         JavaScript controls which category is visible.
+         ===================================================== -->
+
+    <div
+        class="resources-grid"
+        id="resourcesGrid">
+
+
+        <!-- =================================================
+             VIDEOS
+             ================================================= -->
+
+
+        <article
+            class="resource-card"
+            data-category="video"
+            data-title="Managing Stress">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/RcGyVTAoXEU/maxresdefault.jpg"
+                    alt="Managing Stress"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="RcGyVTAoXEU"
+                    aria-label="Play Managing Stress">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Video</span>
+
+                <h3>Managing Stress</h3>
+
+                <p>
+                    Learn practical ways to understand and manage
+                    everyday stress.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="video"
+            data-title="3 Minute Quick Stress Management Tips">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/grfXR6FAsI8/maxresdefault.jpg"
+                    alt="3 Minute Quick Stress Management Tips"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="grfXR6FAsI8"
+                    aria-label="Play 3 Minute Quick Stress Management Tips">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Video</span>
+
+                <h3>3-Minute Quick Stress Management Tips</h3>
+
+                <p>
+                    Quick and practical tips to help you manage
+                    stress in just a few minutes.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="video"
+            data-title="Stress Anxiety Management">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/e7JNRf07bhA/maxresdefault.jpg"
+                    alt="Stress and Anxiety Management"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="e7JNRf07bhA"
+                    aria-label="Play Stress and Anxiety Management">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Video</span>
+
+                <h3>Stress & Anxiety Management</h3>
+
+                <p>
+                    Explore helpful approaches to managing stress
+                    and anxiety in everyday life.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="video"
+            data-title="Why Therapy">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/wwJ1mRCWNKo/maxresdefault.jpg"
+                    alt="Why Therapy"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="wwJ1mRCWNKo"
+                    aria-label="Play Why Therapy">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Video</span>
+
+                <h3>Why Therapy?</h3>
+
+                <p>
+                    Explore what therapy is and how professional
+                    support can help.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="video"
+            data-title="Overcome Depression">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/HWcphoKlbxY/maxresdefault.jpg"
+                    alt="Overcome Depression"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="HWcphoKlbxY"
+                    aria-label="Play Overcome Depression">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Video</span>
+
+                <h3>Overcome Depression</h3>
+
+                <p>
+                    Explore supportive ideas for someone
+                    experiencing depression.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="video"
+            data-title="Understanding Depression">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/yaAFG1ooO0Y/maxresdefault.jpg"
+                    alt="Understanding Depression"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="yaAFG1ooO0Y"
+                    aria-label="Play Understanding Depression">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Video</span>
+
+                <h3>Understanding Depression</h3>
+
+                <p>
+                    Explore depression and develop a better
+                    understanding of the experience.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="video"
+            data-title="Understanding Loneliness">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/lyI1GLHZntI/maxresdefault.jpg"
+                    alt="Understanding Loneliness"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="lyI1GLHZntI"
+                    aria-label="Play Understanding Loneliness">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Video</span>
+
+                <h3>Understanding Loneliness</h3>
+
+                <p>
+                    Explore loneliness and ways of understanding
+                    and navigating the experience.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             BOOKS
+             ================================================= -->
+
+
+        <article
+            class="resource-card"
+            data-category="book"
+            data-title="Man's Search for Meaning">
+
+            <div class="resource-thumbnail book-cover">
+
+                <img
+                    src="images/Books/mansearch.jpg"
+                    alt="Man's Search for Meaning"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Book</span>
+
+                <h3>Man's Search for Meaning</h3>
+
+                <p>
+                    Viktor Frankl's reflection on meaning,
+                    resilience, and purpose in life.
+                </p>
+
+                <a
+                    href="https://www.google.com.np/books/edition/Man_s_Search_for_Meaning/8UNRDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover"
+                    class="resource-link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Explore Book
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="book"
+            data-title="Principles of Psychology">
+
+            <div class="resource-thumbnail book-cover">
+
+                <img
+                    src="images/Books/principals.jpg"
+                    alt="Principles of Psychology"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Book</span>
+
+                <h3>Principles of Psychology</h3>
+
+                <p>
+                    A classic work exploring foundational ideas
+                    in psychology and human thought.
+                </p>
+
+                <a
+                    href="https://archive.org/details/PrinciplesOfPsychologyVol1/page/n3/mode/2up"
+                    class="resource-link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Explore Book
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="book"
+            data-title="Meditations Marcus Aurelius">
+
+            <div class="resource-thumbnail book-cover">
+
+                <img
+                    src="images/Books/meditations.jpg"
+                    alt="Meditations by Marcus Aurelius"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Book</span>
+
+                <h3>Meditations</h3>
+
+                <p>
+                    Reflections on self-discipline, resilience,
+                    perspective, and living well.
+                </p>
+
+                <a
+                    href="https://www.google.com.np/books/edition/Marcus_Aurelius_Antoninus_to_Himself/0X2BxfXnXKcC?hl=en&gbpv=1&printsec=frontcover"
+                    class="resource-link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Explore Book
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="book"
+            data-title="As a Man Thinketh">
+
+            <div class="resource-thumbnail book-cover">
+
+                <img
+                    src="images/Books/manthinketh.jpg"
+                    alt="As a Man Thinketh"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Book</span>
+
+                <h3>As a Man Thinketh</h3>
+
+                <p>
+                    Reflections on thoughts, character, habits,
+                    and personal growth.
+                </p>
+
+                <a
+                    href="https://www.google.com.np/books/edition/As_a_Man_Thinketh/E2MlDwAAQBAJ?hl=en&gbpv=1&printsec=frontcover"
+                    class="resource-link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Explore Book
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="book"
+            data-title="Psychological Self Help">
+
+            <div class="resource-thumbnail book-cover">
+
+                <img
+                    src="images/Books/selfhelp.jpg"
+                    alt="Psychological Self Help"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Book</span>
+
+                <h3>Psychological Self-Help</h3>
+
+                <p>
+                    A resource covering psychological concepts
+                    and approaches to personal wellbeing.
+                </p>
+
+                <a
+                    href="https://www.scribd.com/document/212819913/Psychological-Self-Help"
+                    class="resource-link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Explore Book
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="book"
+            data-title="Atomic Habits James Clear">
+
+            <div class="resource-thumbnail book-cover">
+
+                <img
+                    src="images/Books/atomic.jpg"
+                    alt="Atomic Habits by James Clear"
+                    loading="lazy"
+                >
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Book</span>
+
+                <h3>Atomic Habits</h3>
+
+                <p>
+                    A guide to building better habits through
+                    small and consistent changes.
+                </p>
+
+                <a
+                    href="https://www.scribd.com/document/947617989/Atomic-Habits-by-James-Clear"
+                    class="resource-link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+
+                    Explore Book
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             AUDIOBOOKS
+             ================================================= -->
+
+
+        <article
+            class="resource-card"
+            data-category="audiobook"
+            data-title="The Art of Letting Go">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/lxAHTcX-kAo/maxresdefault.jpg"
+                    alt="The Art of Letting Go"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="lxAHTcX-kAo"
+                    aria-label="Play The Art of Letting Go">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Audiobook</span>
+
+                <h3>The Art of Letting Go</h3>
+
+                <p>
+                    A reflective listen about releasing emotional
+                    burdens and moving forward with greater peace.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="audiobook"
+            data-title="Quiet Your Anxious Mind">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/Vzm7GU4TQ2o/maxresdefault.jpg"
+                    alt="Quiet Your Anxious Mind"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="Vzm7GU4TQ2o"
+                    aria-label="Play Quiet Your Anxious Mind">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Audiobook</span>
+
+                <h3>Quiet Your Anxious Mind</h3>
+
+                <p>
+                    A calming resource focused on anxious thoughts
+                    and finding greater mental calm.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="audiobook"
+            data-title="Trauma and Healing">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/OTQJmkXC2EI/maxresdefault.jpg"
+                    alt="Trauma and Healing"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="OTQJmkXC2EI"
+                    aria-label="Play Trauma and Healing">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Audiobook</span>
+
+                <h3>Trauma & Healing</h3>
+
+                <p>
+                    Explore ideas around trauma, emotional recovery,
+                    and the process of healing.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="audiobook"
+            data-title="Calm and Positive">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/fw4bjaje7pM/maxresdefault.jpg"
+                    alt="Calm and Positive"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="fw4bjaje7pM"
+                    aria-label="Play Calm and Positive">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Audiobook</span>
+
+                <h3>Calm & Positive</h3>
+
+                <p>
+                    A gentle resource for cultivating a calmer
+                    mindset and positive perspective.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="audiobook"
+            data-title="Act As If You're the Best">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/v3lcKf4XRiI/maxresdefault.jpg"
+                    alt="Act As If You're the Best"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="v3lcKf4XRiI"
+                    aria-label="Play Act As If You're the Best">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Audiobook</span>
+
+                <h3>Act As If You're the Best</h3>
+
+                <p>
+                    A motivational listen focused on confidence,
+                    mindset, self-belief, and personal growth.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             MEDITATION & MUSIC
+             ================================================= -->
+
+
+        <article
+            class="resource-card"
+            data-category="meditation"
+            data-title="Simple Meditation">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/60Gnd8Wy0gE/maxresdefault.jpg"
+                    alt="Simple Meditation"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="60Gnd8Wy0gE"
+                    aria-label="Play Simple Meditation">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Meditation & Music</span>
+
+                <h3>Simple Meditation</h3>
+
+                <p>
+                    A simple guided meditation to slow down,
+                    relax, and reconnect with the present moment.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="meditation"
+            data-title="Simple Meditation Tips">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/GqB5kYFD7bk/maxresdefault.jpg"
+                    alt="Simple Meditation Tips"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="GqB5kYFD7bk"
+                    aria-label="Play Simple Meditation Tips">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Meditation & Music</span>
+
+                <h3>Simple Meditation Tips</h3>
+
+                <p>
+                    Helpful tips for building a simple and
+                    comfortable meditation practice.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="meditation"
+            data-title="How to Meditate">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/Hzi3PDz1AWU/maxresdefault.jpg"
+                    alt="How to Meditate"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="Hzi3PDz1AWU"
+                    aria-label="Play How to Meditate">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Meditation & Music</span>
+
+                <h3>How to Meditate</h3>
+
+                <p>
+                    A beginner-friendly guide to understanding
+                    and practicing meditation.
+                </p>
+
+            </div>
+
+        </article>
+
+
+
+        <article
+            class="resource-card"
+            data-category="meditation"
+            data-title="Ho'oponopono Prayer">
+
+            <div class="resource-thumbnail">
+
+                <img
+                    src="https://img.youtube.com/vi/vGd1F6QoHsw/maxresdefault.jpg"
+                    alt="Ho'oponopono Prayer"
+                    loading="lazy"
+                >
+
+                <button
+                    class="play-button"
+                    type="button"
+                    data-video="vGd1F6QoHsw"
+                    aria-label="Play Ho'oponopono Prayer">
+
+                    <i class="fa-solid fa-play"></i>
+
+                </button>
+
+            </div>
+
+            <div class="resource-content">
+
+                <span class="resource-type">Meditation & Music</span>
+
+                <h3>Ho'oponopono Prayer</h3>
+
+                <p>
+                    A gentle reflective practice for creating
+                    a sense of calm, acceptance, and inner peace.
+                </p>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+    <!-- NO RESULTS MESSAGE -->
+
+    <div
+        class="no-results"
+        id="noResults"
+        hidden>
+
+        <i class="fa-regular fa-face-frown"></i>
+
+        <h3>No resources found</h3>
+
+        <p>
+            Try another search or choose a different category.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- second section -->
+
+<!-- =========================================================
+     02. FIND PROFESSIONAL SUPPORT
+     ========================================================= -->
+
+<section class="professional-support" id="professional-help">
+
+    <div class="section-heading">
+
+        <span class="section-number">02</span>
+
+        <h2>Find Professional Support</h2>
+
+        <p>
+            When you need more than self-help, professional support
+            is available. Explore trusted organizations that can
+            help you find the right care.
+        </p>
+
+    </div>
+
+
+    <div class="professional-grid">
+
+
+        <!-- PSYNEPAL -->
+        <article class="professional-card">
+
+            <div class="organization-image">
+                <img
+                    src="images/Books/pys.jpg"
+                    alt="PsyNepal logo">
+            </div>
+
+            <div class="organization-content">
+
+                <span class="organization-label">
+                    PSYCHOLOGY & COUNSELING
+                </span>
+
+                <h3>PsyNepal</h3>
+
+                <p>
+                    Find psychologists and counselors and explore
+                    available mental-health support.
+                </p>
+
+                <a
+                    href="https://psynepal.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="organization-link">
+
+                    Find a Psychologist
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- PSYCHIATRISTS' ASSOCIATION -->
+        <article class="professional-card">
+
+            <div class="organization-image">
+                <img
+                    src="images/Books/association.jpg"
+                    alt="Psychiatrists' Association of Nepal logo">
+            </div>
+
+            <div class="organization-content">
+
+                <span class="organization-label">
+                    PSYCHIATRY
+                </span>
+
+                <h3>Psychiatrists' Association of Nepal</h3>
+
+                <p>
+                    Explore professional psychiatric services
+                    and mental-health information in Nepal.
+                </p>
+
+                <a
+                    href="https://psychiatrynepal.org.np/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="organization-link">
+
+                    Find a Psychiatrist
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- TPO NEPAL -->
+        <article class="professional-card">
+
+            <div class="organization-image">
+                <img
+                    src="images/Books/TPO.jpg"
+                    alt="TPO Nepal logo">
+            </div>
+
+            <div class="organization-content">
+
+                <span class="organization-label">
+                    PSYCHOSOCIAL SUPPORT
+                </span>
+
+                <h3>TPO Nepal</h3>
+
+                <p>
+                    Explore psychosocial support, counseling,
+                    programs, and mental-health resources.
+                </p>
+
+                <a
+                    href="https://www.tponepal.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="organization-link">
+
+                    Explore TPO Nepal
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- KOSHISH -->
+        <article class="professional-card">
+
+            <div class="organization-image">
+                <img
+                    src="images/Books/koshish.jpg"
+                    alt="KOSHISH Nepal logo">
+            </div>
+
+            <div class="organization-content">
+
+                <span class="organization-label">
+                    MENTAL HEALTH SUPPORT
+                </span>
+
+                <h3>KOSHISH</h3>
+
+                <p>
+                    Discover community-based mental-health support,
+                    peer support, and advocacy.
+                </p>
+
+                <a
+                    href="https://koshish.org.np/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="organization-link">
+
+                    Explore KOSHISH
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- CMCS NEPAL -->
+        <article class="professional-card">
+
+            <div class="organization-image">
+                <img
+                    src="images/Books/cmcs.jpg"
+                    alt="CMCS Nepal logo">
+            </div>
+
+            <div class="organization-content">
+
+                <span class="organization-label">
+                    COUNSELING & THERAPY
+                </span>
+
+                <h3>CMCS Nepal</h3>
+
+                <p>
+                    Explore counseling, psychotherapy, and
+                    psychological support services.
+                </p>
+
+                <a
+                    href="https://cmcsnepal.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="organization-link">
+
+                    Explore Services
+                    <span>→</span>
+
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- PROFESSIONAL SUPPORT NOTE -->
+
+    <div class="professional-note">
+
+        <span>ⓘ</span>
+
+        <p>
+            MindSpeak does not provide diagnosis or treatment.
+            These organizations are listed as external resources
+            to help you explore professional support.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- section 4 -->
+
+<!-- =========================================================
+     03. EMERGENCY HELPLINES
+     ========================================================= -->
+
+<section class="emergency-section">
+
+    <!-- SECTION HEADER -->
+    <div class="emergency-heading">
+
+        <span class="section-number">03</span>
+
+        <h2>Emergency Helplines</h2>
+
+        <p>
+            If you need immediate support, these services can
+            help you connect with the right assistance.
+        </p>
+
+    </div>
+
+
+    <!-- IMMEDIATE HELP MESSAGE -->
+    <div class="emergency-alert">
+
+        <div class="alert-icon">
+            !
+        </div>
+
+        <div class="alert-content">
+
+            <h3>Need immediate help?</h3>
+
+            <p>
+                If you or someone around you is in immediate
+                danger, contact emergency services or go to
+                the nearest emergency department.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- HELPLINE CARDS -->
+    <div class="helpline-grid">
+
+
+        <!-- 01. NATIONAL SUICIDE PREVENTION HELPLINE -->
+
+        <article class="helpline-card featured-helpline">
+
+            <div class="helpline-image">
+
+                <img
+                    src="images/Books/suicideprevention.jpg"
+                    alt="National Suicide Prevention Helpline">
+
+            </div>
+
+
+            <div class="helpline-content">
+
+                <span class="helpline-category">
+                    MENTAL HEALTH CRISIS
+                </span>
+
+                <h3>
+                    National Suicide Prevention Helpline
+                </h3>
+
+                <p>
+                    Support for people experiencing suicidal
+                    thoughts, emotional distress, or needing
+                    immediate mental-health assistance.
+                </p>
+
+
+                <div class="helpline-contact">
+
+                    <div class="phone-info">
+
+                        <span class="phone-label">
+                            Call
+                        </span>
+
+                        <strong>1166</strong>
+
+                    </div>
+
+                    <a
+                        href="tel:1166"
+                        class="call-button">
+
+                        Call Now
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 02. TPO NEPAL -->
+
+        <article class="helpline-card">
+
+            <div class="helpline-image">
+
+                <img
+                    src="images/Books/tponepal.jpg"
+                    alt="TPO Nepal">
+
+            </div>
+
+
+            <div class="helpline-content">
+
+                <span class="helpline-category">
+                    PSYCHOSOCIAL SUPPORT
+                </span>
+
+                <h3>TPO Nepal</h3>
+
+                <p>
+                    Psychosocial support and mental-health
+                    assistance through a dedicated helpline.
+                </p>
+
+
+                <div class="helpline-contact">
+
+                    <div class="phone-info">
+
+                        <span class="phone-label">
+                            Call
+                        </span>
+
+                        <strong>1660 010 2005</strong>
+
+                    </div>
+
+                    <a
+                        href="tel:16600102005"
+                        class="call-button">
+
+                        Call Now
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- 03. NEPAL POLICE -->
+
+        <article class="helpline-card">
+
+            <div class="helpline-image">
+
+                <img
+                    src="images/Books/nepalpolice.jpg"
+                    alt="Nepal Police">
+
+            </div>
+
+
+            <div class="helpline-content">
+
+                <span class="helpline-category">
+                    IMMEDIATE EMERGENCY
+                </span>
+
+                <h3>Nepal Police</h3>
+
+                <p>
+                    Contact the police when there is immediate
+                    danger, violence, or a serious safety emergency.
+                </p>
+
+
+                <div class="helpline-contact">
+
+                    <div class="phone-info">
+
+                        <span class="phone-label">
+                            Emergency
+                        </span>
+
+                        <strong>100</strong>
+
+                    </div>
+
+                    <a
+                        href="tel:100"
+                        class="call-button">
+
+                        Call Now
+                        <span>→</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- DISCLAIMER -->
+
+    <div class="emergency-disclaimer">
+
+        <span>ⓘ</span>
+
+        <p>
+            MindSpeak is not an emergency service and does not
+            provide diagnosis, treatment, or crisis intervention.
+            Please contact the appropriate service directly for
+            professional or emergency assistance.
+        </p>
+
+    </div>
+
+</section>
+
+<div id="footer-container"></div>
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<!-- <script src="js/resources.js"></script> -->
+ <script src="js/resources.js?v=2"></script>
+
+</body>
+</html>

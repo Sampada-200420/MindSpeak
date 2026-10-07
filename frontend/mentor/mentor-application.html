@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Become a Mentor | MindSpeak</title>
+
+<!-- Google Fonts -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- Navbar CSS -->
+<link rel="stylesheet" href="../../navbar.css">
+
+<!-- Footer CSS -->
+<link rel="stylesheet" href="../../footer.css">
+
+<!-- Mentor Application CSS -->
+<link rel="stylesheet" href="mentor-application.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- ============================= -->
+<!-- NAVBAR -->
+<!-- ============================= -->
+
+<div id="navbar-container"></div>
+
+
+<!-- ============================= -->
+<!-- MAIN CONTENT -->
+<!-- ============================= -->
+
+<main class="mentor-application-page">
+
+    <!-- Hero -->
+    <section class="application-hero">
+
+        <div class="application-hero-content">
+
+            <span class="application-eyebrow">
+                <i class="fa-solid fa-seedling"></i>
+                BECOME A MENTOR
+            </span>
+
+            <h1>
+                Be there for someone who needs support.
+            </h1>
+
+            <p>
+                Share your time, experience, and understanding
+                with other MindSpeak users through peer support.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- APPLICATION SECTION -->
+    <!-- ============================= -->
+
+    <section class="application-section">
+
+        <div class="application-intro">
+
+            <span>
+                <i class="fa-regular fa-pen-to-square"></i>
+                MENTOR APPLICATION
+            </span>
+
+            <h2>
+                Tell us a little about yourself.
+            </h2>
+
+            <p>
+                Your answers help our team understand whether
+                peer mentoring is a good fit for you.
+            </p>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- STATUS MESSAGE -->
+        <!-- ============================= -->
+
+        <div
+            id="applicationStatus"
+            class="application-status"
+            style="display: none;"
+        ></div>
+
+
+        <!-- ============================= -->
+        <!-- FORM -->
+        <!-- ============================= -->
+
+        <form
+            id="mentorApplicationForm"
+            class="mentor-application-form"
+        >
+
+            <!-- Reason -->
+
+            <div class="form-group">
+
+                <label for="reason">
+                    Why do you want to become a mentor?
+                    <span>*</span>
+                </label>
+
+                <p class="form-help">
+                    Tell us what motivates you to support other
+                    MindSpeak users.
+                </p>
+
+                <textarea
+                    id="reason"
+                    name="reason"
+                    rows="6"
+                    placeholder="I would like to become a mentor because..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- Topics -->
+
+            <div class="form-group">
+
+                <label for="topics">
+                    What topics are you comfortable talking about?
+                </label>
+
+                <p class="form-help">
+                    For example: academic pressure, stress,
+                    loneliness, motivation, relationships, or
+                    general life challenges.
+                </p>
+
+                <textarea
+                    id="topics"
+                    name="topics"
+                    rows="4"
+                    placeholder="Stress, academic pressure, loneliness..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- Languages -->
+
+            <div class="form-group">
+
+                <label for="languages">
+                    What languages can you communicate in?
+                </label>
+
+                <p class="form-help">
+                    List the languages you are comfortable using
+                    for peer support.
+                </p>
+
+                <input
+                    type="text"
+                    id="languages"
+                    name="languages"
+                    placeholder="English, Nepali..."
+                >
+
+            </div>
+
+
+            <!-- Availability -->
+
+            <div class="form-group">
+
+                <label for="availability">
+                    When are you generally available?
+                </label>
+
+                <p class="form-help">
+                    Give us a general idea of when you can respond
+                    to support requests.
+                </p>
+
+                <input
+                    type="text"
+                    id="availability"
+                    name="availability"
+                    placeholder="Evenings and weekends..."
+                >
+
+            </div>
+
+
+            <!-- Experience -->
+
+            <div class="form-group">
+
+                <label for="experience">
+                    Do you have any previous experience supporting others?
+                </label>
+
+                <p class="form-help">
+                    This could include volunteering, peer support,
+                    student organizations, mentoring, or other
+                    relevant experience.
+                </p>
+
+                <textarea
+                    id="experience"
+                    name="experience"
+                    rows="5"
+                    placeholder="Tell us about any relevant experience..."
+                ></textarea>
+
+            </div>
+
+
+            <!-- Guidelines -->
+
+            <div class="guidelines-box">
+
+                <div class="guidelines-icon">
+                    <i class="fa-solid fa-shield-heart"></i>
+                </div>
+
+                <div class="guidelines-content">
+
+                    <h3>
+                        Before you apply
+                    </h3>
+
+                    <p>
+                        MindSpeak mentors provide peer support.
+                        They are not professional therapists or
+                        emergency responders. Mentors are expected
+                        to respect privacy, maintain healthy
+                        boundaries, and follow MindSpeak's mentor
+                        guidelines.
+                    </p>
+
+                    <label class="checkbox-label">
+
+                        <input
+                            type="checkbox"
+                            id="guidelinesAgreed"
+                            name="guidelines_agreed"
+                            value="true"
+                            required
+                        >
+
+                        <span>
+                            I understand and agree to follow the
+                            MindSpeak mentor guidelines.
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- Submit -->
+
+            <div class="form-actions">
+
+                <button
+                    type="submit"
+                    id="submitApplicationBtn"
+                    class="submit-application-btn"
+                >
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    Submit Application
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER NOTE -->
+    <!-- ============================= -->
+
+    <section class="application-note">
+
+        <i class="fa-regular fa-clock"></i>
+
+        <div>
+
+            <strong>
+                What happens next?
+            </strong>
+
+            <p>
+                Your application will be reviewed by the
+                MindSpeak team. You will be notified once a
+                decision has been made.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ============================= -->
+<!-- FOOTER -->
+<!-- ============================= -->
+
+<div id="footer"></div>
+
+
+<!-- Scripts -->
+
+<script src="../js/navbar.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/mentor-application.js"></script>
+
+
+</body>
+
+</html>

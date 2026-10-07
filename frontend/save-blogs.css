@@ -1,0 +1,240 @@
+/* =========================================================
+   SAVED BLOGS PAGE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #faf8f2;
+    color: #293b38;
+
+    font-family:
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+}
+
+
+/* =========================================================
+   MAIN SECTION
+========================================================= */
+
+.blog-details {
+    width: min(1200px, calc(100% - 50px));
+
+    margin: 0 auto;
+
+    padding:
+        70px 0 90px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.section-header {
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+.section-header h1 {
+    margin: 0 0 10px;
+
+    color: #293b38;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 44px;
+
+    font-weight: 600;
+
+    line-height: 1.15;
+}
+
+.section-header p {
+    margin: 0;
+
+    color: #6d7874;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   BACK TO BLOGS
+========================================================= */
+
+.back-to-blogs {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 22px;
+
+    padding:
+        11px 20px;
+
+    border:
+        1px solid #d4e1d9;
+
+    border-radius:
+        999px;
+
+    background:
+        #f1f7f2;
+
+    color:
+        #3f6f5d;
+
+    font-family:
+        "Poppins",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.back-to-blogs i {
+    font-size: 11px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.back-to-blogs:hover {
+    background:
+        #4f806d;
+
+    color:
+        #ffffff;
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(79, 128, 109, 0.18);
+}
+
+.back-to-blogs:hover i {
+    transform:
+        translateX(-3px);
+}
+
+
+/* =========================================================
+   SAVED BLOGS CONTAINER
+========================================================= */
+
+#saved-blogs {
+    width: 100%;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-message {
+    min-height: 180px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    color:
+        #71807a;
+
+    font-size:
+        13px;
+}
+
+.loading-message i {
+    color:
+        #4f806d;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .blog-details {
+        width:
+            calc(100% - 30px);
+
+        padding:
+            50px 0 70px;
+    }
+
+    .section-header h1 {
+        font-size:
+            36px;
+    }
+
+    .section-header p {
+        font-size:
+            13px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .blog-details {
+        width:
+            calc(100% - 24px);
+
+        padding-top:
+            40px;
+    }
+
+    .section-header h1 {
+        font-size:
+            31px;
+    }
+
+    .section-header p {
+        font-size:
+            12px;
+    }
+
+    .back-to-blogs {
+        font-size:
+            11px;
+
+        padding:
+            10px 17px;
+    }
+}

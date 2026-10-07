@@ -1,0 +1,550 @@
+
+/* =========================================================
+   MIND SPEAK — MENTOR CONVERSATIONS
+========================================================= */
+
+.mentor-conversations-page {
+    min-height: calc(100vh - 80px);
+    padding: 70px 20px 90px;
+    background: #f8f5ef;
+}
+
+.mentor-conversations-container {
+    width: min(900px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   BACK LINK
+========================================================= */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 35px;
+
+    color: #315c52;
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+.back-link:hover {
+    color: #24473f;
+    transform: translateX(-2px);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.conversations-header {
+    margin-bottom: 38px;
+}
+
+.section-eyebrow {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #d69b62;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.conversations-header h1 {
+    margin: 0 0 12px;
+
+    color: #315c52;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(32px, 5vw, 46px);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.conversations-header p {
+    max-width: 650px;
+    margin: 0;
+
+    color: #6f756f;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATES
+========================================================= */
+
+.conversations-state {
+    padding: 55px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(49, 92, 82, 0.10);
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 30px rgba(49, 92, 82, 0.06);
+}
+
+.conversations-state[hidden] {
+    display: none;
+}
+
+.state-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef3f0;
+    color: #315c52;
+
+    font-size: 22px;
+}
+
+.conversations-state h2 {
+    margin: 0 0 10px;
+
+    color: #315c52;
+
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.conversations-state p {
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    color: #737873;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-spinner {
+    width: 32px;
+    height: 32px;
+
+    margin: 0 auto 18px;
+
+    border: 3px solid #dce6e2;
+    border-top-color: #315c52;
+
+    border-radius: 50%;
+
+    animation: conversationSpin 0.8s linear infinite;
+}
+
+@keyframes conversationSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-state .state-icon {
+    background: #f7ece7;
+    color: #a85b45;
+}
+
+.retry-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    margin-top: 25px;
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #315c52;
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.retry-btn:hover {
+    background: #24473f;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.find-mentor-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 25px;
+    padding: 13px 22px;
+
+    border-radius: 9px;
+
+    background: #315c52;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition: 0.2s ease;
+}
+
+.find-mentor-btn:hover {
+    background: #24473f;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CONVERSATION LIST
+========================================================= */
+
+.conversations-section[hidden] {
+    display: none;
+}
+
+.conversations-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* =========================================================
+   CONVERSATION CARD
+========================================================= */
+
+.conversation-card {
+    display: grid;
+    grid-template-columns: minmax(220px, 1fr) auto auto;
+    align-items: center;
+    gap: 25px;
+
+    padding: 20px 22px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(49, 92, 82, 0.10);
+    border-radius: 16px;
+
+    box-shadow: 0 7px 25px rgba(49, 92, 82, 0.05);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.conversation-card:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(49, 92, 82, 0.18);
+
+    box-shadow: 0 12px 30px rgba(49, 92, 82, 0.09);
+}
+
+
+/* =========================================================
+   PERSON
+========================================================= */
+
+.conversation-person {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    min-width: 0;
+}
+
+.conversation-avatar {
+    width: 54px;
+    height: 54px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef3f0;
+
+    font-size: 25px;
+}
+
+.conversation-info {
+    min-width: 0;
+}
+
+.conversation-info h2 {
+    margin: 0 0 4px;
+
+    color: #315c52;
+
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.conversation-info p {
+    margin: 0;
+
+    color: #858b86;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.conversation-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+
+    min-width: 115px;
+}
+
+.conversation-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+}
+
+.status-active {
+    color: #477c67;
+}
+
+.status-active .status-dot {
+    background: #477c67;
+}
+
+.status-ended {
+    color: #858b86;
+}
+
+.status-ended .status-dot {
+    background: #a9ada9;
+}
+
+.conversation-date {
+    color: #999e9a;
+
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+.open-conversation-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    min-height: 42px;
+    padding: 10px 16px;
+
+    border: 1px solid rgba(49, 92, 82, 0.18);
+    border-radius: 9px;
+
+    background: transparent;
+    color: #315c52;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+    transition: 0.2s ease;
+}
+
+.open-conversation-btn:hover {
+    background: #315c52;
+    color: #ffffff;
+
+    border-color: #315c52;
+}
+
+
+/* =========================================================
+   PRIVACY NOTE
+========================================================= */
+
+.privacy-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    margin-top: 30px;
+    padding: 18px 20px;
+
+    background: #f0f4f1;
+
+    border: 1px solid rgba(49, 92, 82, 0.08);
+    border-radius: 13px;
+}
+
+.privacy-note-icon {
+    width: 35px;
+    height: 35px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+    color: #315c52;
+
+    font-size: 13px;
+}
+
+.privacy-note h3 {
+    margin: 1px 0 5px;
+
+    color: #315c52;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.privacy-note p {
+    margin: 0;
+
+    color: #777d78;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    .mentor-conversations-page {
+        padding: 45px 16px 70px;
+    }
+
+    .conversation-card {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .conversation-meta {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .open-conversation-btn {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .conversations-header h1 {
+        font-size: 31px;
+    }
+
+    .conversation-card {
+        padding: 17px;
+    }
+
+    .conversation-avatar {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+    }
+
+    .conversation-info h2 {
+        font-size: 18px;
+    }
+
+    .conversation-meta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .privacy-note {
+        padding: 16px;
+    }
+
+}

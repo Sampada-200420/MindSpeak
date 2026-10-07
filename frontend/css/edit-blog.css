@@ -1,0 +1,523 @@
+
+/* ================================
+   EDIT BLOG PAGE
+================================ */
+
+:root {
+    --ms-purple: #6f4b8b;
+    --ms-purple-dark: #4d3563;
+    --ms-purple-light: #eee5f4;
+
+    --ms-cream: #fcf9f5;
+
+    --text-dark: #302638;
+    --text-medium: #665c6d;
+    --text-light: #918895;
+
+    --border: #e5dce9;
+    --white: #ffffff;
+}
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--ms-cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ================================
+   MAIN PAGE
+================================ */
+
+.edit-blog-page {
+    min-height: 100vh;
+    padding: 70px 20px 90px;
+}
+
+/* ================================
+   PAGE HEADER
+================================ */
+
+.edit-blog-header {
+    max-width: 900px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+
+    color: var(--ms-purple);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.edit-blog-header h1 {
+    margin-bottom: 15px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 3.1rem;
+    font-weight: 600;
+    line-height: 1.2;
+
+    color: var(--text-dark);
+}
+
+.edit-blog-header p {
+    max-width: 650px;
+    margin: 0 auto;
+
+    color: var(--text-medium);
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* ================================
+   EDITOR SECTION
+================================ */
+
+.blog-editor {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ================================
+   EDITOR CARD
+================================ */
+
+.editor-card {
+    width: 100%;
+
+    padding: 42px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    box-shadow: 0 12px 35px rgba(77, 53, 99, 0.08);
+}
+
+/* ================================
+   EDITOR HEADING
+================================ */
+
+.editor-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.editor-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: var(--ms-purple-light);
+    color: var(--ms-purple);
+
+    border-radius: 15px;
+
+    font-size: 1.35rem;
+}
+
+.editor-heading h2 {
+    margin-bottom: 3px;
+
+    font-family: "Playfair Display", serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+
+    color: var(--text-dark);
+}
+
+.editor-heading p {
+    color: var(--text-medium);
+    font-size: 0.92rem;
+}
+
+/* ================================
+   FORM GROUP
+================================ */
+
+.form-group {
+    margin-bottom: 28px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--text-dark);
+
+    font-size: 0.98rem;
+    font-weight: 600;
+}
+
+/* ================================
+   INPUT / SELECT / TEXTAREA
+================================ */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--white);
+    color: var(--text-dark);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.98rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+/* ================================
+   TEXT INPUT
+================================ */
+
+.form-group input {
+    height: 54px;
+    padding: 0 16px;
+}
+
+/* ================================
+   SELECT
+================================ */
+
+.form-group select {
+    height: 54px;
+    padding: 0 16px;
+
+    cursor: pointer;
+}
+
+/* ================================
+   TEXTAREA
+================================ */
+
+.form-group textarea {
+    min-height: 320px;
+
+    padding: 17px;
+
+    resize: vertical;
+
+    line-height: 1.8;
+}
+
+/* ================================
+   PLACEHOLDER
+================================ */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-light);
+    opacity: 1;
+}
+
+/* ================================
+   FOCUS EFFECT
+================================ */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--ms-purple);
+
+    box-shadow: 0 0 0 4px rgba(111, 75, 139, 0.08);
+}
+
+/* ================================
+   EDITOR INFORMATION
+================================ */
+
+.editor-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 8px;
+    padding: 0 3px;
+
+    color: var(--text-light);
+
+    font-size: 0.82rem;
+}
+
+/* ================================
+   BLOG ACTIONS
+================================ */
+
+.blog-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 35px;
+    padding-top: 25px;
+
+    border-top: 1px solid var(--border);
+}
+
+/* ================================
+   BUTTON BASE
+================================ */
+
+.blog-actions button {
+    min-height: 50px;
+
+    padding: 0 24px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    border-radius: 11px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.94rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+/* ================================
+   CANCEL BUTTON
+================================ */
+
+.btn-secondary {
+    background: transparent;
+
+    border: 1px solid var(--border);
+
+    color: var(--text-medium);
+}
+
+.btn-secondary:hover {
+    background: #f7f3f8;
+
+    border-color: #d5c8dc;
+
+    color: var(--text-dark);
+
+    transform: translateY(-1px);
+}
+
+/* ================================
+   RESUBMIT BUTTON
+================================ */
+
+.btn-primary {
+    background: var(--ms-purple);
+
+    border: 1px solid var(--ms-purple);
+
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--ms-purple-dark);
+
+    border-color: var(--ms-purple-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 7px 18px rgba(77, 53, 99, 0.18);
+}
+
+/* ================================
+   BUTTON ACTIVE
+================================ */
+
+.blog-actions button:active {
+    transform: translateY(0);
+}
+
+/* ================================
+   DISABLED BUTTON
+================================ */
+
+.blog-actions button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+/* ================================
+   LOADING STATE
+================================ */
+
+.btn-primary.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* ================================
+   RESPONSIVE - TABLET
+================================ */
+
+@media (max-width: 768px) {
+
+    .edit-blog-page {
+        padding: 50px 15px 70px;
+    }
+
+    .edit-blog-header {
+        margin-bottom: 35px;
+    }
+
+    .edit-blog-header h1 {
+        font-size: 2.4rem;
+    }
+
+    .edit-blog-header p {
+        font-size: 0.95rem;
+    }
+
+    .editor-card {
+        padding: 28px 22px;
+        border-radius: 20px;
+    }
+
+    .editor-heading {
+        gap: 14px;
+
+        margin-bottom: 28px;
+    }
+
+    .editor-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 1.15rem;
+    }
+
+    .editor-heading h2 {
+        font-size: 1.45rem;
+    }
+
+    .editor-heading p {
+        font-size: 0.84rem;
+    }
+
+    .form-group textarea {
+        min-height: 280px;
+    }
+
+    .blog-actions {
+        flex-direction: column-reverse;
+
+        width: 100%;
+    }
+
+    .blog-actions button {
+        width: 100%;
+    }
+}
+
+/* ================================
+   RESPONSIVE - MOBILE
+================================ */
+
+@media (max-width: 480px) {
+
+    .edit-blog-page {
+        padding: 40px 12px 60px;
+    }
+
+    .edit-blog-header h1 {
+        font-size: 2rem;
+    }
+
+    .edit-blog-header p {
+        font-size: 0.9rem;
+    }
+
+    .eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 1.5px;
+    }
+
+    .editor-card {
+        padding: 24px 17px;
+        border-radius: 18px;
+    }
+
+    .editor-heading {
+        align-items: flex-start;
+    }
+
+    .editor-heading h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        height: 50px;
+    }
+
+    .form-group textarea {
+        min-height: 250px;
+    }
+
+    .editor-info {
+        font-size: 0.76rem;
+    }
+
+    .blog-actions button {
+        min-height: 48px;
+
+        font-size: 0.88rem;
+    }
+} 

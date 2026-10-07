@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="MindSpeak personal journal — a private space for your thoughts, feelings, and reflections."
+    >
+
+    <title>My Journal | MindSpeak</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- MindSpeak -->
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
+
+    <!-- Journal -->
+    <link rel="stylesheet" href="Journal.css">
+</head>
+
+
+<body>
+
+    <!-- NAVBAR -->
+    <div id="navbar-container"></div>
+
+
+    <main class="journal-page">
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="journal-hero">
+
+            <div class="journal-hero-content">
+
+                <div class="journal-hero-copy">
+
+                    <span class="journal-eyebrow">
+                        YOUR SPACE · YOUR STORY
+                    </span>
+
+                    <h1>
+                        My
+                        <span>Journal.</span>
+                    </h1>
+
+                    <p>
+                        A quiet place to slow down, put your thoughts
+                        into words, and understand yourself a little better.
+                    </p>
+
+                    <div class="journal-hero-note">
+
+                        <span class="hero-note-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+
+                        <div>
+                            <strong>Your thoughts stay yours.</strong>
+                            <span>Your journal is private and personal.</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="journal-hero-image">
+
+                    <img
+                        src="../images/hero/journal.jpg"
+                        alt="A young woman peacefully writing in her journal"
+                    >
+
+                    <div class="hero-image-caption">
+                        <i class="fa-solid fa-leaf"></i>
+                        Take a moment for yourself.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             MAIN JOURNAL CONTENT
+        ====================================================== -->
+
+        <div class="journal-container">
+
+            <section class="journal-top-grid">
+
+
+                <!-- =================================================
+                     NEW ENTRY
+                ================================================== -->
+
+                <section class="new-entry-card">
+
+                    <div class="card-heading">
+
+                        <div class="card-heading-main">
+
+                            <span class="section-icon">
+                                <i class="fa-solid fa-pen"></i>
+                            </span>
+
+                            <div>
+
+                                <span class="small-section-label">
+                                    TODAY'S REFLECTION
+                                </span>
+
+                                <h2>
+                                    Write a new entry
+                                </h2>
+
+                                <p>
+                                    Take a moment to check in with yourself.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="journal-date">
+
+                            <i class="fa-regular fa-calendar"></i>
+
+                            <span id="journalDate">
+                                Today
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MOOD -->
+
+                    <div class="mood-section">
+
+                        <div class="field-label">
+                            How are you feeling today?
+                        </div>
+
+                        <div class="journal-moods">
+
+                            <button type="button" class="journal-mood" data-mood="happy">
+                                <span class="mood-emoji">😊</span>
+                                <span class="mood-name">Happy</span>
+                            </button>
+
+                            <button type="button" class="journal-mood" data-mood="good">
+                                <span class="mood-emoji">🙂</span>
+                                <span class="mood-name">Good</span>
+                            </button>
+
+                            <button type="button" class="journal-mood" data-mood="okay">
+                                <span class="mood-emoji">😐</span>
+                                <span class="mood-name">Okay</span>
+                            </button>
+
+                            <button type="button" class="journal-mood" data-mood="sad">
+                                <span class="mood-emoji">😔</span>
+                                <span class="mood-name">Sad</span>
+                            </button>
+
+                            <button type="button" class="journal-mood" data-mood="anxious">
+                                <span class="mood-emoji">😟</span>
+                                <span class="mood-name">Anxious</span>
+                            </button>
+
+                            <button type="button" class="journal-mood" data-mood="frustrated">
+                                <span class="mood-emoji">😡</span>
+                                <span class="mood-name">Frustrated</span>
+                            </button>
+
+                            <button type="button" class="journal-mood" data-mood="tired">
+                                <span class="mood-emoji">😴</span>
+                                <span class="mood-name">Tired</span>
+                            </button>
+
+                            <button type="button" class="journal-mood" data-mood="grateful">
+                                <span class="mood-emoji">❤️</span>
+                                <span class="mood-name">Grateful</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- TITLE -->
+
+                    <div class="journal-field">
+
+                        <label for="entryTitle">
+                            Entry title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="entryTitle"
+                            name="entryTitle"
+                            placeholder="Give this moment a name..."
+                            maxlength="150"
+                        >
+
+                    </div>
+
+
+                    <!-- CONTENT -->
+
+                    <div class="journal-field journal-writing-field">
+
+                        <div class="writing-label-row">
+
+                            <label for="entryContent">
+                                What's on your mind?
+                            </label>
+
+                            <span>
+                                Write freely
+                            </span>
+
+                        </div>
+
+                        <textarea
+                            id="entryContent"
+                            name="entryContent"
+                            placeholder="Write whatever is on your mind...
+
+It's your space. Be honest, be real, be you."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- IMAGE -->
+
+                    <div class="optional-image">
+
+                        <div class="optional-image-icon">
+                            <i class="fa-regular fa-image"></i>
+                        </div>
+
+                        <div class="optional-image-text">
+
+                            <strong>
+                                Add a memory
+                            </strong>
+
+                            <span>
+                                Optional · JPG, PNG or WebP · Max 5 MB
+                            </span>
+
+                        </div>
+
+                        <label
+                            for="entryImage"
+                            class="choose-image-btn"
+                        >
+                            Choose Image
+                        </label>
+
+                        <input
+                            type="file"
+                            id="entryImage"
+                            name="entryImage"
+                            accept="image/jpeg,image/png,image/webp"
+                            hidden
+                        >
+
+                    </div>
+
+
+                    <!-- IMAGE PREVIEW -->
+
+                    <div
+                        id="imagePreview"
+                        class="image-preview"
+                        hidden
+                    >
+
+                        <img
+                            id="previewImage"
+                            src=""
+                            alt="Selected journal image"
+                        >
+
+                        <button
+                            type="button"
+                            id="removeImageBtn"
+                            class="remove-image-btn"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                            Remove
+                        </button>
+
+                    </div>
+
+
+                    <!-- TAG -->
+
+                    <div class="journal-tag-row">
+
+                        <div class="tag-input-wrapper">
+
+                            <i class="fa-solid fa-tag"></i>
+
+                            <input
+                                type="text"
+                                id="entryTag"
+                                name="entryTag"
+                                placeholder="Add a personal tag (optional)"
+                                maxlength="50"
+                            >
+
+                        </div>
+
+                        <span class="tag-hint">
+                            e.g. school, growth, gratitude
+                        </span>
+
+                    </div>
+
+
+                    <!-- ACTIONS -->
+
+                    <div class="entry-actions">
+
+                        <button
+                            type="button"
+                            class="cancel-entry-btn"
+                            id="cancelEntryBtn"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="button"
+                            class="save-entry-btn"
+                            id="saveEntryBtn"
+                        >
+                            <i class="fa-solid fa-lock"></i>
+                            Save Entry
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- =================================================
+                     SIDEBAR
+                ================================================== -->
+
+                <aside class="journal-sidebar">
+
+
+                    <!-- JOURNEY -->
+
+                    <section class="journey-card">
+
+                        <div class="sidebar-card-heading">
+
+                            <div class="sidebar-heading-main">
+
+                                <span class="sidebar-icon">
+                                    <i class="fa-solid fa-seedling"></i>
+                                </span>
+
+                                <div>
+                                    <span class="sidebar-label">
+                                        YOUR JOURNEY
+                                    </span>
+
+                                    <h2>
+                                        Little by little
+                                    </h2>
+                                </div>
+
+                            </div>
+
+                            <button
+                                type="button"
+                                class="insights-link"
+                                id="viewInsightsBtn"
+                            >
+                                Insights
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+
+                        <div class="journey-stats">
+
+                            <div class="journey-stat">
+                                <strong id="totalEntries">0</strong>
+                                <span>Total Entries</span>
+                            </div>
+
+                            <div class="journey-stat">
+                                <strong id="monthlyEntries">0</strong>
+                                <span>This Month</span>
+                            </div>
+
+                            <div class="journey-stat">
+                                <strong id="differentMoods">0</strong>
+                                <span>Different Moods</span>
+                            </div>
+
+                            <div class="journey-stat">
+                                <strong id="journalStreak">0</strong>
+                                <span>Day Streak</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="journey-message">
+
+                            <span>
+                                <i class="fa-solid fa-leaf"></i>
+                            </span>
+
+                            <div>
+                                <strong>
+                                    Progress, not perfection.
+                                </strong>
+
+                                <p>
+                                    Every entry is a small step toward
+                                    understanding yourself better.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </section>
+
+
+                    <!-- TIP -->
+
+                    <section class="tip-card">
+
+                        <div class="tip-heading">
+
+                            <span class="tip-icon">
+                                <i class="fa-regular fa-lightbulb"></i>
+                            </span>
+
+                            <div>
+
+                                <h2>
+                                    A little reminder
+                                </h2>
+
+                                <button
+                                    type="button"
+                                    id="newTipBtn"
+                                    aria-label="Show another journaling tip"
+                                >
+                                    <i class="fa-solid fa-rotate"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <p id="journalTip">
+                            You don't have to write a lot.
+                            Even a few honest sentences can help
+                            you feel lighter today.
+                        </p>
+
+                    </section>
+
+
+                    <!-- IMAGE -->
+
+                    <div class="journal-side-image">
+                        
+                        <div class="side-image-overlay">
+                          
+                            <span>
+                                <i class="fa-solid fa-leaf"></i>
+                            </span>
+                            <div class="journal-side-image">
+                                    <img src="../images/hero/dairy.jpg" alt="">
+                            </div>  
+                            <p>
+                                Give your thoughts
+                                somewhere to rest.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </section>
+
+
+
+            <!-- =====================================================
+                 PREVIOUS ENTRIES
+            ====================================================== -->
+
+            <section class="previous-entries-section">
+
+                <div class="entries-heading">
+
+                    <div class="entries-title">
+
+                        <span class="entries-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
+
+                        <div>
+
+                            <span class="section-label">
+                                YOUR JOURNAL
+                            </span>
+
+                            <h2>
+                                Previous entries
+                            </h2>
+
+                            <p>
+                                A timeline of your thoughts,
+                                moments, and growth.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="entry-filters">
+
+                        <div class="search-wrapper">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input
+                                type="search"
+                                id="entrySearch"
+                                placeholder="Search your entries..."
+                            >
+
+                        </div>
+
+
+                        <select id="moodFilter">
+
+                            <option value="all">All moods</option>
+                            <option value="happy">Happy</option>
+                            <option value="good">Good</option>
+                            <option value="okay">Okay</option>
+                            <option value="sad">Sad</option>
+                            <option value="anxious">Anxious</option>
+                            <option value="frustrated">Frustrated</option>
+                            <option value="tired">Tired</option>
+                            <option value="grateful">Grateful</option>
+
+                        </select>
+
+
+                        <select id="entrySort">
+
+                            <option value="newest">
+                                Newest first
+                            </option>
+
+                            <option value="oldest">
+                                Oldest first
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="entriesGrid"
+                    class="entries-grid"
+                >
+
+                    <div
+                        id="entriesLoading"
+                        class="entries-loading"
+                    >
+                        Loading your journal...
+                    </div>
+
+                </div>
+
+
+                <div
+                    id="emptyJournalState"
+                    class="empty-journal-state"
+                    hidden
+                >
+
+                    <div class="empty-journal-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <h3>
+                        Your journal starts here
+                    </h3>
+
+                    <p>
+                        You haven't written anything yet.
+                        Take a moment to put your thoughts into words.
+                    </p>
+
+                    <button
+                        type="button"
+                        id="firstEntryBtn"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                        Write Your First Entry
+                    </button>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================================
+                 PRIVACY
+            ====================================================== -->
+
+            <section class="journal-privacy-banner">
+
+                <div class="privacy-banner-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div class="privacy-banner-content">
+
+                    <span>
+                        PRIVATE BY DESIGN
+                    </span>
+
+                    <h3>
+                        Your journal is yours.
+                    </h3>
+
+                    <p>
+                        Your entries are personal and aren't shared
+                        with other students, mentors, or the MindSpeak
+                        community.
+                    </p>
+
+                </div>
+
+                <div class="privacy-banner-decoration">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+    <script src="Journal.js"></script>
+
+</body>
+
+</html>

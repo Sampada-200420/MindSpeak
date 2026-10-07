@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Partner With Us | MindSpeak</title>
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", sans-serif;
+            background: #f7f8f6;
+            color: #10263e;
+        }
+
+        .partner-page {
+            padding-bottom: 70px;
+        }
+
+        /* HERO */
+        .application-hero {
+            background: #e8f3ed;
+            border-bottom: 1px solid #d5ded9;
+            padding: 65px 7% 55px;
+        }
+
+        .hero-inner {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #ccd6d1;
+            border-radius: 30px;
+            padding: 7px 15px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .application-hero h1 {
+            margin: 0 0 15px;
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+        }
+
+        .application-hero p {
+            max-width: 650px;
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #425568;
+        }
+
+        .hero-box {
+            background: #ffffff;
+            border: 1px solid #d5ded9;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 8px 22px rgba(16, 38, 62, 0.06);
+        }
+
+        .hero-box h3 {
+            margin: 0 0 15px;
+            font-size: 19px;
+        }
+
+        .hero-box p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .hero-point {
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .hero-point i {
+            color: #2f7b5d;
+            margin-top: 3px;
+        }
+
+        /* MAIN */
+        .application-container {
+            max-width: 1150px;
+            margin: 50px auto 0;
+            padding: 0 25px;
+        }
+
+        .intro-section {
+            margin-bottom: 35px;
+        }
+
+        .section-label {
+            color: #2f7b5d;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .intro-section h2 {
+            margin: 0 0 10px;
+            font-size: 30px;
+        }
+
+        .intro-section p {
+            max-width: 760px;
+            color: #566575;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* PARTNERSHIP AREAS */
+        .partnership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 55px;
+        }
+
+        .partnership-card {
+            background: #ffffff;
+            border: 1px solid #dbe2de;
+            border-radius: 15px;
+            padding: 22px;
+            transition: 0.2s ease;
+        }
+
+        .partnership-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 38, 62, 0.07);
+        }
+
+        .partnership-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #e8f3ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2f7b5d;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .partnership-card h3 {
+            margin: 0 0 8px;
+            font-size: 17px;
+        }
+
+        .partnership-card p {
+            margin: 0;
+            color: #667483;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* FORM */
+        .form-wrapper {
+            display: grid;
+            grid-template-columns: 0.75fr 1.4fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .form-info {
+            background: #10263e;
+            color: #ffffff;
+            border-radius: 18px;
+            padding: 28px;
+            position: sticky;
+            top: 25px;
+        }
+
+        .form-info h2 {
+            margin: 0 0 12px;
+            font-size: 25px;
+        }
+
+        .form-info > p {
+            color: #d7e0e8;
+            font-size: 14px;
+            line-height: 1.65;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            color: #8dc4a8;
+            margin-top: 3px;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .info-item span {
+            color: #c5d1dc;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .form-card {
+            background: #ffffff;
+            border: 1px solid #dbe2de;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 8px 24px rgba(16, 38, 62, 0.05);
+        }
+
+        .form-card h2 {
+            margin: 0 0 8px;
+            font-size: 27px;
+        }
+
+        .form-card-intro {
+            margin: 0 0 28px;
+            color: #667483;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-section-title {
+            margin: 28px 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid #e2e7e4;
+            font-size: 17px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .required {
+            color: #c44b4b;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            border: 1px solid #ccd6d1;
+            border-radius: 9px;
+            background: #ffffff;
+            color: #10263e;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 12px 13px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #2f7b5d;
+            box-shadow: 0 0 0 3px rgba(47, 123, 93, 0.1);
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .field-hint {
+            margin-top: 6px;
+            color: #788592;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .char-counter {
+            text-align: right;
+            margin-top: 5px;
+            color: #84909a;
+            font-size: 11px;
+        }
+
+        .consent {
+            background: #f2f6f3;
+            border: 1px solid #dbe5df;
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .consent input {
+            width: auto;
+            margin-top: 3px;
+        }
+
+        .consent label {
+            margin: 0;
+            font-size: 12px;
+            font-weight: 400;
+            color: #566575;
+            line-height: 1.55;
+        }
+
+        .submit-area {
+            margin-top: 25px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            border-radius: 9px;
+            background: #2f7b5d;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: #27684e;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            display: none;
+            padding: 13px 15px;
+            border-radius: 9px;
+            margin-top: 15px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .form-message.success {
+            display: block;
+            background: #e8f3ed;
+            border: 1px solid #bcd8c9;
+            color: #245c43;
+        }
+
+        .form-message.error {
+            display: block;
+            background: #fff0f0;
+            border: 1px solid #e7c2c2;
+            color: #8a3333;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            color: #2f7b5d;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .partnership-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .form-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .form-info {
+                position: static;
+            }
+        }
+
+        @media (max-width: 750px) {
+            .application-hero {
+                padding: 45px 5% 40px;
+            }
+
+            .application-container {
+                margin-top: 35px;
+                padding: 0 18px;
+            }
+
+            .partnership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-card,
+            .form-info {
+                padding: 23px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .application-hero h1 {
+                font-size: 38px;
+            }
+
+            .application-hero p {
+                font-size: 15px;
+            }
+
+            .intro-section h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Shared Navbar -->
+    <div id="navbar-container"></div>
+
+    <main class="partner-page">
+
+        <!-- HERO -->
+        <section class="application-hero">
+            <div class="hero-inner">
+
+                <div>
+                    <span class="hero-label">
+                        <i class="fa-solid fa-handshake"></i>
+                        Partnership
+                    </span>
+
+                    <h1>Partner With Us.</h1>
+
+                    <p>
+                        Help us create stronger mental-health support by partnering
+                        with MindSpeak. We welcome organizations, communities,
+                        educational institutions, businesses and other groups
+                        that share our commitment to meaningful support.
+                    </p>
+                </div>
+
+                <div class="hero-box">
+                    <h3>What partnership can mean</h3>
+
+                    <div class="hero-point">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Collaborate on mental-health initiatives.</span>
+                    </div>
+
+                    <div class="hero-point">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Connect people with useful support resources.</span>
+                    </div>
+
+                    <div class="hero-point">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Support awareness and community activities.</span>
+                    </div>
+
+                    <div class="hero-point">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Explore long-term collaboration opportunities.</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="application-container">
+
+            <!-- INTRO -->
+            <section class="intro-section">
+                <div class="section-label">Work together</div>
+
+                <h2>How we could collaborate</h2>
+
+                <p>
+                    Partnerships can take different forms. Tell us about your
+                    organization and what you would like to build together.
+                    Our team can then explore whether there is a suitable
+                    opportunity for collaboration.
+                </p>
+            </section>
+
+            <!-- PARTNERSHIP AREAS -->
+            <section class="partnership-grid">
+
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+
+                    <h3>Education</h3>
+
+                    <p>
+                        Collaborate with schools, colleges and universities
+                        to support student wellbeing and mental-health awareness.
+                    </p>
+                </div>
+
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+
+                    <h3>Community</h3>
+
+                    <p>
+                        Work together on community programs, peer support
+                        initiatives and accessible wellbeing resources.
+                    </p>
+                </div>
+
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+
+                    <h3>Organizations</h3>
+
+                    <p>
+                        Explore partnerships with businesses and organizations
+                        interested in supporting mental-health initiatives.
+                    </p>
+                </div>
+
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <h3>Events</h3>
+
+                    <p>
+                        Collaborate on workshops, awareness campaigns,
+                        discussions and community events.
+                    </p>
+                </div>
+
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fa-solid fa-link"></i>
+                    </div>
+
+                    <h3>Resource Sharing</h3>
+
+                    <p>
+                        Connect people with trustworthy resources, services
+                        and organizations that can provide additional support.
+                    </p>
+                </div>
+
+                <div class="partnership-card">
+                    <div class="partnership-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h3>Ideas & Innovation</h3>
+
+                    <p>
+                        Bring new ideas, expertise or projects that could
+                        strengthen the MindSpeak community.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- FORM -->
+            <section class="form-wrapper">
+
+                <aside class="form-info">
+
+                    <h2>Let's explore an idea.</h2>
+
+                    <p>
+                        Share some information about your organization and
+                        the kind of partnership you have in mind.
+                    </p>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-users"></i>
+
+                        <div>
+                            <strong>Who can apply?</strong>
+                            <span>
+                                Organizations, institutions, businesses,
+                                community groups and initiatives.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-comments"></i>
+
+                        <div>
+                            <strong>What happens next?</strong>
+                            <span>
+                                Our team will review your application and
+                                contact you if there is a potential fit.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-heart"></i>
+
+                        <div>
+                            <strong>Shared purpose</strong>
+                            <span>
+                                We are interested in partnerships that can
+                                contribute to meaningful support.
+                            </span>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <div class="form-card">
+
+                    <h2>Partnership application</h2>
+
+                    <p class="form-card-intro">
+                        Please provide enough information for our team to
+                        understand your organization and your proposed
+                        collaboration.
+                    </p>
+
+                    <form id="partnerApplicationForm">
+
+                        <h3 class="form-section-title">
+                            Your information
+                        </h3>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="name">
+                                    Contact name <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your full name"
+                                    required
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    Email address <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="phone">
+                                    Phone number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+358 ..."
+                                >
+                            </div>
+
+                            <div class="form-group">
+                                <label for="organization">
+                                    Organization / Institution
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="organization"
+                                    name="organization"
+                                    placeholder="Organization name"
+                                >
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="availability">
+                                Preferred availability
+                            </label>
+
+                            <select id="availability" name="availability">
+                                <option value="">Select an option</option>
+                                <option value="Flexible">Flexible</option>
+                                <option value="Weekdays">Weekdays</option>
+                                <option value="Weekends">Weekends</option>
+                                <option value="Occasional">Occasional</option>
+                            </select>
+                        </div>
+
+                        <h3 class="form-section-title">
+                            About your organization
+                        </h3>
+
+                        <div class="form-group">
+                            <label for="organization_mission">
+                                Organization mission / purpose <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="organization_mission"
+                                maxlength="1500"
+                                placeholder="Briefly describe your organization's mission, purpose and the community you serve."
+                                required
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="missionCount">0</span>/1500
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="partnership_focus">
+                                Partnership focus / area <span class="required">*</span>
+                            </label>
+
+                            <select id="partnership_focus" required>
+                                <option value="">Select an area</option>
+                                <option value="Education">Education</option>
+                                <option value="Community">Community</option>
+                                <option value="Mental Health Awareness">Mental Health Awareness</option>
+                                <option value="Events & Workshops">Events & Workshops</option>
+                                <option value="Resource Sharing">Resource Sharing</option>
+                                <option value="Technology / Innovation">Technology / Innovation</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">
+                                Previous partnership / collaboration experience
+                            </label>
+
+                            <textarea
+                                id="experience"
+                                maxlength="1200"
+                                placeholder="Tell us about relevant partnerships, collaborations or community projects your organization has worked on."
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="experienceCount">0</span>/1200
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="skills">
+                                What can your organization offer?
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="skills"
+                                maxlength="1200"
+                                placeholder="For example: expertise, services, resources, events, community access, technology, funding or other support."
+                                required
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="skillsCount">0</span>/1200
+                            </div>
+                        </div>
+
+                        <h3 class="form-section-title">
+                            Partnership proposal
+                        </h3>
+
+                        <div class="form-group">
+                            <label for="motivation">
+                                Why do you want to partner with MindSpeak?
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="motivation"
+                                maxlength="2000"
+                                placeholder="Tell us why this partnership is meaningful to your organization and what you hope to achieve."
+                                required
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="motivationCount">0</span>/2000
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="partnership_idea">
+                                Proposed partnership idea / activity
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="partnership_idea"
+                                maxlength="1800"
+                                placeholder="Describe a specific project, event, program or activity you would like to explore with MindSpeak."
+                                required
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="ideaCount">0</span>/1800
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="resources_commitment">
+                                Resources, support or commitment
+                            </label>
+
+                            <textarea
+                                id="resources_commitment"
+                                maxlength="1200"
+                                placeholder="What resources, people, time, funding, space or other support could your organization commit?"
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="resourcesCount">0</span>/1200
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="additional_information">
+                                Additional information
+                            </label>
+
+                            <textarea
+                                id="additional_information"
+                                maxlength="1500"
+                                placeholder="Anything else you would like our team to know?"
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="additionalCount">0</span>/1500
+                            </div>
+                        </div>
+
+                        <div class="consent">
+
+                            <input
+                                type="checkbox"
+                                id="consent"
+                                required
+                            >
+
+                            <label for="consent">
+                                I confirm that the information I provide is
+                                accurate and I consent to MindSpeak using
+                                these details to review and respond to my
+                                partnership application.
+                            </label>
+
+                        </div>
+
+                        <div class="submit-area">
+
+                            <button
+                                type="submit"
+                                class="submit-btn"
+                                id="submitBtn"
+                            >
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Send Partnership Application
+                            </button>
+
+                            <div
+                                id="formMessage"
+                                class="form-message"
+                            ></div>
+
+                        </div>
+
+                    </form>
+
+                    <a href="contact.html" class="back-link">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Contact Us
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Shared Footer -->
+    <div id="footer"></div>
+
+    <!-- Shared Scripts -->
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const form = document.getElementById("partnerApplicationForm");
+            const submitBtn = document.getElementById("submitBtn");
+            const formMessage = document.getElementById("formMessage");
+
+            /* Character Counters */
+            const counters = [
+                ["organization_mission", "missionCount"],
+                ["experience", "experienceCount"],
+                ["skills", "skillsCount"],
+                ["motivation", "motivationCount"],
+                ["partnership_idea", "ideaCount"],
+                ["resources_commitment", "resourcesCount"],
+                ["additional_information", "additionalCount"]
+            ];
+
+            counters.forEach(([fieldId, counterId]) => {
+
+                const field = document.getElementById(fieldId);
+                const counter = document.getElementById(counterId);
+
+                if (!field || !counter) return;
+
+                const updateCounter = () => {
+                    counter.textContent = field.value.length;
+                };
+
+                field.addEventListener("input", updateCounter);
+                updateCounter();
+            });
+
+            /* Form Submit */
+            form.addEventListener("submit", async (event) => {
+
+                event.preventDefault();
+
+                formMessage.className = "form-message";
+                formMessage.textContent = "";
+
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const organization = document.getElementById("organization").value.trim();
+                const availability = document.getElementById("availability").value;
+                const organizationMission =
+                    document.getElementById("organization_mission").value.trim();
+                const partnershipFocus =
+                    document.getElementById("partnership_focus").value;
+                const experience = document.getElementById("experience").value.trim();
+                const skills = document.getElementById("skills").value.trim();
+                const motivation = document.getElementById("motivation").value.trim();
+                const partnershipIdea =
+                    document.getElementById("partnership_idea").value.trim();
+                const resourcesCommitment =
+                    document.getElementById("resources_commitment").value.trim();
+                const additionalInformation =
+                    document.getElementById("additional_information").value.trim();
+
+                const consent = document.getElementById("consent").checked;
+
+                /* Validation */
+                if (!name) {
+                    showError("Please enter your name.");
+                    return;
+                }
+
+                if (!email) {
+                    showError("Please enter your email address.");
+                    return;
+                }
+
+                const emailPattern =
+                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!emailPattern.test(email)) {
+                    showError("Please enter a valid email address.");
+                    return;
+                }
+
+                if (!organizationMission) {
+                    showError("Please describe your organization's mission or purpose.");
+                    return;
+                }
+
+                if (!partnershipFocus) {
+                    showError("Please select a partnership focus.");
+                    return;
+                }
+
+                if (!skills) {
+                    showError("Please tell us what your organization can offer.");
+                    return;
+                }
+
+                if (!motivation) {
+                    showError("Please tell us why you want to partner with MindSpeak.");
+                    return;
+                }
+
+                if (!partnershipIdea) {
+                    showError("Please describe your proposed partnership idea.");
+                    return;
+                }
+
+                if (!consent) {
+                    showError(
+                        "Please confirm your consent before submitting."
+                    );
+                    return;
+                }
+
+                /* Loading */
+                submitBtn.disabled = true;
+
+                submitBtn.innerHTML = `
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    Sending...
+                `;
+
+                try {
+
+                    let userId = null;
+
+                    try {
+                        userId = localStorage.getItem("user_id");
+                    } catch (storageError) {
+                        console.warn("Could not access localStorage.");
+                    }
+
+                    const structuredAdditionalInformation = [
+                        `Organization Mission / Purpose: ${organizationMission}`,
+                        `Partnership Focus: ${partnershipFocus}`,
+                        `Proposed Partnership Idea / Activity: ${partnershipIdea}`,
+                        `Resources / Support / Commitment: ${resourcesCommitment || "Not provided"}`,
+                        `Additional Information: ${additionalInformation || "None"}`
+                    ].join("\\n\\n");
+
+                    const payload = {
+                        application_type: "partner",
+                        user_id: userId ? Number(userId) : null,
+                        name,
+                        email,
+                        phone,
+                        organization,
+                        availability,
+                        experience,
+                        skills,
+                        motivation,
+                        additional_information: structuredAdditionalInformation
+                    };
+
+                    const API_BASE = "http://127.0.0.1:8000";
+
+                    const response = await fetch(
+                        `${API_BASE}/api/contact/applications`,
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(payload)
+                        }
+                    );
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(
+                            data.detail ||
+                            data.message ||
+                            "Unable to submit your application."
+                        );
+                    }
+
+                    formMessage.className = "form-message success";
+
+                    formMessage.innerHTML = `
+                        <i class="fa-solid fa-circle-check"></i>
+                        <strong> Application submitted successfully.</strong>
+                        <br>
+                        Thank you for reaching out to MindSpeak.
+                        Our team will review your partnership idea.
+                    `;
+
+                    form.reset();
+
+                    counters.forEach(([fieldId, counterId]) => {
+                        document.getElementById(counterId).textContent = "0";
+                    });
+
+                    window.scrollTo({
+                        top: formMessage.getBoundingClientRect().top
+                            + window.scrollY - 120,
+                        behavior: "smooth"
+                    });
+
+                } catch (error) {
+
+                    console.error(
+                        "Partner application error:",
+                        error
+                    );
+
+                    showError(
+                        error.message ||
+                        "Something went wrong. Please try again."
+                    );
+
+                } finally {
+
+                    submitBtn.disabled = false;
+
+                    submitBtn.innerHTML = `
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Partnership Application
+                    `;
+                }
+            });
+
+            function showError(message) {
+
+                formMessage.className = "form-message error";
+
+                formMessage.innerHTML = `
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    ${message}
+                `;
+
+                formMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>

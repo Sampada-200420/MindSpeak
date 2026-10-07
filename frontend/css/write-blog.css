@@ -1,0 +1,680 @@
+:root {
+    --ms-purple: #6f4b8b;
+    --ms-purple-dark: #4d3563;
+    --ms-purple-light: #eee5f4;
+    --ms-cream: #fcf9f5;
+
+    --text-dark: #302638;
+    --text-medium: #665c6d;
+    --text-light: #918895;
+
+    --border: #e5dce9;
+    --white: #ffffff;
+}
+
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: var(--ms-cream);
+    color: var(--text-dark);
+    line-height: 1.7;
+}
+
+
+/* ================================
+   MAIN PAGE
+================================ */
+
+.write-blog-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 24px 100px;
+}
+
+
+/* ================================
+   BACK TO BLOGS
+================================ */
+
+.back-to-blogs {
+    width: min(1000px, 100%);
+    margin: 0 auto 25px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 10px 17px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--white);
+    color: var(--ms-purple);
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    transition: 0.25s ease;
+}
+
+.back-btn i {
+    font-size: 0.85rem;
+}
+
+.back-btn:hover {
+    background: var(--ms-purple-light);
+    border-color: var(--ms-purple);
+
+    transform: translateX(-3px);
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.write-blog-header {
+    width: min(900px, 100%);
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    padding: 8px 18px;
+    margin-bottom: 22px;
+
+    background: var(--ms-purple-light);
+    color: var(--ms-purple);
+
+    border-radius: 50px;
+
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.write-blog-header h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1.1;
+
+    font-weight: 700;
+    color: var(--ms-purple-dark);
+
+    margin-bottom: 22px;
+}
+
+.write-blog-header p {
+    max-width: 700px;
+    margin: 0 auto;
+
+    font-size: 1.2rem;
+    line-height: 1.8;
+
+    color: var(--text-medium);
+}
+
+
+/* ================================
+   EDITOR
+================================ */
+
+.blog-editor {
+    width: min(1000px, 100%);
+    margin: 0 auto;
+}
+
+.editor-card {
+    background: var(--white);
+
+    padding: clamp(30px, 6vw, 60px);
+
+    border: 1px solid var(--border);
+    border-radius: 30px;
+
+    box-shadow: 0 20px 60px rgba(77, 53, 99, 0.10);
+}
+
+
+/* ================================
+   EDITOR HEADING
+================================ */
+
+.editor-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding-bottom: 28px;
+    margin-bottom: 42px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.editor-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 17px;
+
+    background: var(--ms-purple-light);
+    color: var(--ms-purple);
+
+    font-size: 1.35rem;
+}
+
+.editor-heading h2 {
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: var(--text-dark);
+}
+
+.editor-heading p {
+    margin-top: 3px;
+
+    font-size: 1rem;
+    color: var(--text-light);
+}
+
+
+/* ================================
+   FORM
+================================ */
+
+.form-group {
+    margin-bottom: 32px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    color: var(--text-dark);
+}
+
+
+/* ================================
+   INPUTS
+================================ */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 17px 19px;
+
+    border: 1.5px solid var(--border);
+    border-radius: 15px;
+
+    background: #fdfbfd;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1.05rem;
+
+    color: var(--text-dark);
+
+    outline: none;
+
+    transition: 0.25s ease;
+}
+
+.form-group input,
+.form-group select {
+    min-height: 60px;
+}
+
+.form-group textarea {
+    min-height: 340px;
+
+    resize: vertical;
+
+    line-height: 1.85;
+}
+
+
+/* ================================
+   PLACEHOLDER
+================================ */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa1ae;
+}
+
+
+/* ================================
+   FOCUS
+================================ */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--ms-purple);
+
+    background: var(--white);
+
+    box-shadow: 0 0 0 4px rgba(111, 75, 139, 0.10);
+}
+
+
+/* ================================
+   SELECT
+================================ */
+
+.form-group select {
+    cursor: pointer;
+}
+
+
+/* ================================
+   COUNTERS
+================================ */
+
+.editor-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+    padding: 0 4px;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    color: var(--text-light);
+}
+
+
+/* ================================
+   COVER IMAGE
+================================ */
+
+.cover-upload {
+    width: 100%;
+}
+
+#blog-cover {
+    display: none;
+}
+
+
+/* Upload box */
+
+.cover-upload-box {
+    min-height: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border: 2px dashed var(--border);
+    border-radius: 17px;
+
+    background: #fdfbfd;
+    color: var(--text-medium);
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.cover-upload-box:hover {
+    border-color: var(--ms-purple);
+    background: var(--ms-purple-light);
+}
+
+.cover-upload-box i {
+    font-size: 2rem;
+    color: var(--ms-purple);
+
+    margin-bottom: 5px;
+}
+
+.cover-upload-box span {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.cover-upload-box small {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+
+/* ================================
+   COVER PREVIEW
+================================ */
+
+.cover-preview {
+    display: none;
+
+    margin-top: 15px;
+
+    position: relative;
+}
+
+.cover-preview img {
+    display: block;
+
+    width: 100%;
+    max-height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 17px;
+    border: 1px solid var(--border);
+
+    box-shadow: 0 8px 25px rgba(77, 53, 99, 0.08);
+}
+
+
+/* ================================
+   REMOVE COVER IMAGE
+================================ */
+
+.remove-cover-btn {
+    margin-top: 12px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #e1cfd9;
+    border-radius: 11px;
+
+    background: #fff7f8;
+    color: #a34f68;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.remove-cover-btn:hover {
+    background: #f9e9ed;
+    border-color: #c98298;
+
+    transform: translateY(-1px);
+}
+
+.remove-cover-btn i {
+    font-size: 0.85rem;
+}
+
+
+/* ================================
+   BLOG ACTIONS
+================================ */
+
+.blog-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+    padding-top: 30px;
+
+    border-top: 1px solid var(--border);
+}
+
+.blog-actions button {
+    min-height: 54px;
+
+    padding: 0 24px;
+
+    border-radius: 13px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 0.98rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    transition: 0.25s ease;
+}
+
+.btn-secondary {
+    background: #ffffff;
+
+    color: var(--ms-purple);
+
+    border: 1.5px solid var(--ms-purple);
+}
+
+.btn-secondary:hover {
+    background: var(--ms-purple-light);
+
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--ms-purple);
+
+    color: #ffffff;
+
+    border: 1.5px solid var(--ms-purple);
+}
+
+.btn-primary:hover {
+    background: var(--ms-purple-dark);
+
+    border-color: var(--ms-purple-dark);
+
+    transform: translateY(-2px);
+}
+
+.blog-actions button:active {
+    transform: translateY(0);
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 800px) {
+
+    .write-blog-page {
+        padding-top: 60px;
+    }
+
+    .write-blog-header {
+        margin-bottom: 45px;
+    }
+
+    .editor-card {
+        border-radius: 24px;
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .write-blog-page {
+        padding: 45px 16px 70px;
+    }
+
+    /* Back button */
+
+    .back-to-blogs {
+        margin-bottom: 22px;
+    }
+
+    .back-btn {
+        padding: 9px 14px;
+
+        font-size: 0.88rem;
+    }
+
+
+    .write-blog-header {
+        margin-bottom: 35px;
+    }
+
+    .eyebrow {
+        font-size: 0.75rem;
+
+        letter-spacing: 1.5px;
+
+        padding: 7px 14px;
+    }
+
+    .write-blog-header h1 {
+        font-size: 2.7rem;
+    }
+
+    .write-blog-header p {
+        font-size: 1rem;
+    }
+
+
+    .editor-card {
+        padding: 28px 20px;
+
+        border-radius: 20px;
+    }
+
+
+    .editor-heading {
+        align-items: flex-start;
+
+        gap: 14px;
+
+        margin-bottom: 32px;
+    }
+
+    .editor-icon {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 14px;
+
+        font-size: 1.1rem;
+    }
+
+    .editor-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .editor-heading p {
+        font-size: 0.85rem;
+    }
+
+
+    .form-group label {
+        font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1rem;
+    }
+
+    .form-group textarea {
+        min-height: 270px;
+    }
+
+    .editor-info {
+        font-size: 0.8rem;
+    }
+
+
+    /* Cover image */
+
+    .cover-upload-box {
+        min-height: 150px;
+    }
+
+    .cover-upload-box i {
+        font-size: 1.7rem;
+    }
+
+    .cover-upload-box span {
+        font-size: 0.95rem;
+    }
+
+    .cover-upload-box small {
+        font-size: 0.78rem;
+    }
+
+    .cover-preview img {
+        max-height: 230px;
+    }
+
+    .remove-cover-btn {
+        width: 100%;
+    }
+
+
+    /* Blog buttons */
+
+    .blog-actions {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .blog-actions button {
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,1329 @@
+/* =========================================================
+   MINDSPEAK — ANXIETY TOOLKIT
+   Page-specific styles
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    margin: 0;
+    color: #17365d;
+    background: #ffffff;
+    font-family: "Poppins", sans-serif;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.anxiety-container {
+    width: min(1150px, calc(100% - 70px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.anxiety-hero {
+    background: linear-gradient(
+        100deg,
+        #eaf7f3 0%,
+        #eaf7f3 38%,
+        #edf6f4 56%,
+        #f8eee8 100%
+    );
+
+    overflow: hidden;
+}
+
+.hero-grid {
+    min-height: 420px;
+
+    display: grid;
+    grid-template-columns: 43% 57%;
+}
+
+
+/* Hero content */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    padding: 28px 20px 34px 35px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.back-to-toolkit {
+    width: fit-content;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 30px;
+
+    color: #173c61;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+
+    transition: color 0.2s ease;
+}
+
+.back-to-toolkit:hover {
+    color: #257969;
+}
+
+.back-to-toolkit i {
+    font-size: 12px;
+}
+
+.hero-eyebrow {
+    margin-bottom: 3px;
+
+    color: #294d6d;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+}
+
+.hero-content h1 {
+    margin: 0 0 5px;
+
+    color: #102f5c;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(52px, 5vw, 67px);
+    font-weight: 700;
+    line-height: 0.98;
+}
+
+.hero-content h2 {
+    margin: 0 0 9px;
+
+    color: #17375e;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 25px;
+    line-height: 1.16;
+}
+
+.hero-description {
+    max-width: 475px;
+
+    margin: 0;
+
+    color: #294c69;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+
+/* Quote */
+
+.hero-quote {
+    width: min(500px, 100%);
+
+    margin-top: 17px;
+    padding: 11px 17px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    border-radius: 11px;
+
+    background: rgba(211, 239, 231, 0.75);
+}
+
+.quote-icon {
+    flex-shrink: 0;
+
+    margin-top: 3px;
+
+    color: #61a487;
+    font-size: 18px;
+}
+
+.hero-quote p {
+    margin: 0;
+
+    color: #214d63;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+
+/* Hero image */
+
+.hero-image-wrapper {
+    min-height: 420px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+
+/* =========================================================
+   JOURNEY
+   ========================================================= */
+
+.journey-section {
+    padding: 23px 0 20px;
+
+    background: #ffffff;
+}
+
+.journey-heading {
+    margin-bottom: 15px;
+}
+
+.journey-heading h2 {
+    margin: 0;
+
+    color: #14355e;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.journey-heading p {
+    margin: 3px 0 0;
+
+    color: #4b647d;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+}
+
+
+.journey-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
+}
+
+
+.journey-card {
+    min-height: 105px;
+
+    padding: 14px 15px;
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    border: 0;
+    border-radius: 10px;
+
+    text-align: left;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.journey-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(32, 61, 80, 0.10);
+}
+
+.journey-card:focus-visible {
+    outline: 3px solid #277b6c;
+    outline-offset: 2px;
+}
+
+
+/* Journey colors */
+
+.journey-green {
+    background: #e8f6f1;
+}
+
+.journey-blue {
+    background: #e7f2fb;
+}
+
+.journey-yellow {
+    background: #fff5df;
+}
+
+.journey-pink {
+    background: #fdebef;
+}
+
+
+/* Journey icon */
+
+.journey-icon {
+    width: 44px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.58);
+
+    font-size: 21px;
+}
+
+.journey-green .journey-icon {
+    color: #17786c;
+}
+
+.journey-blue .journey-icon {
+    color: #234e83;
+}
+
+.journey-yellow .journey-icon {
+    color: #a36b0b;
+}
+
+.journey-pink .journey-icon {
+    color: #a12660;
+}
+
+
+/* Journey text */
+
+.journey-card-text {
+    padding-top: 1px;
+}
+
+.journey-number {
+    display: inline;
+
+    margin-right: 2px;
+
+    color: #17375d;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.journey-card h3 {
+    display: inline;
+
+    margin: 0;
+
+    color: #17375d;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.journey-card p {
+    margin: 6px 0 0;
+
+    color: #526a80;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   COMMON SECTION HEADING
+   ========================================================= */
+
+.anxiety-section {
+    scroll-margin-top: 85px;
+}
+
+.section-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+
+    margin-bottom: 17px;
+}
+
+.section-title-row h2 {
+    margin: 0;
+
+    color: #14355e;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 24px;
+    line-height: 1.2;
+}
+
+.section-title-row p {
+    margin: 3px 0 0;
+
+    color: #4a637b;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+
+.section-number {
+    width: 31px;
+    height: 31px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #a9d9ca;
+
+    color: #17575a;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.blue-number {
+    background: #b9def2;
+    color: #27517b;
+}
+
+.yellow-number {
+    background: #f4d79b;
+    color: #89620c;
+}
+
+
+/* =========================================================
+   SECTION 1 — UNDERSTAND YOURSELF
+   ========================================================= */
+
+.understand-yourself-section {
+    padding: 24px 0 22px;
+
+    background: #e9f7f3;
+}
+
+
+.self-check-layout {
+    display: grid;
+    grid-template-columns: 1fr 175px;
+    gap: 28px;
+    align-items: center;
+}
+
+
+.survey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 11px;
+}
+
+
+.question-card {
+    min-height: 174px;
+
+    padding: 15px 15px 13px;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 7px rgba(32, 70, 70, 0.035);
+}
+
+.question-card h3 {
+    margin: 0 0 10px;
+
+    color: #17375d;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+
+/* Survey options */
+
+.question-card label {
+    min-height: 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin: 4px 0;
+
+    color: #435d76;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+.question-card label:hover {
+    color: #216c62;
+}
+
+
+.question-card input[type="radio"] {
+    appearance: none;
+
+    width: 14px;
+    height: 14px;
+
+    flex-shrink: 0;
+
+    margin: 0;
+
+    border: 1.5px solid #60758a;
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+.question-card input[type="radio"]:checked {
+    border-color: #27816e;
+}
+
+.question-card input[type="radio"]:checked::after {
+    content: "";
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: 2px;
+    left: 2px;
+
+    border-radius: 50%;
+
+    background: #27816e;
+}
+
+
+/* Submit */
+
+.submit-checkin {
+    margin-top: 12px;
+
+    padding: 9px 16px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #27806c;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.submit-checkin:hover {
+    background: #1e6b5c;
+    transform: translateY(-1px);
+}
+
+.submit-checkin:focus-visible {
+    outline: 3px solid rgba(39, 128, 108, 0.28);
+    outline-offset: 2px;
+}
+
+
+/* Survey result */
+
+.checkin-result {
+    display: none;
+
+    max-width: 720px;
+
+    margin-top: 11px;
+    padding: 11px 14px;
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    color: #31586a;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.checkin-result.show {
+    display: block;
+}
+
+
+/* Decoration */
+
+.self-check-decoration {
+    align-self: center;
+
+    padding-right: 5px;
+
+    text-align: center;
+}
+
+.self-check-decoration p {
+    margin: 0 0 12px;
+
+    color: #176266;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.self-check-decoration i {
+    color: #70a98f;
+
+    font-size: 62px;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   SECTION 2 — UNDERSTAND ANXIETY
+   ========================================================= */
+
+.understand-anxiety-section {
+    padding: 23px 0;
+
+    background: #e8f4fc;
+}
+
+
+.understanding-box {
+    min-height: 205px;
+
+    display: grid;
+    grid-template-columns: 225px 1fr 275px;
+    gap: 22px;
+    align-items: center;
+}
+
+
+/* Visual */
+
+.understanding-visual {
+    min-height: 185px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background:
+        radial-gradient(
+            circle at 48% 35%,
+            rgba(255,255,255,0.7) 0 20%,
+            transparent 21%
+        ),
+        linear-gradient(
+            135deg,
+            #b9d4e9,
+            #dcecf7
+        );
+}
+
+.visual-circle {
+    width: 105px;
+    height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    color: #52789d;
+
+    font-size: 53px;
+}
+
+.visual-leaf {
+    position: absolute;
+
+    right: 20px;
+    bottom: 15px;
+
+    color: #76a38c;
+
+    font-size: 34px;
+
+    transform: rotate(-20deg);
+}
+
+
+/* Text */
+
+.understanding-content h3 {
+    margin: 0 0 7px;
+
+    color: #173b65;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+.understanding-content p {
+    margin: 0 0 7px;
+
+    color: #405e79;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+
+/* Insight */
+
+.insight-box {
+    padding: 17px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.insight-icon {
+    flex-shrink: 0;
+
+    color: #218d82;
+
+    font-size: 22px;
+}
+
+.insight-box h4 {
+    margin: 0 0 4px;
+
+    color: #193d63;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+}
+
+.insight-box p {
+    margin: 0;
+
+    color: #4a6278;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   SECTION 3 — YOU CAN TRY
+   ========================================================= */
+
+.try-section {
+    padding: 23px 0;
+
+    background: #fff7e7;
+}
+
+
+.try-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+
+.try-card {
+    min-height: 148px;
+
+    padding: 17px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 8px rgba(90, 70, 30, 0.035);
+}
+
+
+.try-icon {
+    width: 48px;
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 21px;
+}
+
+.green-icon {
+    background: #e4f4ee;
+    color: #268171;
+}
+
+.blue-icon {
+    background: #e8eff8;
+    color: #456b94;
+}
+
+.mint-icon {
+    background: #e5f4ed;
+    color: #39816d;
+}
+
+
+.try-card h3 {
+    margin: 0 0 5px;
+
+    color: #17375d;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    line-height: 1.3;
+}
+
+.try-card p {
+    margin: 0 0 6px;
+
+    color: #50667b;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+.try-button {
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #1e7769;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.try-button:hover {
+    color: #124f46;
+}
+
+.try-button i {
+    margin-left: 4px;
+
+    font-size: 10px;
+}
+
+
+/* Try message */
+
+.try-tip-message {
+    display: none;
+
+    margin-top: 12px;
+    padding: 11px 15px;
+
+    border-radius: 8px;
+
+    background: #e4f3ed;
+
+    color: #285e56;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.try-tip-message.show {
+    display: block;
+}
+
+
+/* =========================================================
+   SECTION 4 — CONNECT
+   ========================================================= */
+
+.connect-section {
+    padding: 18px 0 20px;
+
+    background: #fdebef;
+}
+
+
+.connect-box {
+    min-height: 112px;
+
+    display: grid;
+    grid-template-columns: 68px 1fr 295px;
+    gap: 18px;
+    align-items: center;
+}
+
+
+.connect-icon {
+    width: 57px;
+    height: 57px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #f7d9e4;
+
+    color: #a02962;
+
+    font-size: 24px;
+}
+
+
+.connect-content h2 {
+    margin: 0 0 2px;
+
+    color: #17365c;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 21px;
+    line-height: 1.25;
+}
+
+.connect-content > p {
+    margin: 0 0 8px;
+
+    color: #4d6174;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+}
+
+
+.connect-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.connect-button {
+    padding: 9px 16px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.connect-button:hover {
+    transform: translateY(-1px);
+}
+
+
+.connect-primary {
+    border: 1px solid #bd376c;
+
+    background: #bd376c;
+    color: #ffffff;
+}
+
+.connect-primary:hover {
+    background: #a92d5f;
+}
+
+
+.connect-secondary {
+    border: 1.5px solid #bd376c;
+
+    background: #ffffff;
+    color: #a52e60;
+}
+
+.connect-secondary:hover {
+    background: #fff6f9;
+}
+
+
+/* Decoration */
+
+.connect-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    color: #a95372;
+}
+
+.connect-decoration > i:first-child {
+    font-size: 53px;
+}
+
+.connect-decoration p {
+    margin: 0;
+
+    color: #4e6078;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.45;
+}
+
+.connect-decoration > i:last-child {
+    align-self: flex-end;
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .anxiety-container {
+        width: min(940px, calc(100% - 45px));
+    }
+
+    .hero-content {
+        padding-left: 25px;
+    }
+
+    .journey-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .understanding-box {
+        grid-template-columns: 190px 1fr;
+    }
+
+    .insight-box {
+        grid-column: 1 / -1;
+    }
+
+    .connect-box {
+        grid-template-columns: 60px 1fr;
+    }
+
+    .connect-decoration {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .anxiety-container {
+        width: calc(100% - 36px);
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        min-height: auto;
+
+        padding: 25px 0 22px;
+    }
+
+    .hero-image-wrapper {
+        min-height: 350px;
+        max-height: 430px;
+    }
+
+    .hero-image {
+        min-height: 350px;
+        max-height: 430px;
+    }
+
+    .survey-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .self-check-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .self-check-decoration {
+        display: none;
+    }
+
+    .try-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    .anxiety-container {
+        width: calc(100% - 28px);
+    }
+
+    .journey-section,
+    .understand-yourself-section,
+    .understand-anxiety-section,
+    .try-section,
+    .connect-section {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+
+    /* Hero */
+
+    .hero-content {
+        padding-top: 21px;
+    }
+
+    .back-to-toolkit {
+        margin-bottom: 22px;
+    }
+
+    .hero-content h1 {
+        font-size: 48px;
+    }
+
+    .hero-content h2 {
+        font-size: 21px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-quote {
+        margin-top: 14px;
+    }
+
+    .hero-image-wrapper {
+        min-height: 270px;
+        max-height: 340px;
+    }
+
+    .hero-image {
+        min-height: 270px;
+        max-height: 340px;
+    }
+
+
+    /* Journey */
+
+    .journey-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .journey-card {
+        min-height: 95px;
+    }
+
+
+    /* Section headings */
+
+    .section-title-row {
+        gap: 9px;
+    }
+
+    .section-title-row h2 {
+        font-size: 21px;
+    }
+
+    .section-title-row p {
+        font-size: 13px;
+    }
+
+
+    /* Understanding */
+
+    .understanding-box {
+        grid-template-columns: 1fr;
+    }
+
+    .understanding-visual {
+        min-height: 165px;
+    }
+
+    .understanding-content p {
+        font-size: 13px;
+    }
+
+
+    /* Connect */
+
+    .connect-box {
+        grid-template-columns: 1fr;
+    }
+
+    .connect-icon {
+        display: none;
+    }
+
+    .connect-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .connect-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero-content h1 {
+        font-size: 43px;
+    }
+
+    .hero-content h2 {
+        font-size: 19px;
+    }
+
+    .hero-quote p {
+        font-size: 13px;
+    }
+
+    .question-card {
+        padding: 14px;
+    }
+
+    .try-card {
+        padding: 14px;
+    }
+
+    .try-icon {
+        width: 43px;
+        height: 43px;
+
+        font-size: 18px;
+    }
+
+}

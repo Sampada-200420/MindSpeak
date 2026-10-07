@@ -1,0 +1,94 @@
+
+<title>Blog Review | MindSpeak</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/blog-review.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<div id="navbar"></div>
+
+<main class="blog-review-page">
+
+    <section class="review-header">
+        <span class="eyebrow">MINDSPEAK • ADMIN</span>
+
+        <h1>Blog Review</h1>
+
+        <p>
+            Review community submissions, provide feedback, and decide
+            which stories are ready to be shared with the MindSpeak community.
+        </p>
+    </section>
+
+    <section class="review-stats">
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <div>
+                <span class="stat-number" id="pending-count">0</span>
+                <span class="stat-label">Pending Reviews</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <div>
+                <span class="stat-number" id="approved-count">0</span>
+                <span class="stat-label">Approved</span>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fa-solid fa-pen"></i>
+            </div>
+
+            <div>
+                <span class="stat-number" id="rejected-count">0</span>
+                <span class="stat-label">Rejected</span>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="review-section">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-eyebrow">SUBMISSIONS</span>
+                <h2>Pending Blogs</h2>
+            </div>
+
+            <button type="button" id="refresh-blogs" class="refresh-btn">
+                <i class="fa-solid fa-rotate"></i>
+                Refresh
+            </button>
+        </div>
+
+        <div id="pending-blogs" class="pending-blogs">
+
+            <div class="loading-message">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                Loading submissions...
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<div id="footer"></div>
+
+<script src="../js/blog-review.js"></script>

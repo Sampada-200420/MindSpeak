@@ -1,0 +1,1753 @@
+/* =========================================================
+   MINDSPEAK EVENTS PAGE
+   Professional, responsive and aligned design
+========================================================= */
+
+
+/* =========================================================
+   01. GLOBAL EVENTS PAGE
+========================================================= */
+
+.events-page {
+    width: 100%;
+    background: #ffffff;
+    color: #263238;
+    font-family: "Poppins", sans-serif;
+}
+
+.events-page *,
+.events-page *::before,
+.events-page *::after {
+    box-sizing: border-box;
+}
+
+.events-page button,
+.events-page input {
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   02. COMMON TYPOGRAPHY
+========================================================= */
+
+.eyebrow {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+
+    color: #5f7f72;
+}
+
+.events-page h1,
+.events-page h2,
+.events-page h3 {
+    margin: 0;
+
+    font-family: "Playfair Display", serif;
+    color: #263b35;
+}
+
+.events-page p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   03. HERO SECTION
+========================================================= */
+
+.events-hero {
+    position: relative;
+
+    width: min(1180px, calc(100% - 48px));
+    min-height: 520px;
+
+    margin: 40px auto 0;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #f7faf8;
+
+    border: 1px solid #e5ebe7;
+    border-radius: 32px;
+
+    box-shadow: 0 18px 45px rgba(35, 60, 48, 0.08);
+}
+
+
+/* =========================================================
+   04. HERO IMAGE — BACKGROUND STYLE
+========================================================= */
+
+.events-hero-image {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+
+/* Actual hero image */
+
+.events-hero-image img {
+    position: absolute;
+
+    width: 72%;
+    height: 100%;
+
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    object-fit: contain;
+    object-position: right center;
+
+    /*
+       Softly fades the image toward
+       the left and right sides.
+    */
+
+    -webkit-mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.05) 8%,
+            rgba(0, 0, 0, 0.45) 18%,
+            #000 32%,
+            #000 78%,
+            rgba(0, 0, 0, 0.75) 88%,
+            transparent 100%
+        );
+
+    mask-image:
+        linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(0, 0, 0, 0.05) 8%,
+            rgba(0, 0, 0, 0.45) 18%,
+            #000 32%,
+            #000 78%,
+            rgba(0, 0, 0, 0.75) 88%,
+            transparent 100%
+        );
+}
+
+
+/* =========================================================
+   05. HERO TOP + BOTTOM BLEND
+========================================================= */
+
+.events-hero-image::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #f7faf8 0%,
+            rgba(247, 250, 248, 0.85) 4%,
+            rgba(247, 250, 248, 0.35) 11%,
+            transparent 20%,
+            transparent 80%,
+            rgba(247, 250, 248, 0.35) 89%,
+            rgba(247, 250, 248, 0.85) 96%,
+            #f7faf8 100%
+        );
+}
+
+
+/* =========================================================
+   06. HERO LEFT BLEND
+========================================================= */
+
+.events-hero-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to right,
+            #f7faf8 0%,
+            rgba(247, 250, 248, 0.96) 18%,
+            rgba(247, 250, 248, 0.78) 27%,
+            rgba(247, 250, 248, 0.35) 38%,
+            transparent 52%,
+            transparent 100%
+        );
+}
+
+/* =========================================================
+   07. HERO CONTENT
+========================================================= */
+.events-hero-content {
+    position: relative;
+    z-index: 5;
+    width: 56%;
+    padding: 70px 0 70px 70px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* MINDSPEAK EVENTS */
+.events-hero-content .eyebrow {
+    display: block;
+    width: fit-content;
+        margin-left: 2px;
+    margin: 0 0 18px 0;
+    padding: 0;
+
+    line-height: 1.2;
+    text-align: left;
+
+    transform: translateX(0);
+}
+
+/* CONNECT. LEARN. GROW. TOGETHER. */
+.events-hero-content h1 {
+    display: block;
+
+    width: 100%;
+    max-width: 650px;
+
+    margin: 0;
+    padding: 0;
+
+    text-align: left;
+
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3.2rem, 5vw, 4.8rem);
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+
+    color: #263b35;
+}
+
+/* Description */
+.events-hero-content p {
+    display: block;
+
+    width: 100%;
+    max-width: 560px;
+
+    margin: 22px 0 0 0;
+    padding: 0;
+
+    text-align: left;
+
+    color: #4d645b;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   08. COMMON SECTION
+========================================================= */
+
+.upcoming-events,
+.featured-event-section,
+.registered-events-section {
+    width: 100%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding: 90px 32px;
+}
+
+.section-header {
+    width: 100%;
+
+    margin-bottom: 38px;
+}
+
+.section-header h2 {
+    margin-bottom: 12px;
+
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    line-height: 1.15;
+}
+
+.section-description {
+    max-width: 650px;
+
+    color: #6b7974;
+
+    font-size: 0.96rem;
+}
+
+
+/* =========================================================
+   09. EVENT FILTERS
+========================================================= */
+
+.event-filters {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-bottom: 38px;
+}
+
+.event-filter {
+    border: 1px solid #d9e3de;
+    border-radius: 999px;
+
+    padding: 11px 21px;
+
+    background: #ffffff;
+    color: #52645e;
+
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.event-filter:hover {
+    border-color: #6f9284;
+    color: #36564b;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(44, 72, 62, 0.08);
+}
+
+.event-filter.active {
+    border-color: #496f60;
+
+    background: #496f60;
+    color: #ffffff;
+
+    box-shadow: 0 7px 20px rgba(73, 111, 96, 0.2);
+}
+
+
+/* =========================================================
+   10. EVENTS GRID
+========================================================= */
+
+.events-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 26px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   11. EVENT CARD
+========================================================= */
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e4ebe7;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 28px rgba(35, 58, 49, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #d3dfd9;
+
+    box-shadow: 0 18px 38px rgba(35, 58, 49, 0.12);
+}
+
+
+/* Event Image */
+
+.event-image {
+    position: relative;
+
+    width: 100%;
+    height: 220px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: #edf2ef;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.04);
+}
+
+
+/* Event Content */
+
+.event-card-content {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 24px;
+}
+
+
+/* Category */
+
+.event-category {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+
+    min-height: 28px;
+
+    padding: 5px 11px;
+
+    border-radius: 999px;
+
+    background: #edf5f1;
+    color: #4c7062;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+/* Title */
+
+.event-title {
+    margin-top: 15px;
+    margin-bottom: 10px;
+
+    font-size: 1.4rem;
+    line-height: 1.25;
+
+    color: #263b35;
+}
+
+
+/* Description */
+
+.event-description {
+    display: -webkit-box;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    color: #687771;
+
+    font-size: 0.88rem;
+    line-height: 1.7;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+
+/* =========================================================
+   12. EVENT DETAILS
+========================================================= */
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: auto;
+    margin-bottom: 22px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #edf1ef;
+}
+
+.event-detail {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 10px;
+
+    color: #687771;
+
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+.event-detail i {
+    width: 18px;
+
+    flex-shrink: 0;
+
+    margin-top: 2px;
+
+    color: #5d8273;
+
+    font-size: 0.86rem;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   13. EVENT ACTION BUTTON
+========================================================= */
+
+.event-action {
+    width: 100%;
+
+    margin-top: auto;
+}
+
+.register-event-btn,
+.interest-btn {
+    width: 100%;
+
+    min-height: 46px;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 11px 18px;
+
+    font-size: 0.86rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+
+/* Register */
+
+.register-event-btn {
+    background: #496f60;
+    color: #ffffff;
+
+    box-shadow: 0 7px 18px rgba(73, 111, 96, 0.18);
+}
+
+.register-event-btn:hover {
+    background: #3e6153;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 22px rgba(73, 111, 96, 0.25);
+}
+
+.register-event-btn:active {
+    transform: translateY(0);
+}
+
+
+/* Fellowship */
+
+.interest-btn {
+    background: #dfece6;
+    color: #3f6254;
+}
+
+.interest-btn:hover {
+    background: #d2e4dc;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(55, 91, 76, 0.12);
+}
+
+
+/* =========================================================
+   14. UPCOMING EVENT STATES
+========================================================= */
+
+.events-loading,
+.events-empty,
+.events-error {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    padding: 55px 25px;
+
+    border: 1px dashed #d6e1dc;
+    border-radius: 16px;
+
+    background: #f8faf9;
+
+    text-align: center;
+}
+
+.events-loading {
+    color: #71817b;
+}
+
+.events-empty h3,
+.events-error h3 {
+    margin-bottom: 8px;
+
+    font-size: 1.3rem;
+}
+
+.events-empty p,
+.events-error p {
+    color: #78847f;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   15. FEATURED EVENT SECTION
+========================================================= */
+
+.featured-event-section {
+    max-width: none;
+
+    background: #f4f7f5;
+
+    padding-left: max(32px, calc((100vw - 1216px) / 2));
+    padding-right: max(32px, calc((100vw - 1216px) / 2));
+}
+
+.featured-event-section .section-header {
+    max-width: 1280px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Featured Card */
+
+#featured-event-container {
+    width: 100%;
+    max-width: 1216px;
+
+    margin: 0 auto;
+}
+
+.featured-event-card {
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    min-height: 470px;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e0e8e3;
+    border-radius: 22px;
+
+    box-shadow: 0 14px 40px rgba(36, 61, 51, 0.09);
+}
+
+
+/* Featured Image */
+
+.featured-event-image {
+    min-height: 470px;
+
+    overflow: hidden;
+
+    background: #e9efec;
+}
+
+.featured-event-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+.featured-event-card:hover .featured-event-image img {
+    transform: scale(1.025);
+}
+
+
+/* Featured Content */
+
+.featured-event-content {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 55px 58px;
+}
+
+
+/* Featured Badge */
+
+.featured-event-badge {
+    display: inline-flex;
+    align-self: flex-start;
+
+    margin-bottom: 14px;
+
+    padding: 7px 12px;
+
+    border-radius: 999px;
+
+    background: #496f60;
+    color: #ffffff;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.09em;
+}
+
+
+/* Featured Category */
+
+.featured-event-category {
+    display: inline-block;
+
+    margin-bottom: 13px;
+
+    color: #638276;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+
+/* Featured Title */
+
+.featured-event-title {
+    max-width: 600px;
+
+    margin-bottom: 17px;
+
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.15;
+}
+
+
+/* Featured Description */
+
+.featured-event-description {
+    max-width: 600px;
+
+    margin-bottom: 25px;
+
+    color: #687771;
+
+    font-size: 0.92rem;
+}
+
+
+/* Featured Details */
+
+.featured-event-details {
+    display: flex;
+    flex-direction: column;
+
+    gap: 11px;
+
+    margin-bottom: 28px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #edf1ef;
+}
+
+
+/* Featured Buttons */
+
+.featured-register-btn,
+.featured-interest-btn {
+    width: 100%;
+    max-width: 230px;
+
+    min-height: 48px;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 12px 20px;
+
+    font-size: 0.86rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.featured-register-btn {
+    background: #496f60;
+    color: #ffffff;
+
+    box-shadow: 0 8px 20px rgba(73, 111, 96, 0.2);
+}
+
+.featured-register-btn:hover {
+    background: #3e6153;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 11px 25px rgba(73, 111, 96, 0.25);
+}
+
+.featured-interest-btn {
+    background: #dfece6;
+    color: #3f6254;
+}
+
+.featured-interest-btn:hover {
+    background: #d2e4dc;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(55, 91, 76, 0.12);
+}
+
+
+/* Featured States */
+
+.featured-empty,
+.featured-error {
+    padding: 50px;
+
+    border: 1px dashed #d4dfda;
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    color: #74827d;
+}
+
+
+/* =========================================================
+   16. REGISTERED EVENTS
+========================================================= */
+
+.registered-events-section {
+    padding-top: 90px;
+    padding-bottom: 110px;
+}
+
+.registered-events-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 26px;
+
+    align-items: stretch;
+}
+
+
+/* Registered Card */
+
+.registered-event-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe8e3;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 28px rgba(35, 58, 49, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.registered-event-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 16px 34px rgba(35, 58, 49, 0.11);
+}
+
+
+/* Registered Image */
+
+.registered-event-image {
+    width: 100%;
+    height: 200px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    background: #edf2ef;
+}
+
+.registered-event-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Registered Content */
+
+.registered-event-content {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding: 23px;
+}
+
+
+/* Registered Category */
+
+.registered-event-category {
+    display: inline-flex;
+    align-self: flex-start;
+
+    padding: 5px 11px;
+
+    border-radius: 999px;
+
+    background: #edf5f1;
+    color: #4c7062;
+
+    font-size: 0.68rem;
+    font-weight: 700;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+/* Registered Title */
+
+.registered-event-title {
+    margin-top: 14px;
+    margin-bottom: 9px;
+
+    font-size: 1.35rem;
+    line-height: 1.25;
+}
+
+
+/* Registered Description */
+
+.registered-event-description {
+    display: -webkit-box;
+
+    overflow: hidden;
+
+    margin-bottom: 20px;
+
+    color: #6b7974;
+
+    font-size: 0.86rem;
+    line-height: 1.7;
+
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+
+/* Registered Details */
+
+.registered-event-details {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin-top: auto;
+    margin-bottom: 19px;
+
+    padding-top: 17px;
+
+    border-top: 1px solid #edf1ef;
+}
+
+
+/* Registered Badge */
+
+.registered-event-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 9px 15px;
+
+    border: 1px solid #cce0d7;
+    border-radius: 10px;
+
+    background: #eef7f2;
+    color: #3f6958;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.registered-event-badge i {
+    font-size: 0.75rem;
+}
+
+
+/* Registered States */
+
+.registered-empty,
+.registered-error {
+    grid-column: 1 / -1;
+
+    padding: 55px 25px;
+
+    border: 1px dashed #d6e1dc;
+    border-radius: 16px;
+
+    background: #f8faf9;
+
+    text-align: center;
+}
+
+.registered-empty h3,
+.registered-error h3 {
+    margin-bottom: 8px;
+
+    font-size: 1.3rem;
+}
+
+.registered-empty p,
+.registered-error p {
+    color: #78847f;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   17. REGISTRATION MODAL
+========================================================= */
+
+.registration-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    background: rgba(24, 39, 34, 0.62);
+
+    backdrop-filter: blur(5px);
+
+    overflow-y: auto;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* Form Container */
+
+.registration-form-container {
+    position: relative;
+
+    width: 100%;
+    max-width: 600px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    padding: 42px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e9e5;
+    border-radius: 20px;
+
+    box-shadow: 0 25px 70px rgba(20, 35, 29, 0.25);
+}
+
+
+/* Close Button */
+
+.close-registration-modal {
+    position: absolute;
+
+    top: 17px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e1e8e4;
+    border-radius: 50%;
+
+    background: #f7f9f8;
+    color: #53635d;
+
+    font-size: 1.35rem;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.close-registration-modal:hover {
+    background: #edf3ef;
+    color: #30473e;
+
+    transform: rotate(5deg);
+}
+
+
+/* Modal Heading */
+
+.registration-form-container .eyebrow {
+    margin-bottom: 8px;
+}
+
+.registration-form-container h2 {
+    margin-bottom: 10px;
+
+    font-size: 2rem;
+    line-height: 1.2;
+}
+
+.registration-form-container > p {
+    margin-bottom: 28px;
+
+    color: #71807a;
+
+    font-size: 0.88rem;
+}
+
+
+/* =========================================================
+   18. REGISTRATION FORM
+========================================================= */
+
+#registration-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 17px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group label {
+    color: #3e5149;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    border: 1px solid #d7e1dc;
+    border-radius: 9px;
+
+    background: #ffffff;
+    color: #30433b;
+
+    font-size: 0.84rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: #a0aaa5;
+}
+
+.form-group input:focus {
+    border-color: #6c9181;
+
+    background: #fbfdfc;
+
+    box-shadow: 0 0 0 3px rgba(108, 145, 129, 0.12);
+}
+
+
+/* Submit */
+
+.submit-registration-btn {
+    width: 100%;
+
+    min-height: 48px;
+
+    margin-top: 7px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #496f60;
+    color: #ffffff;
+
+    font-size: 0.86rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(73, 111, 96, 0.2);
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.submit-registration-btn:hover {
+    background: #3e6153;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 11px 24px rgba(73, 111, 96, 0.25);
+}
+
+.submit-registration-btn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* Cancel */
+
+.cancel-registration-btn {
+    width: 100%;
+
+    min-height: 44px;
+
+    border: 1px solid #d9e2de;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #5c6c65;
+
+    font-size: 0.84rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.cancel-registration-btn:hover {
+    border-color: #c8d5cf;
+
+    background: #f6f8f7;
+    color: #354a41;
+}
+
+
+/* =========================================================
+   19. SCROLLBAR
+========================================================= */
+
+.registration-form-container::-webkit-scrollbar {
+    width: 7px;
+}
+
+.registration-form-container::-webkit-scrollbar-track {
+    background: #f2f5f3;
+}
+
+.registration-form-container::-webkit-scrollbar-thumb {
+    background: #c5d3cc;
+
+    border-radius: 10px;
+}
+
+.registration-form-container::-webkit-scrollbar-thumb:hover {
+    background: #aebfb6;
+}
+
+
+/* =========================================================
+   20. TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .events-hero {
+        min-height: 500px;
+    }
+
+    .events-hero-content {
+        width: 60%;
+
+        padding-left: 55px;
+    }
+
+    .events-hero-content h1 {
+        font-size: clamp(2.9rem, 5vw, 4rem);
+    }
+
+    .events-hero-image img {
+        width: 75%;
+    }
+
+    .events-grid,
+    .registered-events-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .featured-event-content {
+        padding: 45px;
+    }
+}
+
+
+/* =========================================================
+   21. MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    /* -----------------------------------------------------
+       Hero
+    ----------------------------------------------------- */
+
+    .events-hero {
+        width: calc(100% - 30px);
+
+        min-height: 600px;
+
+        margin-top: 25px;
+
+        border-radius: 24px;
+    }
+
+    .events-hero-content {
+        width: 100%;
+
+        padding: 55px 25px 45px;
+    }
+
+    .events-hero-content h1 {
+        max-width: 500px;
+
+        font-size: clamp(2.7rem, 10vw, 3.5rem);
+        line-height: 1.08;
+
+        margin-bottom: 18px;
+    }
+
+    .events-hero-content p {
+        max-width: 450px;
+
+        font-size: 0.9rem;
+    }
+
+    /*
+       Keep the image as a background layer.
+       It does NOT become a separate section.
+    */
+
+    .events-hero-image {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    .events-hero-image img {
+        width: 100%;
+        height: 100%;
+
+        right: 0;
+
+        object-fit: contain;
+        object-position: center right;
+    }
+
+
+    /* -----------------------------------------------------
+       Sections
+    ----------------------------------------------------- */
+
+    .upcoming-events,
+    .featured-event-section,
+    .registered-events-section {
+        padding: 65px 20px;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+
+    /* -----------------------------------------------------
+       Filters
+    ----------------------------------------------------- */
+
+    .event-filters {
+        gap: 9px;
+
+        margin-bottom: 30px;
+    }
+
+    .event-filter {
+        padding: 9px 15px;
+
+        font-size: 0.78rem;
+    }
+
+
+    /* -----------------------------------------------------
+       Event Cards
+    ----------------------------------------------------- */
+
+    .events-grid,
+    .registered-events-grid {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .event-image {
+        height: 215px;
+    }
+
+
+    /* -----------------------------------------------------
+       Featured Event
+    ----------------------------------------------------- */
+
+    .featured-event-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-event-image {
+        min-height: 300px;
+        height: 300px;
+    }
+
+    .featured-event-content {
+        padding: 32px 25px 35px;
+    }
+
+    .featured-event-title {
+        font-size: 2rem;
+    }
+
+    .featured-register-btn,
+    .featured-interest-btn {
+        max-width: none;
+    }
+
+
+    /* -----------------------------------------------------
+       Registered Events
+    ----------------------------------------------------- */
+
+    .registered-event-image {
+        height: 210px;
+    }
+
+
+    /* -----------------------------------------------------
+       Registration Modal
+    ----------------------------------------------------- */
+
+    .registration-modal {
+        align-items: flex-start;
+
+        padding: 15px;
+    }
+
+    .registration-form-container {
+        max-height: 94vh;
+
+        padding: 35px 22px 25px;
+
+        border-radius: 16px;
+    }
+
+    .registration-form-container h2 {
+        font-size: 1.7rem;
+    }
+}
+
+
+/* =========================================================
+   22. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .events-hero {
+        width: calc(100% - 20px);
+
+        min-height: 560px;
+
+        margin-top: 20px;
+
+        border-radius: 20px;
+    }
+
+    .events-hero-content {
+        padding: 50px 20px 35px;
+    }
+
+    .events-hero-content h1 {
+        font-size: 2.45rem;
+
+        line-height: 1.08;
+    }
+
+    .events-hero-content p {
+        font-size: 0.86rem;
+    }
+
+    .events-hero-image img {
+        width: 100%;
+    }
+
+
+    /* Sections */
+
+    .upcoming-events,
+    .featured-event-section,
+    .registered-events-section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+
+    /* Cards */
+
+    .event-card-content,
+    .registered-event-content {
+        padding: 20px;
+    }
+
+    .event-image {
+        height: 195px;
+    }
+
+    .registered-event-image {
+        height: 195px;
+    }
+
+
+    /* Featured */
+
+    .featured-event-image {
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .featured-event-content {
+        padding: 28px 20px 30px;
+    }
+
+
+    /* Registration */
+
+    .registration-form-container {
+        padding: 35px 18px 22px;
+    }
+}
+
+
+/* =========================================================
+   23. FELLOWSHIP EVENT — DISTINCT LAVENDER STYLE
+========================================================= */
+
+.fellowship-event-card {
+    background: #fbf8ff;
+
+    border-color: #e5d9f2;
+}
+
+.fellowship-event-card:hover {
+    border-color: #d8c5eb;
+
+    box-shadow: 0 18px 38px rgba(116, 82, 145, 0.13);
+}
+
+
+/* Fellowship Category */
+
+.fellowship-event-card .event-category {
+    background: #f0e7f8;
+    color: #76538f;
+}
+
+
+/* Fellowship Title */
+
+.fellowship-event-card .event-title {
+    color: #4f385f;
+}
+
+
+/* Fellowship Icons */
+
+.fellowship-event-card .event-detail i {
+    color: #85619d;
+}
+
+
+/* Fellowship Button */
+
+.fellowship-event-card .interest-btn {
+    background: #eadcf5;
+    color: #68477d;
+
+    border: 1px solid #dbc5ea;
+}
+
+.fellowship-event-card .interest-btn:hover {
+    background: #dfcdec;
+    color: #58386d;
+
+    box-shadow: 0 8px 18px rgba(110, 72, 135, 0.14);
+}

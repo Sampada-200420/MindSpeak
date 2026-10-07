@@ -1,0 +1,3062 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MindSpeak Admin Dashboard</title>
+
+    <link rel="stylesheet" href="./dashboard.css">
+
+</head>
+
+
+<body>
+
+
+<div class="admin-layout">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================= -->
+
+    <aside class="sidebar">
+
+
+        <div class="sidebar-logo">
+
+            <h2>MindSpeak</h2>
+
+            <p>Administration Panel</p>
+
+        </div>
+
+
+        <div class="admin-label">
+            ADMIN MENU
+        </div>
+
+
+        <nav class="sidebar-nav">
+
+
+            <button
+                type="button"
+                class="nav-button active"
+                data-section="dashboardSection"
+            >
+                🏠 Dashboard
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="postsSection"
+            >
+                💬 Community Posts
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="usersSection"
+            >
+                👥 Users
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="mentorApplicationsSection"
+            >
+                🌱 Mentor Applications
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="currentMentorsSection"
+            >
+                ⭐ Current Mentors
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="journalActivitySection"
+            >
+                📖 Journal Activity
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="contactManagementSection"
+            >
+                📩 Contact Management
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="faqsSection"
+            >
+                ❓ FAQs
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="connectionOverviewSection"
+            >
+                🔗 Connection
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="connectionMembersSection"
+            >
+                👤 Connection Members
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="adminProfileSection"
+            >
+                ⚙️ Profile
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="eventsSection"
+            >
+                📅 Events
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="resourcesSection"
+            >
+                📚 Resources
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-button"
+                data-section="blogsSection"
+            >
+                📝 Blogs
+            </button>
+
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+
+            <div class="admin-profile">
+
+                <strong id="adminNickname">
+                    Admin
+                </strong>
+
+                <span>
+                    Administrator
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="logout-btn"
+                onclick="logoutAdmin()"
+            >
+                🚪 Logout
+            </button>
+
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN
+    ========================================= -->
+
+    <main class="main-content">
+
+
+        <div
+            id="errorMessage"
+            class="error-message"
+        ></div>
+
+
+        <!-- =========================================
+             DASHBOARD
+        ========================================= -->
+
+        <section
+            id="dashboardSection"
+            class="page-section active"
+        >
+
+            <div class="topbar">
+
+                <h1>
+                    Dashboard
+                </h1>
+
+                <p>
+                    Welcome to the MindSpeak administration panel.
+                </p>
+
+            </div>
+
+
+            <section class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        👥
+                    </div>
+
+                    <h3>
+                        Total Users
+                    </h3>
+
+                    <strong id="totalUsers">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        💬
+                    </div>
+
+                    <h3>
+                        Community Posts
+                    </h3>
+
+                    <strong id="totalPosts">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🌱
+                    </div>
+
+                    <h3>
+                        Mentor Applications
+                    </h3>
+
+                    <strong id="totalMentorApplications">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📩
+                    </div>
+
+                    <h3>
+                        New Contact Messages
+                    </h3>
+
+                    <strong id="contactNewMessages">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </section>
+
+
+            <div class="content-card">
+
+                <h2
+                    style="
+                        color:#20364d;
+                        margin-bottom:8px;
+                    "
+                >
+                    MindSpeak Administration
+                </h2>
+
+                <p
+                    style="
+                        color:#888;
+                        font-size:14px;
+                    "
+                >
+                    Use the sidebar to manage users,
+                    community activity, mentors,
+                    contact requests, connections,
+                    events and resources.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             COMMUNITY POSTS
+        ========================================= -->
+
+        <section
+            id="postsSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Community Posts
+                    </h2>
+
+                    <p>
+                        Review and manage community content.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <!-- SAFETY ALERTS -->
+
+<div class="safety-alert-section">
+
+    <div class="safety-alert-section-header">
+
+        <div>
+            <h3>⚠️ Safety Alerts</h3>
+
+            <p>
+                Review community posts that contain
+                potentially harmful or distress-related language.
+            </p>
+        </div>
+
+        <strong id="safetyAlertCount">
+            0
+        </strong>
+
+    </div>
+
+
+    <div
+        id="safetyAlertsContainer"
+        class="safety-alerts-container"
+    ></div>
+
+</div>
+
+
+<!-- COMMUNITY POSTS -->
+
+<div
+    id="postsContainer"
+    class="mentor-list"
+></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             USERS
+        ========================================= -->
+
+        <section
+            id="usersSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Users
+                    </h2>
+
+                    <p>
+                        View registered MindSpeak users.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div
+                id="usersContainer"
+                class="mentor-list"
+            ></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             MENTOR APPLICATIONS
+        ========================================= -->
+
+        <section
+            id="mentorApplicationsSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Mentor Applications
+                    </h2>
+
+                    <p>
+                        Review and manage mentor applications.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div
+                id="mentorApplicationsContainer"
+                class="mentor-list"
+            ></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             CURRENT MENTORS
+        ========================================= -->
+
+        <section
+            id="currentMentorsSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Current Mentors
+                    </h2>
+
+                    <p>
+                        View approved MindSpeak mentors.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⭐
+                    </div>
+
+                    <h3>
+                        Total Mentors
+                    </h3>
+
+                    <strong id="totalCurrentMentors">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🟢
+                    </div>
+
+                    <h3>
+                        Online
+                    </h3>
+
+                    <strong id="onlineCurrentMentors">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ⚪
+                    </div>
+
+                    <h3>
+                        Offline
+                    </h3>
+
+                    <strong id="offlineCurrentMentors">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="currentMentorsContainer"
+                class="mentor-list"
+            ></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             JOURNAL ACTIVITY
+        ========================================= -->
+
+        <section
+            id="journalActivitySection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Journal Activity
+                    </h2>
+
+                    <p>
+                        Monitor journal usage while protecting private journal content.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="journal-summary-grid">
+
+                <div class="journal-summary-card">
+
+                    <div class="journal-summary-icon">
+                        👥
+                    </div>
+
+                    <div class="journal-summary-content">
+
+                        <span class="journal-summary-label">
+                            Users With Journal Activity
+                        </span>
+
+                        <strong id="journalUsersTotal">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="journal-summary-card">
+
+                    <div class="journal-summary-icon">
+                        📖
+                    </div>
+
+                    <div class="journal-summary-content">
+
+                        <span class="journal-summary-label">
+                            Total Journal Entries
+                        </span>
+
+                        <strong id="journalEntriesTotal">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="journal-summary-card">
+
+                    <div class="journal-summary-icon">
+                        🔒
+                    </div>
+
+                    <div class="journal-summary-content">
+
+                        <span class="journal-summary-label">
+                            Privacy Status
+                        </span>
+
+                        <strong class="journal-privacy-status">
+                            Protected
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="journal-admin-notice">
+
+                <div class="journal-admin-notice-icon">
+                    🔒
+                </div>
+
+                <div>
+
+                    <strong>
+                        Privacy-protected journal management
+                    </strong>
+
+                    <p>
+                        Administrators can view journal activity metadata only.
+                        Private journal entries and their contents are never displayed here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="journal-section-heading">
+
+                <div>
+
+                    <h3>
+                        Journal Activity by User
+                    </h3>
+
+                    <p>
+                        Entry frequency and activity dates.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="journalActivityContainer"
+                class="journal-metadata-container"
+            ></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             CONTACT MANAGEMENT
+        ========================================= -->
+
+        <section
+            id="contactManagementSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Contact Management
+                    </h2>
+
+                    <p>
+                        Manage applications, messages,
+                        feedback and newsletter subscribers.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="contact-summary-grid">
+
+
+                <div class="contact-summary-card">
+
+                    <span>
+                        Pending Applications
+                    </span>
+
+                    <strong id="contactPendingApplications">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="contact-summary-card">
+
+                    <span>
+                        New Messages
+                    </span>
+
+                    <strong id="contactManagementNewMessages">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="contact-summary-card">
+
+                    <span>
+                        New Feedback
+                    </span>
+
+                    <strong id="contactNewFeedback">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="contact-summary-card">
+
+                    <span>
+                        Subscribers
+                    </span>
+
+                    <strong id="contactSubscribers">
+                        0
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="contact-tabs">
+
+
+                <button
+                    type="button"
+                    class="contact-tab active"
+                    data-contact-tab="applications"
+                    onclick="showContactTab('applications')"
+                >
+                    🤝 Applications
+                </button>
+
+
+                <button
+                    type="button"
+                    class="contact-tab"
+                    data-contact-tab="messages"
+                    onclick="showContactTab('messages')"
+                >
+                    📩 Messages
+                </button>
+
+
+                <button
+                    type="button"
+                    class="contact-tab"
+                    data-contact-tab="feedback"
+                    onclick="showContactTab('feedback')"
+                >
+                    💚 Feedback
+                </button>
+
+
+                <button
+                    type="button"
+                    class="contact-tab"
+                    data-contact-tab="newsletter"
+                    onclick="showContactTab('newsletter')"
+                >
+                    📧 Newsletter
+                </button>
+
+
+            </div>
+
+
+            <div
+                id="contactApplicationsPanel"
+                class="contact-panel active"
+            >
+
+                <div
+                    id="contactApplicationsContainer"
+                    class="contact-list"
+                >
+                    <div class="contact-loading">
+                        Loading applications...
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div
+                id="contactMessagesPanel"
+                class="contact-panel"
+            >
+
+                <div
+                    id="contactMessagesContainer"
+                    class="contact-list"
+                >
+                    <div class="contact-loading">
+                        Loading messages...
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div
+                id="contactFeedbackPanel"
+                class="contact-panel"
+            >
+
+                <div
+                    id="contactFeedbackContainer"
+                    class="contact-list"
+                >
+                    <div class="contact-loading">
+                        Loading feedback...
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div
+                id="contactNewsletterPanel"
+                class="contact-panel"
+            >
+
+                <div
+                    id="contactNewsletterContainer"
+                    class="contact-list"
+                >
+                    <div class="contact-loading">
+                        Loading subscribers...
+                    </div>
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             FAQ MANAGEMENT
+        ========================================= -->
+
+        <section
+            id="faqsSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        ❓ FAQ Management
+                    </h2>
+
+                    <p>
+                        Manage frequently asked questions displayed on the Contact page.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3
+                    style="
+                        color:#20364d;
+                        margin-bottom:18px;
+                    "
+                >
+                    Add New FAQ
+                </h3>
+
+
+                <form id="faqForm">
+
+                    <div class="faq-form-grid">
+
+                        <div class="faq-field">
+
+                            <label for="faqQuestion">
+                                Question
+                            </label>
+
+                            <input
+                                type="text"
+                                id="faqQuestion"
+                                class="contact-input"
+                                placeholder="Enter the FAQ question"
+                                maxlength="500"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="faq-field">
+
+                            <label for="faqCategory">
+                                Category
+                            </label>
+
+                            <input
+                                type="text"
+                                id="faqCategory"
+                                class="contact-input"
+                                placeholder="e.g. General, Privacy, Support"
+                                maxlength="100"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="faq-field">
+
+                        <label for="faqAnswer">
+                            Answer
+                        </label>
+
+                        <textarea
+                            id="faqAnswer"
+                            class="contact-textarea"
+                            rows="5"
+                            placeholder="Enter the FAQ answer"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="faq-form-grid">
+
+                        <div class="faq-field">
+
+                            <label for="faqDisplayOrder">
+                                Display Order
+                            </label>
+
+                            <input
+                                type="number"
+                                id="faqDisplayOrder"
+                                class="contact-input"
+                                value="0"
+                                min="0"
+                            >
+
+                        </div>
+
+
+                        <div class="faq-field">
+
+                            <label>
+                                Status
+                            </label>
+
+                            <label class="faq-checkbox">
+
+                                <input
+                                    type="checkbox"
+                                    id="faqIsActive"
+                                    checked
+                                >
+
+                                Active FAQ
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="faqFormMessage"
+                        class="faq-form-message"
+                    ></div>
+
+
+                    <button
+                        type="submit"
+                        class="contact-action-btn"
+                    >
+                        ➕ Add FAQ
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <div
+                class="content-card"
+                style="margin-top:20px;"
+            >
+
+                <div class="section-header">
+
+                    <div>
+
+                        <h3
+                            style="
+                                color:#20364d;
+                                margin-bottom:4px;
+                            "
+                        >
+                            Existing FAQs
+                        </h3>
+
+                        <p>
+                            Manage questions currently stored in the database.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="contact-action-btn"
+                        onclick="loadFaqs()"
+                    >
+                        🔄 Refresh
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="faqList"
+                    class="faq-admin-list"
+                >
+
+                    <div class="contact-loading">
+                        Loading FAQs...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CONNECTION OVERVIEW
+        ========================================= -->
+
+        <section
+            id="connectionOverviewSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Connection Overview
+                    </h2>
+
+                    <p>
+                        Monitor activity across the MindSpeak connection platform.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="connection-admin-stats">
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon">
+                        👥
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Total Profiles
+                        </span>
+
+                        <strong id="adminConnectionProfiles">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon available">
+                        🟢
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Available Members
+                        </span>
+
+                        <strong id="adminAvailableMembers">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon pending">
+                        ⏳
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Pending Requests
+                        </span>
+
+                        <strong id="adminPendingRequests">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon accepted">
+                        🤝
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Accepted Connections
+                        </span>
+
+                        <strong id="adminAcceptedRequests">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon active">
+                        💬
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Active Conversations
+                        </span>
+
+                        <strong id="adminActiveConversations">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon ended">
+                        🔚
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Ended Conversations
+                        </span>
+
+                        <strong id="adminEndedConversations">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon messages">
+                        💌
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Total Messages
+                        </span>
+
+                        <strong id="adminConnectionMessages">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon unread">
+                        🔔
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Unread Messages
+                        </span>
+
+                        <strong id="adminUnreadMessages">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon blocks">
+                        🚫
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Total Blocks
+                        </span>
+
+                        <strong id="adminConnectionBlocks">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon reports">
+                        ⚠️
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Total Reports
+                        </span>
+
+                        <strong id="adminConnectionReports">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-stat-card">
+
+                    <div class="connection-stat-icon pending-reports">
+                        📋
+                    </div>
+
+                    <div class="connection-stat-content">
+
+                        <span>
+                            Pending Reports
+                        </span>
+
+                        <strong id="adminPendingReports">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="connection-breakdown-card">
+
+                <div class="connection-breakdown-header">
+
+                    <div>
+
+                        <h3>
+                            Connection Request Activity
+                        </h3>
+
+                        <p>
+                            Current status of connection requests.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="connection-breakdown-grid">
+
+
+                    <div class="connection-breakdown-item">
+
+                        <span>
+                            Pending
+                        </span>
+
+                        <strong id="adminConnectionPendingBreakdown">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="connection-breakdown-item">
+
+                        <span>
+                            Accepted
+                        </span>
+
+                        <strong id="adminConnectionAcceptedBreakdown">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="connection-breakdown-item">
+
+                        <span>
+                            Declined
+                        </span>
+
+                        <strong id="adminConnectionDeclinedBreakdown">
+                            0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="connection-breakdown-item">
+
+                        <span>
+                            Cancelled
+                        </span>
+
+                        <strong id="adminConnectionCancelledBreakdown">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="connectionOverviewMessage"
+                class="connection-overview-message"
+            ></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             CONNECTION MEMBERS
+        ========================================= -->
+
+        <section
+            id="connectionMembersSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Connection Members
+                    </h2>
+
+                    <p>
+                        View members using the connection system.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div
+                id="connectionMembersContainer"
+                class="mentor-list"
+            ></div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             ADMIN PROFILE
+        ========================================= -->
+
+        <section
+            id="adminProfileSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Admin Profile
+                    </h2>
+
+                    <p>
+                        View the administrator account currently signed in.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="back-btn"
+                    onclick="showSection('dashboardSection')"
+                >
+                    ← Dashboard
+                </button>
+
+            </div>
+
+
+            <div class="admin-profile-page-card">
+
+
+                <div
+                    class="admin-profile-avatar"
+                    id="adminProfileAvatar"
+                >
+                    👤
+                </div>
+
+
+                <div class="admin-profile-page-info">
+
+                    <h3 id="profilePageNickname">
+                        Admin
+                    </h3>
+
+                    <p id="profilePageUsername">
+                        Administrator
+                    </p>
+
+                    <span class="admin-profile-role">
+                        Administrator
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="admin-profile-details">
+
+
+                <div class="admin-profile-detail">
+
+                    <span>
+                        Nickname
+                    </span>
+
+                    <strong id="profileDetailNickname">
+                        Admin
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-profile-detail">
+
+                    <span>
+                        Username
+                    </span>
+
+                    <strong id="profileDetailUsername">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-profile-detail">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong id="profileDetailEmail">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="admin-profile-detail">
+
+                    <span>
+                        Role
+                    </span>
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="admin-profile-actions">
+
+                <button
+                    type="button"
+                    class="profile-logout-btn"
+                    onclick="logoutAdmin()"
+                >
+                    🚪 Logout
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================================================
+             EVENTS MANAGEMENT
+        ========================================================= -->
+
+        <section id="eventsSection" class="page-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>Events Management</h2>
+
+                    <p>
+                        Create, manage and monitor MindSpeak community events.
+                    </p>
+                </div>
+
+                <button
+                    class="primary-btn"
+                    onclick="showEventForm()"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Add Event
+                </button>
+
+            </div>
+
+
+            <div class="events-admin-stats">
+
+                <div class="event-stat-card">
+
+                    <div class="event-stat-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div>
+                        <span class="event-stat-label">
+                            Total Events
+                        </span>
+
+                        <strong id="adminTotalEvents">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="event-stat-card">
+
+                    <div class="event-stat-icon upcoming">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+
+                    <div>
+                        <span class="event-stat-label">
+                            Upcoming
+                        </span>
+
+                        <strong id="adminUpcomingEvents">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="event-stat-card">
+
+                    <div class="event-stat-icon past">
+                        <i class="fa-solid fa-calendar-xmark"></i>
+                    </div>
+
+                    <div>
+                        <span class="event-stat-label">
+                            Past Events
+                        </span>
+
+                        <strong id="adminPastEvents">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="event-stat-card">
+
+                    <div class="event-stat-icon registrations">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <span class="event-stat-label">
+                            Registrations
+                        </span>
+
+                        <strong id="adminTotalRegistrations">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="events-admin-toolbar">
+
+                <div class="events-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="eventSearch"
+                        placeholder="Search events..."
+                    >
+
+                </div>
+
+
+                <select id="eventCategoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                    <option value="workshop">
+                        Workshop
+                    </option>
+
+                    <option value="session">
+                        Session
+                    </option>
+
+                    <option value="fellowship">
+                        Fellowship
+                    </option>
+
+                    <option value="webinar">
+                        Webinar
+                    </option>
+
+                    <option value="community">
+                        Community
+                    </option>
+
+                    <option value="other">
+                        Other
+                    </option>
+
+                    <option value="meetup">
+                        Meetup
+                    </option>
+
+                </select>
+
+
+                <select id="eventStatusFilter">
+
+                    <option value="all">
+                        All Events
+                    </option>
+
+                    <option value="upcoming">
+                        Upcoming
+                    </option>
+
+                    <option value="past">
+                        Past
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="admin-table-container">
+
+                <table class="admin-table events-admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Event</th>
+
+                            <th>Category</th>
+
+                            <th>Date & Time</th>
+
+                            <th>Location</th>
+
+                            <th>Registrations</th>
+
+                            <th>Status</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="adminEventsContainer">
+
+                        <tr>
+
+                            <td
+                                colspan="7"
+                                class="table-loading"
+                            >
+                                Loading events...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- EVENT FORM MODAL -->
+
+            <div
+                id="eventFormModal"
+                class="admin-modal"
+            >
+
+                <div class="admin-modal-content event-form-modal">
+
+                    <div class="admin-modal-header">
+
+                        <div>
+
+                            <span class="modal-eyebrow">
+                                MindSpeak Events
+                            </span>
+
+                            <h3 id="eventFormTitle">
+                                Add New Event
+                            </h3>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close-btn"
+                            onclick="hideEventForm()"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <form id="eventForm">
+
+                        <input
+                            type="hidden"
+                            id="eventId"
+                        >
+
+
+                        <div class="event-form-grid">
+
+                            <div class="form-group full-width">
+
+                                <label for="eventTitle">
+                                    Event Title
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="eventTitle"
+                                    placeholder="Enter event title"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="eventCategory">
+                                    Category
+                                </label>
+
+                                <select
+                                    id="eventCategory"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select category
+                                    </option>
+
+                                    <option value="workshop">
+                                        Workshop
+                                    </option>
+
+                                    <option value="session">
+                                        Session
+                                    </option>
+
+                                    <option value="fellowship">
+                                        Fellowship
+                                    </option>
+
+                                    <option value="webinar">
+                                        Webinar
+                                    </option>
+
+                                    <option value="community">
+                                        Community
+                                    </option>
+
+                                    <option value="other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="eventDate">
+                                    Date & Time
+                                </label>
+
+                                <input
+                                    type="datetime-local"
+                                    id="eventDate"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label for="eventLocation">
+                                    Location
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="eventLocation"
+                                    placeholder="e.g. Online / Pietarsaari Campus"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label for="eventImage">
+                                    Event Image
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="eventImage"
+                                    placeholder="e.g. images/Events/workshop.jpg"
+                                >
+
+                                <small>
+                                    Enter the image path or image URL.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label for="eventDescription">
+                                    Description
+                                </label>
+
+                                <textarea
+                                    id="eventDescription"
+                                    rows="5"
+                                    placeholder="Describe the event..."
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="eventFormMessage"
+                            class="form-message"
+                        ></div>
+
+
+                        <div class="event-form-actions">
+
+                            <button
+                                type="button"
+                                class="secondary-btn"
+                                onclick="hideEventForm()"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="primary-btn"
+                            >
+                                <i class="fa-solid fa-check"></i>
+                                Save Event
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- REGISTRATIONS MODAL -->
+
+            <div
+                id="eventRegistrationsModal"
+                class="admin-modal"
+            >
+
+                <div class="admin-modal-content registrations-modal">
+
+                    <div class="admin-modal-header">
+
+                        <div>
+
+                            <span class="modal-eyebrow">
+                                Event Registrations
+                            </span>
+
+                            <h3 id="registrationsEventTitle">
+                                Registrations
+                            </h3>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close-btn"
+                            onclick="hideEventRegistrations()"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="eventRegistrationsContainer"
+                        class="event-registrations-container"
+                    >
+
+                        <div class="registrations-loading">
+                            Loading registrations...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             RESOURCES MANAGEMENT
+        ====================================================== -->
+
+        <section
+            id="resourcesSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h1>Resources Management</h1>
+
+                    <p>
+                        Add, update, and manage MindSpeak resources.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="admin-primary-btn"
+                    onclick="showResourceForm()"
+                >
+                    + Add Resource
+                </button>
+
+            </div>
+
+
+            <div
+                id="resourceFormContainer"
+                class="admin-form-card"
+                style="display:none;"
+            >
+
+                <div class="admin-form-header">
+
+                    <div>
+
+                        <h2 id="resourceFormTitle">
+                            Add New Resource
+                        </h2>
+
+                        <p>
+                            Add a resource for students to access.
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="admin-close-btn"
+                        onclick="hideResourceForm()"
+                    >
+                        ✕
+                    </button>
+
+                </div>
+
+
+                <form id="resourceForm">
+
+                    <input
+                        type="hidden"
+                        id="resourceId"
+                    >
+
+
+                    <div class="admin-form-grid">
+
+                        <div class="admin-form-group">
+
+                            <label for="resourceTitle">
+                                Resource Title
+                            </label>
+
+                            <input
+                                type="text"
+                                id="resourceTitle"
+                                placeholder="Enter resource title"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="admin-form-group">
+
+                            <label for="resourceCategory">
+                                Category
+                            </label>
+
+                            <select
+                                id="resourceCategory"
+                                required
+                            >
+
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option value="Video">
+                                    Video
+                                </option>
+
+                                <option value="Book">
+                                    Book
+                                </option>
+
+                                <option value="Audiobook">
+                                    Audiobook
+                                </option>
+
+                                <option value="Meditation">
+                                    Meditation
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="admin-form-group">
+
+                            <label for="resourceType">
+                                Resource Type
+                            </label>
+
+                            <select
+                                id="resourceType"
+                                required
+                            >
+
+                                <option value="">
+                                    Select type
+                                </option>
+
+                                <option value="video">
+                                    Video
+                                </option>
+
+                                <option value="book">
+                                    Book
+                                </option>
+
+                                <option value="audiobook">
+                                    Audiobook
+                                </option>
+
+                                <option value="meditation">
+                                    Meditation
+                                </option>
+
+                                <option value="link">
+                                    External Link
+                                </option>
+
+                                <option value="file">
+                                    File
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="admin-form-group">
+
+                            <label for="resourceFileUrl">
+                                Resource URL / File
+                            </label>
+
+                            <input
+                                type="text"
+                                id="resourceFileUrl"
+                                placeholder="Enter resource URL or file path"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div
+                            class="admin-form-group admin-form-full"
+                        >
+
+                            <label for="resourceDescription">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="resourceDescription"
+                                rows="5"
+                                placeholder="Describe this resource..."
+                                required
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="resourceFormMessage"
+                        class="admin-form-message"
+                    ></div>
+
+
+                    <div class="admin-form-actions">
+
+                        <button
+                            type="button"
+                            class="admin-secondary-btn"
+                            onclick="hideResourceForm()"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="admin-primary-btn"
+                        >
+                            Save Resource
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <div class="resource-toolbar">
+
+                <div>
+
+                    <label for="resourceFilter">
+                        Filter by category
+                    </label>
+
+                    <select id="resourceFilter">
+
+                        <option value="all">
+                            All Resources
+                        </option>
+
+                        <option value="Video">
+                            Videos
+                        </option>
+
+                        <option value="Book">
+                            Books
+                        </option>
+
+                        <option value="Audiobook">
+                            Audiobooks
+                        </option>
+
+                        <option value="Meditation">
+                            Meditation
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div
+                    id="resourceCount"
+                    class="resource-count"
+                >
+                    0 resources
+                </div>
+
+            </div>
+
+
+            <div
+                id="resourcesContainer"
+                class="admin-resource-grid"
+            >
+
+                <div class="mentor-loading">
+                    Loading resources...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================================
+             BLOGS MANAGEMENT
+        ========================================================= -->
+
+        <section
+            id="blogsSection"
+            class="page-section"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <h2>
+                        Blogs Management
+                    </h2>
+
+                    <p>
+                        Create, review and manage MindSpeak blog content.
+                    </p>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="primary-btn"
+                    onclick="showBlogForm()"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Add Blog
+                </button>
+
+            </div>
+
+
+            <!-- =====================================================
+                 BLOG STATISTICS
+            ====================================================== -->
+
+            <div class="blogs-admin-stats">
+
+                <div class="blog-stat-card">
+
+                    <div class="blog-stat-icon">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+
+                    <div>
+                        <span>Total Blogs</span>
+                        <strong id="adminTotalBlogs">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="blog-stat-card">
+
+                    <div class="blog-stat-icon published">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+
+                    <div>
+                        <span>Published</span>
+                        <strong id="adminPublishedBlogs">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="blog-stat-card">
+
+                    <div class="blog-stat-icon pending">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <span>Pending</span>
+                        <strong id="adminPendingBlogs">0</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="blog-stat-card">
+
+                    <div class="blog-stat-icon draft">
+                        <i class="fa-solid fa-file"></i>
+                    </div>
+
+                    <div>
+                        <span>Drafts</span>
+                        <strong id="adminDraftBlogs">0</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 SEARCH / FILTER
+            ====================================================== -->
+
+            <div class="blogs-admin-toolbar">
+
+                <div class="blogs-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="blogSearch"
+                        placeholder="Search blogs..."
+                    >
+
+                </div>
+
+
+                <select id="blogCategoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                </select>
+
+
+                <select id="blogStatusFilter">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="published">
+                        Published
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="draft">
+                        Draft
+                    </option>
+
+                    <option value="rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- =====================================================
+                 BLOG TABLE
+            ====================================================== -->
+
+            <div class="admin-table-container">
+
+                <table class="admin-table blogs-admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Blog</th>
+                            <th>Category</th>
+                            <th>Author</th>
+                            <th>Date</th>
+                            <th>Views</th>
+                            <th>Likes</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="adminBlogsContainer">
+
+                        <tr>
+
+                            <td
+                                colspan="8"
+                                class="table-loading"
+                            >
+                                Loading blogs...
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- =====================================================
+                 BLOG FORM MODAL
+            ====================================================== -->
+
+            <div
+                id="blogFormModal"
+                class="admin-modal"
+            >
+
+                <div class="admin-modal-content blog-form-modal">
+
+                    <div class="admin-modal-header">
+
+                        <div>
+
+                            <span class="modal-eyebrow">
+                                MindSpeak Blog
+                            </span>
+
+                            <h3 id="blogFormTitle">
+                                Add New Blog
+                            </h3>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close-btn"
+                            onclick="hideBlogForm()"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <form id="blogForm">
+
+                        <input
+                            type="hidden"
+                            id="blogId"
+                        >
+
+
+                        <div class="blog-form-grid">
+
+                            <div class="form-group full-width">
+
+                                <label for="blogTitle">
+                                    Blog Title
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="blogTitle"
+                                    placeholder="Enter blog title"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="blogCategory">
+                                    Category
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="blogCategory"
+                                    placeholder="e.g. Mental Health"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="blogStatus">
+                                    Status
+                                </label>
+
+                                <select id="blogStatus">
+
+                                    <option value="draft">
+                                        Draft
+                                    </option>
+
+                                    <option value="pending">
+                                        Pending
+                                    </option>
+
+                                    <option value="published">
+                                        Published
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label for="blogCoverImage">
+                                    Cover Image
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="blogCoverImage"
+                                    placeholder="e.g. images/Blogs/article.jpg"
+                                >
+
+                                <small>
+                                    Enter an image path or image URL.
+                                </small>
+
+                            </div>
+
+
+                            <div class="form-group full-width">
+
+                                <label for="blogContent">
+                                    Blog Content
+                                </label>
+
+                                <textarea
+                                    id="blogContent"
+                                    rows="12"
+                                    placeholder="Write the blog content..."
+                                    required
+                                ></textarea>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="blogFormMessage"
+                            class="form-message"
+                        ></div>
+
+
+                        <div class="blog-form-actions">
+
+                            <button
+                                type="button"
+                                class="secondary-btn"
+                                onclick="hideBlogForm()"
+                            >
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="primary-btn"
+                            >
+                                <i class="fa-solid fa-check"></i>
+                                Save Blog
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 BLOG REVIEW / FULL BLOG MODAL
+            ====================================================== -->
+
+            <div
+                id="blogReviewModal"
+                class="admin-modal"
+            >
+
+                <div class="admin-modal-content blog-review-modal">
+
+
+                    <!-- REVIEW HEADER -->
+
+                    <div class="admin-modal-header">
+
+                        <div>
+
+                            <span class="modal-eyebrow">
+                                MindSpeak Blog Review
+                            </span>
+
+                            <h3 id="blogReviewTitle">
+                                Blog Review
+                            </h3>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="modal-close-btn"
+                            onclick="hideBlogReview()"
+                            aria-label="Close blog review"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+
+                    </div>
+
+
+                    <!-- BLOG INFORMATION -->
+
+                    <div class="blog-review-meta">
+
+
+                        <div class="blog-review-meta-item">
+
+                            <span>
+                                Author
+                            </span>
+
+                            <strong id="blogReviewAuthor">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="blog-review-meta-item">
+
+                            <span>
+                                Category
+                            </span>
+
+                            <strong id="blogReviewCategory">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="blog-review-meta-item">
+
+                            <span>
+                                Submitted
+                            </span>
+
+                            <strong id="blogReviewDate">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                        <div class="blog-review-meta-item">
+
+                            <span>
+                                Status
+                            </span>
+
+                            <strong id="blogReviewStatus">
+                                —
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- COVER IMAGE -->
+
+                    <div
+                        id="blogReviewCoverWrapper"
+                        class="blog-review-cover-wrapper"
+                        style="display:none;"
+                    >
+
+                        <img
+                            id="blogReviewCover"
+                            src=""
+                            alt="Blog cover image"
+                            class="blog-review-cover"
+                        >
+
+                    </div>
+
+
+                    <!-- FULL BLOG CONTENT -->
+
+                    <div class="blog-review-content-wrapper">
+
+
+                        <div class="blog-review-content-label">
+                            Full Blog Content
+                        </div>
+
+
+                        <article
+                            id="blogReviewContent"
+                            class="blog-review-content"
+                        >
+                            Loading blog content...
+                        </article>
+
+
+                    </div>
+
+
+                    <!-- REVIEW ACTIONS -->
+
+                    <div class="blog-review-actions">
+
+
+                        <button
+                            type="button"
+                            class="secondary-btn"
+                            onclick="hideBlogReview()"
+                        >
+                            Close
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="blogReviewRejectBtn"
+                            class="danger-btn"
+                        >
+                            <i class="fa-solid fa-xmark"></i>
+                            Reject
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="blogReviewApproveBtn"
+                            class="primary-btn"
+                        >
+                            <i class="fa-solid fa-check"></i>
+                            Approve
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</div>
+
+
+<script src="./dashboard.js"></script>
+
+
+</body>
+
+</html>

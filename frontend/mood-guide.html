@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="MindSpeak Mood Guide - Understand your mood patterns and receive gentle guidance."
+    >
+
+    <title>MindSpeak | Mood Guide</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         MINDSPEAK CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="navbar.css">
+
+    <link rel="stylesheet" href="footer.css">
+
+    <link rel="stylesheet" href="css/mood-guide.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <div id="navbar"></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="mood-guide-page">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="mood-guide-hero">
+
+            <div class="mood-guide-hero-content">
+
+                <span class="hero-label">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                    MINDSPACE
+
+                </span>
+
+
+                <h1>
+                    Your Mood Guide
+                </h1>
+
+
+                <p>
+                    Your feelings are worth understanding.
+                    Look back at your recent check-ins,
+                    notice your patterns, and gently understand
+                    how you've been feeling.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             MOOD ANALYTICS
+        ================================================== -->
+
+        <section class="mood-analytics-section">
+
+
+            <!-- =============================================
+                 SECTION HEADING
+            ============================================== -->
+
+            <div class="section-heading">
+
+                <span class="section-label">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    YOUR MOOD JOURNEY
+
+                </span>
+
+
+                <h2>
+                    Understand your recent feelings
+                </h2>
+
+
+                <p>
+                    Choose a period to see what your mood
+                    check-ins are showing you.
+                </p>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 PERIOD SELECTOR
+            ============================================== -->
+
+            <div class="period-selector">
+
+
+                <button
+                    id="weeklyBtn"
+                    class="period-btn active"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-calendar-week"></i>
+
+                    Last 7 Days
+
+                </button>
+
+
+                <button
+                    id="monthlyBtn"
+                    class="period-btn"
+                    type="button"
+                >
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    Last 30 Days
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 LOADING
+            ============================================== -->
+
+            <div
+                id="moodLoading"
+                class="mood-loading"
+                style="display: none;"
+            >
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Looking at your recent check-ins...
+                </p>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 ERROR
+            ============================================== -->
+
+            <div
+                id="moodError"
+                class="mood-message error-message"
+                style="display: none;"
+            >
+
+                <i class="fa-solid fa-circle-exclamation"></i>
+
+                <p>
+                    We couldn't load your mood information
+                    right now. Please try again.
+                </p>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 EMPTY STATE
+            ============================================== -->
+
+            <div
+                id="moodEmpty"
+                class="mood-message empty-message"
+                style="display: none;"
+            >
+
+                <i class="fa-regular fa-face-smile"></i>
+
+
+                <h3>
+                    Your mood journey is just beginning.
+                </h3>
+
+
+                <p>
+                    Keep checking in with yourself and
+                    you'll start seeing patterns here.
+                </p>
+
+
+                <a href="safe-space.html">
+                    Make a Mood Check-In
+                </a>
+
+            </div>
+
+
+
+            <!-- =============================================
+                 ANALYSIS
+            ============================================== -->
+
+            <div
+                id="moodAnalysis"
+                class="mood-analysis"
+                style="display: none;"
+            >
+
+
+                <!-- =========================================
+                     ANALYSIS HEADER
+                ========================================== -->
+
+                <div class="analysis-header">
+
+                    <div>
+
+                        <span class="analysis-label">
+
+                            <i class="fa-solid fa-seedling"></i>
+
+                            YOUR INSIGHT
+
+                        </span>
+
+
+                        <h2 id="analysisPeriodTitle">
+                            Your Last 7 Days
+                        </h2>
+
+
+                        <p id="analysisPeriodDescription">
+                            Here's what your recent mood
+                            check-ins show.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     1. YOUR DAYS
+                ========================================== -->
+
+                <section class="analysis-card days-card">
+
+
+                    <div class="card-heading">
+
+                        <div class="card-icon">
+
+                            <i class="fa-solid fa-calendar-day"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Your Days
+                            </h3>
+
+
+                            <p>
+                                A day-by-day look at your recent
+                                check-ins.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        id="moodDays"
+                        class="mood-days"
+                    ></div>
+
+
+                </section>
+
+
+
+                <!-- =========================================
+                     2. YOUR MOOD GUIDE
+                ========================================== -->
+
+                <section class="mood-guide-overview">
+
+
+                    <div class="overview-heading">
+
+
+                        <span class="section-label">
+
+                            <i class="fa-solid fa-seedling"></i>
+
+                            YOUR MOOD GUIDE
+
+                        </span>
+
+
+                        <h2>
+                            How have you been feeling?
+                        </h2>
+
+
+                        <p>
+                            A quick look at your recent
+                            emotional journey.
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="mood-stats-grid">
+
+
+                        <!-- CHECK-INS -->
+
+                        <div class="mood-stat-card">
+
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-heart-pulse"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Check-ins
+                                </span>
+
+
+                                <strong id="checkInCount">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- MOST COMMON MOOD -->
+
+                        <div class="mood-stat-card">
+
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-face-smile"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Most Common Mood
+                                </span>
+
+
+                                <strong id="commonMood">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- LATEST MOOD -->
+
+                        <div class="mood-stat-card">
+
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-clock"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Latest Mood
+                                </span>
+
+
+                                <strong id="latestMood">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <!-- MOOD VARIETY -->
+
+                        <div class="mood-stat-card">
+
+
+                            <div class="stat-icon">
+
+                                <i class="fa-solid fa-shapes"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Moods Experienced
+                                </span>
+
+
+                                <strong id="moodVariety">
+                                    0
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =========================================
+                     3. YOUR MOOD AT A GLANCE
+                     
+                     We will build this section next.
+                ========================================== -->
+
+                <section
+                    class="analysis-card mood-glance-card"
+                    id="moodGlanceSection"
+                >
+
+                    <div class="card-heading">
+
+
+                        <div class="card-icon">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Your Mood at a Glance
+                            </h3>
+
+
+                            <p>
+                                A quick visual summary of your
+                                recent mood journey.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div
+                        id="moodGlance"
+                        class="mood-glance"
+                    ></div>
+
+
+                </section>
+
+
+
+                <!-- =========================================
+                     4. YOUR MOOD PATTERN CHART
+                ========================================== -->
+
+                <section
+                    class="analysis-card mood-pattern-card"
+                >
+
+
+                    <div class="card-heading">
+
+
+                        <div class="card-icon">
+
+                            <i class="fa-solid fa-chart-line"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Your Mood Pattern
+                            </h3>
+
+
+                            <p>
+                                A simple look at what has been
+                                showing up in your check-ins.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div
+                        id="moodPatterns"
+                        class="mood-patterns"
+                    ></div>
+
+
+                </section>
+
+
+
+                <!-- =========================================
+                     5. MOOD BREAKDOWN
+                ========================================== -->
+
+                <section class="analysis-card">
+
+
+                    <div class="card-heading">
+
+
+                        <div class="card-icon">
+
+                            <i class="fa-solid fa-chart-simple"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Your Mood Breakdown
+                            </h3>
+
+
+                            <p>
+                                See how often each mood appeared.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <div
+                        id="moodCounts"
+                        class="mood-counts"
+                    ></div>
+
+
+                </section>
+
+
+
+                <!-- =========================================
+                     6. FINAL REFLECTION
+                ========================================== -->
+
+                <section
+                    class="analysis-card final-reflection-card"
+                >
+
+
+                    <div class="card-heading">
+
+
+                        <div class="card-icon">
+
+                            <i class="fa-solid fa-heart"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Final Reflection
+                            </h3>
+
+
+                            <p>
+                                A gentle reflection on your
+                                recent mood journey.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- WHAT HAS CHANGED -->
+
+                    <div class="reflection-item">
+
+
+                        <h4>
+                            <i class="fa-solid fa-arrows-rotate"></i>
+
+                            What has changed?
+                        </h4>
+
+
+                        <p id="reflectionChanged">
+                            Your mood changes will appear here.
+                        </p>
+
+
+                    </div>
+
+
+
+                    <!-- WHAT WE NOTICED -->
+
+                    <div class="reflection-item">
+
+
+                        <h4>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            What we noticed
+                        </h4>
+
+
+                        <p id="reflectionNoticed">
+                            Your mood patterns will appear here.
+                        </p>
+
+
+                    </div>
+
+
+
+                    <!-- THOUGHTS FOR YOU -->
+
+                    <div class="reflection-item">
+
+
+                        <h4>
+                            <i class="fa-solid fa-seedling"></i>
+
+                            Thoughts for you
+                        </h4>
+
+
+                        <p id="reflectionThoughts">
+                            A gentle suggestion based on your
+                            check-ins will appear here.
+                        </p>
+
+
+                    </div>
+
+
+                </section>
+
+
+
+                <!-- =========================================
+                     OPTIONAL GENTLE REMINDER
+                ========================================== -->
+
+                <div class="mood-reminder">
+
+
+                    <i class="fa-solid fa-leaf"></i>
+
+
+                    <p>
+                        Your mood is not your identity.
+                        These check-ins are simply a way
+                        to notice what you've been experiencing.
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BACK TO SAFE SPACE
+        ================================================== -->
+
+        <section class="back-section">
+
+
+            <a
+                href="safe-space.html"
+                class="back-to-safe-space"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Safe Space
+
+            </a>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <div id="footer"></div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script src="js/navbar.js"></script>
+
+    <script src="js/footer.js"></script>
+
+    <script src="js/mood-guide.js"></script>
+
+
+</body>
+
+</html>

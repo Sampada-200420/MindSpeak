@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Mentor Conversations | MindSpeak</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+    <!-- Existing global styles -->
+    <link rel="stylesheet" href="../../navbar.css">
+    <link rel="stylesheet" href="../../footer.css">
+
+    <!-- Mentor conversations styles -->
+    <link rel="stylesheet" href="mentor-conversations.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <div id="navbar"></div>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="mentor-conversations-page">
+
+        <div class="mentor-conversations-container">
+
+            <!-- Back -->
+            <a
+                href="mentor-support.html"
+                class="back-link"
+            >
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Mentor Support
+            </a>
+
+
+            <!-- Header -->
+            <section class="conversations-header">
+
+                <span class="section-eyebrow">
+                    PEER SUPPORT
+                </span>
+
+                <h1>
+                    My Mentor Conversations
+                </h1>
+
+                <p>
+                    Your private conversations with MindSpeak
+                    peer mentors appear here.
+                </p>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOADING
+            ================================================== -->
+
+            <section
+                id="conversationsLoading"
+                class="conversations-state"
+            >
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Loading your conversations...
+                </p>
+            </section>
+
+
+            <!-- =================================================
+                 ERROR
+            ================================================== -->
+
+            <section
+                id="conversationsError"
+                class="conversations-state error-state"
+                hidden
+            >
+
+                <div class="state-icon">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
+
+                <h2>
+                    Something went wrong
+                </h2>
+
+                <p id="conversationsErrorMessage">
+                    We couldn't load your conversations.
+                </p>
+
+                <button
+                    type="button"
+                    id="conversationsRetryBtn"
+                    class="retry-btn"
+                >
+                    <i class="fa-solid fa-rotate-right"></i>
+                    Try Again
+                </button>
+
+            </section>
+
+
+            <!-- =================================================
+                 EMPTY
+            ================================================== -->
+
+            <section
+                id="conversationsEmpty"
+                class="conversations-state empty-state"
+                hidden
+            >
+
+                <div class="state-icon">
+                    <i class="fa-regular fa-comments"></i>
+                </div>
+
+                <h2>
+                    No conversations yet
+                </h2>
+
+                <p>
+                    When a mentor accepts your support request,
+                    your private conversation will appear here.
+                </p>
+
+                <a
+                    href="mentor-support.html"
+                    class="find-mentor-btn"
+                >
+                    Find a Mentor
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </section>
+
+
+            <!-- =================================================
+                 CONVERSATIONS
+            ================================================== -->
+
+            <section
+                id="conversationsSection"
+                class="conversations-section"
+                hidden
+            >
+
+                <div
+                    id="conversationsList"
+                    class="conversations-list"
+                >
+                    <!-- Conversations are loaded by JavaScript -->
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PRIVACY NOTE
+            ================================================== -->
+
+            <section class="privacy-note">
+
+                <div class="privacy-note-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Your conversations are private
+                    </h3>
+
+                    <p>
+                        Mentor conversations are only available
+                        to the people involved in the conversation.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <div id="footer"></div>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <!-- Conversation page script -->
+    <script src="../js/mentor-conversations.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MindSpeak — Register</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background:
+                linear-gradient(
+                    135deg,
+                    #F1EAD8 0%,
+                    #BEC5A4 100%
+                );
+
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+
+        /* =========================================
+           AUTH WRAPPER
+        ========================================= */
+
+        .auth-wrapper {
+            display: flex;
+
+            width: 100%;
+            max-width: 900px;
+
+            background: white;
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 60px rgba(104, 96, 77, 0.15);
+
+            min-height: 600px;
+        }
+
+
+        /* =========================================
+           LEFT SIDE
+        ========================================= */
+
+        .auth-left {
+            flex: 1;
+
+            background:
+                linear-gradient(
+                    160deg,
+                    #8A8E75,
+                    #68604D
+                );
+
+            padding: 50px 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            color: white;
+        }
+
+
+        .auth-left .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-size: 28px;
+            font-weight: 700;
+
+            color: #ffffff;
+
+            margin-bottom: 40px;
+        }
+
+
+        .auth-left .logo img {
+            width: 48px;
+            height: 48px;
+
+            object-fit: contain;
+
+            border-radius: 10px;
+        }
+
+
+        .auth-left .logo span {
+            color: #ffffff;
+        }
+
+
+        .auth-left h2 {
+            font-size: 22px;
+            font-weight: 700;
+
+            line-height: 1.4;
+
+            margin-bottom: 15px;
+        }
+
+
+        .auth-left p {
+            font-size: 14px;
+
+            opacity: 0.85;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+
+        .feature-list {
+            list-style: none;
+        }
+
+
+        .feature-list li {
+            font-size: 13px;
+
+            padding: 8px 0;
+
+            opacity: 0.9;
+
+            display: flex;
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .feature-list li::before {
+            content: '✓';
+
+            background: rgba(255,255,255,0.2);
+
+            width: 22px;
+            height: 22px;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 12px;
+
+            flex-shrink: 0;
+        }
+
+
+        /* =========================================
+           RIGHT SIDE
+        ========================================= */
+
+        .auth-right {
+            flex: 1;
+
+            padding: 50px 40px;
+
+            overflow-y: auto;
+        }
+
+
+        .auth-right h2 {
+            font-size: 22px;
+            font-weight: 700;
+
+            color: #3a3a2e;
+
+            margin-bottom: 5px;
+        }
+
+
+        .auth-right .subtitle {
+            font-size: 13px;
+
+            color: #8A8E75;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================
+           FORM
+        ========================================= */
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+
+        .form-group label {
+            display: block;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            color: #68604D;
+
+            margin-bottom: 6px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        .form-group input {
+            width: 100%;
+
+            padding: 12px 16px;
+
+            border: 2px solid #e8e0d0;
+
+            border-radius: 10px;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 14px;
+
+            color: #3a3a2e;
+
+            background: #F1EAD8;
+
+            transition: all 0.3s ease;
+
+            outline: none;
+        }
+
+
+        .form-group input:focus {
+            border-color: #8A8E75;
+
+            background: white;
+        }
+
+
+        /* =========================================
+           PASSWORD
+        ========================================= */
+
+        .password-wrapper {
+            position: relative;
+
+            width: 100%;
+        }
+
+
+        .password-wrapper input {
+            width: 100%;
+
+            padding-right: 55px;
+        }
+
+
+        .password-toggle {
+            position: absolute;
+
+            right: 12px;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 38px;
+            height: 38px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border: none;
+
+            background: transparent;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            font-size: 19px;
+
+            opacity: 0.65;
+
+            transition: all 0.25s ease;
+        }
+
+
+        .password-toggle:hover {
+            opacity: 1;
+
+            background: rgba(138, 142, 117, 0.12);
+
+            transform:
+                translateY(-50%)
+                scale(1.05);
+        }
+
+
+        .password-toggle:active {
+            transform:
+                translateY(-50%)
+                scale(0.95);
+        }
+
+
+        /* =========================================
+           MINDSPEAK IDENTITY
+        ========================================= */
+
+        .identity-section {
+            margin-top: 24px;
+
+            margin-bottom: 20px;
+
+            padding: 22px;
+
+            background: #f8faf9;
+
+            border: 1px solid #e3ebe6;
+
+            border-radius: 18px;
+        }
+
+
+        .identity-title {
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            font-size: 18px;
+
+            font-weight: 600;
+
+            color: #263b32;
+
+            margin-bottom: 6px;
+        }
+
+
+        .identity-subtitle {
+            margin: 0 0 22px;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            color: #718078;
+        }
+
+
+        .identity-hint {
+            display: block;
+
+            margin-top: 6px;
+
+            font-size: 12px;
+
+            color: #89968f;
+        }
+
+
+        /* =========================================
+           AVATAR GRID
+        ========================================= */
+
+        .avatar-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 12px;
+
+            margin-top: 10px;
+        }
+
+
+        .avatar-option {
+            width: 100%;
+
+            height: 62px;
+
+            border: 1px solid #dce5df;
+
+            background: #ffffff;
+
+            border-radius: 14px;
+
+            font-size: 28px;
+
+            cursor: pointer;
+
+            transition: all 0.2s ease;
+        }
+
+
+        .avatar-option:hover {
+            border-color: #9ab5a7;
+
+            background: #f3f8f5;
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        .avatar-option.selected {
+            border: 2px solid #5c8d72;
+
+            background: #edf6f0;
+
+            box-shadow:
+                0 3px 10px
+                rgba(70, 110, 88, 0.12);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =========================================
+           REGISTER BUTTON
+        ========================================= */
+
+        .btn-register {
+            width: 100%;
+
+            padding: 14px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #8A8E75,
+                    #68604D
+                );
+
+            color: white;
+
+            border: none;
+
+            border-radius: 10px;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: all 0.3s ease;
+
+            margin-top: 5px;
+        }
+
+
+        .btn-register:hover {
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 8px 20px
+                rgba(104,96,77,0.3);
+        }
+
+
+        .btn-register:disabled {
+            opacity: 0.7;
+
+            cursor: not-allowed;
+
+            transform: none;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .auth-footer {
+            text-align: center;
+
+            margin-top: 20px;
+
+            font-size: 13px;
+
+            color: #8A8E75;
+        }
+
+
+        .auth-footer a {
+            color: #8A8E75;
+
+            font-weight: 600;
+
+            text-decoration: none;
+        }
+
+
+        .auth-footer a:hover {
+            color: #68604D;
+        }
+
+
+        /* =========================================
+           MESSAGE BOX
+        ========================================= */
+
+        .message-box {
+            padding: 12px 16px;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+
+            margin-bottom: 15px;
+
+            display: none;
+
+            text-align: center;
+
+            font-weight: 500;
+        }
+
+
+        .message-box.error {
+            background: #fde8e8;
+
+            color: #c0392b;
+
+            border: 1px solid #f5c6c6;
+
+            display: block;
+        }
+
+
+        .message-box.success {
+            background: #e8f5e9;
+
+            color: #2e7d32;
+
+            border: 1px solid #c8e6c9;
+
+            display: block;
+        }
+
+
+        /* =========================================
+           SUCCESS CARD
+        ========================================= */
+
+        .success-card {
+            display: none;
+
+            text-align: center;
+
+            padding: 20px 0;
+        }
+
+
+        .success-card.show {
+            display: block;
+        }
+
+
+        .avatar-big {
+            font-size: 70px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .success-card h3 {
+            font-size: 18px;
+
+            color: #3a3a2e;
+
+            margin-bottom: 8px;
+        }
+
+
+        .nickname-display {
+            font-size: 24px;
+
+            font-weight: 700;
+
+            color: #8A8E75;
+
+            background: #F1EAD8;
+
+            padding: 12px 24px;
+
+            border-radius: 50px;
+
+            display: inline-block;
+
+            margin: 10px 0;
+        }
+
+
+        .success-card p {
+            font-size: 13px;
+
+            color: #8A8E75;
+
+            line-height: 1.7;
+
+            margin: 15px 0;
+        }
+
+
+        .verify-note {
+            background: #fff8e8;
+
+            border: 1px solid #f0d080;
+
+            border-radius: 10px;
+
+            padding: 12px;
+
+            font-size: 12px;
+
+            color: #8a6d00;
+
+            margin: 15px 0;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 650px) {
+
+            .auth-left {
+                display: none;
+            }
+
+            .auth-right {
+                padding: 30px 25px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .identity-section {
+                padding: 18px;
+            }
+
+            .avatar-grid {
+                grid-template-columns:
+                    repeat(4, 1fr);
+
+                gap: 8px;
+            }
+
+            .avatar-option {
+                height: 55px;
+
+                font-size: 24px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="auth-wrapper">
+
+
+    <!-- =========================================
+         LEFT SIDE
+    ========================================= -->
+
+    <div class="auth-left">
+
+        <div class="logo">
+
+            <img
+                src="../images/mindspeak.jpg"
+                alt="MindSpeak Logo"
+            >
+
+            <span>
+                MindSpeak
+            </span>
+
+        </div>
+
+
+        <h2>
+            Let minds speak. Let hearts heal.
+        </h2>
+
+
+        <p>
+            A safe, anonymous & supportive platform
+            for student mental well-being.
+        </p>
+
+
+        <ul class="feature-list">
+
+            <li>
+                100% Anonymous - no identity stored
+            </li>
+
+            <li>
+                Real support from trained mentors
+            </li>
+
+            <li>
+                Safe space to express yourself
+            </li>
+
+            <li>
+                Resources & breathing exercises
+            </li>
+
+            <li>
+                Professional helplines always visible
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- =========================================
+         RIGHT SIDE
+    ========================================= -->
+
+    <div class="auth-right">
+
+
+        <h2>
+            Create Account
+        </h2>
+
+
+        <p class="subtitle">
+            Join thousands of students finding support
+        </p>
+
+
+
+        <!-- MESSAGE BOX -->
+
+        <div
+            class="message-box"
+            id="messageBox"
+        ></div>
+
+
+
+        <!-- =====================================
+             REGISTER FORM
+        ===================================== -->
+
+        <div id="registerForm">
+
+
+            <!-- FULL NAME -->
+
+            <div class="form-group">
+
+                <label for="username">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your full name"
+                    autocomplete="name"
+                >
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                >
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword('password', this)"
+                        aria-label="Show password"
+                        title="Show password"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <div class="password-wrapper">
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Repeat your password"
+                        autocomplete="new-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword('confirmPassword', this)"
+                        aria-label="Show password"
+                        title="Show password"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================
+                 MINDSPEAK IDENTITY
+            ===================================== -->
+
+            <div class="identity-section">
+
+                <div class="identity-title">
+
+                    <span>🌿</span>
+
+                    <span>
+                        Choose Your MindSpeak Identity
+                    </span>
+
+                </div>
+
+
+                <p class="identity-subtitle">
+
+                    Choose a nickname and avatar that you
+                    want others to see. Your real identity
+                    stays private.
+
+                </p>
+
+
+
+                <!-- NICKNAME -->
+
+                <div class="form-group">
+
+                    <label for="nickname">
+                        MindSpeak Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nickname"
+                        placeholder="Choose your nickname"
+                        maxlength="30"
+                        autocomplete="off"
+                    >
+
+                    <small class="identity-hint">
+
+                        3–30 characters. This is the name
+                        other MindSpeak users will see.
+
+                    </small>
+
+                </div>
+
+
+
+                <!-- AVATAR -->
+
+                <div class="form-group">
+
+                    <label>
+                        Choose Your Avatar
+                    </label>
+
+
+                    <div
+                        class="avatar-grid"
+                        id="avatarGrid"
+                    >
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🌱"
+                            onclick="selectAvatar(this)"
+                        >🌱</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🌙"
+                            onclick="selectAvatar(this)"
+                        >🌙</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="⭐"
+                            onclick="selectAvatar(this)"
+                        >⭐</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🦋"
+                            onclick="selectAvatar(this)"
+                        >🦋</button>
+
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="☁️"
+                            onclick="selectAvatar(this)"
+                        >☁️</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🌻"
+                            onclick="selectAvatar(this)"
+                        >🌻</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🌊"
+                            onclick="selectAvatar(this)"
+                        >🌊</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🍃"
+                            onclick="selectAvatar(this)"
+                        >🍃</button>
+
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🌸"
+                            onclick="selectAvatar(this)"
+                        >🌸</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🌈"
+                            onclick="selectAvatar(this)"
+                        >🌈</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="☀️"
+                            onclick="selectAvatar(this)"
+                        >☀️</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🌿"
+                            onclick="selectAvatar(this)"
+                        >🌿</button>
+
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🐻"
+                            onclick="selectAvatar(this)"
+                        >🐻</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🐼"
+                            onclick="selectAvatar(this)"
+                        >🐼</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🦊"
+                            onclick="selectAvatar(this)"
+                        >🦊</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🐨"
+                            onclick="selectAvatar(this)"
+                        >🐨</button>
+
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🐰"
+                            onclick="selectAvatar(this)"
+                        >🐰</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🐱"
+                            onclick="selectAvatar(this)"
+                        >🐱</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🐶"
+                            onclick="selectAvatar(this)"
+                        >🐶</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🦄"
+                            onclick="selectAvatar(this)"
+                        >🦄</button>
+
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="💫"
+                            onclick="selectAvatar(this)"
+                        >💫</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🌌"
+                            onclick="selectAvatar(this)"
+                        >🌌</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="🔥"
+                            onclick="selectAvatar(this)"
+                        >🔥</button>
+
+                        <button
+                            type="button"
+                            class="avatar-option"
+                            data-avatar="💚"
+                            onclick="selectAvatar(this)"
+                        >💚</button>
+
+                    </div>
+
+
+                    <!-- ONLY ONE hidden avatar field -->
+
+                    <input
+                        type="hidden"
+                        id="selectedAvatar"
+                        value=""
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- REGISTER BUTTON -->
+
+            <button
+                class="btn-register"
+                onclick="register()"
+                id="registerBtn"
+                type="button"
+            >
+                Create My Account
+            </button>
+
+
+
+            <!-- LOGIN -->
+
+            <div class="auth-footer">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Log In
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             SUCCESS CARD
+        ===================================== -->
+
+        <div
+            class="success-card"
+            id="successCard"
+        >
+
+            <div
+                class="avatar-big"
+                id="avatarDisplay"
+            ></div>
+
+
+            <h3>
+                Welcome to MindSpeak!
+            </h3>
+
+
+            <p>
+                Your anonymous identity is:
+            </p>
+
+
+            <div
+                class="nickname-display"
+                id="nicknameDisplay"
+            ></div>
+
+
+            <p>
+                This is how others will see you on MindSpeak.
+                Your real identity is completely hidden.
+            </p>
+
+
+            <div class="verify-note">
+
+                ✅ Your account has been created successfully.
+
+                <br><br>
+
+                You can now log in to MindSpeak and start your journey.
+
+            </div>
+
+
+            <button
+                class="btn-register"
+                type="button"
+                onclick="window.location.href='login.html'"
+            >
+                Continue to Login
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+
+    // ========================================================
+    // API
+    // ========================================================
+
+    const API = "http://127.0.0.1:8000";
+
+
+
+    // ========================================================
+    // MESSAGE
+    // ========================================================
+
+    function showMessage(message, type) {
+
+        const box =
+            document.getElementById("messageBox");
+
+        box.textContent = message;
+
+        box.className =
+            `message-box ${type}`;
+
+    }
+
+
+
+    // ========================================================
+    // MINDSPEAK AVATAR SELECTION
+    // ========================================================
+
+    let selectedAvatar = "";
+
+
+    function selectAvatar(button) {
+
+        document
+            .querySelectorAll(".avatar-option")
+            .forEach(option => {
+
+                option.classList.remove("selected");
+
+            });
+
+
+        button.classList.add("selected");
+
+
+        selectedAvatar =
+            button.dataset.avatar;
+
+
+        const avatarInput =
+            document.getElementById("selectedAvatar");
+
+
+        if (avatarInput) {
+
+            avatarInput.value =
+                selectedAvatar;
+
+        }
+
+    }
+
+
+
+    // ========================================================
+    // REGISTER
+    // ========================================================
+
+    async function register() {
+
+
+        // ----------------------------------------------------
+        // GET FORM VALUES
+        // ----------------------------------------------------
+
+        const username =
+            document
+                .getElementById("username")
+                .value
+                .trim();
+
+
+        const email =
+            document
+                .getElementById("email")
+                .value
+                .trim();
+
+
+        const password =
+            document
+                .getElementById("password")
+                .value;
+
+
+        const confirmPassword =
+            document
+                .getElementById("confirmPassword")
+                .value;
+
+
+        const nickname =
+            document
+                .getElementById("nickname")
+                .value
+                .trim();
+
+
+        const avatarInput =
+            document.getElementById("selectedAvatar");
+
+
+        const avatar =
+            avatarInput
+                ? avatarInput.value
+                : selectedAvatar;
+
+
+
+        // ----------------------------------------------------
+        // BASIC VALIDATION
+        // ----------------------------------------------------
+
+        if (
+            !username ||
+            !email ||
+            !password ||
+            !confirmPassword
+        ) {
+
+            showMessage(
+                "Please fill in all fields.",
+                "error"
+            );
+
+            return;
+        }
+
+
+
+        // ----------------------------------------------------
+        // PASSWORD VALIDATION
+        // ----------------------------------------------------
+
+        if (
+            password !== confirmPassword
+        ) {
+
+            showMessage(
+                "Passwords do not match.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        if (
+            password.length < 6
+        ) {
+
+            showMessage(
+                "Password must be at least 6 characters.",
+                "error"
+            );
+
+            return;
+        }
+
+
+
+        // ----------------------------------------------------
+        // MINDSPEAK IDENTITY VALIDATION
+        // ----------------------------------------------------
+
+        if (!nickname) {
+
+            showMessage(
+                "Please choose a MindSpeak name.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        if (nickname.length < 3) {
+
+            showMessage(
+                "Your MindSpeak name must be at least 3 characters.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        if (!avatar) {
+
+            showMessage(
+                "Please choose an avatar.",
+                "error"
+            );
+
+            return;
+        }
+
+
+
+        // ----------------------------------------------------
+        // DISABLE BUTTON
+        // ----------------------------------------------------
+
+        const btn =
+            document.getElementById("registerBtn");
+
+
+        btn.disabled = true;
+
+        btn.textContent =
+            "Creating account...";
+
+
+
+        // ----------------------------------------------------
+        // SEND REQUEST
+        // ----------------------------------------------------
+
+        try {
+
+
+            const res =
+                await fetch(
+                    `${API}/auth/register`,
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify({
+                                username,
+                                email,
+                                password,
+                                nickname,
+                                avatar
+                            })
+                    }
+                );
+
+
+
+            // ------------------------------------------------
+            // READ RESPONSE SAFELY
+            // ------------------------------------------------
+
+            let data = {};
+
+            try {
+
+                data =
+                    await res.json();
+
+            } catch (jsonError) {
+
+                data = {};
+
+            }
+
+
+
+            // ------------------------------------------------
+            // HANDLE HTTP ERRORS
+            // ------------------------------------------------
+
+            if (!res.ok) {
+
+                let errorMessage =
+                    "Registration failed.";
+
+                if (data.detail) {
+
+                    if (typeof data.detail === "string") {
+
+                        errorMessage =
+                            data.detail;
+
+                    } else {
+
+                        errorMessage =
+                            JSON.stringify(
+                                data.detail
+                            );
+
+                    }
+
+                } else if (data.error) {
+
+                    errorMessage =
+                        data.error;
+
+                }
+
+                showMessage(
+                    errorMessage,
+                    "error"
+                );
+
+                btn.disabled = false;
+
+                btn.textContent =
+                    "Create My Account";
+
+                return;
+            }
+
+
+
+            // ------------------------------------------------
+            // BACKEND ERROR
+            // ------------------------------------------------
+
+            if (data.error) {
+
+                showMessage(
+                    data.error,
+                    "error"
+                );
+
+                btn.disabled = false;
+
+                btn.textContent =
+                    "Create My Account";
+
+                return;
+            }
+
+
+
+            // ------------------------------------------------
+            // SHOW SUCCESS CARD
+            // ------------------------------------------------
+
+            document
+                .getElementById("registerForm")
+                .style.display = "none";
+
+
+            document
+                .getElementById("messageBox")
+                .style.display = "none";
+
+
+            document
+                .getElementById("avatarDisplay")
+                .textContent =
+                    data.avatar || avatar;
+
+
+            document
+                .getElementById("nicknameDisplay")
+                .textContent =
+                    data.nickname || nickname;
+
+
+            document
+                .getElementById("successCard")
+                .classList
+                .add("show");
+
+
+        } catch (err) {
+
+
+            console.error(
+                "Registration error:",
+                err
+            );
+
+
+            showMessage(
+                "Unable to connect to the server. Please make sure the MindSpeak backend is running.",
+                "error"
+            );
+
+
+            btn.disabled = false;
+
+            btn.textContent =
+                "Create My Account";
+
+        }
+
+    }
+
+
+
+    // ========================================================
+    // SHOW / HIDE PASSWORD
+    // ========================================================
+
+    function togglePassword(
+        inputId,
+        button
+    ) {
+
+
+        const input =
+            document.getElementById(inputId);
+
+
+        if (!input) {
+
+            return;
+
+        }
+
+
+        if (
+            input.type === "password"
+        ) {
+
+
+            // SHOW PASSWORD
+
+            input.type = "text";
+
+            button.textContent = "🙈";
+
+            button.setAttribute(
+                "aria-label",
+                "Hide password"
+            );
+
+            button.setAttribute(
+                "title",
+                "Hide password"
+            );
+
+
+        } else {
+
+
+            // HIDE PASSWORD
+
+            input.type = "password";
+
+            button.textContent = "👁";
+
+            button.setAttribute(
+                "aria-label",
+                "Show password"
+            );
+
+            button.setAttribute(
+                "title",
+                "Show password"
+            );
+
+        }
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>

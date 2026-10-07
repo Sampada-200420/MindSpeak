@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MindSpeak | Safe Space</title>
+
+ <link rel="stylesheet" href="safe-space.css">
+    <link rel="stylesheet" href="../navbar.css">
+
+<link rel="stylesheet" href="../footer.css">
+
+
+    <!-- SAFE SPACE -->
+
+
+
+    <!-- FOOTER -->
+
+    
+    <!-- GOOGLE FONTS -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+
+<div id="navbar-container"></div>
+
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<!-- =========================
+     SAFE SPACE HERO
+========================= -->
+<section class="safe-space-hero">
+
+    <div class="safe-space-hero-image">
+        <img
+            src="images/safe-space/safespace.jpg"
+            alt="A young woman sitting with her dog"
+        >
+    </div>
+
+    <div class="safe-space-hero-overlay"></div>
+
+    <div class="safe-space-hero-content">
+
+        <span class="safe-space-eyebrow">
+            🌿 A SPACE TO BE HEARD
+        </span>
+
+        <h1>
+            You're not <span>alone.</span>
+        </h1>
+
+        <p class="safe-space-hero-subtitle">
+            Whatever you're carrying right now, you don't
+            have to carry it alone.
+        </p>
+
+        <p class="safe-space-hero-description">
+            Share anonymously. Feel understood. Find support
+            when you need it.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- =========================================================
+     MAIN SAFE SPACE AREA
+========================================================= -->
+
+<main class="safe-space-main">
+
+
+    <!-- =====================================================
+         LEFT SIDEBAR
+    ====================================================== -->
+
+    <aside class="safe-space-sidebar">
+
+
+        <!-- FILTER POSTS -->
+
+        <div class="safe-space-filter-card">
+
+
+            <div class="safe-space-sidebar-title">
+
+                <h2>
+                    <i class="fa-solid fa-filter"></i>
+                    Filter Posts
+                </h2>
+
+            </div>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="safe-space-filter-group">
+
+                <button
+                    type="button"
+                    class="safe-space-filter-heading"
+                >
+
+                    <span>
+                        Category
+                    </span>
+
+                    <i class="fa-solid fa-chevron-up"></i>
+
+                </button>
+
+
+                <div class="safe-space-category-list">
+
+
+                    <button
+                        type="button"
+                        class="safe-space-category-btn active"
+                        data-safe-space-category="all"
+                    >
+                        All Categories
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-category-btn"
+                        data-safe-space-category="family"
+                    >
+                        Family
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-category-btn"
+                        data-safe-space-category="academic"
+                    >
+                        Studies
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-category-btn"
+                        data-safe-space-category="relationships"
+                    >
+                        Relationships
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-category-btn"
+                        data-safe-space-category="work"
+                    >
+                        Work
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-category-btn"
+                        data-safe-space-category="self-growth"
+                    >
+                        Self-Growth
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-category-btn"
+                        data-safe-space-category="loneliness"
+                    >
+                        Loneliness
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-category-btn"
+                        data-safe-space-category="other"
+                    >
+                        Other
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SORT -->
+
+            <div class="safe-space-filter-group sort-group">
+
+
+                <button
+                    type="button"
+                    class="safe-space-filter-heading"
+                >
+
+                    <span>
+                        Sort By
+                    </span>
+
+                    <i class="fa-solid fa-chevron-up"></i>
+
+                </button>
+
+
+                <div class="safe-space-sort-list">
+
+
+                    <button
+                        type="button"
+                        class="safe-space-sort-btn active"
+                        data-safe-space-sort="relevant"
+                    >
+                        Most Relevant
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-sort-btn"
+                        data-safe-space-sort="liked"
+                    >
+                        Most Liked
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-sort-btn"
+                        data-safe-space-sort="latest"
+                    >
+                        Latest
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="safe-space-sort-btn"
+                        data-safe-space-sort="my-mood"
+                    >
+                        My Mood
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         CENTER — ANONYMOUS WALL
+    ====================================================== -->
+
+    <section class="safe-space-wall">
+
+
+        <!-- WALL HEADER -->
+
+        <div class="safe-space-wall-header">
+
+
+            <div class="safe-space-wall-title">
+
+
+                <div class="safe-space-wall-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h2>
+                        Anonymous Wall
+                    </h2>
+
+                    <p>
+                        Stories from people who understand.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="safe-space-wall-status">
+
+
+                <span
+                    class="safe-space-current-filter"
+                    id="safeSpaceCurrentFilter"
+                >
+                    <i class="fa-solid fa-face-sad-tear"></i>
+                    All posts
+                </span>
+
+
+                <span
+                    class="safe-space-post-count"
+                    data-post-count
+                >
+                    0 posts
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- POSTS -->
+
+        <div
+            id="postsContainer"
+            class="posts-container"
+        >
+
+            <div class="empty-posts">
+
+                <p>
+                    Loading community voices...
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RIGHT SIDEBAR
+    ====================================================== -->
+
+    <aside class="safe-space-support-sidebar">
+
+
+        <!-- MOOD GUIDE -->
+
+        <article class="safe-space-support-card mood-guide-card">
+
+
+            <div class="safe-space-support-image mood-guide-image">
+
+    <img
+        src="images/safe-space/mood-guide.jpg"
+        alt="MindSpeak Mood Guide"
+    >
+
+</div>
+
+
+            <div class="safe-space-support-content">
+
+                <h3>
+                    View My Mood Guide
+                </h3>
+
+                <p>
+                    Understand what you're feeling
+                    and explore gentle ways to cope.
+                </p>
+
+
+                <a
+                    href="mood-guide.html"
+                    class="safe-space-support-link"
+                >
+
+                    Explore Mood Guide
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- MENTOR -->
+
+        <article class="safe-space-support-card">
+
+
+            <div class="safe-space-support-image">
+
+                <img
+                    src="images/hero/mentor.jpg"
+                    alt="Talk to a MindSpeak mentor"
+                >
+
+            </div>
+
+
+            <div class="safe-space-support-content">
+
+                <h3>
+                    Talk to a Mentor
+                </h3>
+
+                <p>
+                    Chat with a trained MindSpeak
+                    mentor in a safe and supportive space.
+                </p>
+
+
+                <a
+                    href="mentor/mentor-support.html"
+                    class="safe-space-support-button"
+                >
+
+                    Talk to a Mentor
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- CHATBOT -->
+
+        <article class="safe-space-support-card">
+
+
+            <div class="safe-space-support-image">
+
+                <img
+                    src="images/chatbot/Muna.jpg"
+                    alt="MindSpeak chatbot"
+                >
+
+            </div>
+
+
+            <div class="safe-space-support-content">
+
+                <h3>
+                    Talk to Our Chatbot
+                </h3>
+
+                <p>
+                    Need someone to talk to?
+                    Chat with our AI support anytime.
+                </p>
+
+
+                <a
+                    href="chatbot/chatbot.html"
+                    class="safe-space-support-button"
+                >
+
+                    Chat Now
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+
+<article
+    class="safe-space-toolkit-card"
+    id="safeSpaceToolkitCard"
+>
+
+    <!-- TOOLKIT IMAGE -->
+
+    <div class="safe-space-toolkit-image">
+
+        <img
+            id="safeSpaceToolkitImage"
+            src="images/Toolkit/anxiety.jpg"
+            alt="MindSpeak Toolkit"
+        >
+
+    </div>
+
+
+    <!-- TOOLKIT HEADER -->
+
+    <div class="safe-space-toolkit-header">
+
+        <div class="safe-space-toolkit-leaf">
+            🌿
+        </div>
+
+        <div>
+
+            <h3 id="safeSpaceToolkitTitle">
+                Your Toolkit
+            </h3>
+
+            <p id="safeSpaceToolkitDescription">
+                Small tools for difficult moments.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOOLKIT QUICK LINKS -->
+
+    <div class="safe-space-toolkit-grid">
+
+        <a
+            href="Toolkit/toolkit.html"
+            class="safe-space-toolkit-item"
+            id="safeSpaceToolkitLink1"
+        >
+
+            <i class="fa-solid fa-water"></i>
+
+            <span id="safeSpaceToolkitText1">
+                Calm<br>
+                Your Mind
+            </span>
+
+        </a>
+
+
+        <a
+            href="Toolkit/toolkit.html"
+            class="safe-space-toolkit-item"
+            id="safeSpaceToolkitLink2"
+        >
+
+            <i class="fa-solid fa-seedling"></i>
+
+            <span id="safeSpaceToolkitText2">
+                Ground<br>
+                Yourself
+            </span>
+
+        </a>
+
+
+        <a
+            href="Toolkit/toolkit.html"
+            class="safe-space-toolkit-item"
+            id="safeSpaceToolkitLink3"
+        >
+
+            <i class="fa-solid fa-brain"></i>
+
+            <span id="safeSpaceToolkitText3">
+                Manage<br>
+                Your Thoughts
+            </span>
+
+        </a>
+
+
+        <a
+            href="Toolkit/toolkit.html"
+            class="safe-space-toolkit-item"
+            id="safeSpaceToolkitLink4"
+        >
+
+            <i class="fa-solid fa-sun"></i>
+
+            <span id="safeSpaceToolkitText4">
+                Small<br>
+                Daily Steps
+            </span>
+
+        </a>
+
+    </div>
+
+
+    <!-- FULL TOOLKIT BUTTON -->
+
+    <a
+        href="Toolkit/toolkit.html"
+        class="safe-space-toolkit-button"
+        id="safeSpaceToolkitButton"
+    >
+
+        Explore Full Toolkit
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</article>
+    </aside>
+
+
+</main>
+
+
+
+<!-- ==================== IMMEDIATE SUPPORT ==================== -->
+<section class="immediate-support-section">
+
+    <div class="immediate-support-header">
+        <span class="immediate-support-eyebrow">
+            Immediate Support
+        </span>
+
+        <h2>Help is available when you need it.</h2>
+
+        <p>
+            If you feel unsafe, overwhelmed, or need someone to talk to,
+            these Nepal-based services can help you reach support.
+        </p>
+    </div>
+
+
+    <div class="immediate-support-grid">
+
+        <!-- Nepal Police -->
+        <a href="tel:100" class="immediate-support-card police-card">
+
+            <div class="immediate-support-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div class="immediate-support-content">
+                <span class="immediate-support-label">
+                    Emergency Support
+                </span>
+
+                <h3>Nepal Police</h3>
+
+                <p>
+                    For immediate danger or when you need emergency
+                    assistance from the police.
+                </p>
+
+                <div class="immediate-support-contact">
+                    <span>Police Control</span>
+                    <strong>100</strong>
+                </div>
+            </div>
+
+            <span class="immediate-support-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+
+        </a>
+
+
+        <!-- Psychosocial Support -->
+        <a href="tel:16600102005" class="immediate-support-card psychosocial-card">
+
+            <div class="immediate-support-icon">
+                <i class="fa-solid fa-hands-holding-circle"></i>
+            </div>
+
+            <div class="immediate-support-content">
+                <span class="immediate-support-label">
+                    Talk &amp; Support
+                </span>
+
+                <h3>Psychosocial Support</h3>
+
+                <p>
+                    TPO Nepal provides psychosocial support, emotional
+                    support, listening, and counseling services.
+                </p>
+
+                <div class="immediate-support-contact">
+                    <span>TPO Nepal</span>
+                    <strong>1660 010 2005</strong>
+                </div>
+            </div>
+
+            <span class="immediate-support-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+
+        </a>
+
+
+        <!-- Mental Health Crisis -->
+        <a href="tel:1166" class="immediate-support-card crisis-card">
+
+            <div class="immediate-support-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+            </div>
+
+            <div class="immediate-support-content">
+                <span class="immediate-support-label">
+                    Crisis Support
+                </span>
+
+                <h3>Mental Health Crisis Support</h3>
+
+                <p>
+                    National suicide prevention helpline operated through
+                    Mental Hospital Lagankhel.
+                </p>
+
+                <div class="immediate-support-contact">
+                    <span>National Helpline</span>
+                    <strong>1166</strong>
+                </div>
+            </div>
+
+            <span class="immediate-support-arrow">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<div id="footer"></div>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/safe-space.js"></script>
+
+</body>
+
+</html>

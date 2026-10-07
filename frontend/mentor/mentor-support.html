@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mentor Support | MindSpeak</title>
+
+    <!-- Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Navbar CSS -->
+<link rel="stylesheet" href="../../navbar.css">
+
+<!-- Footer CSS -->
+<link rel="stylesheet" href="../../footer.css">
+
+<!-- Mentor Support CSS -->
+<link rel="stylesheet" href="mentor-support.css">
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- NAVBAR -->
+    <!-- ============================= -->
+
+    <div id="navbar-container"></div>
+
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main class="mentor-support-page">
+
+        <!-- Hero Section -->
+        <section class="mentor-hero">
+
+            <div class="mentor-hero-content">
+
+                <span class="mentor-eyebrow">
+                    <i class="fa-solid fa-seedling"></i>
+                    PEER SUPPORT
+                </span>
+
+                <h1>
+                    Talk to someone who understands.
+                </h1>
+
+                <p>
+                    Connect with a MindSpeak mentor who is here
+                    to listen, support you, and walk alongside you.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- INTRODUCTION -->
+        <!-- ============================= -->
+
+        <section class="mentor-introduction">
+
+            <div class="section-heading">
+
+                <span>
+                    <i class="fa-regular fa-comments"></i>
+                    FIND YOUR MENTOR
+                </span>
+
+                <h2>
+                    Someone is here to listen.
+                </h2>
+
+                <p>
+                    Browse our approved peer mentors and find
+                    someone you feel comfortable talking to.
+                </p>
+
+            </div>
+
+
+            <!-- Mentor Summary -->
+
+            <div class="mentor-summary">
+
+                <!-- Total Mentors -->
+
+                <div class="summary-item">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+
+                    <div>
+                        <strong id="mentorCount">
+                            —
+                        </strong>
+
+                        <span>
+                            Mentors available
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <!-- Online Mentors -->
+
+                <div class="summary-item">
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+
+                    <div>
+                        <strong id="onlineMentorCount">
+                            —
+                        </strong>
+
+                        <span>
+                            Online now
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- MENTOR LIST -->
+        <!-- ============================= -->
+
+        <section class="mentor-list-section">
+
+            <!-- <div class="mentor-list-header">
+
+                <div>
+
+                    <h2>
+                        Available Mentors
+                    </h2>
+
+                    <p>
+                        Choose a mentor you'd feel comfortable
+                        talking to.
+                    </p>
+
+                </div>
+
+            </div> -->
+            <div class="mentor-list-header">
+
+    <div>
+
+        <h2>
+            Available Mentors
+        </h2>
+
+        <p>
+            Choose a mentor you'd feel comfortable
+            talking to.
+        </p>
+
+    </div>
+
+    <a href="mentor-conversations.html" class="my-conversations-btn">
+        <i class="fa-regular fa-comments"></i>
+        My Conversations
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</div>
+
+            <!-- Mentor Cards -->
+
+            <div
+                class="mentor-grid"
+                id="mentorGrid"
+            >
+
+                <!-- Loading -->
+
+                <div
+                    class="mentor-loading"
+                    id="mentorLoading"
+                >
+
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+
+                    <p>
+                        Finding available mentors...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ============================= -->
+<!-- BECOME A MENTOR -->
+<!-- ============================= -->
+
+<section class="mentor-application-section">
+
+    <div class="mentor-application-content">
+
+        <div class="mentor-application-icon">
+            <i class="fa-solid fa-hands-holding-circle"></i>
+        </div>
+
+        <div class="mentor-application-text">
+
+            <span class="mentor-application-eyebrow">
+                <i class="fa-solid fa-seedling"></i>
+                WANT TO HELP OTHERS?
+            </span>
+
+            <h2>
+                Become a MindSpeak Mentor
+            </h2>
+
+            <p>
+                If you have experience supporting others and want to
+                make a positive difference in someone's journey,
+                you can apply to become a MindSpeak peer mentor.
+            </p>
+
+            <p class="mentor-application-note">
+                Mentors are peer supporters who listen, encourage,
+                and share their experiences. All applications are
+                reviewed before approval.
+            </p>
+
+            <a href="mentor-application.html" class="mentor-apply-btn">
+                <i class="fa-solid fa-user-plus"></i>
+                Apply to Become a Mentor
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+            <!-- ============================= -->
+            <!-- EMPTY STATE -->
+            <!-- ============================= -->
+
+            <div
+                class="mentor-empty"
+                id="mentorEmpty"
+                style="display: none;"
+            >
+
+                <div class="empty-icon">
+                    <i class="fa-regular fa-face-sad-tear"></i>
+                </div>
+
+                <h3>
+                    No mentors are available right now.
+                </h3>
+
+                <p>
+                    Please check again later. Someone will be
+                    here when you need them.
+                </p>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- ERROR STATE -->
+            <!-- ============================= -->
+
+            <div
+                class="mentor-error"
+                id="mentorError"
+                style="display: none;"
+            >
+
+                <div class="error-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <h3>
+                    Unable to load mentors.
+                </h3>
+
+                <p>
+                    Something went wrong while loading mentor
+                    support. Please try again.
+                </p>
+
+                <button
+                    type="button"
+                    id="mentorRetryBtn"
+                >
+                    <i class="fa-solid fa-rotate-right"></i>
+                    Try Again
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- SAFETY NOTE -->
+        <!-- ============================= -->
+
+        <section class="mentor-safety-note">
+
+            <div class="safety-icon">
+                <i class="fa-solid fa-shield-heart"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    A safe space for peer support
+                </h3>
+
+                <p>
+                    MindSpeak mentors are peer supporters, not
+                    professional therapists or emergency responders.
+                    If you are in immediate danger or facing an
+                    emergency, please contact your local emergency
+                    services or a trusted person.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <!-- FOOTER -->
+<div id="footer"></div>
+
+<script src="../js/navbar.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/mentor-support.js"></script>
+</body>
+
+</html>

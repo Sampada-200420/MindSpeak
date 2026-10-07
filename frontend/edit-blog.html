@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Blog | MindSpeak</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="css/edit-blog.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         NAVBAR
+    ================================ -->
+
+    <div id="navbar"></div>
+
+
+    <!-- ================================
+         MAIN CONTENT
+    ================================ -->
+
+    <main class="edit-blog-page">
+
+
+        <!-- ================================
+             PAGE HEADER
+        ================================ -->
+
+        <section class="edit-blog-header">
+
+            <span class="eyebrow">
+                MINDSPEAK • EDIT
+            </span>
+
+            <h1>
+                Edit Your Blog
+            </h1>
+
+            <p>
+                Make your changes, refine your thoughts,
+                and resubmit your story for review.
+            </p>
+
+        </section>
+
+
+        <!-- ================================
+             BLOG EDITOR
+        ================================ -->
+
+        <section class="blog-editor">
+
+            <div class="editor-card">
+
+
+                <!-- EDITOR HEADING -->
+
+                <div class="editor-heading">
+
+                    <span class="editor-icon">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </span>
+
+                    <div>
+
+                        <h2>
+                            Refine Your Story
+                        </h2>
+
+                        <p>
+                            Review your blog and make the necessary changes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     BLOG TITLE
+                ================================ -->
+
+                <div class="form-group">
+
+                    <label for="blog-title">
+                        Blog Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="blog-title"
+                        placeholder="Enter your blog title..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- ================================
+                     CATEGORY
+                ================================ -->
+
+                <div class="form-group">
+
+                    <label for="blog-category">
+                        Category
+                    </label>
+
+                    <select id="blog-category">
+
+                        <option value="">
+                            Choose a category
+                        </option>
+
+                        <option value="Mental Health">
+                            Mental Health
+                        </option>
+
+                        <option value="Self Growth">
+                            Self Growth
+                        </option>
+
+                        <option value="Relationships">
+                            Relationships
+                        </option>
+
+                        <option value="Student Life">
+                            Student Life
+                        </option>
+
+                        <option value="Wellbeing">
+                            Wellbeing
+                        </option>
+
+                        <option value="Personal Stories">
+                            Personal Stories
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ================================
+                     YOUR STORY
+                ================================ -->
+
+                <div class="form-group">
+
+                    <label for="blog-content">
+                        Your Story
+                    </label>
+
+                    <textarea
+                        id="blog-content"
+                        placeholder="Edit your thoughts here..."
+                    ></textarea>
+
+
+                    <!-- WORD & CHARACTER COUNT -->
+
+                    <div class="editor-info">
+
+                        <span id="word-count">
+                            0 words
+                        </span>
+
+                        <span id="char-count">
+                            0 characters
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================================
+                     BLOG ACTIONS
+                ================================ -->
+
+                <div class="blog-actions">
+
+                    <button
+                        type="button"
+                        id="cancel-edit"
+                        class="btn-secondary"
+                    >
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        Cancel
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="resubmit-blog"
+                        class="btn-primary"
+                    >
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        Resubmit for Review
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================
+         FOOTER
+    ================================ -->
+
+    <div id="footer"></div>
+
+
+    <!-- ================================
+         JAVASCRIPT
+    ================================ -->
+
+    <script src="js/edit-blog.js"></script>
+
+</body>
+</html>

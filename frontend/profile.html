@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Profile | MindSpeak</title>
+
+
+    <!-- NAVBAR -->
+
+    <link
+        rel="stylesheet"
+        href="navbar.css"
+    >
+
+
+    <!-- FOOTER -->
+
+    <link
+        rel="stylesheet"
+        href="footer.css"
+    >
+
+
+    <!-- PROFILE CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/profile.css"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         NAVBAR
+    =========================================== -->
+
+    <div id="navbar-placeholder"></div>
+
+
+
+    <!-- ==========================================
+         MAIN PROFILE PAGE
+    =========================================== -->
+
+    <main class="profile-page">
+
+
+        <!-- ==========================================
+             PROFILE HERO
+        =========================================== -->
+
+        <section class="profile-hero">
+
+            <div class="profile-hero-content">
+
+                <span class="hero-label">
+
+                    <i class="fa-regular fa-user"></i>
+
+                    My Profile
+
+                </span>
+
+
+                <h1>
+                    Your MindSpeak Profile
+                </h1>
+
+
+                <p>
+                    Manage your anonymous identity and
+                    personal MindSpeak settings.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             PROFILE SECTION
+        =========================================== -->
+
+        <section class="profile-section">
+
+
+            <!-- ======================================
+                 LOADING STATE
+            ======================================= -->
+
+            <div
+                id="loadingState"
+                class="state-message"
+            >
+
+                <i class="fa-solid fa-spinner fa-spin"></i>
+
+                <p>
+                    Loading your profile...
+                </p>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 ERROR STATE
+            ======================================= -->
+
+            <div
+                id="errorState"
+                class="state-message error-state"
+                style="display: none;"
+            >
+
+                <i
+                    class="fa-solid fa-circle-exclamation"
+                ></i>
+
+
+                <h3>
+                    Unable to load profile
+                </h3>
+
+
+                <p id="errorMessage">
+                    Something went wrong while loading
+                    your profile.
+                </p>
+
+
+                <button
+                    id="retryBtn"
+                    class="retry-btn"
+                    type="button"
+                >
+                    Try Again
+                </button>
+
+            </div>
+
+
+
+            <!-- ======================================
+                 PROFILE CARD
+            ======================================= -->
+
+            <div
+                id="profileCard"
+                class="profile-card"
+                style="display: none;"
+            >
+
+
+                <!-- ==================================
+                     PROFILE HEADER
+                =================================== -->
+
+                <div class="profile-top">
+
+
+                    <!-- AVATAR -->
+
+                    <div class="avatar-wrapper">
+
+                        <div
+                            id="profileAvatar"
+                            class="profile-avatar profile-avatar-emoji"
+                            aria-label="MindSpeak avatar"
+                        >
+                            🌱
+                        </div>
+
+
+                        <div
+                            id="avatarFallback"
+                            class="avatar-fallback"
+                            style="display: none;"
+                        >
+
+                            <i
+                                class="fa-solid fa-user"
+                            ></i>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PROFILE HEADING -->
+
+                    <div class="profile-heading">
+
+                        <span
+                            id="profileRole"
+                            class="profile-role"
+                        >
+                            User
+                        </span>
+
+
+                        <h2 id="profileNickname">
+                            —
+                        </h2>
+
+
+                        <p>
+
+                            <i
+                                class="fa-regular fa-heart"
+                            ></i>
+
+                            Your anonymous identity
+                            on MindSpeak
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="profile-divider"></div>
+
+
+
+                <!-- ==================================
+                     MINDSPEAK IDENTITY
+                =================================== -->
+
+                <div class="identity-settings">
+
+
+                    <div class="identity-settings-heading">
+
+                        <div>
+
+                            <span class="section-label">
+
+                                <i
+                                    class="fa-regular fa-id-card"
+                                ></i>
+
+                                MindSpeak Identity
+
+                            </span>
+
+
+                            <h3>
+                                How others see you
+                            </h3>
+
+
+                            <p>
+                                Your MindSpeak name and avatar
+                                are visible to other users.
+                                Your real account information
+                                remains private.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         NICKNAME EDIT
+                    =================================== -->
+
+                    <div class="identity-field">
+
+
+                        <label
+                            for="nicknameInput"
+                            class="identity-field-label"
+                        >
+
+                            <i
+                                class="fa-regular fa-user"
+                            ></i>
+
+                            MindSpeak Name
+
+                        </label>
+
+
+                        <div class="nickname-edit-row">
+
+                            <input
+                                type="text"
+                                id="nicknameInput"
+                                class="nickname-input"
+                                maxlength="30"
+                                autocomplete="off"
+                                placeholder="Choose your MindSpeak name"
+                            >
+
+
+                            <button
+                                type="button"
+                                id="saveNicknameBtn"
+                                class="identity-save-btn"
+                            >
+
+                                <i
+                                    class="fa-solid fa-check"
+                                ></i>
+
+                                Save Name
+
+                            </button>
+
+                        </div>
+
+
+                        <p class="identity-help">
+
+                            3–30 characters. This is the
+                            anonymous name other MindSpeak
+                            users will see.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         AVATAR SELECTION
+                    =================================== -->
+
+                    <div class="identity-field">
+
+
+                        <div class="identity-field-label">
+
+                            <i
+                                class="fa-regular fa-image"
+                            ></i>
+
+                            Choose Your Avatar
+
+                        </div>
+
+
+                        <p class="identity-help avatar-help">
+
+                            Choose one of the approved
+                            MindSpeak avatars.
+
+                        </p>
+
+
+
+                        <!-- AVATAR OPTIONS -->
+
+                        <div
+                            class="avatar-options"
+                            id="avatarOptions"
+                        >
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🌱"
+                                aria-label="Sprout avatar"
+                            >
+                                🌱
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🌙"
+                                aria-label="Moon avatar"
+                            >
+                                🌙
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="⭐"
+                                aria-label="Star avatar"
+                            >
+                                ⭐
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🦋"
+                                aria-label="Butterfly avatar"
+                            >
+                                🦋
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="☁️"
+                                aria-label="Cloud avatar"
+                            >
+                                ☁️
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🌻"
+                                aria-label="Sunflower avatar"
+                            >
+                                🌻
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🌊"
+                                aria-label="Wave avatar"
+                            >
+                                🌊
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🍃"
+                                aria-label="Leaf avatar"
+                            >
+                                🍃
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🌸"
+                                aria-label="Blossom avatar"
+                            >
+                                🌸
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🌈"
+                                aria-label="Rainbow avatar"
+                            >
+                                🌈
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="☀️"
+                                aria-label="Sun avatar"
+                            >
+                                ☀️
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🌿"
+                                aria-label="Herb avatar"
+                            >
+                                🌿
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🐻"
+                                aria-label="Bear avatar"
+                            >
+                                🐻
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🐼"
+                                aria-label="Panda avatar"
+                            >
+                                🐼
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🦊"
+                                aria-label="Fox avatar"
+                            >
+                                🦊
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🐨"
+                                aria-label="Koala avatar"
+                            >
+                                🐨
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🐰"
+                                aria-label="Rabbit avatar"
+                            >
+                                🐰
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🐱"
+                                aria-label="Cat avatar"
+                            >
+                                🐱
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🐶"
+                                aria-label="Dog avatar"
+                            >
+                                🐶
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🦄"
+                                aria-label="Unicorn avatar"
+                            >
+                                🦄
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="💫"
+                                aria-label="Sparkles avatar"
+                            >
+                                💫
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🌌"
+                                aria-label="Galaxy avatar"
+                            >
+                                🌌
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="🔥"
+                                aria-label="Fire avatar"
+                            >
+                                🔥
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="avatar-option"
+                                data-avatar="💚"
+                                aria-label="Green heart avatar"
+                            >
+                                💚
+                            </button>
+
+                        </div>
+
+
+
+                        <!-- SELECTED AVATAR -->
+
+                        <div
+                            id="avatarSelection"
+                            class="avatar-selection"
+                            style="display: none;"
+                        >
+
+                            <div class="selected-avatar-preview">
+
+                                <span>
+                                    Selected
+                                </span>
+
+
+                                <div
+                                    id="selectedAvatarPreview"
+                                ></div>
+
+                            </div>
+
+
+                            <div class="selected-avatar-info">
+
+                                <strong
+                                    id="selectedAvatarName"
+                                >
+                                    Avatar selected
+                                </strong>
+
+
+                                <p
+                                    id="selectedAvatarDescription"
+                                >
+                                    Your selected avatar
+                                    will be saved to your
+                                    MindSpeak identity.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                        <!-- ==================================
+     PROFILE PHOTO
+=================================== -->
+
+<div class="profile-photo-upload">
+
+    <div
+        id="profilePhotoPreview"
+        class="profile-photo-preview"
+    >
+        <i class="fa-solid fa-camera"></i>
+    </div>
+
+    <div class="profile-photo-upload-content">
+
+        <strong>
+            Add a profile picture
+        </strong>
+
+        <p>
+            Choose a photo you'd like other
+            MindSpeak users to see.
+        </p>
+
+    </div>
+
+    <div class="profile-photo-upload-actions">
+
+        <input
+            type="file"
+            id="profilePhotoInput"
+            accept="image/jpeg,image/png,image/webp"
+            hidden
+        >
+
+        <button
+            type="button"
+            id="chooseProfilePhotoBtn"
+            class="profile-photo-btn"
+        >
+            <i class="fa-solid fa-upload"></i>
+            Choose Photo
+        </button>
+
+    </div>
+
+</div>
+
+
+<div
+    id="profilePhotoStatus"
+    class="avatar-status"
+    style="display: none;"
+></div>
+
+                        <!-- SAVE AVATAR -->
+
+                        <button
+                            type="button"
+                            id="saveAvatarBtn"
+                            class="save-avatar-btn"
+                            disabled
+                        >
+
+                            <i
+                                class="fa-solid fa-check"
+                            ></i>
+
+                            Save Avatar
+
+                        </button>
+
+
+
+                        <!-- AVATAR STATUS -->
+
+                        <div
+                            id="avatarStatus"
+                            class="avatar-status"
+                            style="display: none;"
+                        ></div>
+
+                    </div>
+
+
+
+                    <!-- ==================================
+                         IDENTITY STATUS
+                    =================================== -->
+
+                    <div
+                        id="identityStatus"
+                        class="identity-status"
+                        style="display: none;"
+                    ></div>
+
+
+
+                    <!-- ==================================
+                         DELETE IDENTITY
+                    =================================== -->
+
+                    <div class="identity-delete-section">
+
+                        <div class="identity-delete-heading">
+
+                            <span
+                                class="section-label"
+                            >
+
+                                <i
+                                    class="fa-solid fa-trash-can"
+                                ></i>
+
+                                Identity Controls
+
+                            </span>
+
+
+                            <p>
+                                You can remove either part
+                                of your anonymous identity
+                                whenever you want.
+                            </p>
+
+                        </div>
+
+
+                        <div class="identity-delete-actions">
+
+
+                            <button
+                                type="button"
+                                id="deleteNicknameBtn"
+                                class="delete-identity-btn"
+                            >
+
+                                <i
+                                    class="fa-regular fa-user"
+                                ></i>
+
+                                Delete Name
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                id="deleteAvatarBtn"
+                                class="delete-identity-btn"
+                            >
+
+                                <i
+                                    class="fa-regular fa-image"
+                                ></i>
+
+                                Delete Avatar
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="profile-divider"></div>
+
+
+
+                <!-- ==================================
+                     PROFILE DETAILS
+                =================================== -->
+
+                <div class="profile-details">
+
+
+                    <!-- NICKNAME -->
+
+                    <div class="profile-field">
+
+                        <span class="field-label">
+
+                            <i
+                                class="fa-regular fa-user"
+                            ></i>
+
+                            Nickname
+
+                        </span>
+
+
+                        <span
+                            id="detailNickname"
+                            class="field-value"
+                        >
+                            —
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- ROLE -->
+
+                    <div class="profile-field">
+
+                        <span class="field-label">
+
+                            <i
+                                class="fa-solid fa-shield-halved"
+                            ></i>
+
+                            Account Role
+
+                        </span>
+
+
+                        <span
+                            id="detailRole"
+                            class="field-value"
+                        >
+                            —
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- MEMBER SINCE -->
+
+                    <div class="profile-field">
+
+                        <span class="field-label">
+
+                            <i
+                                class="fa-regular fa-calendar"
+                            ></i>
+
+                            Member Since
+
+                        </span>
+
+
+                        <span
+                            id="detailCreatedAt"
+                            class="field-value"
+                        >
+                            —
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     MENTOR SUPPORT
+                =================================== -->
+
+                <div class="mentor-application-box">
+
+
+                    <div class="mentor-application-icon">
+                        🌿
+                    </div>
+
+
+                    <div class="mentor-application-content">
+
+                        <span class="section-label">
+
+                            <i
+                                class="fa-solid fa-hands-holding-circle"
+                            ></i>
+
+                            Give Back
+
+                        </span>
+
+
+                        <h3>
+                            Become a MindSpeak Mentor
+                        </h3>
+
+
+                        <p>
+                            Want to support other students?
+                            Apply to become a peer mentor
+                            and help create a safe and
+                            supportive space for others.
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="mentor-application-btn"
+                            onclick="window.location.href='mentor/mentor-application.html'"
+                        >
+
+                            Apply to Become a Mentor
+
+                            <i
+                                class="fa-solid fa-arrow-right"
+                            ></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================
+                     PRIVACY NOTE
+                =================================== -->
+
+                <div class="privacy-note">
+
+
+                    <i
+                        class="fa-solid fa-lock"
+                    ></i>
+
+
+                    <div>
+
+                        <strong>
+                            Your privacy matters.
+                        </strong>
+
+
+                        <p>
+                            MindSpeak uses anonymous
+                            identities to help keep your
+                            personal information private.
+                            Your real account name and email
+                            are not used as your public
+                            MindSpeak identity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <div id="footer"></div>
+
+
+
+    <!-- ==========================================
+         SCRIPTS
+    =========================================== -->
+
+    <script src="js/navbar.js"></script>
+
+    <script src="js/footer.js"></script>
+
+    <script src="js/profile.js"></script>
+
+
+</body>
+
+</html>

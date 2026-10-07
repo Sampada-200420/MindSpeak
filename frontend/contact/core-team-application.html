@@ -1,0 +1,1624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Core Team Application | MindSpeak</title>
+
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", Arial, sans-serif;
+            background: #f7f8f6;
+            color: #10263e;
+            line-height: 1.6;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ==================================================
+           HERO
+        ================================================== */
+
+        .application-hero {
+            background: #10263e;
+            color: white;
+            min-height: 430px;
+            padding: 85px 7% 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .application-hero::after {
+            content: "";
+            position: absolute;
+            width: 280px;
+            height: 280px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 50%;
+            right: -80px;
+            bottom: -130px;
+        }
+
+        .application-hero-content {
+            max-width: 850px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #a9d5bd;
+            margin-bottom: 16px;
+        }
+
+        .application-hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            line-height: 1.02;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+        }
+
+        .application-hero h1 em {
+            color: #8fc6a8;
+            font-style: normal;
+        }
+
+        .application-hero p {
+            max-width: 670px;
+            color: #d9e3eb;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 13px 21px;
+            background: white;
+            color: #10263e;
+            border: 1px solid white;
+            font-size: 14px;
+            font-weight: 700;
+            transition: 0.2s ease;
+        }
+
+        .hero-button:hover {
+            background: #dff0e6;
+            border-color: #dff0e6;
+            transform: translateY(-2px);
+        }
+
+        .application-hero-note {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 48px;
+            color: #c8d7e2;
+            font-size: 14px;
+        }
+
+        .application-hero-note i {
+            color: #8fc6a8;
+        }
+
+        /* ==================================================
+           COMMON
+        ================================================== */
+
+        .application-intro,
+        .team-areas,
+        .application-section {
+            padding: 85px 7%;
+        }
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: #6d7b88;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            margin-bottom: 38px;
+        }
+
+        .section-label span {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #cbd4d0;
+            display: grid;
+            place-items: center;
+            color: #2f7b5d;
+            font-size: 11px;
+        }
+
+        /* ==================================================
+           INTRO
+        ================================================== */
+
+        .application-intro {
+            background: white;
+            border-bottom: 1px solid #dfe5e1;
+        }
+
+        .intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            max-width: 1150px;
+        }
+
+        .intro-heading h2 {
+            font-size: clamp(32px, 4vw, 50px);
+            line-height: 1.12;
+            letter-spacing: -1.5px;
+        }
+
+        .intro-heading h2 span {
+            color: #2f7b5d;
+        }
+
+        .intro-text {
+            color: #5d6b77;
+            font-size: 16px;
+        }
+
+        .intro-text p + p {
+            margin-top: 20px;
+        }
+
+        /* ==================================================
+           CORE TEAM AREAS
+        ================================================== */
+
+        .team-areas {
+            background: #f7f8f6;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .area-card {
+            background: white;
+            border: 1px solid #dbe2de;
+            padding: 28px 24px;
+            min-height: 230px;
+            transition: 0.2s ease;
+        }
+
+        .area-card:hover {
+            transform: translateY(-3px);
+            border-color: #9dbbab;
+            box-shadow: 0 10px 25px rgba(16,38,62,0.07);
+        }
+
+        .area-icon {
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            background: #e8f3ed;
+            color: #2f7b5d;
+            margin-bottom: 24px;
+        }
+
+        .area-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .area-card p {
+            color: #687581;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        /* ==================================================
+           APPLICATION
+        ================================================== */
+
+        .application-section {
+            background: #eef3f0;
+        }
+
+        .application-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .form-intro {
+            padding-top: 10px;
+        }
+
+        .form-kicker {
+            color: #2f7b5d;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        .form-intro h2 {
+            font-size: clamp(34px, 4vw, 52px);
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin: 16px 0 20px;
+        }
+
+        .form-intro h2 span {
+            color: #2f7b5d;
+        }
+
+        .form-intro > p {
+            color: #62707a;
+            font-size: 15px;
+            max-width: 440px;
+        }
+
+        .form-info-list {
+            margin-top: 35px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-info-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .form-info-item > i {
+            width: 40px;
+            height: 40px;
+            display: grid;
+            place-items: center;
+            background: white;
+            border: 1px solid #d7e0db;
+            color: #2f7b5d;
+        }
+
+        .form-info-item div {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-info-item strong {
+            font-size: 13px;
+        }
+
+        .form-info-item span {
+            color: #77838c;
+            font-size: 12px;
+        }
+
+        /* ==================================================
+           FORM
+        ================================================== */
+
+        .application-form-card {
+            background: white;
+            border: 1px solid #d5ded9;
+            padding: 38px;
+            box-shadow: 0 12px 35px rgba(16,38,62,0.06);
+        }
+
+        .form-group {
+            margin-bottom: 23px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .form-group label > span {
+            color: #c55c5c;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            border: 1px solid #ccd6d1;
+            background: #fbfcfb;
+            color: #10263e;
+            padding: 12px 14px;
+            outline: none;
+            border-radius: 0;
+            transition: 0.2s ease;
+        }
+
+        .form-group input,
+        .form-group select {
+            height: 46px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #2f7b5d;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(47,123,93,0.08);
+        }
+
+        .form-group input.invalid,
+        .form-group textarea.invalid,
+        .form-group select.invalid {
+            border-color: #c55c5c;
+        }
+
+        .field-error {
+            display: block;
+            color: #b54d4d;
+            font-size: 11px;
+            margin-top: 5px;
+        }
+
+        .textarea-footer {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 5px;
+            color: #89939a;
+            font-size: 11px;
+        }
+
+        /* ==================================================
+           CONSENT
+        ================================================== */
+
+        .form-consent {
+            margin: 10px 0 20px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-label input {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .custom-checkbox {
+            width: 19px;
+            height: 19px;
+            min-width: 19px;
+            border: 1px solid #bcc8c1;
+            background: white;
+            margin-top: 2px;
+            position: relative;
+        }
+
+        .checkbox-label input:checked + .custom-checkbox {
+            background: #2f7b5d;
+            border-color: #2f7b5d;
+        }
+
+        .checkbox-label input:checked + .custom-checkbox::after {
+            content: "✓";
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            left: 3px;
+            top: -1px;
+        }
+
+        .consent-text {
+            color: #66727b;
+            font-size: 12px;
+            line-height: 1.55;
+        }
+
+        /* ==================================================
+           MESSAGE
+        ================================================== */
+
+        .form-message {
+            display: none;
+            padding: 13px 15px;
+            margin-bottom: 18px;
+            font-size: 13px;
+            border: 1px solid transparent;
+        }
+
+        .form-message.show {
+            display: block;
+        }
+
+        .form-message.success {
+            background: #e7f3ec;
+            border-color: #b7d7c4;
+            color: #246346;
+        }
+
+        .form-message.error {
+            background: #faecec;
+            border-color: #e2baba;
+            color: #984747;
+        }
+
+        /* ==================================================
+           BUTTON
+        ================================================== */
+
+        .submit-button {
+            width: 100%;
+            min-height: 50px;
+            border: none;
+            background: #2f7b5d;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: 0.2s ease;
+        }
+
+        .submit-button:hover:not(:disabled) {
+            background: #256449;
+        }
+
+        .submit-button:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .button-loading {
+            display: none;
+        }
+
+        .submit-button.loading .button-text,
+        .submit-button.loading .button-arrow {
+            display: none;
+        }
+
+        .submit-button.loading .button-loading {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* ==================================================
+           BOTTOM NOTE
+        ================================================== */
+
+        .application-note {
+            margin: 0 7%;
+            padding: 32px;
+            background: #dfeee6;
+            border: 1px solid #c5ddd0;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .note-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: white;
+            color: #2f7b5d;
+            display: grid;
+            place-items: center;
+        }
+
+        .application-note h3 {
+            font-size: 17px;
+            margin-bottom: 3px;
+        }
+
+        .application-note p {
+            color: #61756b;
+            font-size: 13px;
+        }
+
+        /* ==================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 1000px) {
+
+            .areas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .application-layout {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .form-intro > p {
+                max-width: 700px;
+            }
+        }
+
+        @media (max-width: 750px) {
+
+            .application-hero,
+            .application-intro,
+            .team-areas,
+            .application-section {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .intro-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .application-note {
+                margin: 0 5%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .application-hero {
+                min-height: 390px;
+                padding-top: 65px;
+            }
+
+            .application-hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .application-hero p {
+                font-size: 15px;
+            }
+
+            .areas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .application-form-card {
+                padding: 24px 18px;
+            }
+
+            .application-note {
+                padding: 24px;
+                align-items: flex-start;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ==================================================
+         NAVBAR
+    ================================================== -->
+
+    <div id="navbar-container"></div>
+
+
+    <main>
+
+        <!-- ==================================================
+             HERO
+        ================================================== -->
+
+        <section class="application-hero">
+
+            <div class="application-hero-content">
+
+                <span class="hero-eyebrow">
+                    JOIN MINDSPEAK
+                </span>
+
+                <h1>
+                    Join the
+                    <em>Core Team.</em>
+                </h1>
+
+                <p>
+                    Help shape the direction of MindSpeak and work closely
+                    with a team committed to building meaningful support
+                    and connection.
+                </p>
+
+                <a
+                    href="#application-form"
+                    class="hero-button"
+                >
+                    Start Application
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+
+            </div>
+
+            <div class="application-hero-note">
+
+                <i class="fa-solid fa-people-group"></i>
+
+                <span>
+                    Bring your ideas, initiative, and commitment.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             INTRODUCTION
+        ================================================== -->
+
+        <section class="application-intro">
+
+            <div class="section-label">
+                <span>01</span>
+                ABOUT THE ROLE
+            </div>
+
+            <div class="intro-content">
+
+                <div class="intro-heading">
+
+                    <h2>
+                        Help build what
+                        <span>MindSpeak becomes.</span>
+                    </h2>
+
+                </div>
+
+                <div class="intro-text">
+
+                    <p>
+                        Core Team members contribute to the planning,
+                        development, coordination, and growth of MindSpeak.
+                        This is an opportunity to take greater responsibility
+                        and help turn ideas into real projects.
+                    </p>
+
+                    <p>
+                        Tell us about your experience, strengths, ideas,
+                        and the kind of contribution you would like to make.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CORE TEAM AREAS
+        ================================================== -->
+
+        <section class="team-areas">
+
+            <div class="section-label">
+                <span>02</span>
+                AREAS OF CONTRIBUTION
+            </div>
+
+            <div class="areas-grid">
+
+                <article class="area-card">
+
+                    <div class="area-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+
+                    <h3>Leadership</h3>
+
+                    <p>
+                        Help coordinate people, priorities, and initiatives
+                        across the MindSpeak community.
+                    </p>
+
+                </article>
+
+
+                <article class="area-card">
+
+                    <div class="area-icon">
+                        <i class="fa-solid fa-diagram-project"></i>
+                    </div>
+
+                    <h3>Project Development</h3>
+
+                    <p>
+                        Help plan, develop, and improve MindSpeak projects
+                        and experiences.
+                    </p>
+
+                </article>
+
+
+                <article class="area-card">
+
+                    <div class="area-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <h3>Community</h3>
+
+                    <p>
+                        Help understand community needs and create
+                        meaningful engagement opportunities.
+                    </p>
+
+                </article>
+
+
+                <article class="area-card">
+
+                    <div class="area-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+
+                    <h3>Growth & Strategy</h3>
+
+                    <p>
+                        Contribute ideas that help MindSpeak grow
+                        responsibly and sustainably.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             APPLICATION FORM
+        ================================================== -->
+
+        <section
+            class="application-section"
+            id="application-form"
+        >
+
+            <div class="section-label">
+                <span>03</span>
+                CORE TEAM APPLICATION
+            </div>
+
+            <div class="application-layout">
+
+                <!-- LEFT -->
+
+                <div class="form-intro">
+
+                    <span class="form-kicker">
+                        LET'S GET TO KNOW YOU
+                    </span>
+
+                    <h2>
+                        Tell us what
+                        <span>you can bring.</span>
+                    </h2>
+
+                    <p>
+                        We want to understand your background, strengths,
+                        experience, and ideas for MindSpeak. Be honest and
+                        specific — there is no need to make your answers
+                        overly formal.
+                    </p>
+
+                    <div class="form-info-list">
+
+                        <div class="form-info-item">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            <div>
+                                <strong>About 7 minutes</strong>
+                                <span>to complete</span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-info-item">
+
+                            <i class="fa-solid fa-users"></i>
+
+                            <div>
+                                <strong>Team-focused role</strong>
+                                <span>with ongoing collaboration</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT -->
+
+                <div class="application-form-card">
+
+                    <form
+                        id="coreTeamApplicationForm"
+                        novalidate
+                    >
+
+                        <input
+                            type="hidden"
+                            name="application_type"
+                            value="core_team"
+                        >
+
+
+                        <!-- NAME -->
+
+                        <div class="form-group">
+
+                            <label for="coreName">
+                                Full Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="coreName"
+                                name="name"
+                                placeholder="Your full name"
+                                autocomplete="name"
+                                required
+                            >
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- EMAIL / PHONE -->
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="coreEmail">
+                                    Email Address <span>*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="coreEmail"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                                <small class="field-error"></small>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="corePhone">
+                                    Phone Number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="corePhone"
+                                    name="phone"
+                                    placeholder="Optional"
+                                    autocomplete="tel"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ORGANIZATION -->
+
+                        <div class="form-group">
+
+                            <label for="coreOrganization">
+                                Organization / Institution
+                            </label>
+
+                            <input
+                                type="text"
+                                id="coreOrganization"
+                                name="organization"
+                                placeholder="Optional"
+                            >
+
+                        </div>
+
+
+                        <!-- CORE TEAM AREA -->
+
+                        <div class="form-group">
+
+                            <label for="coreArea">
+                                Which area would you like to contribute to?
+                                <span>*</span>
+                            </label>
+
+                            <select id="coreArea" required>
+                                <option value="">Select an area</option>
+                                <option value="Leadership">Leadership</option>
+                                <option value="Project Development">Project Development</option>
+                                <option value="Community">Community</option>
+                                <option value="Growth & Strategy">Growth & Strategy</option>
+                                <option value="Other">Other</option>
+                            </select>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- AVAILABILITY -->
+
+                        <div class="form-group">
+
+                            <label for="coreAvailability">
+                                Availability <span>*</span>
+                            </label>
+
+                            <select
+                                id="coreAvailability"
+                                name="availability"
+                                required
+                            >
+                                <option value="">Select your availability</option>
+                                <option value="1-2 hours per week">1–2 hours per week</option>
+                                <option value="3-5 hours per week">3–5 hours per week</option>
+                                <option value="5-10 hours per week">5–10 hours per week</option>
+                                <option value="10+ hours per week">10+ hours per week</option>
+                                <option value="Flexible">Flexible</option>
+                            </select>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- LEADERSHIP / PROJECT EXPERIENCE -->
+
+                        <div class="form-group">
+
+                            <label for="coreExperience">
+                                Leadership / Project Experience <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="coreExperience"
+                                name="experience"
+                                rows="5"
+                                maxlength="2500"
+                                placeholder="Tell us about a project, team, initiative, or responsibility you have taken ownership of. What was your role and what did you learn?"
+                                required
+                            ></textarea>
+
+                            <div class="textarea-footer">
+                                <span>Specific examples are helpful.</span>
+                                <span><strong id="experienceCount">0</strong>/2500</span>
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- SKILLS -->
+
+                        <div class="form-group">
+
+                            <label for="coreSkills">
+                                Skills & Strengths <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="coreSkills"
+                                name="skills"
+                                rows="5"
+                                maxlength="2000"
+                                placeholder="What strengths would you bring to the Core Team? Consider leadership, communication, organization, technology, creativity, problem-solving, or other areas."
+                                required
+                            ></textarea>
+
+                            <div class="textarea-footer">
+                                <span></span>
+                                <span><strong id="skillsCount">0</strong>/2000</span>
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- TEAM COLLABORATION -->
+
+                        <div class="form-group">
+
+                            <label for="coreCollaboration">
+                                Team Collaboration <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="coreCollaboration"
+                                rows="4"
+                                maxlength="1800"
+                                placeholder="How do you handle disagreement or different opinions within a team?"
+                                required
+                            ></textarea>
+
+                            <div class="textarea-footer">
+                                <span></span>
+                                <span><strong id="collaborationCount">0</strong>/1800</span>
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- PROBLEM SOLVING -->
+
+                        <div class="form-group">
+
+                            <label for="coreProblemSolving">
+                                Problem Solving & Responsibility <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="coreProblemSolving"
+                                rows="4"
+                                maxlength="1800"
+                                placeholder="Imagine you are responsible for a MindSpeak project and it starts falling behind schedule. What would you do?"
+                                required
+                            ></textarea>
+
+                            <div class="textarea-footer">
+                                <span></span>
+                                <span><strong id="problemSolvingCount">0</strong>/1800</span>
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- MOTIVATION -->
+
+                        <div class="form-group">
+
+                            <label for="coreMotivation">
+                                Why do you want to join the Core Team? <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="coreMotivation"
+                                name="motivation"
+                                rows="5"
+                                maxlength="2200"
+                                placeholder="Why do you want to take an active Core Team role rather than volunteering? What responsibility are you hoping to take on?"
+                                required
+                            ></textarea>
+
+                            <div class="textarea-footer">
+                                <span></span>
+                                <span><strong id="motivationCount">0</strong>/2200</span>
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- IDEAS -->
+
+                        <div class="form-group">
+
+                            <label for="coreIdeas">
+                                Ideas for MindSpeak <span>*</span>
+                            </label>
+
+                            <textarea
+                                id="coreIdeas"
+                                rows="5"
+                                maxlength="2200"
+                                placeholder="What is one thing you would like to improve, build, or introduce at MindSpeak?"
+                                required
+                            ></textarea>
+
+                            <div class="textarea-footer">
+                                <span></span>
+                                <span><strong id="ideasCount">0</strong>/2200</span>
+                            </div>
+
+                            <small class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- ADDITIONAL -->
+
+                        <div class="form-group">
+
+                            <label for="coreAdditional">
+                                Anything else you'd like us to know?
+                            </label>
+
+                            <textarea
+                                id="coreAdditional"
+                                name="additional_information"
+                                rows="4"
+                                maxlength="1500"
+                                placeholder="Anything else you'd like to share with the team?"
+                            ></textarea>
+
+                            <div class="textarea-footer">
+                                <span></span>
+                                <span><strong id="additionalCount">0</strong>/1500</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONSENT -->
+
+                        <div class="form-consent">
+
+                            <label class="checkbox-label">
+
+                                <input type="checkbox" id="coreConsent">
+
+                                <span class="custom-checkbox"></span>
+
+                                <span class="consent-text">
+                                    I confirm that the information I have provided
+                                    is accurate and I agree to be contacted regarding
+                                    my Core Team application.
+                                </span>
+
+                            </label>
+
+                            <small id="consentError" class="field-error"></small>
+
+                        </div>
+
+
+                        <!-- MESSAGE -->
+
+                        <div
+                            id="coreFormMessage"
+                            class="form-message"
+                            role="alert"
+                            aria-live="polite"
+                        ></div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="submit-button"
+                            id="coreSubmitButton"
+                        >
+
+                            <span class="button-text">
+                                Submit Application
+                            </span>
+
+                            <span class="button-loading">
+                                <i class="fa-solid fa-spinner fa-spin"></i>
+                                Submitting...
+                            </span>
+
+                            <i class="fa-solid fa-arrow-right button-arrow"></i>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             NOTE
+        ================================================== -->
+
+        <section class="application-note">
+
+            <div class="note-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+
+            <div>
+
+                <h3>
+                    Have an idea? Bring it with you.
+                </h3>
+
+                <p>
+                    MindSpeak grows through people who care enough to
+                    contribute their time, skills, and ideas.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <div id="footer"></div>
+
+
+    <!-- SHARED SCRIPTS -->
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+
+
+    <!-- ==================================================
+         PAGE JAVASCRIPT
+    ================================================== -->
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const API_BASE = "http://127.0.0.1:8000";
+
+    const form = document.getElementById("coreTeamApplicationForm");
+    const submitBtn = document.getElementById("coreSubmitButton");
+    const formMessage = document.getElementById("coreFormMessage");
+    const consent = document.getElementById("coreConsent");
+    const consentError = document.getElementById("consentError");
+
+    const fields = {
+        name: document.getElementById("coreName"),
+        email: document.getElementById("coreEmail"),
+        phone: document.getElementById("corePhone"),
+        organization: document.getElementById("coreOrganization"),
+        area: document.getElementById("coreArea"),
+        availability: document.getElementById("coreAvailability"),
+        experience: document.getElementById("coreExperience"),
+        skills: document.getElementById("coreSkills"),
+        collaboration: document.getElementById("coreCollaboration"),
+        problemSolving: document.getElementById("coreProblemSolving"),
+        motivation: document.getElementById("coreMotivation"),
+        ideas: document.getElementById("coreIdeas"),
+        additional: document.getElementById("coreAdditional")
+    };
+
+    const counters = [
+        [fields.experience, "experienceCount"],
+        [fields.skills, "skillsCount"],
+        [fields.collaboration, "collaborationCount"],
+        [fields.problemSolving, "problemSolvingCount"],
+        [fields.motivation, "motivationCount"],
+        [fields.ideas, "ideasCount"],
+        [fields.additional, "additionalCount"]
+    ];
+
+    counters.forEach(([field, counterId]) => {
+        const counter = document.getElementById(counterId);
+        if (!field || !counter) return;
+
+        const update = () => counter.textContent = field.value.length;
+        field.addEventListener("input", update);
+        update();
+    });
+
+    function clearErrors() {
+        form.querySelectorAll(".invalid").forEach(el => el.classList.remove("invalid"));
+        form.querySelectorAll(".field-error").forEach(el => el.textContent = "");
+        consentError.textContent = "";
+    }
+
+    function setFieldError(field, message) {
+        field.classList.add("invalid");
+        const error = field.closest(".form-group")?.querySelector(".field-error");
+        if (error) error.textContent = message;
+    }
+
+    function showMessage(message, type) {
+        formMessage.textContent = message;
+        formMessage.className = `form-message show ${type}`;
+    }
+
+    function validEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    form.addEventListener("submit", async (event) => {
+
+        event.preventDefault();
+        clearErrors();
+        formMessage.className = "form-message";
+
+        let valid = true;
+
+        if (!fields.name.value.trim()) {
+            setFieldError(fields.name, "Please enter your full name.");
+            valid = false;
+        }
+
+        if (!fields.email.value.trim()) {
+            setFieldError(fields.email, "Please enter your email address.");
+            valid = false;
+        } else if (!validEmail(fields.email.value.trim())) {
+            setFieldError(fields.email, "Please enter a valid email address.");
+            valid = false;
+        }
+
+        if (!fields.area.value) {
+            setFieldError(fields.area, "Please select an area.");
+            valid = false;
+        }
+
+        if (!fields.availability.value) {
+            setFieldError(fields.availability, "Please select your availability.");
+            valid = false;
+        }
+
+        const requiredTextFields = [
+            [fields.experience, "Please describe your relevant experience."],
+            [fields.skills, "Please tell us about your strengths."],
+            [fields.collaboration, "Please explain how you handle different opinions."],
+            [fields.problemSolving, "Please explain how you would handle a delayed project."],
+            [fields.motivation, "Please explain why you want to join the Core Team."],
+            [fields.ideas, "Please share one idea for MindSpeak."]
+        ];
+
+        requiredTextFields.forEach(([field, message]) => {
+            if (!field.value.trim()) {
+                setFieldError(field, message);
+                valid = false;
+            }
+        });
+
+        if (!consent.checked) {
+            consentError.textContent = "Please confirm the information above.";
+            valid = false;
+        }
+
+        if (!valid) {
+            showMessage("Please check the highlighted fields.", "error");
+            return;
+        }
+
+        let userId = null;
+
+        try {
+            const storedUser = localStorage.getItem("user");
+
+            if (storedUser) {
+                const user = JSON.parse(storedUser);
+                userId = user.id || null;
+            }
+
+            if (!userId) {
+                const storedUserId = localStorage.getItem("user_id");
+                if (storedUserId) userId = Number(storedUserId);
+            }
+        } catch (error) {
+            console.warn("Could not read stored user.", error);
+        }
+
+        const additionalSections = [
+            `Core Team Area: ${fields.area.value}`,
+            `Team Collaboration:\n${fields.collaboration.value.trim()}`,
+            `Problem Solving & Responsibility:\n${fields.problemSolving.value.trim()}`,
+            `Ideas for MindSpeak:\n${fields.ideas.value.trim()}`
+        ];
+
+        if (fields.additional.value.trim()) {
+            additionalSections.push(
+                `Additional Information:\n${fields.additional.value.trim()}`
+            );
+        }
+
+        const applicationData = {
+            application_type: "core_team",
+            user_id: userId,
+            name: fields.name.value.trim(),
+            email: fields.email.value.trim(),
+            phone: fields.phone.value.trim() || null,
+            organization: fields.organization.value.trim() || null,
+            motivation: fields.motivation.value.trim(),
+            experience: fields.experience.value.trim(),
+            skills: fields.skills.value.trim(),
+            availability: fields.availability.value || null,
+            additional_information: additionalSections.join("\n\n")
+        };
+
+        submitBtn.disabled = true;
+        submitBtn.classList.add("loading");
+
+        try {
+
+            const response = await fetch(
+                `${API_BASE}/api/contact/applications`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify(applicationData)
+                }
+            );
+
+            const responseText = await response.text();
+
+            let data = null;
+
+            if (responseText.trim()) {
+                try {
+                    data = JSON.parse(responseText);
+                } catch {
+                    throw new Error("The server returned an invalid response.");
+                }
+            }
+
+            if (!response.ok) {
+                throw new Error(
+                    data?.detail ||
+                    data?.message ||
+                    `Server error (${response.status})`
+                );
+            }
+
+            showMessage(
+                "Thank you! Your Core Team application has been submitted successfully. Our team will review it and get back to you.",
+                "success"
+            );
+
+            form.reset();
+
+            counters.forEach(([field, counterId]) => {
+                const counter = document.getElementById(counterId);
+                if (counter) counter.textContent = "0";
+            });
+
+            formMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        } catch (error) {
+
+            console.error("Core Team application error:", error);
+
+            showMessage(
+                error.message ||
+                "Something went wrong while submitting your application. Please try again.",
+                "error"
+            );
+
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("loading");
+        }
+    });
+
+    form.querySelectorAll("input, textarea, select").forEach(field => {
+
+        field.addEventListener("input", () => {
+            field.classList.remove("invalid");
+
+            const error = field.closest(".form-group")?.querySelector(".field-error");
+            if (error) error.textContent = "";
+        });
+
+        field.addEventListener("change", () => {
+            field.classList.remove("invalid");
+
+            const error = field.closest(".form-group")?.querySelector(".field-error");
+            if (error) error.textContent = "";
+        });
+    });
+
+    consent.addEventListener("change", () => {
+        if (consent.checked) consentError.textContent = "";
+    });
+
+});
+</script>
+</body>
+</html>

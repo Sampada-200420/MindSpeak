@@ -1,0 +1,293 @@
+
+/* =========================
+        FOOTER BASE
+========================= */
+
+.footer {
+    background: linear-gradient(135deg, #0b1220, #0f172a);
+    color: #e5e7eb;
+    padding: 70px 5% 25px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* soft green glow */
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #22c55e;
+    filter: blur(140px);
+    opacity: 0.12;
+    top: -120px;
+    left: -120px;
+}
+
+/* =========================
+        GRID CONTAINER
+========================= */
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================
+        FOOTER CARDS
+========================= */
+
+.footer-col {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 20px;
+
+    /* IMPORTANT: works with JS reveal */
+   
+    transform: translateY(40px);
+    transition: all 0.6s ease;
+}
+
+/* JS trigger */
+.footer-col.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* hover effect */
+.footer-col:hover {
+    border-color: rgba(34, 197, 94, 0.4);
+    transform: translateY(-5px);
+}
+
+/* =========================
+        LOGO
+========================= */
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.footer-logo h2 {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+/* =========================
+        TEXT
+========================= */
+
+.footer-text {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #94a3b8;
+}
+
+/* =========================
+        HEADINGS
+========================= */
+
+.footer-col h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+/* =========================
+        LINKS
+========================= */
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #22c55e;
+    padding-left: 6px;
+}
+
+/* =========================
+        CONTACT
+========================= */
+
+.footer-col p {
+    font-size: 14px;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}
+
+.footer-col i {
+    margin-right: 8px;
+    color: #22c55e;
+}
+
+/* =========================
+        NEWSLETTER
+========================= */
+
+.newsletter {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+.newsletter input {
+    flex: 1;
+    min-width: 140px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.05);
+    color: #fff;
+    outline: none;
+}
+
+.newsletter button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.newsletter button:hover {
+    transform: scale(1.05);
+}
+
+/* feedback text (JS adds this) */
+.newsletter-feedback {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* =========================
+        SOCIAL ICONS
+========================= */
+
+.social-icons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #22c55e;
+    transform: scale(1.1);
+}
+
+/* =========================
+        FOOTER BOTTOM
+========================= */
+
+.footer-bottom {
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 13px;
+    color: #94a3b8;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* =========================
+        TOP BUTTON (JS CONTROLLED)
+========================= */
+
+#topBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+
+    opacity: 0;
+    transform: scale(0.8);
+    pointer-events: none;
+
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+#topBtn.show {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+#topBtn:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+        MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .newsletter {
+        flex-direction: column;
+    }
+
+    .newsletter button {
+        width: 100%;
+    }
+}

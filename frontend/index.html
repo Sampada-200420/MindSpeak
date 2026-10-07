@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MindSpeak | Home</title>
+
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="../navbar.css">
+
+<link rel="stylesheet" href="../footer.css">
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+>
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+</head>
+
+<body class="home-page">
+
+    <!-- ================= NAVBAR ================= -->
+    <header id="navbar"></header>
+
+
+    <!-- ================= MAIN ================= -->
+    <main>
+
+        <!-- ================= TIME GREETING HERO ================= -->
+        <section class="hero-section">
+
+            <div class="hero-content">
+
+                <div class="hero-text">
+
+                    <div class="greeting-line">
+                        <span id="greetingIcon">🌅</span>
+                        <span id="timeGreeting">Good morning</span>
+                        <span class="greeting-leaf">🍃</span>
+                    </div>
+
+                    <h1>
+                        How are you feeling
+                        <br>
+                        right now<span>?</span>
+                    </h1>
+
+                    <p id="greetingMessage">
+                        Start gently. You don't have to have everything figured out today.
+                    </p>
+
+                </div>
+
+
+                <div class="hero-image-wrapper">
+                    <img
+                        id="heroTimeImage"
+                        src="images/hero/morning.jpg"
+                        alt="A peaceful moment with a person and a dog"
+                    >
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= EMOTIONS ================= -->
+        <section class="emotion-section">
+
+            <div class="emotion-grid">
+
+                <button class="mood-btn" data-mood="anxious">
+                    <span class="mood-icon">😟</span>
+                    <span>Anxious</span>
+                </button>
+
+                <button class="mood-btn" data-mood="stressed">
+                    <span class="mood-icon">😥</span>
+                    <span>Stressed</span>
+                </button>
+
+                <button class="mood-btn" data-mood="low-mood">
+                    <span class="mood-icon">😔</span>
+                    <span>Low Mood</span>
+                </button>
+
+                <button class="mood-btn" data-mood="lonely">
+                    <span class="mood-icon">😞</span>
+                    <span>Lonely</span>
+                </button>
+
+                <button class="mood-btn" data-mood="angry">
+                    <span class="mood-icon">😡</span>
+                    <span>Angry</span>
+                </button>
+
+                <button class="mood-btn" data-mood="numb">
+                    <span class="mood-icon">😐</span>
+                    <span>Numb</span>
+                </button>
+
+                <button class="mood-btn" data-mood="tired">
+                    <span class="mood-icon">😴</span>
+                    <span>Tired</span>
+                </button>
+
+                <button class="mood-btn" data-mood="hopeful">
+                    <span class="mood-icon">🙂</span>
+                    <span>Hopeful</span>
+                </button>
+
+                <button
+                    class="mood-btn see-more-btn"
+                    id="allEmotionsBtn"
+                    type="button"
+                >
+                    <span class="mood-icon plus-icon">+</span>
+                    <span>See More</span>
+                </button>
+
+            </div>
+
+
+            <!-- Extra emotions -->
+            <div class="extra-moods" id="extraMoods" hidden>
+
+                <button class="mood-btn" data-mood="calm">
+                    <span class="mood-icon">😌</span>
+                    <span>Calm</span>
+                </button>
+
+                <button class="mood-btn" data-mood="confused">
+                    <span class="mood-icon">😕</span>
+                    <span>Confused</span>
+                </button>
+
+                <button class="mood-btn" data-mood="overwhelmed">
+                    <span class="mood-icon">🥺</span>
+                    <span>Overwhelmed</span>
+                </button>
+
+                <button class="mood-btn" data-mood="excited">
+                    <span class="mood-icon">🤩</span>
+                    <span>Excited</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- EVERYTHING BELOW THIS IS SHOWN AFTER MOOD SELECT -->
+        <!-- ================================================= -->
+
+        <div id="personalizedHomeContent" class="personalized-content">
+
+
+            <!-- ================= WHAT'S ON YOUR MIND ================= -->
+            <section class="mind-section">
+
+                <div class="section-card">
+
+                    <div class="section-heading">
+
+                        <div class="heading-icon speech-icon">
+                            💬
+                        </div>
+
+                        <div>
+                            <h2>What's on your mind?</h2>
+                            <p>You can write anything. This is your space.</p>
+                        </div>
+
+                        <span
+                            class="character-counter"
+                            id="moodCounter"
+                        >
+                            0 / 2000
+                        </span>
+
+                    </div>
+
+
+                    <textarea
+                        id="moodThought"
+                        maxlength="2000"
+                        placeholder="Write whatever is on your mind..."
+                    ></textarea>
+
+
+
+                    <!-- WHAT'S THIS ABOUT -->
+                    <div class="category-area">
+
+                        <div class="category-heading">
+
+                            <div class="heading-icon folder-icon">
+                                📁
+                            </div>
+
+                            <div>
+                                <h2>What's this about?</h2>
+                                <p>Choose a category that fits best.</p>
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="category-options"
+                            id="contextOptions"
+                        >
+
+                            <button
+                                class="context-option active"
+                                data-context="general"
+                                type="button"
+                            >
+                                General
+                            </button>
+
+                            <button
+                                class="context-option"
+                                data-context="academic"
+                                type="button"
+                            >
+                                Academic
+                            </button>
+
+                            <button
+                                class="context-option"
+                                data-context="anxiety"
+                                type="button"
+                            >
+                                Anxiety
+                            </button>
+
+                            <button
+                                class="context-option"
+                                data-context="relationships"
+                                type="button"
+                            >
+                                Relationships
+                            </button>
+
+                            <button
+                                class="context-option"
+                                data-context="family"
+                                type="button"
+                            >
+                                Family
+                            </button>
+
+                            <button
+                                class="context-option"
+                                data-context="self"
+                                type="button"
+                            >
+                                Self
+                            </button>
+
+                            <button
+                                class="context-option"
+                                data-context="others"
+                                type="button"
+                            >
+                                Others
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- NEXT STEP -->
+                    <div class="next-step-area">
+
+                        <div class="next-step-heading">
+                            <span>YOUR NEXT STEP</span>
+                            <h2>What would you like to do?</h2>
+                        </div>
+
+
+                        <div
+                            class="sharing-options"
+                            id="sharingOptions"
+                        >
+
+                            <button
+                                class="privacy-option"
+                                data-option="private"
+                                type="button"
+                            >
+                                <span class="option-icon">🔒</span>
+
+                                <span>
+                                    Keep this private
+                                </span>
+                            </button>
+
+
+                            <button
+                                class="privacy-option active"
+                                data-option="anonymous"
+                                type="button"
+                            >
+                                <span class="option-icon">💬</span>
+
+                                <span>
+                                    Share with community
+                                </span>
+                            </button>
+
+
+                            <button
+                                class="privacy-option"
+                                data-option="similar"
+                                type="button"
+                            >
+                                <span class="option-icon">👥</span>
+
+                                <span>
+                                    See more stories as yours
+                                </span>
+                            </button>
+
+                        </div>
+
+
+                        <div class="mind-action-row">
+
+                            <button
+                                id="submitMoodPost"
+                                class="primary-action"
+                                type="button"
+                            >
+                                Share with community
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= PEOPLE WHO UNDERSTAND ================= -->
+            <section
+                class="people-section"
+                id="peopleSection"
+            >
+
+                <div class="section-title-row">
+
+                    <div class="title-left">
+
+                        <div class="large-section-icon">
+                            👥
+                        </div>
+
+                        <div>
+                            <h2>People Who Understand</h2>
+                            <p id="peopleSubtitle">
+                                People who have felt this too.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="safe-space/safe-space.html"
+                        id="viewMoodPosts"
+                        class="section-link"
+                    >
+                        View all stories
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+
+                <!-- REAL POSTS INSERTED BY JS -->
+                <div
+                    class="wall-grid"
+                    id="similarPostsContainer"
+                >
+                </div>
+
+
+                <!-- Empty state -->
+                <div
+                    class="wall-empty"
+                    id="wallEmpty"
+                    hidden
+                >
+                    <div>🌱</div>
+                    <h3>No stories yet</h3>
+                    <p>
+                        Be the first person to share something about how you're feeling.
+                    </p>
+                </div>
+
+            </section>
+
+
+
+            <!-- ================= SUPPORT ================= -->
+            <section
+                class="support-section"
+                id="supportSection"
+            >
+
+                <div class="section-title-row">
+
+                    <div class="title-left">
+
+                        <div class="large-section-icon leaf-icon">
+                            🌿
+                        </div>
+
+                        <div>
+                            <h2>Support for you right now</h2>
+                            <p>
+                                Practical tools based on how you're feeling.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="support-grid">
+
+
+                    <!-- CHATBOT -->
+                    <article class="support-card">
+
+                        <div class="support-image">
+                            <img
+                                src="images/chatbot/Muna.jpg"
+                                alt="MindSpeak chatbot support"
+                            >
+                        </div>
+
+                        <div class="support-card-content">
+
+                            <h3>Talk to MUNA</h3>
+
+                            <p>
+                                Get instant, safe support whenever you need.
+                            </p>
+
+                            <a
+                                href="chatbot/chatbot.html"
+                                id="chatbotSupportLink"
+                                class="support-button green-button"
+                            >
+                                Start Chatting
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- MENTOR -->
+                    <article class="support-card">
+
+                        <div class="support-image">
+                            <img
+                                src="images/hero/mentor.jpg"
+                                alt="Talk to a mentor"
+                            >
+                        </div>
+
+                        <div class="support-card-content">
+
+                            <h3>Talk to a Mentor</h3>
+
+                            <p>
+                                Connect with trained mentors who understand.
+                            </p>
+
+                            <a
+                                href="mentor/mentor-support.html"
+                                id="mentorSupportLink"
+                                class="support-button purple-button"
+                            >
+                                Find a Mentor
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- TOOLKIT -->
+                    <article class="support-card">
+
+                        <div class="support-image">
+                            <img
+                                src="images/hero/toolkit.jpg"
+                                alt="MindSpeak Toolkit"
+                            >
+                        </div>
+
+                        <div class="support-card-content">
+
+                            <h3>Explore Toolkit</h3>
+
+                            <p>
+                                Practical tools and exercises to feel a little calmer.
+                            </p>
+
+                            <a
+                                href="Toolkit/toolkit.html"
+                                id="toolkitSupportLink"
+                                class="support-button blue-button"
+                            >
+                                Open Toolkit
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- CONNECTION -->
+                    <article class="support-card">
+
+                        <div class="support-image">
+                            <img
+                                src="images/hero/connection.jpg"
+                                alt="MindSpeak connections"
+                            >
+                        </div>
+
+                        <div class="support-card-content">
+
+                            <h3>Make Connections</h3>
+
+                            <p>
+                                Meet people who have similar experiences.
+                            </p>
+
+                            <a
+                                href="connection/connection-hub.html"
+                                id="connectionSupportLink"
+                                class="support-button orange-button"
+                            >
+                                Find Your People
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+                
+
+        <!-- =====================================================
+     WHAT IS MINDSPEAK
+===================================================== -->
+
+<section class="what-is-mindspeak">
+
+    <div class="what-is-content">
+
+        <!-- Left: Introduction -->
+        <div class="what-is-intro">
+
+            <span class="section-eyebrow">
+                ABOUT MINDSPEAK
+            </span>
+
+            <h2>
+                What is <span>MindSpeak?</span>
+            </h2>
+
+            <p>
+                MindSpeak is a safe digital space where people can talk,
+                connect, learn, and find support without feeling judged.
+            </p>
+
+            <a href="about/about.html" class="mindspeak-primary-btn">
+                Explore MindSpeak
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <!-- Middle: Feature cards -->
+        <div class="mindspeak-features">
+
+            <article class="mindspeak-feature-card">
+                <div class="feature-icon express-icon">
+                    💬
+                </div>
+
+                <span class="feature-number">01</span>
+
+                <h3>Express</h3>
+
+                <p>
+                    Share what's on your mind in a space where your
+                    feelings matter.
+                </p>
+
+                <span class="feature-arrow">→</span>
+            </article>
+
+
+            <article class="mindspeak-feature-card">
+                <div class="feature-icon connect-icon">
+                    ♡
+                </div>
+
+                <span class="feature-number">02</span>
+
+                <h3>Connect</h3>
+
+                <p>
+                    Find people who understand what you're going through.
+                </p>
+
+                <span class="feature-arrow">→</span>
+            </article>
+
+
+            <article class="mindspeak-feature-card">
+                <div class="feature-icon learn-icon">
+                    ◫
+                </div>
+
+                <span class="feature-number">03</span>
+
+                <h3>Learn</h3>
+
+                <p>
+                    Explore practical resources to understand yourself
+                    and your wellbeing.
+                </p>
+
+                <span class="feature-arrow">→</span>
+            </article>
+
+
+            <article class="mindspeak-feature-card">
+                <div class="feature-icon grow-icon">
+                    🌱
+                </div>
+
+                <span class="feature-number">04</span>
+
+                <h3>Grow</h3>
+
+                <p>
+                    Build healthier ways of coping and move forward
+                    at your own pace.
+                </p>
+
+                <span class="feature-arrow">→</span>
+            </article>
+
+        </div>
+
+
+        <!-- Right: Cup image -->
+        <div class="what-is-image">
+
+            <img
+                src="images/hero/cup.jpg"
+                alt="A calm and welcoming MindSpeak space"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MINDSPEAK COMMUNITY
+===================================================== -->
+
+<section class="final-community-cta">
+
+    <div class="community-content">
+
+        <!-- Left: Community text -->
+        <div class="community-text">
+
+            <span class="section-eyebrow">
+                MINDSPEAK COMMUNITY
+            </span>
+
+            <h2>
+                There's a place
+                <br>
+                <span>for you here.</span>
+            </h2>
+
+            <p>
+                Whether you want to talk, listen, learn, or simply feel
+                less alone — MindSpeak is here for you.
+            </p>
+
+
+            <div class="community-buttons">
+
+                <a href="connection/connection-hub.html"
+                   class="mindspeak-primary-btn">
+                    Join the Community
+                    <span>→</span>
+                </a>
+
+                <a href="about/about.html"
+                   class="mindspeak-secondary-btn">
+                    Explore MindSpeak
+                </a>
+
+            </div>
+
+
+            <!-- Small values -->
+            <div class="community-values">
+
+                <div class="community-value">
+                    <span class="value-icon">♧</span>
+
+                    <span>
+                        A welcoming<br>
+                        community
+                    </span>
+                </div>
+
+
+                <div class="community-value">
+                    <span class="value-icon">♡</span>
+
+                    <span>
+                        Safe and<br>
+                        supportive
+                    </span>
+                </div>
+
+
+                <div class="community-value">
+                    <span class="value-icon">♥</span>
+
+                    <span>
+                        Real<br>
+                        conversations
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Right: Community image -->
+        <div class="community-image">
+
+            <img
+                src="images/hero/community.jpg"
+                alt="People connecting and talking together"
+            >
+
+            <div class="community-image-message">
+                <span></span>
+
+                <p>
+                    Real people.<br>
+                    Real support.<br>
+                    A kinder tomorrow.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="footer"></footer>
+
+
+
+    <!-- ================= NOTIFICATION ================= -->
+    <div
+        id="homeNotification"
+        class="home-notification"
+        aria-live="polite"
+    ></div>
+
+
+<div id="footer"></div>
+    <!-- ================= SCRIPTS ================= -->
+
+<script src="js/navbar.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/index.js"></script>
+
+
+</body>
+</html>

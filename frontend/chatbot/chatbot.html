@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Talk to Muna | MindSpeak</title>
+
+    <!-- Muna Chatbot CSS -->
+    <link rel="stylesheet" href="chatbot.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <main class="muna-page">
+
+        <!-- =====================================================
+             MUNA HEADER
+        ====================================================== -->
+
+        <header class="muna-header">
+             <a href="../safe-space.html" class="back-safe-space">
+    <span class="back-arrow">←</span>
+    <span>Back to Safe Space</span>
+</a>
+            <div class="muna-header-left">
+
+                <div class="muna-avatar-wrap">
+
+                    <img
+                        src="../images/chatbot/Muna.jpg"
+                        alt="Muna"
+                        class="muna-avatar"
+                    >
+
+                    <span class="online-dot"></span>
+
+                </div>
+
+                <div class="muna-header-info">
+
+                    <h1>Muna</h1>
+
+                    <p>Your MindSpeak companion</p>
+
+                </div>
+
+            </div>
+
+            <div class="muna-header-right">
+
+                <div class="muna-status">
+
+                    <span class="status-dot"></span>
+
+                    <span>Here to listen</span>
+
+                </div>
+
+                <!-- Conversation History -->
+                <button
+                    type="button"
+                    id="munaHistoryBtn"
+                    class="muna-history-btn"
+                    aria-label="View previous conversations"
+                    title="Previous conversations"
+                >
+                    ☰
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             CONVERSATION HISTORY
+             Hidden until the user clicks the history button.
+        ====================================================== -->
+
+        <section
+            id="munaHistory"
+            class="muna-history"
+            style="display: none;"
+        >
+
+            <div class="muna-history-header">
+
+                <button
+                    type="button"
+                    id="closeMunaHistoryBtn"
+                    class="history-back-btn"
+                    aria-label="Back to Muna"
+                >
+                    ←
+                </button>
+
+                <div>
+                    <h2>Your Conversations</h2>
+                    <p>Your previous conversations with Muna</p>
+                </div>
+
+            </div>
+
+
+            <!-- Loading -->
+            <div
+                id="munaHistoryLoading"
+                class="muna-history-loading"
+                style="display: none;"
+            >
+                <div class="history-spinner"></div>
+                <p>Loading your conversations...</p>
+            </div>
+
+
+            <!-- Empty state -->
+            <div
+                id="munaHistoryEmpty"
+                class="muna-history-empty"
+                style="display: none;"
+            >
+
+                <div class="history-empty-icon">
+                    💚
+                </div>
+
+                <h3>No previous conversations yet</h3>
+
+                <p>
+                    When you talk with Muna, your conversations will appear here.
+                </p>
+
+                <button
+                    type="button"
+                    id="startNewMunaFromHistory"
+                    class="history-start-btn"
+                >
+                    Start a conversation
+                </button>
+
+            </div>
+
+
+            <!-- Previous conversations inserted by chatbot.js -->
+            <div
+                id="munaHistoryList"
+                class="muna-history-list"
+            ></div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MAIN CHAT CONTENT
+        ====================================================== -->
+
+        <section class="muna-content">
+
+
+            <!-- =================================================
+                 MOOD SELECTION
+            ================================================== -->
+
+            <div id="munaWelcome" class="muna-welcome">
+
+                <div class="welcome-avatar">
+
+                    <img
+                        src="../images/chatbot/Muna.jpg"
+                        alt="Muna"
+                    >
+
+                </div>
+
+
+                <h2>
+                    Hi, I'm Muna. <span>💚</span>
+                </h2>
+
+
+                <p class="welcome-description">
+                    I'm here to listen, talk things through with you,
+                    and help you find the support you need.
+                </p>
+
+
+                <!-- Mood -->
+
+                <div class="mood-section">
+
+                    <h3>How are you feeling today?</h3>
+
+
+                    <div class="mood-grid">
+
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-mood="happy"
+                        >
+                            <span class="mood-emoji">😊</span>
+                            <span>Happy</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-mood="calm"
+                        >
+                            <span class="mood-emoji">😌</span>
+                            <span>Calm</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-mood="anxious"
+                        >
+                            <span class="mood-emoji">😟</span>
+                            <span>Anxious</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-mood="sad"
+                        >
+                            <span class="mood-emoji">😔</span>
+                            <span>Sad</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-mood="stressed"
+                        >
+                            <span class="mood-emoji">😣</span>
+                            <span>Stressed</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-mood="tired"
+                        >
+                            <span class="mood-emoji">😴</span>
+                            <span>Tired</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-mood="lonely"
+                        >
+                            <span class="mood-emoji">😞</span>
+                            <span>Lonely</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="mood-option"
+                            data-mood="angry"
+                        >
+                            <span class="mood-emoji">😤</span>
+                            <span>Angry</span>
+                        </button>
+
+                    </div>
+
+
+                    <!-- Something Else -->
+
+                    <button
+                        type="button"
+                        class="something-else-btn"
+                        id="somethingElseBtn"
+                    >
+                        <span class="something-icon">💭</span>
+                        <span>Something else</span>
+                    </button>
+
+                </div>
+
+
+                <!-- No Mood -->
+
+                <div class="normal-chat-option">
+
+                    <span>Not sure how you're feeling?</span>
+
+                    <button
+                        type="button"
+                        id="talkNormallyBtn"
+                    >
+                        That's okay, I'll just talk
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ONE-TO-ONE CHAT
+            ================================================== -->
+
+            <div
+                id="munaChat"
+                class="muna-chat"
+                style="display: none;"
+            >
+
+
+                <!-- Chat Context -->
+
+                <div class="chat-context">
+
+                    <div class="chat-context-left">
+
+                        <img
+                            src="../images/chatbot/Muna.jpg"
+                            alt="Muna"
+                            class="context-avatar"
+                        >
+
+                        <div>
+
+                            <strong>Muna</strong>
+
+                            <span id="selectedMoodText">
+                                Here to listen
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="changeMoodBtn"
+                        class="change-mood-btn"
+                    >
+                        ✎ Change mood
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     MESSAGES
+                ================================================== -->
+
+                <div
+                    id="munaMessages"
+                    class="muna-messages"
+                    aria-live="polite"
+                >
+
+                    <!-- Messages inserted by chatbot.js -->
+
+                </div>
+
+
+                <!-- =================================================
+                     TYPING INDICATOR
+                ================================================== -->
+
+                <div
+                    id="munaTyping"
+                    class="typing-indicator"
+                    style="display: none;"
+                >
+
+                    <img
+                        src="../images/chatbot/Muna.jpg"
+                        alt="Muna"
+                        class="message-avatar"
+                    >
+
+                    <div class="typing-bubble">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     SMALL CONVERSATION SUGGESTIONS
+                ================================================== -->
+
+                <div
+                    id="suggestedPrompts"
+                    class="suggested-prompts"
+                >
+
+                    <button
+                        type="button"
+                        class="suggestion-btn"
+                        data-message="I just want to talk."
+                    >
+                        💬 I just want to talk
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-btn"
+                        data-message="I'm having a difficult day."
+                    >
+                        🌱 I'm having a difficult day
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="suggestion-btn"
+                        data-message="I don't know how I'm feeling."
+                    >
+                        💭 I don't know how I'm feeling
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     MESSAGE INPUT
+                ================================================== -->
+
+                <form
+                    id="munaChatForm"
+                    class="muna-input-area"
+                >
+
+                    <div class="input-wrapper">
+
+                        <textarea
+                            id="munaMessageInput"
+                            name="message"
+                            rows="1"
+                            placeholder="Talk to Muna..."
+                            autocomplete="off"
+                            aria-label="Message Muna"
+                        ></textarea>
+
+
+                        <button
+                            type="submit"
+                            id="munaSendBtn"
+                            class="send-btn"
+                            aria-label="Send message"
+                        >
+                            <span>➤</span>
+                        </button>
+
+                    </div>
+
+
+                    <p class="input-note">
+                        Muna is an AI companion, not a replacement for
+                        professional or emergency support.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTEXTUAL SUPPORT
+             Hidden until Muna decides it is useful.
+        ====================================================== -->
+
+        <section
+            id="munaSupportSection"
+            class="muna-support-section"
+            style="display: none;"
+        >
+
+            <div class="support-heading">
+
+                <span class="support-label">
+                    💚 You don't have to handle everything alone
+                </span>
+
+                <h2>
+                    Some support you might find helpful
+                </h2>
+
+                <p>
+                    Muna can help you explore these MindSpeak resources.
+                </p>
+
+            </div>
+
+
+            <div class="support-grid">
+
+
+                <!-- Toolkit -->
+
+                <a
+                    href="../Toolkit/toolkit.html"
+                    class="support-card"
+                    id="munaToolkitLink"
+                >
+
+                    <div class="support-card-icon">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <h3>Explore Toolkit</h3>
+
+                        <p>
+                            Find practical exercises and gentle ways to cope.
+                        </p>
+
+                    </div>
+
+                    <span class="support-arrow">→</span>
+
+                </a>
+
+
+                <!-- Mentor -->
+
+                <a
+                    href="../mentor/mentor-support.html"
+                    class="support-card"
+                    id="munaMentorLink"
+                >
+
+                    <div class="support-card-icon">
+                        🧑‍🏫
+                    </div>
+
+                    <div>
+
+                        <h3>Talk to a Mentor</h3>
+
+                        <p>
+                            Connect with someone who can listen and support you.
+                        </p>
+
+                    </div>
+
+                    <span class="support-arrow">→</span>
+
+                </a>
+
+
+                <!-- Articles -->
+
+                <a
+                    href="../blog.html"
+                    class="support-card"
+                    id="munaArticlesLink"
+                >
+
+                    <div class="support-card-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <h3>Recommended Articles</h3>
+
+                        <p>
+                            Read stories and ideas that may help.
+                        </p>
+
+                    </div>
+
+                    <span class="support-arrow">→</span>
+
+                </a>
+
+
+                <!-- Events -->
+
+                <a
+                    href="../events.html"
+                    class="support-card"
+                    id="munaEventsLink"
+                >
+
+                    <div class="support-card-icon">
+                        📅
+                    </div>
+
+                    <div>
+
+                        <h3>MindSpeak Events</h3>
+
+                        <p>
+                            Find upcoming sessions and community events.
+                        </p>
+
+                    </div>
+
+                    <span class="support-arrow">→</span>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SMALL CLOSING NOTE
+        ====================================================== -->
+
+        <div class="muna-footer-note">
+
+            <span>💚</span>
+
+            <p>
+                You can talk to Muna about what's on your mind.
+                There's no need to have the right words.
+            </p>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         MUNA JAVASCRIPT ONLY
+    ========================================================== -->
+
+    <script src="chatbot.js"></script>
+
+</body>
+
+</html>

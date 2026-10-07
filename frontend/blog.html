@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blogs | MindSpeak</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+
+    <main class="blogs-page">
+
+        <!-- HERO -->
+        <section class="blogs-hero">
+
+            <span class="eyebrow">MINDSPEAK • BLOGS</span>
+
+            <h1>Stories That Speak.</h1>
+
+            <p>
+                Explore real experiences, thoughtful perspectives, and
+                meaningful conversations around mental health and wellbeing.
+            </p>
+
+            <div class="blog-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="blog-search"
+                    placeholder="Search blogs..."
+                    autocomplete="off"
+                >
+            </div>
+
+        </section>
+
+
+        <!-- CATEGORIES -->
+        <section class="blog-categories">
+
+            <button class="category-btn active" data-category="All">
+                All
+            </button>
+
+            <button class="category-btn" data-category="Mental Health">
+                Mental Health
+            </button>
+
+            <button class="category-btn" data-category="Self Growth">
+                Self Growth
+            </button>
+
+            <button class="category-btn" data-category="Relationships">
+                Relationships
+            </button>
+
+            <button class="category-btn" data-category="Student Life">
+                Student Life
+            </button>
+
+            <button class="category-btn" data-category="Wellbeing">
+                Wellbeing
+            </button>
+
+            <button class="category-btn" data-category="Personal Stories">
+                Personal Stories
+            </button>
+
+        </section>
+
+
+        <!-- FEATURED ARTICLES -->
+        <section class="blogs-section featured-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-eyebrow">
+                        EDITOR'S PICKS
+                    </span>
+
+                    <h2>Featured Articles</h2>
+                </div>
+
+            </div>
+
+            <div id="featured-blogs" class="featured-blogs">
+
+                <div class="loading-message">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    Loading featured articles...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LATEST ARTICLES -->
+        <section class="blogs-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-eyebrow">
+                        COMMUNITY STORIES
+                    </span>
+
+                    <h2>Latest Articles</h2>
+                </div>
+
+            </div>
+
+            <div id="latest-blogs" class="blogs-container">
+
+                <div class="loading-message">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    Loading latest blogs...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MOST POPULAR -->
+        <section class="blogs-section popular-section">
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-eyebrow">
+                        COMMUNITY FAVOURITES
+                    </span>
+
+                    <h2>Most Popular</h2>
+                </div>
+
+            </div>
+
+            <div id="popular-blogs" class="blogs-container">
+
+                <div class="loading-message">
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    Loading popular blogs...
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MINDSPEAK PERSPECTIVE -->
+        <section class="perspective-section">
+
+            <div class="perspective-content">
+
+                <span class="section-eyebrow">
+                    MINDSPEAK PERSPECTIVE
+                </span>
+
+                <h2>A Thought Worth Pausing For.</h2>
+
+                <p id="perspective-text">
+                    Sometimes the most important conversations are the ones
+                    we have with ourselves.
+                </p>
+
+                <div class="perspective-author">
+                    <span class="perspective-line"></span>
+                    <span>MindSpeak</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BLOG ACTIONS -->
+        <section class="blog-actions-section">
+
+            <div class="actions-heading">
+
+                <span class="section-eyebrow">
+                    YOUR VOICE MATTERS
+                </span>
+
+                <h2>Want to be part of the conversation?</h2>
+
+                <p>
+                    Share your experiences, thoughts, and perspectives with
+                    the MindSpeak community.
+                </p>
+
+            </div>
+
+            <div class="blog-action-buttons">
+
+                <a href="write-blog.html" class="blog-action-btn primary-action">
+                    <i class="fa-solid fa-pen"></i>
+                    <span>
+                        <strong>Write a Blog</strong>
+                        <small>Share your story</small>
+                    </span>
+                </a>
+
+                <a href="my-blogs.html" class="blog-action-btn">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>
+                        <strong>My Blogs</strong>
+                        <small>Manage your writing</small>
+                    </span>
+                </a>
+
+                <a href="save-blogs.html" class="blog-action-btn">
+                    <i class="fa-regular fa-bookmark"></i>
+                    <span>
+                        <strong>Saved Blogs</strong>
+                        <small>Read them later</small>
+                    </span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- NEWSLETTER -->
+        <section class="newsletter-section">
+
+            <div class="newsletter-content">
+
+                <span class="section-eyebrow">
+                    STAY CONNECTED
+                </span>
+
+                <h2>Keep the conversation going.</h2>
+
+                <p>
+                    Get thoughtful stories, wellbeing insights, and MindSpeak
+                    updates delivered to your inbox.
+                </p>
+
+                <form id="newsletter-form" class="newsletter-form">
+
+                    <div class="newsletter-input">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="newsletter-email"
+                            placeholder="Enter your email address"
+                            required
+                        >
+
+                    </div>
+
+                    <button type="submit" class="newsletter-btn">
+                        Subscribe
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+                <p id="newsletter-message" class="newsletter-message"></p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    
+
+    <div id="footer"></div>
+
+    <script src="js/blogs.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/footer.js"></script>
+
+</body>
+</html>

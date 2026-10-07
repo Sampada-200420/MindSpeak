@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Mentor Profile | MindSpeak</title>
+
+<!-- Google Fonts -->
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+>
+
+<!-- Font Awesome -->
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+
+<!-- Navbar CSS -->
+<link rel="stylesheet" href="../../navbar.css">
+
+<!-- Footer CSS -->
+<link rel="stylesheet" href="../../footer.css">
+
+<!-- Mentor Profile CSS -->
+<link rel="stylesheet" href="mentor-profile.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- ============================= -->
+<!-- NAVBAR -->
+<!-- ============================= -->
+
+<div id="navbar-container"></div>
+
+
+<!-- ============================= -->
+<!-- MAIN CONTENT -->
+<!-- ============================= -->
+
+<main class="mentor-profile-page">
+
+    <!-- ============================= -->
+    <!-- BACK LINK -->
+    <!-- ============================= -->
+
+    <section class="mentor-profile-header">
+
+        <a href="mentor-support.html" class="back-to-mentors">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Mentors
+        </a>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- LOADING STATE -->
+    <!-- ============================= -->
+
+    <section
+        class="mentor-profile-loading"
+        id="mentorProfileLoading"
+    >
+
+        <div class="loading-spinner">
+            <i class="fa-solid fa-spinner fa-spin"></i>
+        </div>
+
+        <p>
+            Loading mentor profile...
+        </p>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- PROFILE CARD -->
+    <!-- ============================= -->
+
+    <section
+        class="mentor-profile-card"
+        id="mentorProfileCard"
+        style="display: none;"
+    >
+
+        <!-- Profile Hero -->
+
+        <div class="mentor-profile-top">
+
+            <div class="mentor-profile-avatar-wrapper">
+
+                <img
+                    src=""
+                    alt="Mentor avatar"
+                    id="mentorAvatar"
+                    class="mentor-profile-avatar"
+                >
+
+                <span
+                    class="mentor-status-dot"
+                    id="mentorStatusDot"
+                ></span>
+
+            </div>
+
+
+            <div class="mentor-profile-identity">
+
+                <span
+                    class="mentor-status"
+                    id="mentorStatus"
+                >
+                    <i class="fa-solid fa-circle"></i>
+                    <span>Available</span>
+                </span>
+
+                <h1 id="mentorName">
+                    Mentor
+                </h1>
+
+                <p class="mentor-role">
+                    <i class="fa-solid fa-seedling"></i>
+                    Peer Support Mentor
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- PROFILE CONTENT -->
+        <!-- ============================= -->
+
+        <div
+            class="mentor-profile-content"
+            id="mentorProfileContent"
+        >
+
+            <!-- Bio -->
+
+            <section class="profile-section mentor-bio-section">
+
+                <div class="profile-section-heading">
+
+                    <div class="profile-section-icon">
+                        <i class="fa-regular fa-heart"></i>
+                    </div>
+
+                    <div>
+                        <h2>
+                            A little about them
+                        </h2>
+                    </div>
+
+                </div>
+
+                <p
+                    class="mentor-bio"
+                    id="mentorBio"
+                >
+                    <!-- Filled by JavaScript -->
+                </p>
+
+            </section>
+
+
+            <!-- Topics -->
+
+            <section
+                class="profile-section"
+                id="mentorTopicsSection"
+            >
+
+                <div class="profile-section-heading">
+
+                    <div class="profile-section-icon">
+                        <i class="fa-regular fa-comments"></i>
+                    </div>
+
+                    <div>
+                        <h2>
+                            Comfortable talking about
+                        </h2>
+                    </div>
+
+                </div>
+
+                <div
+                    class="mentor-tags"
+                    id="mentorTopics"
+                >
+                    <!-- Filled by JavaScript -->
+                </div>
+
+            </section>
+
+
+            <!-- Languages -->
+
+            <section
+                class="profile-section"
+                id="mentorLanguagesSection"
+            >
+
+                <div class="profile-section-heading">
+
+                    <div class="profile-section-icon">
+                        <i class="fa-solid fa-language"></i>
+                    </div>
+
+                    <div>
+                        <h2>
+                            Languages
+                        </h2>
+                    </div>
+
+                </div>
+
+                <div
+                    class="mentor-tags"
+                    id="mentorLanguages"
+                >
+                    <!-- Filled by JavaScript -->
+                </div>
+
+            </section>
+
+
+            <!-- Availability -->
+
+            <section
+                class="profile-section"
+                id="mentorAvailabilitySection"
+            >
+
+                <div class="profile-section-heading">
+
+                    <div class="profile-section-icon">
+                        <i class="fa-regular fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <h2>
+                            Availability
+                        </h2>
+                    </div>
+
+                </div>
+
+                <p
+                    class="profile-detail"
+                    id="mentorAvailability"
+                >
+                    <!-- Filled by JavaScript -->
+                </p>
+
+            </section>
+
+
+            <!-- Response Time -->
+
+            <section
+                class="profile-section"
+                id="mentorResponseSection"
+            >
+
+                <div class="profile-section-heading">
+
+                    <div class="profile-section-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <div>
+                        <h2>
+                            Response time
+                        </h2>
+                    </div>
+
+                </div>
+
+                <p
+                    class="profile-detail"
+                    id="mentorResponseTime"
+                >
+                    <!-- Filled by JavaScript -->
+                </p>
+
+            </section>
+
+
+            <!-- ============================= -->
+            <!-- REQUEST SUPPORT -->
+            <!-- ============================= -->
+
+            <div class="mentor-request-area">
+
+                <button
+                    type="button"
+                    class="request-support-btn"
+                    id="requestSupportBtn"
+                >
+                    <i class="fa-regular fa-paper-plane"></i>
+                    Request Support
+                </button>
+
+                <p class="request-help-text">
+                    You can share what you'd like to talk about
+                    before the mentor accepts your request.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- ERROR STATE -->
+    <!-- ============================= -->
+
+    <section
+        class="mentor-profile-error"
+        id="mentorProfileError"
+        style="display: none;"
+    >
+
+        <div class="profile-error-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+
+        <h2>
+            Unable to load this mentor.
+        </h2>
+
+        <p>
+            We couldn't find the mentor profile you're looking for.
+            Please return to the mentor list and try again.
+        </p>
+
+        <a
+            href="mentor-support.html"
+            class="back-to-mentor-list"
+        >
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Mentors
+        </a>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- SAFETY NOTE -->
+    <!-- ============================= -->
+
+    <section class="mentor-profile-safety">
+
+        <div class="profile-safety-icon">
+            <i class="fa-solid fa-shield-heart"></i>
+        </div>
+
+        <div>
+
+            <h3>
+                A safe space for peer support
+            </h3>
+
+            <p>
+                MindSpeak mentors are peer supporters, not
+                professional therapists or emergency responders.
+                If you are in immediate danger or facing an
+                emergency, please contact your local emergency
+                services or a trusted person.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ============================= -->
+<!-- FOOTER -->
+<!-- ============================= -->
+
+<div id="footer"></div>
+
+
+<!-- ============================= -->
+<!-- SCRIPTS -->
+<!-- ============================= -->
+
+<script src="../js/navbar.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/mentor-profile.js"></script>
+```
+
+</body>
+
+</html>

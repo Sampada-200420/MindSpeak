@@ -1,0 +1,312 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f7f7f3;
+    color:#333;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.navbar{
+
+    position:sticky;
+    top:15px;
+
+    width:100%;
+    margin:0;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:12px 40px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.78);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.08);
+    flex-wrap: nowrap;
+    z-index:1000;
+
+}
+
+/* Logo */
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+}
+
+.logo img{
+
+    width:95px;
+    height:95px;
+
+    border-radius:50%;
+    object-fit:cover;
+    transition: .4s;
+    border:3px solid #6A8C69;
+
+}
+.logo img:hover{
+    transition:rotate(10deg) scale(1.08);
+}
+
+.logo-text h2{
+
+    font-size:18px;
+
+    color:#4D6B4A;
+
+    font-family:'Playfair Display',serif;
+
+}
+
+.logo-text p{
+
+    font-size:10px;
+    color:#777;
+
+}
+
+/* Navigation */
+
+nav{
+
+    display:flex;
+    gap:35px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#444;
+    
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 3px;
+    border-radius: 20px;
+    background: #6A8C69;
+    transition: .3s;
+    color:#5B8B60;
+
+}
+
+nav a:hover{
+    width: 100%;
+    color: #356635;
+}
+.active{
+
+    color:#5B8B60;
+
+    border-bottom:3px solid #5B8B60;
+
+    padding-bottom:8px;
+
+}
+
+/* Right Buttons */
+
+.profile-area{
+
+    display:flex;
+    gap:15px;
+
+}
+
+.profile-btn{
+
+    background:#d8efd3;
+
+    color:#356635;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.profile-btn:hover{
+
+    background:#c5e7bb;
+
+}
+
+.logout-btn{
+
+    background:white;
+
+    border:1px solid #ccc;
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.logout-btn:hover{
+
+    background:#f2f2f2;
+
+}
+
+/* =========================================
+   LOGGED OUT NAVIGATION
+========================================= */
+
+.logged-out-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   SIGN IN BUTTON
+========================================= */
+
+.nav-signin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 90px;
+    height: 44px;
+
+    padding: 0 20px;
+
+    color: #356635;
+    background: transparent;
+
+    border: 1.5px solid #6A8C69;
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+
+.nav-signin:hover {
+    background: #edf5eb;
+    color: #2f5c30;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   GET STARTED BUTTON
+========================================= */
+
+.nav-get-started {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 115px;
+    height: 44px;
+
+    padding: 0 22px;
+
+    color: white;
+    background: #5B8B60;
+
+    border: 1.5px solid #5B8B60;
+    border-radius: 25px;
+
+    text-decoration: none;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 5px 15px rgba(91, 139, 96, 0.18);
+
+    transition: all 0.3s ease;
+}
+
+
+.nav-get-started:hover {
+    background: #47734d;
+    border-color: #47734d;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(91, 139, 96, 0.25);
+}
+
+
+/* =========================================
+   LOGGED-IN NAVIGATION
+========================================= */
+
+.logged-in-nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .logged-out-nav {
+        gap: 8px;
+    }
+
+    .nav-signin,
+    .nav-get-started {
+        min-width: auto;
+        height: 40px;
+        padding: 0 14px;
+        font-size: 13px;
+    }
+
+}

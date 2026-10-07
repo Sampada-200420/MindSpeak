@@ -1,0 +1,681 @@
+/* =========================================================
+   MINDSPEAK — PROFESSIONAL SUPPORT
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #17355f;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+.professional-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.professional-hero {
+    padding: 45px 0 50px;
+    background: #f3f5ef;
+    overflow: hidden;
+}
+
+.professional-hero .professional-container {
+    min-height: 300px;
+}
+
+.hero-content {
+    max-width: 760px;
+    padding: 15px 20px;
+}
+
+.hero-eyebrow,
+.section-eyebrow {
+    display: block;
+    margin-bottom: 7px;
+    color: #68877d;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.professional-hero h1 {
+    margin-bottom: 12px;
+    color: #263d57;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(43px, 5vw, 61px);
+    line-height: 1.05;
+}
+
+.professional-hero p {
+    max-width: 760px;
+    color: #536977;
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+.hero-quote {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    max-width: 620px;
+    margin-top: 22px;
+    padding: 13px 18px;
+    border-radius: 11px;
+    background: #e4eee8;
+    color: #3e615a;
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.hero-quote i {
+    color: #518774;
+    font-size: 20px;
+}
+
+/* =========================================================
+   PROFESSIONAL PATHWAY
+   ========================================================= */
+
+.professional-pathway {
+    padding: 42px 0;
+    background: #ffffff;
+}
+
+.pathway-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 480px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #f8faf7;
+    box-shadow: 0 4px 18px rgba(34, 65, 55, 0.05);
+}
+
+.pathway-image {
+    min-height: 480px;
+    overflow: hidden;
+}
+
+.pathway-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    display: block;
+    object-fit: cover;
+}
+
+.pathway-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 45px 45px;
+}
+
+.pathway-content h2 {
+    margin-bottom: 10px;
+    color: #263d57;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+.pathway-description {
+    margin-bottom: 22px;
+    color: #5a6f79;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pathway-steps {
+    display: grid;
+    gap: 11px;
+    margin-bottom: 25px;
+}
+
+.pathway-step {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.step-icon {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e4eee8;
+    color: #477c70;
+    font-size: 14px;
+}
+
+.pathway-step strong {
+    display: block;
+    color: #334d63;
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.pathway-step p {
+    color: #72818a;
+    font-family: Georgia, serif;
+    font-size: 11px;
+}
+
+.explore-professional-btn,
+.start-professional-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #184d47;
+    color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.explore-professional-btn:hover,
+.start-professional-btn:hover {
+    background: #123d39;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   FOUR CONTRIBUTIONS
+   ========================================================= */
+
+.professional-guide {
+    padding: 35px 0 45px;
+    background: #ffffff;
+    scroll-margin-top: 20px;
+}
+
+.section-heading {
+    max-width: 750px;
+    margin-bottom: 22px;
+    padding-left: 10px;
+}
+
+.section-heading h2 {
+    margin-bottom: 5px;
+    color: #263d57;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 31px;
+    line-height: 1.2;
+}
+
+.section-heading p {
+    color: #5c707c;
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.contribution-card {
+    position: relative;
+    min-height: 310px;
+    padding: 24px 25px;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: 0.22s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(35, 55, 70, 0.08);
+}
+
+.involvement-card {
+    background: #eaf6f1;
+}
+
+.verification-card {
+    background: #edf4fb;
+}
+
+.community-card {
+    background: #fff7e5;
+}
+
+.participation-card {
+    background: #fcecf2;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+
+.card-number {
+    color: #759187;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.contribution-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.75);
+    color: #39796d;
+    font-size: 20px;
+}
+
+.verification-card .contribution-icon {
+    color: #44779a;
+}
+
+.community-card .contribution-icon {
+    color: #b17b16;
+}
+
+.participation-card .contribution-icon {
+    color: #a13b68;
+}
+
+.card-eyebrow {
+    display: block;
+    margin-bottom: 4px;
+    color: #719087;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.contribution-card h3 {
+    margin-bottom: 8px;
+    color: #263d57;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 23px;
+    line-height: 1.2;
+}
+
+.contribution-card > p {
+    min-height: 63px;
+    margin-bottom: 13px;
+    color: #526a78;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.contribution-card ul {
+    display: grid;
+    gap: 6px;
+    list-style: none;
+}
+
+.contribution-card li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #526a78;
+    font-family: Georgia, serif;
+    font-size: 12px;
+}
+
+.contribution-card li i {
+    margin-top: 4px;
+    color: #4b8879;
+    font-size: 9px;
+}
+
+.verification-card li i {
+    color: #4b7797;
+}
+
+.community-card li i {
+    color: #ae7a19;
+}
+
+.participation-card li i {
+    color: #a13b68;
+}
+
+/* =========================================================
+   PROFESSIONAL RESPONSIBILITY
+   ========================================================= */
+
+.professional-responsibility {
+    padding: 10px 0 40px;
+}
+
+.responsibility-box {
+    display: grid;
+    grid-template-columns: 75px 1fr;
+    gap: 20px;
+    align-items: start;
+    padding: 28px 30px;
+    border-radius: 14px;
+    background: #eef5f2;
+}
+
+.responsibility-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #39796d;
+    font-size: 24px;
+}
+
+.responsibility-content h2 {
+    margin-bottom: 6px;
+    color: #263d57;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.responsibility-content > p {
+    max-width: 850px;
+    margin-bottom: 16px;
+    color: #536c78;
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+.responsibility-points {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px 25px;
+}
+
+.responsibility-points div {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #496573;
+    font-family: Georgia, serif;
+    font-size: 12px;
+}
+
+.responsibility-points i {
+    margin-top: 4px;
+    color: #4d8879;
+    font-size: 10px;
+}
+
+/* =========================================================
+   FINAL SECTION
+   ========================================================= */
+
+.professional-next {
+    padding: 15px 0 50px;
+}
+
+.next-box {
+    position: relative;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px 50px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #f2eee5;
+}
+
+.next-box::after {
+    content: "";
+    position: absolute;
+    right: -80px;
+    bottom: -130px;
+    width: 390px;
+    height: 280px;
+    border-radius: 50%;
+    background: rgba(205, 218, 201, 0.42);
+}
+
+.next-box > * {
+    position: relative;
+    z-index: 1;
+}
+
+.next-box h2 {
+    margin-bottom: 10px;
+    color: #263d57;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.05;
+}
+
+.next-box p {
+    max-width: 650px;
+    margin-bottom: 20px;
+    color: #586d78;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.start-professional-btn {
+    width: fit-content;
+    min-width: 235px;
+}
+
+/* =========================================================
+   FOCUS STATES
+   ========================================================= */
+
+.explore-professional-btn:focus-visible,
+.start-professional-btn:focus-visible {
+    outline: 3px solid #77a99a;
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .pathway-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pathway-image {
+        min-height: 360px;
+        max-height: 430px;
+    }
+
+    .pathway-image img {
+        min-height: 360px;
+        max-height: 430px;
+    }
+
+    .pathway-content {
+        padding: 35px;
+    }
+
+    .contribution-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .responsibility-points {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .professional-container {
+        width: 94%;
+    }
+
+    .professional-hero {
+        padding: 30px 0 35px;
+    }
+
+    .hero-content {
+        padding: 10px 5px;
+    }
+
+    .professional-hero h1 {
+        font-size: 42px;
+    }
+
+    .professional-hero p {
+        font-size: 14px;
+    }
+
+    .hero-quote {
+        font-size: 13px;
+    }
+
+    .professional-pathway {
+        padding: 25px 0;
+    }
+
+    .pathway-grid {
+        border-radius: 12px;
+    }
+
+    .pathway-image {
+        min-height: 290px;
+        max-height: 360px;
+    }
+
+    .pathway-image img {
+        min-height: 290px;
+        max-height: 360px;
+    }
+
+    .pathway-content {
+        padding: 28px 22px;
+    }
+
+    .pathway-content h2 {
+        font-size: 27px;
+    }
+
+    .contribution-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contribution-card {
+        min-height: auto;
+    }
+
+    .responsibility-box {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+    }
+
+    .responsibility-icon {
+        margin-bottom: 2px;
+    }
+
+    .next-box {
+        padding: 32px 23px;
+    }
+
+    .next-box h2 {
+        font-size: 34px;
+    }
+
+    .start-professional-btn {
+        width: 100%;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+    .professional-hero h1 {
+        font-size: 37px;
+    }
+
+    .pathway-step strong {
+        font-size: 13px;
+    }
+
+    .pathway-step p {
+        font-size: 10px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .contribution-card h3 {
+        font-size: 21px;
+    }
+
+    .responsibility-content h2 {
+        font-size: 23px;
+    }
+
+    .next-box h2 {
+        font-size: 30px;
+    }
+}
+
+/* =========================================================
+   BACK TO TOOLKIT
+   ========================================================= */
+
+.back-to-toolkit {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    width: fit-content;
+    margin: 0 0 18px 5px;
+    color: #17355f;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.back-to-toolkit:hover {
+    transform: translateX(-4px);
+    color: #39796d;
+}

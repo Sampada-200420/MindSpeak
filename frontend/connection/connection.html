@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Connection | MindSpeak</title>
+
+
+    <!-- ==================================================
+         GOOGLE FONTS
+    ================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- ==================================================
+         FONT AWESOME
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+
+    <!-- ==================================================
+         CONNECTION CSS
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="connection.css"
+    >
+
+
+    <!-- ==================================================
+         EXISTING MINDSPEAK NAVBAR + FOOTER
+    ================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="../navbar.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../footer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVBAR
+    ================================================== -->
+
+    <!-- navbar.js loads the navbar automatically -->
+
+
+    <main class="connection-page">
+
+
+        <!-- ==================================================
+             HERO
+        ================================================== -->
+
+        <section class="connection-hero">
+
+            <div class="connection-hero-content">
+
+                <span class="section-label">
+                    CONNECTION
+                </span>
+
+                <h1>
+                    Find Your
+                    <span>People</span>
+                </h1>
+
+                <p>
+                    Connect with people who understand,
+                    support, and inspire you. Make new
+                    connections or find guidance from
+                    our mentors.
+                </p>
+
+
+                <div class="connection-search">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="connectionSearchInput"
+                        placeholder="Search members or mentors..."
+                        autocomplete="off"
+                    >
+
+                    <button
+                        type="button"
+                        id="connectionSearchBtn"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="connection-hero-image">
+
+                <img
+                    src="../images/connection-hero.jpg"
+                    alt="People connecting in nature"
+                >
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             MAIN DASHBOARD
+        ================================================== -->
+
+        <section class="connection-dashboard">
+
+
+            <!-- ==================================================
+                 LEFT COLUMN
+            ================================================== -->
+
+            <div class="connection-main-column">
+
+
+                <!-- ==================================================
+                     PEOPLE
+                ================================================== -->
+
+                <section class="connection-panel people-panel">
+
+                    <div class="panel-heading">
+
+                        <div class="panel-heading-text">
+
+                            <div class="panel-title-row">
+
+                                <div class="panel-icon people-icon">
+                                    <i class="fa-solid fa-user-group"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>
+                                        People You May Want
+                                        to Connect With
+                                    </h2>
+
+                                    <p>
+                                        Meet members who share
+                                        similar interests and
+                                        experiences.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="see-more-btn"
+                            id="viewMoreMembersBtn"
+                        >
+                            See More
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- ==================================================
+                         TOPIC FILTERS
+                    ================================================== -->
+
+                    <div
+                        class="topic-filter"
+                        id="topicList"
+                    >
+
+                        <button
+                            type="button"
+                            class="topic-card active"
+                            data-topic=""
+                        >
+                            All
+                        </button>
+
+                        <button
+                            type="button"
+                            class="topic-card"
+                            data-topic="Academic"
+                        >
+                            Academic
+                        </button>
+
+                        <button
+                            type="button"
+                            class="topic-card"
+                            data-topic="Friendships"
+                        >
+                            Friendships
+                        </button>
+
+                        <button
+                            type="button"
+                            class="topic-card"
+                            data-topic="Loneliness"
+                        >
+                            Loneliness
+                        </button>
+
+                        <button
+                            type="button"
+                            class="topic-card"
+                            data-topic="Motivation"
+                        >
+                            Motivation
+                        </button>
+
+                        <button
+                            type="button"
+                            class="topic-card"
+                            data-topic="Relationships"
+                        >
+                            Relationships
+                        </button>
+
+                        <button
+                            type="button"
+                            class="topic-card"
+                            data-topic="Family"
+                        >
+                            Family
+                        </button>
+
+                        <button
+                            type="button"
+                            class="topic-card"
+                            data-topic="Future & career"
+                        >
+                            Future & Career
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- ==================================================
+                         MEMBER CARDS
+                    ================================================== -->
+
+                    <div
+                        class="members-grid"
+                        id="membersGrid"
+                    >
+
+                        <div class="member-loading">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                            <p>
+                                Finding people who understand...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==================================================
+                     AVAILABLE MENTORS
+                ================================================== -->
+
+                <section class="connection-panel mentors-panel">
+
+                    <div class="panel-heading">
+
+                        <div class="panel-heading-text">
+
+                            <div class="panel-title-row">
+
+                                <div class="panel-icon mentor-icon">
+                                    <i class="fa-solid fa-star"></i>
+                                </div>
+
+                                <div>
+
+                                    <h2>
+                                        Available Mentors
+                                    </h2>
+
+                                    <p>
+                                        Connect with experienced
+                                        mentors who are here to
+                                        listen, guide, and support you.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <a
+                            href="../mentor/mentor-support.html"
+                            class="see-more-btn"
+                        >
+                            See More
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- ==================================================
+                         REAL MENTORS ARE LOADED HERE
+                    ================================================== -->
+
+                    <div
+                        class="mentor-grid"
+                        id="mentorGrid"
+                    >
+
+                        <div class="mentor-loading">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                            <p>
+                                Finding available mentors...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==================================================
+                     SIMPLE CONNECTION MESSAGE
+                ================================================== -->
+
+                <section class="connection-message-banner">
+
+                    <div class="message-banner-content">
+
+                        <div class="message-banner-icon">
+
+                            <i class="fa-solid fa-seedling"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h2>
+                                A kinder place to connect.
+                            </h2>
+
+                            <p>
+                                Whether you're looking for a
+                                friend who understands or a
+                                mentor to guide you, MindSpeak
+                                is here to help.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="primary-action-btn"
+                        id="explorePeopleBtn"
+                    >
+                        <i class="fa-solid fa-user-group"></i>
+                        Explore People
+                    </button>
+
+                </section>
+
+            </div>
+
+
+
+            <!-- ==================================================
+                 RIGHT COLUMN
+            ================================================== -->
+
+            <aside class="connection-side-column">
+
+
+                <!-- ==================================================
+                     YOUR REQUESTS
+                ================================================== -->
+
+                <section class="connection-side-panel requests-panel">
+
+                    <div class="side-panel-heading">
+
+                        <div class="side-title">
+
+                            <div class="side-panel-icon">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+
+                            <h2>
+                                Your Requests
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="side-see-all-btn"
+                            id="seeAllRequestsBtn"
+                        >
+                            See All
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- REQUEST TABS -->
+
+                    <div class="request-tabs">
+
+                        <button
+                            type="button"
+                            class="request-tab active"
+                            data-request-tab="incoming"
+                            id="incomingRequestsTab"
+                        >
+                            Incoming
+                            <span id="incomingRequestCount">
+                                0
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="request-tab"
+                            data-request-tab="sent"
+                            id="sentRequestsTab"
+                        >
+                            Sent
+                            <span id="sentRequestCount">
+                                0
+                            </span>
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- REQUEST LIST -->
+
+                    <div
+                        class="connection-request-list"
+                        id="connectionRequestList"
+                    >
+
+                        <div class="side-loading">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                            <p>
+                                Loading requests...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==================================================
+                     YOUR CONNECTIONS
+                ================================================== -->
+
+                <section class="connection-side-panel connections-panel">
+
+                    <div class="side-panel-heading">
+
+                        <div class="side-title">
+
+                            <div class="side-panel-icon connections-icon">
+                                <i class="fa-solid fa-user-group"></i>
+                            </div>
+
+                            <h2>
+                                Your Connections
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="side-see-all-btn"
+                            id="seeAllConnectionsBtn"
+                        >
+                            See All
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- CONNECTION TABS -->
+
+                    <div class="connection-tabs">
+
+                        <button
+                            type="button"
+                            class="connection-tab active"
+                            data-connection-tab="friends"
+                        >
+                            Friends
+                            <span id="friendConnectionCount">
+                                0
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            class="connection-tab"
+                            data-connection-tab="mentors"
+                        >
+                            Mentors
+                            <span id="mentorConnectionCount">
+                                0
+                            </span>
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- CONNECTION LIST -->
+
+                    <div
+                        class="connection-list"
+                        id="connectionList"
+                    >
+
+                        <div class="side-loading">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                            <p>
+                                Loading connections...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==================================================
+                     GO TO MESSAGES
+                ================================================== -->
+
+                <button
+                    type="button"
+                    class="messages-panel"
+                    id="finalFindPeopleBtn"
+                >
+
+                    <div class="messages-icon">
+
+                        <i class="fa-solid fa-comment-dots"></i>
+
+                    </div>
+
+
+                    <div class="messages-content">
+
+                        <h2>
+                            Go to Messages
+                        </h2>
+
+                        <p>
+                            View your conversations with
+                            friends and mentors.
+                        </p>
+
+                    </div>
+
+
+                    <div class="messages-arrow">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </div>
+
+                </button>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <div id="footer"></div>
+
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script src="../js/navbar.js"></script>
+
+    <script src="../js/footer.js"></script>
+
+    <script src="connection.js"></script>
+
+
+</body>
+
+</html>

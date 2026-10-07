@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Connection Hub | MindSpeak</title>
+
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+
+    <!-- Shared Navbar -->
+
+    <link
+        rel="stylesheet"
+        href="../navbar.css"
+    >
+
+
+    <!-- Shared Footer -->
+
+    <link
+        rel="stylesheet"
+        href="../footer.css"
+    >
+
+
+    <!-- Connection Hub CSS -->
+
+    <link
+        rel="stylesheet"
+        href="connection-hub.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==================================================
+         NAVBAR
+    =================================================== -->
+
+    <div id="navbar"></div>
+
+
+
+    <!-- ==================================================
+         CONNECTION HUB
+    =================================================== -->
+
+    <main class="connection-hub-page">
+
+
+        <!-- ==================================================
+             HUB HEADER
+        =================================================== -->
+
+        <section class="hub-header">
+
+            <div class="hub-header-content">
+
+                <span class="section-label">
+                    YOUR CONNECTIONS
+                </span>
+
+                <h1>
+                    Connection Hub
+                </h1>
+
+                <p>
+                    Your safe space for meaningful
+                    conversations.
+                </p>
+
+            </div>
+
+
+            <div class="hub-header-note">
+
+                <span>
+                    Different people
+                </span>
+
+                <span>
+                    Same struggles
+                </span>
+
+                <span>
+                    Brighter tomorrows
+                    <i class="fa-solid fa-leaf"></i>
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ==================================================
+             HUB LAYOUT
+        =================================================== -->
+
+        <section class="connection-hub-layout">
+
+
+            <!-- ==================================================
+                 LEFT SIDEBAR
+            =================================================== -->
+
+            <aside class="hub-sidebar">
+
+
+                <!-- ==================================================
+                     CONNECTION REQUESTS
+                =================================================== -->
+
+                <section class="requests-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="panel-label">
+                                CONNECTION REQUESTS
+                            </span>
+
+                            <h2>
+
+                                Requests
+
+                                <span
+                                    class="request-count"
+                                    id="requestCount"
+                                >
+                                    0
+                                </span>
+
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="panel-link"
+                            id="viewAllRequestsBtn"
+                        >
+                            See all
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        class="requests-list"
+                        id="requestsList"
+                    >
+
+                        <div class="hub-empty-state">
+
+                            <i class="fa-regular fa-paper-plane"></i>
+
+                            <p>
+                                No connection requests
+                                right now.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+
+                <!-- ==================================================
+                     CONVERSATIONS
+                =================================================== -->
+
+                <section class="conversations-panel">
+
+
+                    <!-- PANEL HEADER -->
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="panel-label">
+                                PRIVATE CONNECTIONS
+                            </span>
+
+                            <h2>
+                                Your Conversations
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="new-connection-btn"
+                            id="newConnectionBtn"
+                        >
+
+                            <i class="fa-solid fa-plus"></i>
+
+                            New
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- ==================================================
+                         FRIEND CONVERSATIONS
+                    =================================================== -->
+
+                    <div class="hub-conversation-section">
+
+
+                        <div class="conversation-section-heading">
+
+
+                            <div class="conversation-section-title">
+
+
+                                <span
+                                    class="conversation-section-icon friend-icon"
+                                >
+
+                                    <i class="fa-solid fa-user-group"></i>
+
+                                </span>
+
+
+                                <div>
+
+                                    <span class="conversation-section-label">
+                                        FRIENDS
+                                    </span>
+
+                                    <p>
+                                        Your peer connections
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <span
+                                class="conversation-section-count"
+                                id="friendConversationCount"
+                            >
+                                0
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div
+                            class="conversation-list friend-conversation-list"
+                            id="conversationList"
+                        >
+
+                            <div class="hub-empty-state">
+
+                                <i class="fa-regular fa-comments"></i>
+
+                                <p>
+                                    Your friend conversations
+                                    will appear here.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- ==================================================
+                         MENTOR CONVERSATIONS
+                    =================================================== -->
+
+                    <div
+                        class="hub-conversation-section mentor-conversation-section"
+                    >
+
+
+                        <div class="conversation-section-heading">
+
+
+                            <div class="conversation-section-title">
+
+
+                                <span
+                                    class="conversation-section-icon mentor-icon"
+                                >
+
+                                    <i class="fa-solid fa-hands-holding-child"></i>
+
+                                </span>
+
+
+                                <div>
+
+                                    <span class="conversation-section-label">
+                                        MENTORS
+                                    </span>
+
+                                    <p>
+                                        Your mentor conversations
+                                    </p>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <span
+                                class="conversation-section-count"
+                                id="mentorConversationCount"
+                            >
+                                0
+                            </span>
+
+
+                        </div>
+
+
+
+                        <div
+                            class="mentor-conversation-list"
+                            id="mentorConversationList"
+                        >
+
+                            <div class="hub-empty-state">
+
+                                <i class="fa-solid fa-user-shield"></i>
+
+                                <p>
+                                    Your mentor conversations
+                                    will appear here.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </section>
+
+
+            </aside>
+
+
+
+            <!-- ==================================================
+                 RIGHT CHAT AREA
+            =================================================== -->
+
+            <section
+                class="chat-panel"
+                id="chatPanel"
+            >
+
+
+                <!-- ==================================================
+                     EMPTY CHAT STATE
+                =================================================== -->
+
+                <div
+                    class="chat-empty-state"
+                    id="chatEmptyState"
+                >
+
+
+                    <div class="chat-empty-icon">
+
+                        <i class="fa-regular fa-comments"></i>
+
+                    </div>
+
+
+                    <span class="section-label">
+                        PRIVATE CONVERSATION
+                    </span>
+
+
+                    <h2>
+                        Choose someone to talk to.
+                    </h2>
+
+
+                    <p>
+                        Select a conversation from the
+                        list and start a private,
+                        anonymous conversation.
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     ACTIVE CHAT
+                =================================================== -->
+
+                <div
+                    class="active-chat"
+                    id="activeChat"
+                    hidden
+                >
+
+
+                    <!-- ==================================================
+                         CHAT HEADER
+                    =================================================== -->
+
+                    <header class="chat-header">
+
+
+                        <div class="chat-person">
+
+
+                            <div class="chat-avatar">
+
+
+                                <img
+                                    id="chatAvatar"
+                                    src=""
+                                    alt=""
+                                >
+
+
+                                <div
+                                    class="chat-avatar-placeholder"
+                                    id="chatAvatarPlaceholder"
+                                >
+
+                                    <i class="fa-solid fa-leaf"></i>
+
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="chat-person-info">
+
+
+                                <h2 id="chatNickname">
+                                    Anonymous Member
+                                </h2>
+
+
+                                <div
+                                    class="chat-status"
+                                    id="chatStatus"
+                                >
+
+
+                                    <span
+                                        class="chat-status-dot"
+                                    ></span>
+
+
+                                    <span>
+                                        Available
+                                    </span>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <div class="chat-header-actions">
+
+
+                            <span
+                                class="chat-topic"
+                                id="chatTopic"
+                            >
+                                Topic
+                            </span>
+
+
+
+                            <button
+                                type="button"
+                                class="chat-action-btn"
+                                id="chatSearchBtn"
+                                aria-label="Search conversation"
+                            >
+
+                                <i class="fa-solid fa-magnifying-glass"></i>
+
+                            </button>
+
+
+
+                            <button
+                                type="button"
+                                class="chat-action-btn"
+                                id="chatMenuBtn"
+                                aria-label="Conversation options"
+                            >
+
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+
+                            </button>
+
+
+                        </div>
+
+
+                    </header>
+
+
+
+                    <!-- ==================================================
+                         CHAT MESSAGES
+                    =================================================== -->
+
+                    <div
+                        class="chat-messages"
+                        id="chatMessages"
+                    >
+
+                    </div>
+
+
+
+                    <!-- ==================================================
+                         CHAT COMPOSER
+                    =================================================== -->
+
+                    <form
+                        class="chat-composer"
+                        id="chatComposer"
+                    >
+
+
+                        <button
+                            type="button"
+                            class="composer-action-btn"
+                            id="attachmentBtn"
+                            aria-label="Attach"
+                        >
+
+                            <i class="fa-solid fa-paperclip"></i>
+
+                        </button>
+
+
+
+                        <div class="message-input-wrapper">
+
+
+                            <input
+                                type="text"
+                                id="messageInput"
+                                placeholder="Write a message..."
+                                autocomplete="off"
+                                maxlength="1000"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="composer-emoji-btn"
+                                id="emojiBtn"
+                                aria-label="Add emoji"
+                            >
+
+                                <i class="fa-regular fa-face-smile"></i>
+
+                            </button>
+
+
+                        </div>
+
+
+
+                        <button
+                            type="submit"
+                            class="send-message-btn"
+                            id="sendMessageBtn"
+                            aria-label="Send message"
+                        >
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- ==================================================
+                         PRIVACY NOTE
+                    =================================================== -->
+
+                    <div class="chat-privacy-note">
+
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+
+                        <span>
+                            This is a private and anonymous
+                            conversation.
+                        </span>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+
+        <!-- ==================================================
+             BACK TO CONNECTION
+        =================================================== -->
+
+        <div class="hub-back-wrapper">
+
+
+            <button
+                type="button"
+                class="hub-back-btn"
+                id="backToConnectionBtn"
+            >
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Back to Connection
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- ==================================================
+             SAFETY / SUPPORT NOTE
+        =================================================== -->
+
+        <section class="hub-support-note">
+
+
+            <div class="support-note-icon">
+
+                <i class="fa-solid fa-heart"></i>
+
+            </div>
+
+
+
+            <div class="support-note-content">
+
+
+                <h3>
+                    A reminder for every conversation
+                </h3>
+
+
+                <p>
+                    Be kind, respect boundaries, and
+                    remember that you can end a connection
+                    whenever you feel uncomfortable.
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==================================================
+         FOOTER
+    =================================================== -->
+
+    <div id="footer"></div>
+
+
+
+    <!-- ==================================================
+         SCRIPTS
+    =================================================== -->
+
+    <script src="../js/navbar.js"></script>
+
+    <script src="../js/footer.js"></script>
+
+    <script src="connection-hub.js"></script>
+
+
+</body>
+
+</html>

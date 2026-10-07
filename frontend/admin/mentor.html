@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Mentor Applications | MindSpeak</title>
+
+<link rel="stylesheet" href="../navbar.css">
+<link rel="stylesheet" href="../footer.css">
+
+<link rel="stylesheet" href="mentor.css">
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+>
+```
+
+</head>
+
+<body>
+
+```
+<!-- NAVBAR -->
+<div id="navbar-placeholder"></div>
+
+
+<!-- MAIN CONTENT -->
+<main class="mentor-admin-page">
+
+    <section class="mentor-admin-hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                <i class="fa-solid fa-seedling"></i>
+                Mentor Management
+            </span>
+
+            <h1>Mentor Applications</h1>
+
+            <p>
+                Review applications from community members who want to
+                support others through MindSpeak.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="applications-section">
+
+        <div class="section-header">
+
+            <div>
+                <h2>Applications</h2>
+
+                <p>
+                    Review pending mentor applications and manage their status.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="refresh-btn"
+                id="refreshApplicationsBtn"
+            >
+                <i class="fa-solid fa-rotate"></i>
+                Refresh
+            </button>
+
+        </div>
+
+
+        <!-- LOADING -->
+        <div
+            id="loadingState"
+            class="state-message"
+        >
+            <i class="fa-solid fa-spinner fa-spin"></i>
+
+            <p>
+                Loading mentor applications...
+            </p>
+        </div>
+
+
+        <!-- ERROR -->
+        <div
+            id="errorState"
+            class="state-message error-state"
+            style="display: none;"
+        >
+            <i class="fa-solid fa-circle-exclamation"></i>
+
+            <p id="errorMessage">
+                Unable to load mentor applications.
+            </p>
+
+            <button
+                type="button"
+                id="retryBtn"
+                class="retry-btn"
+            >
+                Try Again
+            </button>
+        </div>
+
+
+        <!-- EMPTY -->
+        <div
+            id="emptyState"
+            class="state-message"
+            style="display: none;"
+        >
+            <i class="fa-regular fa-folder-open"></i>
+
+            <h3>No Applications</h3>
+
+            <p>
+                There are currently no mentor applications.
+            </p>
+        </div>
+
+
+        <!-- APPLICATION LIST -->
+        <div
+            id="applicationsContainer"
+            class="applications-container"
+        ></div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<div id="footer"></div>
+
+
+<script src="../js/navbar.js"></script>
+<script src="../js/footer.js"></script>
+<script src="../js/admin-mentor.js"></script>
+
+
+</body>
+</html>

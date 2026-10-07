@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Join as a Professional | MindSpeak</title>
+
+    <!-- Shared Styles -->
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
+
+    <!-- DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", sans-serif;
+            background: #f7f8f6;
+            color: #10263e;
+        }
+
+        .professional-page {
+            padding-bottom: 70px;
+        }
+
+        /* HERO */
+
+        .application-hero {
+            background: #e8f3ed;
+            border-bottom: 1px solid #d5ded9;
+            padding: 65px 7% 55px;
+        }
+
+        .hero-inner {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: #ffffff;
+            border: 1px solid #ccd6d1;
+            border-radius: 30px;
+            padding: 7px 15px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .application-hero h1 {
+            margin: 0 0 15px;
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+        }
+
+        .application-hero p {
+            max-width: 650px;
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #425568;
+        }
+
+        .hero-box {
+            background: #ffffff;
+            border: 1px solid #d5ded9;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 8px 22px rgba(16, 38, 62, 0.06);
+        }
+
+        .hero-box h3 {
+            margin: 0 0 15px;
+            font-size: 19px;
+        }
+
+        .hero-point {
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .hero-point i {
+            color: #2f7b5d;
+            margin-top: 3px;
+        }
+
+        /* MAIN */
+
+        .application-container {
+            max-width: 1150px;
+            margin: 50px auto 0;
+            padding: 0 25px;
+        }
+
+        .intro-section {
+            margin-bottom: 35px;
+        }
+
+        .section-label {
+            color: #2f7b5d;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .intro-section h2 {
+            margin: 0 0 10px;
+            font-size: 30px;
+        }
+
+        .intro-section p {
+            max-width: 780px;
+            color: #566575;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* PROFESSIONAL AREAS */
+
+        .professional-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 55px;
+        }
+
+        .professional-card {
+            background: #ffffff;
+            border: 1px solid #dbe2de;
+            border-radius: 15px;
+            padding: 22px;
+            transition: 0.2s ease;
+        }
+
+        .professional-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 38, 62, 0.07);
+        }
+
+        .professional-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #e8f3ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2f7b5d;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .professional-card h3 {
+            margin: 0 0 8px;
+            font-size: 17px;
+        }
+
+        .professional-card p {
+            margin: 0;
+            color: #667483;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* FORM */
+
+        .form-wrapper {
+            display: grid;
+            grid-template-columns: 0.75fr 1.4fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .form-info {
+            background: #10263e;
+            color: #ffffff;
+            border-radius: 18px;
+            padding: 28px;
+            position: sticky;
+            top: 25px;
+        }
+
+        .form-info h2 {
+            margin: 0 0 12px;
+            font-size: 25px;
+        }
+
+        .form-info > p {
+            color: #d7e0e8;
+            font-size: 14px;
+            line-height: 1.65;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            color: #8dc4a8;
+            margin-top: 3px;
+        }
+
+        .info-item strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .info-item span {
+            color: #c5d1dc;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .form-card {
+            background: #ffffff;
+            border: 1px solid #dbe2de;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 8px 24px rgba(16, 38, 62, 0.05);
+        }
+
+        .form-card h2 {
+            margin: 0 0 8px;
+            font-size: 27px;
+        }
+
+        .form-card-intro {
+            margin: 0 0 28px;
+            color: #667483;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-section-title {
+            margin: 28px 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid #e2e7e4;
+            font-size: 17px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .required {
+            color: #c44b4b;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            border: 1px solid #ccd6d1;
+            border-radius: 9px;
+            background: #ffffff;
+            color: #10263e;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 12px 13px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #2f7b5d;
+            box-shadow: 0 0 0 3px rgba(47, 123, 93, 0.1);
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .char-counter {
+            text-align: right;
+            margin-top: 5px;
+            color: #84909a;
+            font-size: 11px;
+        }
+
+        .consent {
+            background: #f2f6f3;
+            border: 1px solid #dbe5df;
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .consent input {
+            width: auto;
+            margin-top: 3px;
+        }
+
+        .consent label {
+            margin: 0;
+            font-size: 12px;
+            font-weight: 400;
+            color: #566575;
+            line-height: 1.55;
+        }
+
+        .submit-area {
+            margin-top: 25px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            border-radius: 9px;
+            background: #2f7b5d;
+            color: #ffffff;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: #27684e;
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            display: none;
+            padding: 13px 15px;
+            border-radius: 9px;
+            margin-top: 15px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .form-message.success {
+            display: block;
+            background: #e8f3ed;
+            border: 1px solid #bcd8c9;
+            color: #245c43;
+        }
+
+        .form-message.error {
+            display: block;
+            background: #fff0f0;
+            border: 1px solid #e7c2c2;
+            color: #8a3333;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            color: #2f7b5d;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .hero-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .professional-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .form-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .form-info {
+                position: static;
+            }
+        }
+
+        @media (max-width: 750px) {
+            .application-hero {
+                padding: 45px 5% 40px;
+            }
+
+            .application-container {
+                margin-top: 35px;
+                padding: 0 18px;
+            }
+
+            .professional-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .form-card,
+            .form-info {
+                padding: 23px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            .application-hero h1 {
+                font-size: 38px;
+            }
+
+            .application-hero p {
+                font-size: 15px;
+            }
+
+            .intro-section h2 {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Shared Navbar -->
+    <div id="navbar-container"></div>
+
+    <main class="professional-page">
+
+        <!-- HERO -->
+        <section class="application-hero">
+
+            <div class="hero-inner">
+
+                <div>
+
+                    <span class="hero-label">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        Professional Community
+                    </span>
+
+                    <h1>Join as a Professional.</h1>
+
+                    <p>
+                        Bring your professional knowledge and experience to
+                        the MindSpeak community. We welcome qualified and
+                        experienced professionals interested in contributing
+                        to mental-health education, resources and support.
+                    </p>
+
+                </div>
+
+                <div class="hero-box">
+
+                    <h3>Ways professionals can contribute</h3>
+
+                    <div class="hero-point">
+                        <i class="fa-solid fa-check"></i>
+                        <span>
+                            Share professional knowledge and resources.
+                        </span>
+                    </div>
+
+                    <div class="hero-point">
+                        <i class="fa-solid fa-check"></i>
+                        <span>
+                            Contribute to educational content.
+                        </span>
+                    </div>
+
+                    <div class="hero-point">
+                        <i class="fa-solid fa-check"></i>
+                        <span>
+                            Support awareness and wellbeing initiatives.
+                        </span>
+                    </div>
+
+                    <div class="hero-point">
+                        <i class="fa-solid fa-check"></i>
+                        <span>
+                            Collaborate with the MindSpeak community.
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="application-container">
+
+            <!-- INTRO -->
+            <section class="intro-section">
+
+                <div class="section-label">
+                    Professional contribution
+                </div>
+
+                <h2>
+                    Bring your expertise to MindSpeak
+                </h2>
+
+                <p>
+                    MindSpeak can benefit from people with experience in
+                    mental-health services, counselling, psychology,
+                    education, social work, wellbeing and related fields.
+                    Tell us about your background and how you would like
+                    to contribute.
+                </p>
+
+            </section>
+
+            <!-- PROFESSIONAL AREAS -->
+            <section class="professional-grid">
+
+                <div class="professional-card">
+
+                    <div class="professional-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <h3>Mental Health</h3>
+
+                    <p>
+                        Contribute professional knowledge related to
+                        mental-health awareness, wellbeing and support.
+                    </p>
+
+                </div>
+
+                <div class="professional-card">
+
+                    <div class="professional-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <h3>Counselling & Support</h3>
+
+                    <p>
+                        Help strengthen supportive communication,
+                        guidance and educational resources.
+                    </p>
+
+                </div>
+
+                <div class="professional-card">
+
+                    <div class="professional-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <h3>Education</h3>
+
+                    <p>
+                        Support students and young people through
+                        accessible educational content and initiatives.
+                    </p>
+
+                </div>
+
+                <div class="professional-card">
+
+                    <div class="professional-icon">
+                        <i class="fa-solid fa-people-roof"></i>
+                    </div>
+
+                    <h3>Social & Community Work</h3>
+
+                    <p>
+                        Bring experience working with communities,
+                        vulnerable groups or support programs.
+                    </p>
+
+                </div>
+
+                <div class="professional-card">
+
+                    <div class="professional-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <h3>Content & Research</h3>
+
+                    <p>
+                        Help review, develop or improve mental-health
+                        educational resources.
+                    </p>
+
+                </div>
+
+                <div class="professional-card">
+
+                    <div class="professional-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+
+                    <h3>Other Expertise</h3>
+
+                    <p>
+                        Have another relevant professional background?
+                        Tell us about it in your application.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <!-- FORM -->
+            <section class="form-wrapper">
+
+                <aside class="form-info">
+
+                    <h2>
+                        Share your expertise.
+                    </h2>
+
+                    <p>
+                        Give us some information about your professional
+                        background and how you would like to contribute
+                        to MindSpeak.
+                    </p>
+
+                    <div class="info-item">
+
+                        <i class="fa-solid fa-user-check"></i>
+
+                        <div>
+                            <strong>
+                                Who can apply?
+                            </strong>
+
+                            <span>
+                                Professionals and experienced individuals
+                                with relevant knowledge or expertise.
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <div>
+                            <strong>
+                                Tell us about your experience
+                            </strong>
+
+                            <span>
+                                Include your professional background,
+                                skills and relevant experience.
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+
+                        <div>
+                            <strong>
+                                Contribute meaningfully
+                            </strong>
+
+                            <span>
+                                Your experience can help improve the
+                                quality of MindSpeak resources and support.
+                            </span>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+                <div class="form-card">
+
+                    <h2>
+                        Professional application
+                    </h2>
+
+                    <p class="form-card-intro">
+                        Please provide accurate information about your
+                        professional background and the contribution
+                        you would like to make.
+                    </p>
+
+                    <form id="professionalApplicationForm">
+
+                        <!-- PERSONAL INFORMATION -->
+
+                        <h3 class="form-section-title">
+                            Your information
+                        </h3>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Full name
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    placeholder="Your full name"
+                                    required
+                                >
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email address
+                                    <span class="required">*</span>
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="phone">
+                                    Phone number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    placeholder="+358 ..."
+                                >
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="organization">
+                                    Organization / Workplace
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="organization"
+                                    name="organization"
+                                    placeholder="Organization or workplace"
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <!-- PROFESSIONAL BACKGROUND -->
+
+                        <h3 class="form-section-title">
+                            Your professional background
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="professionalField">
+                                Professional field / specialization
+                                <span class="required">*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="professionalField"
+                                placeholder="e.g. Psychology, Counselling, Education, Social Work, Technology"
+                                required
+                            >
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="experience">
+                                Professional experience
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="experience"
+                                name="experience"
+                                maxlength="2000"
+                                placeholder="Tell us about your professional background, qualifications, roles and relevant experience."
+                                required
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="experienceCount">0</span>/2000
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="skills">
+                                Professional skills & expertise
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="skills"
+                                name="skills"
+                                maxlength="1800"
+                                placeholder="What professional skills, knowledge or areas of expertise could you bring to MindSpeak?"
+                                required
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="skillsCount">0</span>/1800
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="relevantWork">
+                                Relevant work with students, young people or communities
+                            </label>
+
+                            <textarea
+                                id="relevantWork"
+                                maxlength="1600"
+                                placeholder="If applicable, tell us about your experience working with students, young people, communities or support programs."
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="relevantWorkCount">0</span>/1600
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="availability">
+                                Preferred availability
+                            </label>
+
+                            <select id="availability" name="availability">
+
+                                <option value="">
+                                    Select an option
+                                </option>
+
+                                <option value="Flexible">
+                                    Flexible
+                                </option>
+
+                                <option value="Weekdays">
+                                    Weekdays
+                                </option>
+
+                                <option value="Weekends">
+                                    Weekends
+                                </option>
+
+                                <option value="Occasional">
+                                    Occasional
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- PROFESSIONAL CONTRIBUTION -->
+
+                        <h3 class="form-section-title">
+                            Your contribution to MindSpeak
+                        </h3>
+
+                        <div class="form-group">
+
+                            <label for="motivation">
+                                What would you like to contribute?
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="motivation"
+                                name="motivation"
+                                maxlength="2200"
+                                placeholder="What would you like to contribute to MindSpeak? For example: professional guidance, educational content, resource review, workshops, awareness initiatives, mentoring or another area."
+                                required
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="motivationCount">0</span>/2200
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="professionalBoundaries">
+                                Professional boundaries & responsible contribution
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="professionalBoundaries"
+                                maxlength="1800"
+                                placeholder="How would you make sure your contribution remains appropriate, responsible and within your professional role and boundaries?"
+                                required
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="professionalBoundariesCount">0</span>/1800
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="collaboration">
+                                How would you like to collaborate with MindSpeak?
+                                <span class="required">*</span>
+                            </label>
+
+                            <textarea
+                                id="collaboration"
+                                maxlength="1600"
+                                placeholder="Tell us what type of collaboration would work well for you, such as reviewing resources, joining sessions, creating content, mentoring or advising."
+                                required
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="collaborationCount">0</span>/1600
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="additional_information">
+                                Additional information
+                            </label>
+
+                            <textarea
+                                id="additional_information"
+                                name="additional_information"
+                                maxlength="1800"
+                                placeholder="Anything else you would like us to know about your professional background or potential contribution?"
+                            ></textarea>
+
+                            <div class="char-counter">
+                                <span id="additionalCount">0</span>/1800
+                            </div>
+
+                        </div>
+
+                        <!-- CONSENT -->
+
+                        <div class="consent">
+
+                            <input
+                                type="checkbox"
+                                id="consent"
+                                required
+                            >
+
+                            <label for="consent">
+                                I confirm that the information I provide is
+                                accurate and I consent to MindSpeak using
+                                these details to review and respond to my
+                                professional application.
+                            </label>
+
+                        </div>
+
+                        <!-- SUBMIT -->
+
+                        <div class="submit-area">
+
+                            <button
+                                type="submit"
+                                class="submit-btn"
+                                id="submitBtn"
+                            >
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Submit Professional Application
+                            </button>
+
+                            <div
+                                id="formMessage"
+                                class="form-message"
+                            ></div>
+
+                        </div>
+
+                    </form>
+
+                    <a
+                        href="contact.html"
+                        class="back-link"
+                    >
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Back to Contact Us
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <!-- Shared Footer -->
+    <div id="footer"></div>
+
+    <!-- Shared Scripts -->
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const API_BASE = "http://127.0.0.1:8000";
+
+            const form =
+                document.getElementById(
+                    "professionalApplicationForm"
+                );
+
+            const submitBtn =
+                document.getElementById("submitBtn");
+
+            const formMessage =
+                document.getElementById("formMessage");
+
+
+            /* CHARACTER COUNTERS */
+
+            const counters = [
+                ["experience", "experienceCount"],
+                ["skills", "skillsCount"],
+                ["relevantWork", "relevantWorkCount"],
+                ["motivation", "motivationCount"],
+                ["professionalBoundaries", "professionalBoundariesCount"],
+                ["collaboration", "collaborationCount"],
+                ["additional_information", "additionalCount"]
+            ];
+
+            counters.forEach(([fieldId, counterId]) => {
+
+                const field =
+                    document.getElementById(fieldId);
+
+                const counter =
+                    document.getElementById(counterId);
+
+                if (!field || !counter) return;
+
+                const updateCounter = () => {
+                    counter.textContent =
+                        field.value.length;
+                };
+
+                field.addEventListener(
+                    "input",
+                    updateCounter
+                );
+
+                updateCounter();
+
+            });
+
+
+            function showError(message) {
+
+                formMessage.className =
+                    "form-message error";
+
+                formMessage.innerHTML = `
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    ${message}
+                `;
+
+                formMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }
+
+
+            function showSuccess(message) {
+
+                formMessage.className =
+                    "form-message success";
+
+                formMessage.innerHTML = `
+                    <i class="fa-solid fa-circle-check"></i>
+                    <strong> Application submitted successfully.</strong>
+                    <br>
+                    ${message}
+                `;
+
+                formMessage.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+            }
+
+
+            function validEmail(email) {
+
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+                    .test(email);
+
+            }
+
+
+            /* FORM SUBMISSION */
+
+            form.addEventListener(
+                "submit",
+                async (event) => {
+
+                    event.preventDefault();
+
+                    formMessage.className =
+                        "form-message";
+
+                    formMessage.textContent = "";
+
+
+                    const name =
+                        document.getElementById("name")
+                            .value.trim();
+
+                    const email =
+                        document.getElementById("email")
+                            .value.trim();
+
+                    const phone =
+                        document.getElementById("phone")
+                            .value.trim();
+
+                    const organization =
+                        document.getElementById("organization")
+                            .value.trim();
+
+                    const professionalField =
+                        document.getElementById("professionalField")
+                            .value.trim();
+
+                    const experience =
+                        document.getElementById("experience")
+                            .value.trim();
+
+                    const skills =
+                        document.getElementById("skills")
+                            .value.trim();
+
+                    const relevantWork =
+                        document.getElementById("relevantWork")
+                            .value.trim();
+
+                    const availability =
+                        document.getElementById("availability")
+                            .value;
+
+                    const motivation =
+                        document.getElementById("motivation")
+                            .value.trim();
+
+                    const professionalBoundaries =
+                        document.getElementById("professionalBoundaries")
+                            .value.trim();
+
+                    const collaboration =
+                        document.getElementById("collaboration")
+                            .value.trim();
+
+                    const additionalInformation =
+                        document.getElementById("additional_information")
+                            .value.trim();
+
+                    const consent =
+                        document.getElementById("consent")
+                            .checked;
+
+
+                    /* VALIDATION */
+
+                    if (!name) {
+                        showError(
+                            "Please enter your full name."
+                        );
+                        return;
+                    }
+
+                    if (!email) {
+                        showError(
+                            "Please enter your email address."
+                        );
+                        return;
+                    }
+
+                    if (!validEmail(email)) {
+                        showError(
+                            "Please enter a valid email address."
+                        );
+                        return;
+                    }
+
+                    if (!professionalField) {
+                        showError(
+                            "Please enter your professional field or specialization."
+                        );
+                        return;
+                    }
+
+                    if (!experience) {
+                        showError(
+                            "Please describe your professional experience."
+                        );
+                        return;
+                    }
+
+                    if (!skills) {
+                        showError(
+                            "Please describe your professional skills and expertise."
+                        );
+                        return;
+                    }
+
+                    if (!motivation) {
+                        showError(
+                            "Please describe what you would like to contribute."
+                        );
+                        return;
+                    }
+
+                    if (!professionalBoundaries) {
+                        showError(
+                            "Please describe how you would maintain appropriate professional boundaries."
+                        );
+                        return;
+                    }
+
+                    if (!collaboration) {
+                        showError(
+                            "Please describe how you would like to collaborate with MindSpeak."
+                        );
+                        return;
+                    }
+
+                    if (!consent) {
+                        showError(
+                            "Please confirm your consent before submitting."
+                        );
+                        return;
+                    }
+
+
+                    /* LOADING */
+
+                    submitBtn.disabled = true;
+
+                    submitBtn.innerHTML = `
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+                        Sending...
+                    `;
+
+
+                    try {
+
+                        /* USER ID */
+
+                        let userId = null;
+
+                        try {
+
+                            const storedUser =
+                                localStorage.getItem("user");
+
+                            if (storedUser) {
+
+                                const user =
+                                    JSON.parse(storedUser);
+
+                                userId =
+                                    user.id || null;
+
+                            }
+
+                            if (!userId) {
+
+                                const storedUserId =
+                                    localStorage.getItem("user_id");
+
+                                if (storedUserId) {
+                                    userId =
+                                        Number(storedUserId);
+                                }
+
+                            }
+
+                        } catch (storageError) {
+
+                            console.warn(
+                                "Could not read stored user.",
+                                storageError
+                            );
+
+                        }
+
+
+                        /*
+                         * The current backend has one additional_information
+                         * field. Keep the Professional-specific answers
+                         * structured inside that field.
+                         */
+
+                        const additionalSections = [
+
+                            `Professional field / specialization:
+${professionalField}`,
+
+                            `Relevant work with students, young people or communities:
+${relevantWork || "Not provided"}`,
+
+                            `Professional boundaries & responsible contribution:
+${professionalBoundaries}`,
+
+                            `Preferred collaboration:
+${collaboration}`
+
+                        ];
+
+                        if (additionalInformation) {
+
+                            additionalSections.push(
+                                `Additional information:
+${additionalInformation}`
+                            );
+
+                        }
+
+
+                        const payload = {
+
+                            application_type:
+                                "professional",
+
+                            user_id:
+                                userId,
+
+                            name:
+                                name,
+
+                            email:
+                                email,
+
+                            phone:
+                                phone || null,
+
+                            organization:
+                                organization || null,
+
+                            motivation:
+                                motivation,
+
+                            experience:
+                                experience,
+
+                            skills:
+                                skills,
+
+                            availability:
+                                availability || null,
+
+                            additional_information:
+                                additionalSections.join("\n\n")
+
+                        };
+
+
+                        console.log(
+                            "Submitting Professional application:",
+                            payload
+                        );
+
+
+                        /* API REQUEST */
+
+                        const response =
+                            await fetch(
+                                `${API_BASE}/api/contact/applications`,
+                                {
+                                    method: "POST",
+
+                                    headers: {
+                                        "Content-Type":
+                                            "application/json",
+
+                                        "Accept":
+                                            "application/json"
+                                    },
+
+                                    body:
+                                        JSON.stringify(
+                                            payload
+                                        )
+                                }
+                            );
+
+
+                        const responseText =
+                            await response.text();
+
+                        let data = null;
+
+
+                        if (responseText.trim()) {
+
+                            try {
+
+                                data =
+                                    JSON.parse(
+                                        responseText
+                                    );
+
+                            } catch (parseError) {
+
+                                throw new Error(
+                                    "The server returned an invalid response."
+                                );
+
+                            }
+
+                        }
+
+
+                        if (!response.ok) {
+
+                            throw new Error(
+                                data?.detail ||
+                                data?.message ||
+                                `Server error (${response.status})`
+                            );
+
+                        }
+
+
+                        /* SUCCESS */
+
+                        showSuccess(
+                            "Thank you for your interest in contributing to MindSpeak. Our team will review your professional application."
+                        );
+
+
+                        form.reset();
+
+
+                        counters.forEach(
+                            ([fieldId, counterId]) => {
+
+                                const counter =
+                                    document.getElementById(
+                                        counterId
+                                    );
+
+                                if (counter) {
+                                    counter.textContent = "0";
+                                }
+
+                            }
+                        );
+
+
+                    } catch (error) {
+
+                        console.error(
+                            "Professional application error:",
+                            error
+                        );
+
+                        showError(
+                            error.message ||
+                            "Something went wrong while submitting your application. Please try again."
+                        );
+
+                    } finally {
+
+                        submitBtn.disabled = false;
+
+                        submitBtn.innerHTML = `
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Submit Professional Application
+                        `;
+
+                    }
+
+                }
+            );
+
+        });
+
+    </script>
+
+</body>
+</html>

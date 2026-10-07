@@ -1,0 +1,146 @@
+<header class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo" id="nav-logo">
+
+        <img
+            src="images/mindspeak.jpg"
+            alt="MindSpeak Logo"
+        >
+
+        <div class="logo-text">
+            <h2>MindSpeak</h2>
+            <p>Your mind matters.</p>
+        </div>
+
+    </div>
+
+
+    <!-- NAVIGATION -->
+    <nav id="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <!-- AVAILABLE TO EVERYONE -->
+        <a href="safe-space.html">
+            Wall
+        </a>
+
+        <!-- LOGGED-IN USERS ONLY -->
+        <a
+            href="connection/connection.html"
+            id="connectionNavLink"
+            class="auth-only-nav"
+        >
+            Connection
+        </a>
+
+        <a
+            href="Journal/Journal.html"
+            id="journalNavLink"
+            class="auth-only-nav"
+        >
+            Journal
+        </a>
+
+        <!-- AVAILABLE TO EVERYONE -->
+        <a href="resources.html">
+            Resources
+        </a>
+
+        <a href="Toolkit/toolkit.html">
+            Toolkit
+        </a>
+
+        <a href="events.html">
+            Events
+        </a>
+
+        <a href="blog.html">
+            Blogs
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact/contact.html">
+            Contact
+        </a>
+
+        <!-- MENTOR ONLY -->
+        <a
+            href="mentor/mentor-requests.html"
+            id="mentorNavLink"
+            class="mentor-only-nav"
+            style="display:none;"
+        >
+            Mentor Space
+        </a>
+
+    </nav>
+
+
+    <!-- AUTH AREA -->
+    <div class="nav-auth">
+
+        <!-- LOGGED OUT -->
+        <div
+            id="loggedOutNav"
+            class="logged-out-nav"
+        >
+
+            <a
+                href="register.html"
+                class="nav-signin"
+            >
+                Sign In
+            </a>
+
+            <a
+                href="register.html"
+                class="nav-get-started"
+            >
+                Get Started
+            </a>
+
+        </div>
+
+
+        <!-- LOGGED IN -->
+        <div
+            id="loggedInNav"
+            class="logged-in-nav"
+            style="display:none;"
+        >
+
+            <button
+                class="profile-btn"
+                type="button"
+                id="profileButton"
+            >
+
+                <span id="navAvatar">
+                    🌿
+                </span>
+
+                <span id="navNickname">
+                    Friend
+                </span>
+
+            </button>
+
+
+            <button
+                class="logout-btn"
+                type="button"
+                id="logoutButton"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+</header>

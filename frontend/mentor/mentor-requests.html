@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mentor Space | MindSpeak</title>
+
+    <!-- Existing MindSpeak shared styles -->
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
+
+    <!-- This page only -->
+    <link rel="stylesheet" href="mentor-requests.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header id="navbar-container"></header>
+
+
+    <!-- =====================================================
+         MAIN MENTOR SPACE
+    ====================================================== -->
+
+    <main class="mentor-space-page">
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="mentor-space-hero">
+
+            <div class="mentor-space-hero-content">
+
+                <span class="mentor-space-label">
+                    <i class="fa-solid fa-leaf"></i>
+                    Mentor Space
+                </span>
+
+                <h1>
+                    Your space to support others.
+                </h1>
+
+                <p>
+                    Manage support requests, stay connected
+                    with the people you support, and continue
+                    meaningful conversations in one place.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SUMMARY
+        ================================================== -->
+
+        <section class="mentor-summary">
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-inbox"></i>
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        Pending Requests
+                    </span>
+
+                    <strong id="pendingRequestCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <div class="summary-content">
+
+                    <span>
+                        Active Support
+                    </span>
+
+                    <strong id="activeSupportCount">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MENTOR WORKSPACE
+        ================================================== -->
+
+        <section class="mentor-workspace">
+
+
+            <!-- =============================================
+                 LEFT SIDE
+            ============================================== -->
+
+            <aside class="mentor-sidebar">
+
+
+                <!-- =========================================
+                     PENDING REQUESTS
+                ========================================== -->
+
+                <section class="mentor-panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Support
+                            </span>
+
+                            <h2>
+                                Pending Requests
+                            </h2>
+
+                        </div>
+
+                        <span
+                            class="panel-badge"
+                            id="pendingRequestBadge"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <!-- Loading -->
+
+                    <div
+                        id="requestsLoading"
+                        class="panel-loading"
+                    >
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        <span>
+                            Loading requests...
+                        </span>
+
+                    </div>
+
+
+                    <!-- Error -->
+
+                    <div
+                        id="requestsPageError"
+                        class="panel-error"
+                        hidden
+                    >
+
+                        <i class="fa-solid fa-circle-exclamation"></i>
+
+                        <p id="requestsPageErrorText">
+                            Unable to load requests.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Empty -->
+
+                    <div
+                        id="requestsEmpty"
+                        class="panel-empty"
+                        hidden
+                    >
+
+                        <div class="panel-empty-icon">
+                            <i class="fa-regular fa-envelope-open"></i>
+                        </div>
+
+                        <h3>
+                            No pending requests
+                        </h3>
+
+                        <p>
+                            New support requests from
+                            MindSpeak members will appear here.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Real requests inserted by JS -->
+
+                    <div
+                        id="requestsList"
+                        class="request-list"
+                    ></div>
+
+
+                </section>
+
+
+
+                <!-- =========================================
+                     ACTIVE SUPPORT
+                ========================================== -->
+
+                <section class="mentor-panel active-support-panel">
+
+
+                    <div class="panel-header">
+
+                        <div>
+
+                            <span class="panel-eyebrow">
+                                Ongoing
+                            </span>
+
+                            <h2>
+                                Active Support
+                            </h2>
+
+                        </div>
+
+                        <span
+                            class="panel-badge"
+                            id="activeSupportBadge"
+                        >
+                            0
+                        </span>
+
+                    </div>
+
+
+                    <!-- Loading -->
+
+                    <div
+                        id="activeSupportLoading"
+                        class="panel-loading"
+                    >
+
+                        <i class="fa-solid fa-spinner fa-spin"></i>
+
+                        <span>
+                            Loading active support...
+                        </span>
+
+                    </div>
+
+
+                    <!-- Real active support cards -->
+
+                    <div
+                        id="activeSupportList"
+                        class="active-support-list"
+                    ></div>
+
+
+                </section>
+
+
+            </aside>
+
+
+
+            <!-- =============================================
+                 RIGHT SIDE — CONVERSATION
+            ============================================== -->
+
+            <section class="mentor-conversation-panel">
+
+
+                <!-- =========================================
+                     EMPTY CONVERSATION STATE
+                ========================================== -->
+
+                <div
+                    id="mentorConversationEmpty"
+                    class="conversation-empty"
+                >
+
+                    <div class="conversation-empty-icon">
+
+                        <i class="fa-regular fa-comments"></i>
+
+                    </div>
+
+                    <h2>
+                        Choose someone to support
+                    </h2>
+
+                    <p>
+                        Select an active support conversation
+                        from the left to continue your conversation.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     ACTIVE CONVERSATION
+                ========================================== -->
+
+                <div
+                    id="mentorActiveConversation"
+                    class="mentor-active-conversation"
+                    hidden
+                >
+
+
+                    <!-- Conversation Header -->
+
+                    <header class="mentor-chat-header">
+
+
+                        <div class="mentor-chat-person">
+
+
+                            <div
+                                class="mentor-chat-avatar"
+                                id="mentorChatAvatar"
+                            >
+                                🌱
+                            </div>
+
+
+                            <div class="mentor-chat-person-info">
+
+                                <h2 id="mentorChatNickname">
+                                    Member
+                                </h2>
+
+                                <div class="mentor-chat-meta">
+
+                                    <span id="mentorChatTopic">
+                                        Support
+                                    </span>
+
+                                    <span class="meta-divider">
+                                        •
+                                    </span>
+
+                                    <span
+                                        id="mentorChatStatus"
+                                        class="chat-status"
+                                    >
+                                        Active
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="mentor-chat-menu"
+                            id="mentorChatMenuBtn"
+                            aria-label="Conversation options"
+                        >
+
+                            <i class="fa-solid fa-ellipsis"></i>
+
+                        </button>
+
+
+                    </header>
+
+
+
+                    <!-- Messages -->
+
+                    <div
+                        id="mentorChatMessages"
+                        class="mentor-chat-messages"
+                    >
+
+                        <!-- Messages inserted by JS -->
+
+                    </div>
+
+
+
+                    <!-- Composer -->
+
+                    <form
+                        id="mentorChatComposer"
+                        class="mentor-chat-composer"
+                    >
+
+
+                        <button
+                            type="button"
+                            id="mentorAttachmentBtn"
+                            class="attachment-btn"
+                            aria-label="Add attachment"
+                        >
+
+                            <i class="fa-solid fa-paperclip"></i>
+
+                        </button>
+
+
+                        <textarea
+                            id="mentorMessageInput"
+                            rows="1"
+                            maxlength="2000"
+                            placeholder="Write a supportive message..."
+                            autocomplete="off"
+                        ></textarea>
+
+
+                        <button
+                            type="submit"
+                            id="mentorSendMessageBtn"
+                            class="send-message-btn"
+                            aria-label="Send message"
+                        >
+
+                            <i class="fa-solid fa-paper-plane"></i>
+
+                        </button>
+
+
+                    </form>
+
+
+                </div>
+
+
+            </section>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             MENTOR REMINDER
+        ================================================== -->
+
+        <section class="mentor-space-reminder">
+
+            <div class="reminder-icon">
+
+                <i class="fa-solid fa-heart"></i>
+
+            </div>
+
+
+            <div class="reminder-content">
+
+                <h3>
+                    A small reminder
+                </h3>
+
+                <p>
+                    You are here to listen and support.
+                    You do not need to have all the answers.
+                    If someone needs professional or emergency
+                    help, encourage them to seek appropriate
+                    support.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer id="footer"></footer>
+
+
+    <!-- =====================================================
+         EXISTING SHARED SCRIPTS
+    ====================================================== -->
+
+    <script src="../js/navbar.js"></script>
+    <script src="../js/footer.js"></script>
+
+    <!-- =====================================================
+         THIS PAGE SCRIPT
+    ====================================================== -->
+
+    <script src="../js/mentor-requests.js"></script>
+
+
+</body>
+
+</html>

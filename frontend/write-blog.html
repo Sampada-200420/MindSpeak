@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Write a Blog | MindSpeak</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="css/write-blog.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div id="navbar"></div>
+
+
+<!-- ================================
+     WRITE BLOG PAGE
+================================= -->
+
+<main class="write-blog-page">
+
+    <!-- Back to Blogs -->
+    <div class="back-to-blogs">
+        <a href="blog.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back to Blogs
+        </a>
+    </div>
+
+
+    <!-- Page Header -->
+    <section class="write-blog-header">
+
+        <span class="eyebrow">
+            MINDSPEAK • WRITE
+        </span>
+
+        <h1>
+            Share Your Voice.
+        </h1>
+
+        <p>
+            Your thoughts can create understanding, start conversations,
+            and help someone feel less alone.
+        </p>
+
+    </section>
+
+
+    <!-- ================================
+         BLOG EDITOR
+    ================================= -->
+
+    <section class="blog-editor">
+
+        <div class="editor-card">
+
+            <!-- Editor Heading -->
+            <div class="editor-heading">
+
+                <span class="editor-icon">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </span>
+
+                <div>
+                    <h2>Create Your Blog</h2>
+
+                    <p>
+                        Take your time. Write something meaningful.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 TITLE
+            ================================= -->
+
+            <div class="form-group">
+
+                <label for="blog-title">
+                    Blog Title
+                </label>
+
+                <input
+                    type="text"
+                    id="blog-title"
+                    placeholder="Give your blog a meaningful title..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- ================================
+                 COVER IMAGE
+            ================================= -->
+
+            <div class="form-group">
+
+                <label for="blog-cover">
+                    Cover Image
+                </label>
+
+                <div class="cover-upload">
+
+                    <input
+                        type="file"
+                        id="blog-cover"
+                        accept="image/*"
+                    >
+
+                    <label
+                        for="blog-cover"
+                        class="cover-upload-box"
+                    >
+                        <i class="fa-solid fa-image"></i>
+
+                        <span>
+                            Choose a cover image
+                        </span>
+
+                        <small>
+                            JPG, PNG or WEBP
+                        </small>
+                    </label>
+
+
+                    <!-- Cover Image Preview -->
+                    <div
+                        id="cover-preview"
+                        class="cover-preview"
+                    ></div>
+
+
+                    <!-- Remove Cover Image -->
+                    <button
+                        type="button"
+                        id="remove-cover"
+                        class="remove-cover-btn"
+                        style="display: none;"
+                    >
+                        <i class="fa-solid fa-trash"></i>
+                        Remove Cover Image
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================================
+                 CATEGORY
+            ================================= -->
+
+            <div class="form-group">
+
+                <label for="blog-category">
+                    Category
+                </label>
+
+                <select id="blog-category">
+
+                    <option value="">
+                        Choose a category
+                    </option>
+
+                    <option value="Mental Health">
+                        Mental Health
+                    </option>
+
+                    <option value="Self Growth">
+                        Self Growth
+                    </option>
+
+                    <option value="Relationships">
+                        Relationships
+                    </option>
+
+                    <option value="Student Life">
+                        Student Life
+                    </option>
+
+                    <option value="Wellbeing">
+                        Wellbeing
+                    </option>
+
+                    <option value="Personal Stories">
+                        Personal Stories
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- ================================
+                 CONTENT
+            ================================= -->
+
+            <div class="form-group">
+
+                <label for="blog-content">
+                    Your Story
+                </label>
+
+                <textarea
+                    id="blog-content"
+                    placeholder="Start writing your thoughts here..."
+                ></textarea>
+
+
+                <!-- Writing Statistics -->
+
+                <div class="editor-info">
+
+                    <span id="word-count">
+                        0 words
+                    </span>
+
+                    <span id="char-count">
+                        0 characters
+                    </span>
+
+                </div>
+
+
+                <!-- ================================
+                     BLOG ACTIONS
+                ================================= -->
+
+                <div class="blog-actions">
+
+                    <button
+                        type="button"
+                        id="save-draft"
+                        class="btn-secondary"
+                    >
+                        <i class="fa-regular fa-floppy-disk"></i>
+                        Save as Draft
+                    </button>
+
+                    <button
+                        type="button"
+                        id="submit-blog"
+                        class="btn-primary"
+                    >
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Submit for Review
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- Footer -->
+<div id="footer"></div>
+
+
+<!-- JavaScript -->
+<script src="js/write-blog.js"></script>
+
+</body>
+</html>

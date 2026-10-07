@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Blogs | MindSpeak</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="css/my-blogs.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar"></div>
+
+    <main class="my-blogs-page">
+
+        <!-- Page Header -->
+        <section class="my-blogs-header">
+            <span class="eyebrow">MINDSPEAK • MY BLOGS</span>
+
+            <h1>My Writing Space</h1>
+
+            <p>
+                Keep track of your stories, submissions, and published work.
+            </p>
+
+            <a href="blog.html" class="back-to-blogs">
+    <i class="fa-solid fa-arrow-left"></i>
+    Back to Blogs
+</a>
+
+<div class="blog-filters">
+        </section>
+
+        <!-- Blog Filter -->
+        <section class="blog-filters">
+
+            <button class="filter-btn active" data-status="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-status="draft">
+                Drafts
+            </button>
+
+            <button class="filter-btn" data-status="pending">
+                Pending
+            </button>
+
+            <button class="filter-btn" data-status="published">
+                Published
+            </button>
+
+            <button class="filter-btn" data-status="rejected">
+                Rejected
+            </button>
+
+        </section>
+
+        <!-- Blogs Container -->
+        <section class="my-blogs-list" id="my-blogs-list">
+
+            <!-- Blogs will be loaded here using JavaScript -->
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="js/my-blogs.js"></script>
+
+</body>
+</html>

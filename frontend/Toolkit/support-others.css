@@ -1,0 +1,896 @@
+/* =========================================================
+   MINDSPEAK — SUPPORT OTHERS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #17355f;
+    background: #ffffff;
+    line-height: 1.6;
+}
+
+.support-container {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.support-hero {
+    padding: 18px 0 0;
+    background: #eef6f2;
+    overflow: hidden;
+}
+
+.back-to-toolkit {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0 0 18px 5px;
+    color: #17355f;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.back-to-toolkit:hover {
+    transform: translateX(-4px);
+}
+
+.support-hero-grid {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    min-height: 405px;
+    align-items: stretch;
+}
+
+.support-hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px 30px 35px 22px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-eyebrow {
+    margin-bottom: 8px;
+    color: #54746c;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.support-hero h1 {
+    margin-bottom: 8px;
+    color: #102d5a;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(44px, 5.2vw, 63px);
+    line-height: 1.02;
+}
+
+.support-hero h2 {
+    margin-bottom: 8px;
+    color: #1d4f55;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 21px;
+    line-height: 1.25;
+}
+
+.support-hero-content > p {
+    max-width: 600px;
+    margin-bottom: 16px;
+    color: #355572;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.hero-quote {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 590px;
+    padding: 13px 18px;
+    border-radius: 12px;
+    background: rgba(218, 237, 229, 0.9);
+    color: #315c5c;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.hero-quote i {
+    flex-shrink: 0;
+    color: #4c8b79;
+    font-size: 21px;
+}
+
+.support-hero-image {
+    min-height: 405px;
+    overflow: hidden;
+    border-radius: 18px 0 0 18px;
+}
+
+.support-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 405px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.support-intro {
+    padding: 34px 0 18px;
+    background: #ffffff;
+}
+
+.section-heading {
+    max-width: 850px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.section-eyebrow {
+    display: block;
+    margin-bottom: 4px;
+    color: #588477;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.section-heading h2 {
+    margin-bottom: 5px;
+    color: #102d5a;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 29px;
+    line-height: 1.2;
+}
+
+.section-heading p {
+    color: #355572;
+    font-family: Georgia, serif;
+    font-size: 15px;
+}
+
+/* =========================================================
+   SKILL NAVIGATION
+   ========================================================= */
+
+.skills-navigation {
+    display: grid;
+    gap: 9px;
+}
+
+.skill-nav-card {
+    width: 100%;
+    min-height: 69px;
+    display: grid;
+    grid-template-columns: 48px 48px 1fr 25px;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 18px;
+    border: 1px solid #e4ebe7;
+    border-radius: 11px;
+    background: #fafcfb;
+    color: #17355f;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.22s ease;
+}
+
+.skill-nav-card:hover {
+    transform: translateX(4px);
+    border-color: #9fc5b7;
+    background: #f1f8f4;
+    box-shadow: 0 5px 15px rgba(32, 70, 65, 0.08);
+}
+
+.skill-nav-card.active {
+    border-color: #6d9d8d;
+    background: #edf7f2;
+    box-shadow: 0 4px 13px rgba(55, 105, 91, 0.08);
+}
+
+.skill-number {
+    color: #78988e;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.skill-nav-icon {
+    width: 39px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #e4f1eb;
+    color: #276e68;
+    font-size: 17px;
+}
+
+.skill-nav-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-nav-content strong {
+    color: #17355f;
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.skill-nav-content small {
+    color: #66808a;
+    font-family: Georgia, serif;
+    font-size: 12px;
+}
+
+.skill-arrow {
+    color: #6e8982;
+    font-size: 13px;
+    transition: 0.2s ease;
+}
+
+.skill-nav-card:hover .skill-arrow {
+    transform: translateX(4px);
+}
+
+/* =========================================================
+   COMMON SKILL SECTION
+   ========================================================= */
+
+.support-skill-section {
+    width: min(1180px, 92%);
+    margin: 0 auto 14px;
+    padding: 28px 28px 30px;
+    border-radius: 15px;
+    scroll-margin-top: 20px;
+}
+
+.active-listening-section {
+    background: #eaf7f2;
+}
+
+.supportive-communication-section {
+    background: #eaf3fb;
+}
+
+.understanding-emotions-section {
+    background: #f4edfa;
+}
+
+.setting-boundaries-section {
+    background: #fff7e5;
+}
+
+.safety-referral-section {
+    background: #fcecf2;
+}
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+.skill-header-number {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #bce4d7;
+    color: #175b5b;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.blue-number {
+    background: #c7e2f5;
+    color: #234e78;
+}
+
+.purple-number {
+    background: #e0d1eb;
+    color: #745286;
+}
+
+.yellow-number {
+    background: #ffe2a4;
+    color: #8b620d;
+}
+
+.pink-number {
+    background: #f6c6d7;
+    color: #8e2758;
+}
+
+.skill-label {
+    display: block;
+    margin-bottom: 2px;
+    color: #6a8b83;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.skill-header h2 {
+    color: #102d5a;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 27px;
+    line-height: 1.15;
+}
+
+.skill-header p {
+    color: #4a6577;
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+/* =========================================================
+   SKILL CONTENT
+   ========================================================= */
+
+.skill-content-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: 16px;
+}
+
+.skill-main-card,
+.skill-practice-card {
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.82);
+}
+
+.skill-main-card {
+    padding: 22px 24px;
+}
+
+.skill-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 11px;
+    border-radius: 50%;
+    background: #dcefe8;
+    color: #21736b;
+    font-size: 21px;
+}
+
+.blue-icon {
+    background: #dceaf7;
+    color: #2d6893;
+}
+
+.purple-icon {
+    background: #eadff1;
+    color: #85548c;
+}
+
+.yellow-icon {
+    background: #ffedc7;
+    color: #bc7c0b;
+}
+
+.pink-icon {
+    background: #f8dce6;
+    color: #a02e61;
+}
+
+.skill-main-card h3 {
+    margin-bottom: 6px;
+    color: #102d5a;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    line-height: 1.3;
+}
+
+.skill-main-card > p {
+    margin-bottom: 14px;
+    color: #355572;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.skill-main-card h4 {
+    margin-bottom: 6px;
+    color: #17355f;
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.skill-list {
+    display: grid;
+    gap: 6px;
+    list-style: none;
+}
+
+.skill-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #355572;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.skill-list li i {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: #438878;
+    font-size: 10px;
+}
+
+/* =========================================================
+   PRACTICE CARD
+   ========================================================= */
+
+.skill-practice-card {
+    align-self: stretch;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.72);
+}
+
+.practice-label {
+    display: inline-block;
+    margin-bottom: 9px;
+    color: #5d8b7e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.skill-practice-card h3 {
+    margin-bottom: 17px;
+    color: #17355f;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.conversation-example {
+    display: grid;
+    gap: 10px;
+}
+
+.example-bad,
+.example-good {
+    padding: 12px 14px;
+    border-radius: 9px;
+}
+
+.example-bad {
+    background: #f7f0ef;
+    border-left: 3px solid #c98c86;
+}
+
+.example-good {
+    background: #edf7f2;
+    border-left: 3px solid #57957f;
+}
+
+.example-bad span,
+.example-good span {
+    display: block;
+    margin-bottom: 3px;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.example-bad span {
+    color: #9b5b54;
+}
+
+.example-good span {
+    color: #43806c;
+}
+
+.example-bad p,
+.example-good p {
+    color: #3c5870;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+/* =========================================================
+   SAFETY SECTION
+   ========================================================= */
+
+.safety-layout {
+    display: grid;
+    grid-template-columns: 1.35fr 0.85fr;
+    gap: 16px;
+}
+
+.safety-card {
+    height: 100%;
+}
+
+.safety-note {
+    align-self: stretch;
+    padding: 24px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.safety-note-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    background: #f8dce7;
+    color: #a02e61;
+    font-size: 21px;
+}
+
+.safety-note h3 {
+    margin-bottom: 8px;
+    color: #102d5a;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 20px;
+}
+
+.safety-note p {
+    margin-bottom: 10px;
+    color: #3d5b73;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   REMINDER
+   ========================================================= */
+
+.support-reminder {
+    padding: 8px 0 14px;
+}
+
+.reminder-box {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 20px 25px;
+    border-radius: 13px;
+    background: #e8f5f0;
+}
+
+.reminder-icon {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #397d70;
+    font-size: 21px;
+}
+
+.reminder-label {
+    display: block;
+    margin-bottom: 2px;
+    color: #5e897f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.reminder-box h2 {
+    margin-bottom: 2px;
+    color: #17355f;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 22px;
+}
+
+.reminder-box p {
+    color: #466577;
+    font-family: Georgia, serif;
+    font-size: 13px;
+}
+
+/* =========================================================
+   NEXT STEP
+   ========================================================= */
+
+.support-next-step {
+    padding: 10px 0 35px;
+}
+
+.next-step-box {
+    padding: 30px 35px;
+    border-radius: 15px;
+    background: #f9edf2;
+    text-align: center;
+}
+
+.next-step-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.next-step-box .section-eyebrow {
+    color: #a15476;
+}
+
+.next-step-box h2 {
+    margin-bottom: 6px;
+    color: #102d5a;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 29px;
+}
+
+.next-step-box p {
+    margin-bottom: 18px;
+    color: #466577;
+    font-family: Georgia, serif;
+    font-size: 14px;
+}
+
+.next-step-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+.next-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 210px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.primary-button {
+    background: #b21f63;
+    color: #ffffff;
+}
+
+.primary-button:hover {
+    background: #94184f;
+    transform: translateY(-2px);
+}
+
+.secondary-button {
+    border: 1px solid #b21f63;
+    background: #ffffff;
+    color: #a10051;
+}
+
+.secondary-button:hover {
+    background: #fff8fa;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.skill-nav-card:focus-visible,
+.back-to-toolkit:focus-visible,
+.next-button:focus-visible {
+    outline: 3px solid #6c9e8e;
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .support-hero-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .skill-content-grid,
+    .safety-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .skill-practice-card {
+        min-height: auto;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .support-container {
+        width: 94%;
+    }
+
+    .support-hero {
+        padding-top: 12px;
+    }
+
+    .support-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .support-hero-content {
+        padding: 20px 8px 28px;
+    }
+
+    .support-hero h1 {
+        font-size: 46px;
+    }
+
+    .support-hero h2 {
+        font-size: 19px;
+    }
+
+    .support-hero-content > p {
+        font-size: 14px;
+    }
+
+    .support-hero-image {
+        min-height: 300px;
+        border-radius: 14px;
+    }
+
+    .support-hero-image img {
+        min-height: 300px;
+        max-height: 420px;
+    }
+
+    .section-heading {
+        padding-left: 5px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .skill-nav-card {
+        grid-template-columns: 35px 42px 1fr 20px;
+        gap: 8px;
+        padding: 10px 12px;
+    }
+
+    .skill-nav-content strong {
+        font-size: 13px;
+    }
+
+    .skill-nav-content small {
+        font-size: 11px;
+    }
+
+    .support-skill-section {
+        width: 94%;
+        padding: 22px 16px;
+    }
+
+    .skill-header h2 {
+        font-size: 23px;
+    }
+
+    .skill-main-card,
+    .skill-practice-card,
+    .safety-note {
+        padding: 18px;
+    }
+
+    .reminder-box {
+        align-items: flex-start;
+        padding: 18px;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .support-hero h1 {
+        font-size: 40px;
+    }
+
+    .hero-quote {
+        font-size: 13px;
+    }
+
+    .skill-nav-card {
+        grid-template-columns: 30px 38px 1fr 15px;
+    }
+
+    .skill-number {
+        font-size: 11px;
+    }
+
+    .skill-nav-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .skill-nav-content strong {
+        font-size: 12px;
+    }
+
+    .skill-nav-content small {
+        font-size: 10px;
+    }
+
+    .skill-header {
+        align-items: flex-start;
+    }
+
+    .skill-header-number {
+        width: 37px;
+        height: 37px;
+    }
+
+    .skill-header h2 {
+        font-size: 21px;
+    }
+
+    .skill-main-card > p,
+    .skill-list li,
+    .safety-note p {
+        font-size: 12px;
+    }
+
+    .next-step-box {
+        padding: 24px 17px;
+    }
+
+    .next-step-box h2 {
+        font-size: 24px;
+    }
+
+    .next-button {
+        width: 100%;
+        min-width: 0;
+    }
+}

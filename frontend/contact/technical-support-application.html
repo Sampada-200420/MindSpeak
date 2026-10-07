@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Support | MindSpeak</title>
+
+    <link rel="stylesheet" href="../navbar.css">
+    <link rel="stylesheet" href="../footer.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: "DM Sans", sans-serif;
+            background: #f7f8f6;
+            color: #10263e;
+        }
+
+        .technical-page { padding-bottom: 70px; }
+
+        .application-hero {
+            background: #e8f3ed;
+            border-bottom: 1px solid #d5ded9;
+            padding: 65px 7% 55px;
+        }
+
+        .hero-inner {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.4fr .8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #ccd6d1;
+            border-radius: 30px;
+            padding: 7px 15px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .application-hero h1 {
+            margin: 0 0 15px;
+            font-size: clamp(38px, 5vw, 60px);
+            line-height: 1.05;
+            letter-spacing: -1.5px;
+        }
+
+        .application-hero p {
+            max-width: 650px;
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.7;
+            color: #425568;
+        }
+
+        .hero-box {
+            background: #fff;
+            border: 1px solid #d5ded9;
+            border-radius: 18px;
+            padding: 25px;
+            box-shadow: 0 8px 22px rgba(16,38,62,.06);
+        }
+
+        .hero-box h3 { margin: 0 0 15px; font-size: 19px; }
+
+        .hero-point {
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .hero-point i { color: #2f7b5d; margin-top: 3px; }
+
+        .application-container {
+            max-width: 1150px;
+            margin: 50px auto 0;
+            padding: 0 25px;
+        }
+
+        .intro-section { margin-bottom: 35px; }
+
+        .section-label {
+            color: #2f7b5d;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .intro-section h2 { margin: 0 0 10px; font-size: 30px; }
+
+        .intro-section p {
+            max-width: 760px;
+            color: #566575;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 55px;
+        }
+
+        .support-card {
+            background: #fff;
+            border: 1px solid #dbe2de;
+            border-radius: 15px;
+            padding: 22px;
+            transition: .2s ease;
+        }
+
+        .support-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16,38,62,.07);
+        }
+
+        .support-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #e8f3ed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2f7b5d;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .support-card h3 { margin: 0 0 8px; font-size: 17px; }
+
+        .support-card p {
+            margin: 0;
+            color: #667483;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-wrapper {
+            display: grid;
+            grid-template-columns: .75fr 1.4fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .form-info {
+            background: #10263e;
+            color: #fff;
+            border-radius: 18px;
+            padding: 28px;
+            position: sticky;
+            top: 25px;
+        }
+
+        .form-info h2 { margin: 0 0 12px; font-size: 25px; }
+
+        .form-info > p {
+            color: #d7e0e8;
+            font-size: 14px;
+            line-height: 1.65;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .info-item i { color: #8dc4a8; margin-top: 3px; }
+
+        .info-item strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 3px;
+        }
+
+        .info-item span {
+            color: #c5d1dc;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .form-card {
+            background: #fff;
+            border: 1px solid #dbe2de;
+            border-radius: 18px;
+            padding: 32px;
+            box-shadow: 0 8px 24px rgba(16,38,62,.05);
+        }
+
+        .form-card h2 { margin: 0 0 8px; font-size: 27px; }
+
+        .form-card-intro {
+            margin: 0 0 28px;
+            color: #667483;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-section-title {
+            margin: 28px 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid #e2e7e4;
+            font-size: 17px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group { margin-bottom: 18px; }
+
+        .form-group.full { grid-column: 1 / -1; }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .required { color: #c44b4b; }
+
+        input, textarea, select {
+            width: 100%;
+            border: 1px solid #ccd6d1;
+            border-radius: 9px;
+            background: #fff;
+            color: #10263e;
+            font-family: inherit;
+            font-size: 14px;
+            padding: 12px 13px;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #2f7b5d;
+            box-shadow: 0 0 0 3px rgba(47,123,93,.1);
+        }
+
+        textarea {
+            min-height: 125px;
+            resize: vertical;
+        }
+
+        .field-hint {
+            margin-top: 6px;
+            color: #788592;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .char-counter {
+            text-align: right;
+            margin-top: 5px;
+            color: #84909a;
+            font-size: 11px;
+        }
+
+        .consent {
+            background: #f2f6f3;
+            border: 1px solid #dbe5df;
+            border-radius: 10px;
+            padding: 14px;
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+
+        .consent input {
+            width: auto;
+            margin-top: 3px;
+        }
+
+        .consent label {
+            margin: 0;
+            font-size: 12px;
+            font-weight: 400;
+            color: #566575;
+            line-height: 1.55;
+        }
+
+        .submit-area { margin-top: 25px; }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            border-radius: 9px;
+            background: #2f7b5d;
+            color: #fff;
+            font-family: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: .2s ease;
+        }
+
+        .submit-btn:hover { background: #27684e; }
+
+        .submit-btn:disabled {
+            opacity: .65;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            display: none;
+            padding: 13px 15px;
+            border-radius: 9px;
+            margin-top: 15px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .form-message.success {
+            display: block;
+            background: #e8f3ed;
+            border: 1px solid #bcd8c9;
+            color: #245c43;
+        }
+
+        .form-message.error {
+            display: block;
+            background: #fff0f0;
+            border: 1px solid #e7c2c2;
+            color: #8a3333;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 25px;
+            color: #2f7b5d;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        @media (max-width: 1000px) {
+            .hero-inner { grid-template-columns: 1fr; }
+            .support-grid { grid-template-columns: 1fr 1fr; }
+            .form-wrapper { grid-template-columns: 1fr; }
+            .form-info { position: static; }
+        }
+
+        @media (max-width: 750px) {
+            .application-hero { padding: 45px 5% 40px; }
+            .application-container { margin-top: 35px; padding: 0 18px; }
+            .support-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; gap: 0; }
+            .form-card, .form-info { padding: 23px; }
+        }
+
+        @media (max-width: 550px) {
+            .application-hero h1 { font-size: 38px; }
+            .application-hero p { font-size: 15px; }
+            .intro-section h2 { font-size: 25px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="navbar-container"></div>
+
+<main class="technical-page">
+
+    <section class="application-hero">
+        <div class="hero-inner">
+            <div>
+                <span class="hero-label">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    Technical Support
+                </span>
+
+                <h1>Support the Technology Behind MindSpeak.</h1>
+
+                <p>
+                    Help us keep MindSpeak accessible, reliable and useful.
+                    We welcome people with technical skills who want to
+                    contribute to the digital systems, website and tools
+                    that support our community.
+                </p>
+            </div>
+
+            <div class="hero-box">
+                <h3>Where you could help</h3>
+
+                <div class="hero-point">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Website development and maintenance.</span>
+                </div>
+
+                <div class="hero-point">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Backend, database and API support.</span>
+                </div>
+
+                <div class="hero-point">
+                    <i class="fa-solid fa-check"></i>
+                    <span>UI/UX, accessibility and usability.</span>
+                </div>
+
+                <div class="hero-point">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Technical problem solving and improvements.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="application-container">
+
+        <section class="intro-section">
+            <div class="section-label">Build with us</div>
+            <h2>Technical areas of contribution</h2>
+            <p>
+                Tell us about your technical background, the areas you are
+                comfortable working in and what you would like to contribute.
+                You do not need to be an expert in every area.
+            </p>
+        </section>
+
+        <section class="support-grid">
+
+            <div class="support-card">
+                <div class="support-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Help improve frontend pages, components, interactions and responsive experiences.</p>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon"><i class="fa-solid fa-server"></i></div>
+                <h3>Backend & APIs</h3>
+                <p>Contribute to backend services, APIs, authentication and application logic.</p>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon"><i class="fa-solid fa-database"></i></div>
+                <h3>Database</h3>
+                <p>Help with data structure, database maintenance, queries and reliable data handling.</p>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+                <h3>UI / UX</h3>
+                <p>Improve usability, accessibility, visual consistency and user experience.</p>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon"><i class="fa-solid fa-bug"></i></div>
+                <h3>Testing & Debugging</h3>
+                <p>Find issues, test features and help make MindSpeak more stable and dependable.</p>
+            </div>
+
+            <div class="support-card">
+                <div class="support-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3>Technical Ideas</h3>
+                <p>Suggest tools, improvements or technical solutions that could strengthen the platform.</p>
+            </div>
+
+        </section>
+
+        <section class="form-wrapper">
+
+            <aside class="form-info">
+                <h2>Let's build something useful.</h2>
+
+                <p>
+                    Share your technical experience and tell us how you would
+                    like to contribute to MindSpeak.
+                </p>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <div>
+                        <strong>Who can apply?</strong>
+                        <span>Students, developers, designers, testers and people with relevant technical skills.</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-code-branch"></i>
+                    <div>
+                        <strong>What can you contribute?</strong>
+                        <span>Development, design, testing, debugging, documentation or technical ideas.</span>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-shield-heart"></i>
+                    <div>
+                        <strong>Responsible contribution</strong>
+                        <span>Technical work should respect privacy, security, accessibility and the wellbeing of users.</span>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="form-card">
+
+                <h2>Technical support application</h2>
+
+                <p class="form-card-intro">
+                    Please tell us about your technical background, skills and
+                    the kind of contribution you would like to make.
+                </p>
+
+                <form id="technicalSupportForm">
+
+                    <h3 class="form-section-title">Your information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full name <span class="required">*</span></label>
+                            <input type="text" id="name" required placeholder="Your full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email address <span class="required">*</span></label>
+                            <input type="email" id="email" required placeholder="you@example.com">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone number</label>
+                            <input type="tel" id="phone" placeholder="+358 ...">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="organization">Organization / Institution</label>
+                            <input type="text" id="organization" placeholder="Optional">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="technical_area">
+                            Main technical area <span class="required">*</span>
+                        </label>
+
+                        <select id="technical_area" required>
+                            <option value="">Select an area</option>
+                            <option value="Frontend Development">Frontend Development</option>
+                            <option value="Backend Development">Backend Development</option>
+                            <option value="Database">Database</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Testing & Debugging">Testing & Debugging</option>
+                            <option value="DevOps / Infrastructure">DevOps / Infrastructure</option>
+                            <option value="Cybersecurity">Cybersecurity</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">
+                            Technical experience <span class="required">*</span>
+                        </label>
+
+                        <textarea id="experience" maxlength="1500" required
+                            placeholder="Tell us about your projects, education, work experience or other relevant technical experience."></textarea>
+
+                        <div class="char-counter">
+                            <span id="experienceCount">0</span>/1500
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skills">
+                            Technical skills & tools <span class="required">*</span>
+                        </label>
+
+                        <textarea id="skills" maxlength="1500" required
+                            placeholder="For example: HTML, CSS, JavaScript, Python, FastAPI, MySQL, Git, Figma, testing, etc."></textarea>
+
+                        <div class="char-counter">
+                            <span id="skillsCount">0</span>/1500
+                        </div>
+                    </div>
+
+                    <h3 class="form-section-title">How you would contribute</h3>
+
+                    <div class="form-group">
+                        <label for="motivation">
+                            What would you like to contribute to MindSpeak?
+                            <span class="required">*</span>
+                        </label>
+
+                        <textarea id="motivation" maxlength="2000" required
+                            placeholder="Describe the technical work, improvements or projects you would like to help with."></textarea>
+
+                        <div class="char-counter">
+                            <span id="motivationCount">0</span>/2000
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="availability">Preferred availability</label>
+
+                            <select id="availability">
+                                <option value="">Select an option</option>
+                                <option value="Flexible">Flexible</option>
+                                <option value="Weekdays">Weekdays</option>
+                                <option value="Weekends">Weekends</option>
+                                <option value="Occasional">Occasional</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="collaboration">Preferred collaboration</label>
+
+                            <select id="collaboration">
+                                <option value="">Select an option</option>
+                                <option value="Project based">Project based</option>
+                                <option value="Ongoing support">Ongoing support</option>
+                                <option value="Team collaboration">Team collaboration</option>
+                                <option value="Flexible contribution">Flexible contribution</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="responsibility">
+                            Responsible technical contribution
+                            <span class="required">*</span>
+                        </label>
+
+                        <textarea id="responsibility" maxlength="1200" required
+                            placeholder="How would you approach privacy, security, accessibility and responsible handling of user data?"></textarea>
+
+                        <div class="char-counter">
+                            <span id="responsibilityCount">0</span>/1200
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additional_information">Additional information</label>
+
+                        <textarea id="additional_information" maxlength="1500"
+                            placeholder="Anything else you would like the MindSpeak team to know?"></textarea>
+
+                        <div class="char-counter">
+                            <span id="additionalCount">0</span>/1500
+                        </div>
+                    </div>
+
+                    <div class="consent">
+                        <input type="checkbox" id="consent" required>
+
+                        <label for="consent">
+                            I confirm that the information I provide is accurate
+                            and I consent to MindSpeak using these details to
+                            review and respond to my technical support application.
+                        </label>
+                    </div>
+
+                    <div class="submit-area">
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Send Technical Support Application
+                        </button>
+
+                        <div id="formMessage" class="form-message"></div>
+                    </div>
+
+                </form>
+
+                <a href="contact.html" class="back-link">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Contact Us
+                </a>
+
+            </div>
+        </section>
+    </div>
+</main>
+
+<div id="footer"></div>
+
+<script src="../js/navbar.js"></script>
+<script src="../js/footer.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.getElementById("technicalSupportForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const formMessage = document.getElementById("formMessage");
+
+    const counters = [
+        ["experience", "experienceCount"],
+        ["skills", "skillsCount"],
+        ["motivation", "motivationCount"],
+        ["responsibility", "responsibilityCount"],
+        ["additional_information", "additionalCount"]
+    ];
+
+    counters.forEach(([fieldId, counterId]) => {
+        const field = document.getElementById(fieldId);
+        const counter = document.getElementById(counterId);
+
+        const updateCounter = () => {
+            counter.textContent = field.value.length;
+        };
+
+        field.addEventListener("input", updateCounter);
+        updateCounter();
+    });
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        formMessage.className = "form-message";
+        formMessage.textContent = "";
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const organization = document.getElementById("organization").value.trim();
+        const technicalArea = document.getElementById("technical_area").value;
+        const experience = document.getElementById("experience").value.trim();
+        const skills = document.getElementById("skills").value.trim();
+        const motivation = document.getElementById("motivation").value.trim();
+        const availability = document.getElementById("availability").value;
+        const collaboration = document.getElementById("collaboration").value;
+        const responsibility = document.getElementById("responsibility").value.trim();
+        const additionalInformation =
+            document.getElementById("additional_information").value.trim();
+        const consent = document.getElementById("consent").checked;
+
+        if (!name) return showError("Please enter your name.");
+        if (!email) return showError("Please enter your email address.");
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailPattern.test(email)) {
+            return showError("Please enter a valid email address.");
+        }
+
+        if (!technicalArea) return showError("Please select your main technical area.");
+        if (!experience) return showError("Please describe your technical experience.");
+        if (!skills) return showError("Please describe your technical skills.");
+        if (!motivation) return showError("Please tell us what you would like to contribute.");
+        if (!responsibility) {
+            return showError("Please describe your approach to responsible technical contribution.");
+        }
+
+        if (!consent) {
+            return showError("Please confirm your consent before submitting.");
+        }
+
+        /*
+         * IMPORTANT:
+         * The current backend must support "technical_support" in its
+         * allowed application types before this form can be submitted.
+         */
+        submitBtn.disabled = true;
+
+        submitBtn.innerHTML = `
+            <i class="fa-solid fa-spinner fa-spin"></i>
+            Sending...
+        `;
+
+        try {
+            let userId = null;
+
+            try {
+                const storedUser = localStorage.getItem("user");
+
+                if (storedUser) {
+                    const user = JSON.parse(storedUser);
+                    userId = user?.id ?? null;
+                }
+
+                if (!userId) {
+                    userId = localStorage.getItem("user_id");
+                }
+            } catch (storageError) {
+                console.warn("Could not access localStorage.");
+            }
+
+            const structuredAdditionalInformation = [
+                `Technical Area: ${technicalArea}`,
+                `Preferred Collaboration: ${collaboration || "Not specified"}`,
+                `Responsible Technical Contribution: ${responsibility}`,
+                additionalInformation
+                    ? `Additional Information: ${additionalInformation}`
+                    : ""
+            ].filter(Boolean).join("\n\n");
+
+            const payload = {
+                application_type: "technical_support",
+                user_id: userId ? Number(userId) : null,
+                name,
+                email,
+                phone,
+                organization,
+                motivation,
+                experience,
+                skills,
+                availability,
+                additional_information: structuredAdditionalInformation
+            };
+
+            const response = await fetch(
+                "http://127.0.0.1:8000/api/contact/applications",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                }
+            );
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(
+                    data.detail ||
+                    data.message ||
+                    "Unable to submit your application."
+                );
+            }
+
+            formMessage.className = "form-message success";
+
+            formMessage.innerHTML = `
+                <i class="fa-solid fa-circle-check"></i>
+                <strong> Application submitted successfully.</strong>
+                <br>
+                Thank you for offering your technical skills to MindSpeak.
+                Our team will review your application.
+            `;
+
+            form.reset();
+
+            counters.forEach(([fieldId, counterId]) => {
+                document.getElementById(counterId).textContent = "0";
+            });
+
+            formMessage.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        } catch (error) {
+            console.error("Technical support application error:", error);
+
+            showError(
+                error.message ||
+                "Something went wrong. Please try again."
+            );
+        } finally {
+            submitBtn.disabled = false;
+
+            submitBtn.innerHTML = `
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Technical Support Application
+            `;
+        }
+    });
+
+    function showError(message) {
+        formMessage.className = "form-message error";
+
+        formMessage.innerHTML = `
+            <i class="fa-solid fa-circle-exclamation"></i>
+            ${message}
+        `;
+
+        formMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+});
+</script>
+
+</body>
+</html>

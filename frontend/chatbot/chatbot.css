@@ -1,0 +1,2828 @@
+/* =========================================================
+   MINDSPEAK — MUNA AI COMPANION
+   Calm • Human • Modern • Supportive
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: #f7f5ef;
+    color: #1d2725;
+    font-family: "DM Sans", sans-serif;
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.muna-page {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background:
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(221, 239, 234, 0.55),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 92% 88%,
+            rgba(243, 235, 221, 0.55),
+            transparent 30%
+        ),
+        #f7f5ef;
+}
+
+/* =========================================================
+   MAIN HEADER
+========================================================= */
+
+.muna-header {
+    width: 100%;
+    height: 78px;
+
+    padding: 10px 5%;
+
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid #e7e8e5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 50;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.muna-header-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* =========================================================
+   BACK TO SAFE SPACE
+========================================================= */
+
+.back-safe-space {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #66706d;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.back-safe-space:hover {
+    color: #087f72;
+}
+
+/* =========================================================
+   MUNA AVATAR
+========================================================= */
+
+.muna-avatar-wrap {
+    width: 77px;
+    height: 77px;
+
+    position: relative;
+    flex-shrink: 0;
+}
+
+.muna-avatar {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 50%;
+    border: 2px solid #ddefea;
+
+    background: #ddefea;
+}
+
+.online-dot {
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    right: 0;
+    bottom: 1px;
+
+    border-radius: 50%;
+
+    background: #087f72;
+    border: 2px solid #ffffff;
+}
+
+/* =========================================================
+   HEADER INFORMATION
+========================================================= */
+
+.muna-header-info h1 {
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 25px;
+    line-height: 1.2;
+
+    color: #087f72;
+    font-weight: 700;
+}
+
+.muna-header-info p {
+    margin-top: 3px;
+
+    color: #66706d;
+
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.muna-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #66706d;
+    font-size: 11px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: #087f72;
+}
+
+/* =========================================================
+   HEADER RIGHT
+========================================================= */
+
+.muna-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.muna-history-btn {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #e7e8e5;
+    border-radius: 12px;
+
+    background: #ffffff;
+    color: #66706d;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.muna-history-btn:hover {
+    background: #f3f8f6;
+    border-color: #cfe2dd;
+    color: #087f72;
+}
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.muna-content {
+    width: 100%;
+    margin: 0 auto;
+
+    padding: 38px 0 45px;
+}
+
+/* =========================================================
+   WELCOME SCREEN
+========================================================= */
+
+.muna-welcome {
+    width: min(900px, 92%);
+
+    margin: 0 auto;
+
+    padding: 26px 24px 34px;
+
+    text-align: center;
+}
+
+.welcome-avatar {
+    width: 96px;
+    height: 96px;
+
+    margin: 0 auto 20px;
+
+    padding: 4px;
+
+    border-radius: 50%;
+
+    background: #ddefea;
+
+    box-shadow:
+        0 0 0 8px rgba(221, 239, 234, 0.45);
+}
+
+.welcome-avatar img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.muna-welcome h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(31px, 4vw, 43px);
+
+    line-height: 1.18;
+
+    color: #1d2725;
+
+    font-weight: 600;
+
+    letter-spacing: -0.4px;
+}
+
+.muna-welcome h2 span {
+    font-family: "DM Sans", sans-serif;
+}
+
+.welcome-description {
+    max-width: 570px;
+
+    margin: 13px auto 0;
+
+    color: #66706d;
+
+    font-size: 25px;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   MOOD SECTION
+========================================================= */
+
+.mood-section {
+    margin-top: 38px;
+}
+
+.mood-section h3 {
+    margin-bottom: 17px;
+
+    color: #1d2725;
+
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.mood-grid {
+    width: min(760px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.mood-option {
+    min-height: 94px;
+
+    padding: 14px 10px;
+
+    border: 1px solid #e2e6e2;
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    color: #45514e;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    cursor: pointer;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    box-shadow: 0 3px 12px rgba(29, 39, 37, 0.025);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.mood-option:hover {
+    transform: translateY(-2px);
+
+    border-color: #b7dcd5;
+
+    background: #f8fcfb;
+
+    box-shadow:
+        0 8px 22px rgba(29, 39, 37, 0.06);
+}
+
+.mood-option.selected {
+    border-color: #087f72;
+
+    background: #ddefea;
+
+    color: #05695f;
+
+    box-shadow:
+        0 6px 18px rgba(8, 127, 114, 0.08);
+}
+
+.mood-emoji {
+    font-size: 35px;
+    line-height: 1;
+}
+
+/* =========================================================
+   SOMETHING ELSE
+========================================================= */
+
+.something-else-btn {
+    width: min(360px, 100%);
+
+    min-height: 56px;
+
+    margin: 14px auto 0;
+
+    padding: 10px 18px;
+
+    border: 1px solid #e2e6e2;
+    border-radius: 16px;
+
+    background: #ffffff;
+    color: #45514e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    cursor: pointer;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.something-else-btn:hover {
+    background: #f8fcfb;
+    border-color: #b7dcd5;
+    transform: translateY(-1px);
+}
+
+.something-icon {
+    font-size: 20px;
+}
+
+/* =========================================================
+   NORMAL CHAT
+========================================================= */
+
+.normal-chat-option {
+    margin: 25px auto 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 6px;
+
+    color: #8a9290;
+
+    font-size: 11px;
+}
+
+.normal-chat-option button {
+    border: none;
+    background: transparent;
+
+    color: #087f72;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size:15px;
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.normal-chat-option button:hover {
+    text-decoration: underline;
+}
+
+/* =========================================================
+   CHAT WINDOW
+========================================================= */
+
+.muna-chat {
+    width: min(1050px, 94%);
+
+    height: calc(100vh - 125px);
+    min-height: 620px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e7e4;
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 18px 55px rgba(29, 39, 37, 0.08);
+}
+
+/* =========================================================
+   CHAT CONTEXT
+========================================================= */
+
+.chat-context {
+    min-height: 72px;
+    flex: 0 0 72px;
+
+    padding: 10px 20px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    border-bottom: 1px solid #e7e8e5;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 14px;
+}
+
+.chat-context-left {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+}
+
+.context-avatar {
+    width: 44px;
+    height: 44px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 2px solid #ddefea;
+}
+
+.chat-context-left div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.chat-context-left strong {
+    color: #1d2725;
+
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.chat-context-left span {
+    color: #087f72;
+
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* =========================================================
+   CHANGE MOOD
+========================================================= */
+
+.change-mood-btn {
+    min-height: 34px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d9e5e1;
+    border-radius: 18px;
+
+    background: #f7fbfa;
+
+    color: #087f72;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.change-mood-btn:hover {
+    background: #ddefea;
+    border-color: #b7dcd5;
+}
+
+/* =========================================================
+   MESSAGE AREA
+========================================================= */
+
+.muna-messages {
+    width: 100%;
+
+    flex: 1 1 auto;
+
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 28px 32px 22px;
+
+    background:
+        radial-gradient(
+            circle at 12% 8%,
+            rgba(221, 239, 234, 0.45),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 88% 88%,
+            rgba(243, 235, 221, 0.48),
+            transparent 28%
+        ),
+        #f7f8f5;
+
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+
+    gap: 12px !important;
+
+    scrollbar-width: thin;
+    scrollbar-color: #c7d4d0 transparent;
+}
+
+.muna-messages::-webkit-scrollbar {
+    width: 6px;
+}
+
+.muna-messages::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.muna-messages::-webkit-scrollbar-thumb {
+    background: #c7d4d0;
+    border-radius: 10px;
+}
+
+/* =========================================================
+   MESSAGE ROW
+========================================================= */
+
+.muna-messages .message-row {
+    width: 100% !important;
+
+    min-width: 0;
+
+    display: flex !important;
+
+    flex: 0 0 auto !important;
+
+    flex-direction: row !important;
+
+    align-items: flex-end !important;
+
+    gap: 8px;
+
+    margin: 0 !important;
+}
+
+.muna-messages .message-row.muna {
+    justify-content: flex-start !important;
+}
+
+.muna-messages .message-row.user {
+    justify-content: flex-end !important;
+}
+
+/* =========================================================
+   MUNA MESSAGE AVATAR
+========================================================= */
+
+.muna-messages .message-row.muna .message-avatar {
+    width: 32px;
+    height: 32px;
+
+    flex: 0 0 32px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border: 1px solid #d5e4df;
+
+    align-self: flex-end;
+}
+
+.muna-messages .message-row.user .message-avatar {
+    display: none;
+}
+
+/* =========================================================
+   MESSAGE BUBBLES
+========================================================= */
+
+.muna-messages .message-bubble {
+    width: fit-content;
+
+    max-width: min(68%, 560px);
+
+    padding: 12px 15px 9px;
+
+    border-radius: 16px;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    word-break: break-word;
+    white-space: pre-wrap;
+
+    box-shadow:
+        0 2px 7px rgba(29, 39, 37, 0.045);
+
+    position: relative;
+}
+
+/* =========================================================
+   MUNA BUBBLE
+========================================================= */
+
+.muna-messages .message-row.muna .message-bubble {
+    background: #ffffff;
+
+    color: #26322f;
+
+    border: 1px solid #e7eae8;
+
+    border-top-left-radius: 5px;
+
+    border-bottom-left-radius: 16px;
+}
+
+/* =========================================================
+   USER BUBBLE
+========================================================= */
+
+.muna-messages .message-row.user .message-bubble {
+    background: #087f72;
+
+    color: #ffffff;
+
+    border: 1px solid #087f72;
+
+    border-top-right-radius: 5px;
+
+    border-bottom-right-radius: 16px;
+
+    box-shadow:
+        0 4px 12px rgba(8, 127, 114, 0.12);
+}
+
+/* =========================================================
+   MESSAGE TIME
+========================================================= */
+
+.muna-messages .message-time {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #8a9290;
+
+    font-size: 9px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+.muna-messages .message-row.user .message-time {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.muna-messages .message-row.muna .message-time {
+    margin-left: 40px;
+
+    text-align: left;
+}
+
+.muna-messages .message-row.user .message-time {
+    margin-right: 3px;
+
+    text-align: right;
+}
+
+/* =========================================================
+   TYPING INDICATOR
+========================================================= */
+
+.typing-indicator {
+    width: 100%;
+
+    padding: 0 32px 12px;
+
+    background: #f7f8f5;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 8px;
+}
+
+.typing-indicator .message-avatar {
+    width: 32px;
+    height: 32px;
+
+    flex: 0 0 32px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 1px solid #d5e4df;
+}
+
+.typing-bubble {
+    width: 64px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7eae8;
+
+    border-radius: 16px;
+    border-top-left-radius: 5px;
+
+    box-shadow:
+        0 2px 7px rgba(29, 39, 37, 0.04);
+}
+
+.typing-bubble span {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #087f72;
+
+    animation: munaTyping 1.2s infinite ease-in-out;
+}
+
+.typing-bubble span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.typing-bubble span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes munaTyping {
+
+    0%,
+    60%,
+    100% {
+        transform: translateY(0);
+        opacity: 0.35;
+    }
+
+    30% {
+        transform: translateY(-3px);
+        opacity: 1;
+    }
+}
+
+/* =========================================================
+   QUICK SUGGESTIONS
+========================================================= */
+
+.suggested-prompts {
+    padding: 11px 18px 8px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #edf0ed;
+}
+
+.suggestion-btn {
+    min-height: 34px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d9e5e1;
+
+    border-radius: 18px;
+
+    background: #f9fbfa;
+
+    color: #087f72;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 10.5px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.suggestion-btn:hover {
+    background: #ddefea;
+
+    border-color: #b7dcd5;
+
+    transform: translateY(-1px);
+}
+
+/* =========================================================
+   INPUT AREA
+========================================================= */
+
+.muna-input-area {
+    padding: 11px 18px 14px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e7e8e5;
+
+    flex: 0 0 auto;
+}
+
+.input-wrapper {
+    min-height: 52px;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 8px;
+
+    padding: 5px 6px 5px 16px;
+
+    border: 1px solid #dce3df;
+
+    border-radius: 26px;
+
+    background: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: #087f72;
+
+    box-shadow:
+        0 0 0 3px rgba(8, 127, 114, 0.08);
+}
+
+#munaMessageInput {
+    width: 100%;
+
+    min-height: 38px;
+    max-height: 110px;
+
+    resize: none;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #1d2725;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 20px;
+
+    line-height: 1.5;
+
+    padding: 8px 2px;
+}
+
+#munaMessageInput::placeholder {
+    color: #9aa29f;
+}
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.send-btn {
+    width: 42px;
+    height: 42px;
+
+    flex: 0 0 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #087f72;
+
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    transition:
+        background 0.2s ease,
+        transform 0.15s ease,
+        box-shadow 0.2s ease;
+}
+
+.send-btn:hover {
+    background: #05695f;
+
+    transform: scale(1.04);
+
+    box-shadow:
+        0 5px 14px rgba(8, 127, 114, 0.18);
+}
+
+.send-btn:active {
+    transform: scale(0.97);
+}
+
+.send-btn:disabled {
+    background: #b9c8c4;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+.send-btn span {
+    display: inline-block;
+
+    transform: rotate(-12deg);
+}
+
+/* =========================================================
+   PRIVACY / INPUT NOTE
+========================================================= */
+
+.input-note {
+    margin-top: 6px;
+
+    text-align: center;
+
+    color: #8a9290;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+}
+
+/* =========================================================
+   SUPPORT SECTION
+========================================================= */
+
+.muna-support-section {
+    width: min(1050px, 92%);
+
+    margin: 18px auto 0;
+
+    padding: 30px 0 35px;
+}
+
+.support-heading {
+    text-align: center;
+
+    margin-bottom: 22px;
+}
+
+.support-label {
+    color: #087f72;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.7px;
+
+    text-transform: uppercase;
+}
+
+.support-heading h2 {
+    margin-top: 7px;
+
+    font-family: "Playfair Display", serif;
+
+    color: #1d2725;
+
+    font-size: 27px;
+
+    font-weight: 600;
+}
+
+.support-heading p {
+    max-width: 520px;
+
+    margin: 7px auto 0;
+
+    color: #66706d;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.support-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.support-card {
+    min-height: 100px;
+
+    padding: 17px;
+
+    display: grid;
+
+    grid-template-columns: 44px 1fr auto;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e9e6;
+
+    border-radius: 18px;
+
+    color: inherit;
+
+    box-shadow:
+        0 4px 16px rgba(29, 39, 37, 0.035);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.support-card:hover {
+    transform: translateY(-2px);
+
+    border-color: #cfe2dd;
+
+    box-shadow:
+        0 10px 26px rgba(29, 39, 37, 0.07);
+}
+
+.support-card-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 13px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ddefea;
+
+    color: #087f72;
+
+    font-size: 19px;
+}
+
+.support-card h3 {
+    color: #1d2725;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+.support-card p {
+    margin-top: 4px;
+
+    color: #7c8582;
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+
+.support-arrow {
+    color: #087f72;
+
+    font-size: 19px;
+
+    transition: transform 0.2s ease;
+}
+
+.support-card:hover .support-arrow {
+    transform: translateX(3px);
+}
+
+/* =========================================================
+   FOOTER NOTE
+========================================================= */
+
+.muna-footer-note {
+    width: min(650px, 90%);
+
+    margin: auto auto 0;
+
+    padding: 17px 20px 28px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    text-align: center;
+}
+
+.muna-footer-note span {
+    font-size: 13px;
+}
+
+.muna-footer-note p {
+    color: #8a9290;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+/* =========================================================
+   HISTORY
+========================================================= */
+
+.muna-history {
+    width: min(850px, 92%);
+
+    margin: 30px auto;
+
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e9e6;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 35px rgba(29, 39, 37, 0.06);
+}
+
+.muna-history-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.muna-history-header h2 {
+    font-family: "Playfair Display", serif;
+
+    color: #1d2725;
+
+    font-size: 25px;
+
+    font-weight: 600;
+}
+
+.history-back-btn {
+    border: 1px solid #dce5e1;
+
+    background: #f8fbfa;
+
+    color: #087f72;
+
+    padding: 8px 13px;
+
+    border-radius: 18px;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+.history-back-btn:hover {
+    background: #ddefea;
+}
+
+.muna-history-loading {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 35px;
+}
+
+.history-spinner {
+    width: 28px;
+    height: 28px;
+
+    border: 3px solid #ddefea;
+
+    border-top-color: #087f72;
+
+    border-radius: 50%;
+
+    animation: historySpin 0.8s linear infinite;
+}
+
+@keyframes historySpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.muna-history-empty {
+    padding: 40px 20px;
+
+    text-align: center;
+
+    color: #66706d;
+}
+
+.history-empty-icon {
+    font-size: 34px;
+
+    margin-bottom: 10px;
+}
+
+.history-start-btn {
+    margin-top: 16px;
+
+    padding: 10px 17px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #087f72;
+
+    color: #ffffff;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.history-start-btn:hover {
+    background: #05695f;
+}
+
+.muna-history-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.muna-history-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 16px;
+
+    padding: 14px 15px;
+
+    border: 1px solid #e6ebe8;
+
+    border-radius: 14px;
+
+    background: #fafcfb;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.muna-history-item:hover {
+    background: #f4faf8;
+
+    border-color: #cfe2dd;
+}
+
+.muna-history-content {
+    flex: 1;
+
+    min-width: 0;
+
+    cursor: pointer;
+}
+
+.muna-delete-conversation {
+    flex-shrink: 0;
+
+    border: 1px solid #e2e5e8;
+
+    background: #ffffff;
+
+    color: #777;
+
+    padding: 8px 14px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.muna-delete-conversation:hover {
+    background: #fff5f5;
+
+    border-color: #e3aaaa;
+
+    color: #c84c4c;
+}
+
+.muna-delete-conversation:active {
+    transform: scale(0.97);
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(8, 127, 114, 0.18);
+
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .muna-header {
+        padding: 10px 4%;
+    }
+
+    .mood-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .muna-status {
+        display: none;
+    }
+
+    .muna-chat {
+        width: 100%;
+
+        min-height: calc(100vh - 110px);
+        height: calc(100vh - 110px);
+
+        border-radius: 0;
+
+        border-left: none;
+        border-right: none;
+
+        box-shadow: none;
+    }
+
+    .muna-messages .message-bubble {
+        max-width: 72%;
+    }
+
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 520px) {
+
+    .muna-header {
+        height: 68px;
+
+        padding: 8px 14px;
+    }
+
+    .back-safe-space {
+        font-size: 10px;
+    }
+
+    .muna-avatar-wrap {
+        width: 44px;
+        height: 44px;
+    }
+
+    .muna-header-left {
+        gap: 9px;
+    }
+
+    .muna-header-info h1 {
+        font-size: 17px;
+    }
+
+    .muna-header-info p {
+        font-size: 9px;
+    }
+
+    .muna-history-btn {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Welcome */
+
+    .muna-content {
+        padding: 18px 0 25px;
+    }
+
+    .muna-welcome {
+        width: 94%;
+
+        padding: 15px 5px 25px;
+    }
+
+    .welcome-avatar {
+        width: 76px;
+        height: 76px;
+
+        margin-bottom: 17px;
+
+        box-shadow:
+            0 0 0 6px rgba(221, 239, 234, 0.45);
+    }
+
+    .muna-welcome h2 {
+        font-size: 29px;
+    }
+
+    .welcome-description {
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+    .mood-section {
+        margin-top: 27px;
+    }
+
+    .mood-section h3 {
+        font-size: 15px;
+    }
+
+    .mood-grid {
+        gap: 8px;
+    }
+
+    .mood-option {
+        min-height: 82px;
+
+        border-radius: 13px;
+
+        font-size: 11px;
+    }
+
+    .mood-emoji {
+        font-size: 23px;
+    }
+
+    .something-else-btn {
+        min-height: 53px;
+    }
+
+    .normal-chat-option {
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+    /* Chat */
+
+    .muna-chat {
+        width: 100%;
+
+        min-height: calc(100vh - 88px);
+        height: calc(100vh - 88px);
+
+        border-radius: 0;
+    }
+
+    .chat-context {
+        min-height: 64px;
+        flex-basis: 64px;
+
+        padding: 8px 12px;
+    }
+
+    .context-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+    .chat-context-left strong {
+        font-size: 13px;
+    }
+
+    .change-mood-btn {
+        min-height: 30px;
+
+        padding: 0 9px;
+
+        font-size: 9px;
+    }
+
+    .muna-messages {
+        padding: 18px 10px 15px;
+
+        gap: 8px !important;
+    }
+
+    .muna-messages .message-row {
+        gap: 5px;
+    }
+
+    .muna-messages .message-row.muna .message-avatar {
+        width: 27px;
+        height: 27px;
+
+        flex-basis: 27px;
+    }
+
+    .muna-messages .message-bubble {
+        max-width: 81%;
+
+        padding: 9px 11px 7px;
+
+        font-size: 13px;
+
+        line-height: 1.45;
+    }
+
+    .muna-messages .message-time {
+        font-size: 8px;
+    }
+
+    .muna-messages .message-row.muna .message-time {
+        margin-left: 32px;
+    }
+
+    /* Suggestions */
+
+    .suggested-prompts {
+        padding: 8px 9px 5px;
+
+        gap: 5px;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+    }
+
+    .suggestion-btn {
+        min-height: 31px;
+
+        padding: 0 10px;
+
+        font-size: 9.5px;
+
+        white-space: nowrap;
+
+        flex: 0 0 auto;
+    }
+
+    /* Input */
+
+    .muna-input-area {
+        padding: 7px 8px 9px;
+    }
+
+    .input-wrapper {
+        min-height: 49px;
+
+        padding-left: 11px;
+    }
+
+    #munaMessageInput {
+        font-size: 13px;
+
+        min-height: 35px;
+    }
+
+    .send-btn {
+        width: 38px;
+        height: 38px;
+
+        flex-basis: 38px;
+
+        font-size: 16px;
+    }
+
+    .input-note {
+        font-size: 8px;
+    }
+
+    /* Support */
+
+    .muna-support-section {
+        width: 94%;
+    }
+
+    .support-heading h2 {
+        font-size: 22px;
+    }
+
+    .support-card {
+        grid-template-columns: 38px 1fr auto;
+
+        padding: 12px;
+
+        gap: 8px;
+    }
+
+    .support-card-icon {
+        width: 38px;
+        height: 38px;
+
+        font-size: 17px;
+    }
+
+    .support-card p {
+        font-size: 10px;
+    }
+
+    /* History */
+
+    .muna-history {
+        width: 94%;
+
+        padding: 18px;
+
+        border-radius: 18px;
+    }
+
+    .muna-history-header h2 {
+        font-size: 21px;
+    }
+
+    .muna-history-item {
+        gap: 10px;
+    }
+
+    .muna-delete-conversation {
+        padding: 7px 10px;
+
+        font-size: 12px;
+    }
+
+    .muna-footer-note {
+        padding-bottom: 18px;
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* =========================================================
+   MINDSPEAK MUNA — PROFESSIONAL AI CHAT WORKSPACE
+   Visual refinement layer
+========================================================= */
+
+@media (min-width: 1001px) {
+
+    /* -----------------------------------------------------
+       PAGE CANVAS
+    ----------------------------------------------------- */
+
+    .muna-content {
+        width: min(1500px, 95vw);
+        max-width: 1500px;
+
+        margin: 0 auto;
+
+        padding: 34px 0 60px;
+
+        position: relative;
+    }
+
+
+    /* -----------------------------------------------------
+       MUNA INTRO
+    ----------------------------------------------------- */
+
+    #munaWelcome {
+        display: block !important;
+
+        width: calc(100% - 355px);
+
+        margin: 0;
+
+        padding: 18px 30px 24px;
+
+        text-align: left;
+    }
+
+    #munaWelcome .welcome-avatar {
+        display: none;
+    }
+
+    #munaWelcome h2 {
+        margin: 0 0 8px;
+
+        font-family: "Playfair Display", serif;
+
+        font-size: 38px;
+
+        line-height: 1.15;
+
+        letter-spacing: -0.6px;
+
+        color: #172622;
+
+        font-weight: 600;
+    }
+
+    #munaWelcome h2::after {
+        content: "";
+        display: inline-block;
+
+        width: 10px;
+        height: 10px;
+
+        margin-left: 9px;
+
+        border-radius: 50%;
+
+        background: #087f72;
+
+        vertical-align: middle;
+
+        opacity: 0.9;
+    }
+
+    #munaWelcome .welcome-description {
+        margin: 0;
+
+        max-width: 680px;
+
+        color: #65736f;
+
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+
+    /* -----------------------------------------------------
+       MOOD PANEL
+    ----------------------------------------------------- */
+
+    #munaWelcome .mood-section {
+
+        position: absolute;
+
+        top: 34px;
+        right: 0;
+
+        width: 335px;
+
+        margin: 0;
+
+        padding: 25px 24px 22px;
+
+        background:
+            linear-gradient(
+                145deg,
+                #ffffff 0%,
+                #fbfdfc 100%
+            );
+
+        border: 1px solid #e2e9e6;
+
+        border-radius: 24px;
+
+        box-shadow:
+            0 14px 45px rgba(29, 39, 37, 0.08),
+            0 2px 8px rgba(29, 39, 37, 0.025);
+
+        z-index: 10;
+    }
+
+    #munaWelcome .mood-section::before {
+
+        content: "";
+
+        position: absolute;
+
+        width: 110px;
+        height: 110px;
+
+        top: -35px;
+        right: -30px;
+
+        border-radius: 50%;
+
+        background: #ddefea;
+
+        opacity: 0.45;
+
+        filter: blur(2px);
+
+        pointer-events: none;
+    }
+
+    #munaWelcome .mood-section h3 {
+
+        position: relative;
+
+        margin: 0 0 7px;
+
+        color: #182723;
+
+        font-family: "Playfair Display", serif;
+
+        font-size: 22px;
+
+        line-height: 1.3;
+
+        font-weight: 600;
+
+        text-align: left;
+    }
+
+    #munaWelcome .mood-section::after {
+
+        content: "Share your mood to help Muna understand you better.";
+
+        display: block;
+
+        margin-bottom: 18px;
+
+        color: #75817e;
+
+        font-size: 11px;
+
+        line-height: 1.5;
+    }
+
+
+    /* -----------------------------------------------------
+       MOOD GRID
+    ----------------------------------------------------- */
+
+    #munaWelcome .mood-grid {
+
+        position: relative;
+
+        width: 100%;
+
+        margin: 0;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+
+        z-index: 2;
+    }
+
+    #munaWelcome .mood-option {
+
+        min-height: 78px;
+
+        padding: 10px 7px;
+
+        border: 1px solid #e4eae7;
+
+        border-radius: 16px;
+
+        background: #fbfcfb;
+
+        color: #34423e;
+
+        font-size: 12px;
+
+        font-weight: 600;
+
+        gap: 7px;
+
+        box-shadow:
+            0 2px 8px rgba(29, 39, 37, 0.025);
+
+        transition:
+            transform 0.2s ease,
+            background 0.2s ease,
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    #munaWelcome .mood-option:hover {
+
+        transform: translateY(-2px);
+
+        background: #f4faf8;
+
+        border-color: #b7dcd5;
+
+        box-shadow:
+            0 8px 18px rgba(8, 127, 114, 0.08);
+    }
+
+    #munaWelcome .mood-option.selected {
+
+        background: #ddefea;
+
+        border-color: #087f72;
+
+        color: #05695f;
+
+        box-shadow:
+            0 6px 18px rgba(8, 127, 114, 0.12);
+    }
+
+    #munaWelcome .mood-emoji {
+
+        width: 38px;
+        height: 38px;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #f3e9d8;
+
+        font-size: 22px;
+    }
+
+    #munaWelcome .mood-option:nth-child(2) .mood-emoji {
+        background: #ddefea;
+    }
+
+    #munaWelcome .mood-option:nth-child(3) .mood-emoji {
+        background: #eee5f7;
+    }
+
+    #munaWelcome .mood-option:nth-child(4) .mood-emoji {
+        background: #dceaf4;
+    }
+
+    #munaWelcome .mood-option:nth-child(5) .mood-emoji {
+        background: #f4e0dc;
+    }
+
+    #munaWelcome .mood-option:nth-child(6) .mood-emoji {
+        background: #e9e4f4;
+    }
+
+    #munaWelcome .mood-option:nth-child(7) .mood-emoji {
+        background: #f1e8d5;
+    }
+
+    #munaWelcome .mood-option:nth-child(8) .mood-emoji {
+        background: #f4deda;
+    }
+
+
+    /* -----------------------------------------------------
+       SOMETHING ELSE
+    ----------------------------------------------------- */
+
+    #munaWelcome .something-else-btn {
+
+        position: relative;
+
+        width: 100%;
+
+        min-height: 46px;
+
+        margin: 12px 0 0;
+
+        border-radius: 14px;
+
+        background: #f8faf9;
+
+        border: 1px solid #e1e8e5;
+
+        color: #4f5e59;
+
+        font-size: 11px;
+
+        z-index: 2;
+    }
+
+    #munaWelcome .something-else-btn:hover {
+
+        background: #eef7f4;
+
+        border-color: #b7dcd5;
+    }
+
+
+    /* -----------------------------------------------------
+       NORMAL CHAT
+    ----------------------------------------------------- */
+
+    #munaWelcome .normal-chat-option {
+
+        margin-top: 15px;
+
+        color: #8a9290;
+
+        font-size: 11px;
+    }
+
+    #munaWelcome .normal-chat-option button {
+
+        color: #087f72;
+
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       MAIN CHAT CARD
+    ===================================================== */
+
+    #munaChat {
+
+        display: flex !important;
+
+        width: calc(100% - 355px);
+
+        height: 690px;
+
+        min-height: 690px;
+
+        margin: 0;
+
+        border-radius: 26px;
+
+        overflow: hidden;
+
+        background: #ffffff;
+
+        border: 1px solid #e1e8e5;
+
+        box-shadow:
+            0 20px 60px rgba(29, 39, 37, 0.09),
+            0 3px 12px rgba(29, 39, 37, 0.025);
+    }
+
+
+    /* -----------------------------------------------------
+       CHAT HEADER
+    ----------------------------------------------------- */
+
+    #munaChat .chat-context {
+
+        height: 82px;
+
+        min-height: 82px;
+
+        flex-basis: 82px;
+
+        padding: 12px 24px;
+
+        background: rgba(255,255,255,0.97);
+
+        border-bottom: 1px solid #e7ece9;
+    }
+
+    #munaChat .context-avatar {
+
+        width: 48px;
+        height: 48px;
+
+        border: 2px solid #ddefea;
+    }
+
+    #munaChat .chat-context-left {
+
+        gap: 13px;
+    }
+
+    #munaChat .chat-context-left strong {
+
+        color: #172622;
+
+        font-size: 17px;
+
+        font-weight: 700;
+    }
+
+    #munaChat .chat-context-left span {
+
+        color: #087f72;
+
+        font-size: 12px;
+
+        font-weight: 500;
+    }
+
+    #munaChat .change-mood-btn {
+
+        min-height: 38px;
+
+        padding: 0 15px;
+
+        border-radius: 20px;
+
+        background: #f5faf8;
+
+        border-color: #d5e5e0;
+
+        color: #087f72;
+
+        font-size: 11px;
+    }
+
+
+    /* -----------------------------------------------------
+       MESSAGE CANVAS
+    ----------------------------------------------------- */
+
+    #munaChat .muna-messages {
+
+        padding: 32px 38px 25px;
+
+        background:
+            radial-gradient(
+                circle at 8% 12%,
+                rgba(221, 239, 234, 0.48),
+                transparent 25%
+            ),
+            radial-gradient(
+                circle at 92% 82%,
+                rgba(243, 235, 221, 0.50),
+                transparent 28%
+            ),
+            #f8f9f7;
+    }
+
+
+    /* -----------------------------------------------------
+       MESSAGE ROWS
+    ----------------------------------------------------- */
+
+    #munaChat .message-row {
+
+        margin-bottom: 5px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       MUNA AVATAR
+    ----------------------------------------------------- */
+
+    #munaChat .message-row.muna .message-avatar {
+
+        width: 38px;
+        height: 38px;
+
+        flex-basis: 38px;
+
+        border: 2px solid #ddefea;
+    }
+
+
+    /* -----------------------------------------------------
+       MESSAGE BUBBLES
+    ----------------------------------------------------- */
+
+    #munaChat .message-bubble {
+
+        max-width: 72%;
+
+        padding: 15px 18px 11px;
+
+        border-radius: 19px;
+
+        font-size: 15px;
+
+        line-height: 1.6;
+
+        box-shadow:
+            0 4px 14px rgba(29, 39, 37, 0.045);
+    }
+
+    #munaChat .message-row.muna .message-bubble {
+
+        background: #ffffff;
+
+        border: 1px solid #e5eae8;
+
+        border-top-left-radius: 6px;
+
+        color: #263530;
+    }
+
+    #munaChat .message-row.user .message-bubble {
+
+        background:
+            linear-gradient(
+                145deg,
+                #159281,
+                #087f72
+            );
+
+        border: none;
+
+        border-top-right-radius: 6px;
+
+        color: #ffffff;
+
+        box-shadow:
+            0 7px 20px rgba(8, 127, 114, 0.16);
+    }
+
+    #munaChat .message-time {
+
+        margin-top: 6px;
+
+        font-size: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       TYPING
+    ----------------------------------------------------- */
+
+    #munaChat .typing-indicator {
+
+        padding: 0 38px 14px;
+
+        background: #f8f9f7;
+    }
+
+    #munaChat .typing-indicator .message-avatar {
+
+        width: 38px;
+        height: 38px;
+
+        flex-basis: 38px;
+    }
+
+    #munaChat .typing-bubble {
+
+        width: 68px;
+        height: 42px;
+
+        border-radius: 18px;
+
+        border-top-left-radius: 6px;
+    }
+
+
+    /* -----------------------------------------------------
+       QUICK PROMPTS
+    ----------------------------------------------------- */
+
+    #munaChat .suggested-prompts {
+
+        padding: 13px 22px 10px;
+
+        gap: 8px;
+
+        background: #ffffff;
+
+        border-top: 1px solid #edf1ef;
+    }
+
+    #munaChat .suggestion-btn {
+
+        min-height: 39px;
+
+        padding: 0 15px;
+
+        border-radius: 20px;
+
+        background: #f8fbfa;
+
+        border: 1px solid #d9e6e2;
+
+        color: #087f72;
+
+        font-size: 11px;
+
+        font-weight: 600;
+
+        transition:
+            transform 0.2s ease,
+            background 0.2s ease;
+    }
+
+    #munaChat .suggestion-btn:hover {
+
+        transform: translateY(-1px);
+
+        background: #eaf6f3;
+    }
+
+
+    /* -----------------------------------------------------
+       INPUT AREA
+    ----------------------------------------------------- */
+
+    #munaChat .muna-input-area {
+
+        padding: 13px 22px 17px;
+
+        background: #ffffff;
+
+        border-top: 1px solid #e7ece9;
+    }
+
+    #munaChat .input-wrapper {
+
+        min-height: 62px;
+
+        padding: 6px 7px 6px 19px;
+
+        border-radius: 31px;
+
+        border: 1px solid #d8e3df;
+
+        box-shadow:
+            0 3px 12px rgba(29,39,37,0.025);
+    }
+
+    #munaChat #munaMessageInput {
+
+        min-height: 43px;
+
+        padding: 10px 3px;
+
+        font-size: 15px;
+    }
+
+    #munaChat #munaMessageInput::placeholder {
+
+        color: #9aa5a1;
+    }
+
+    #munaChat .send-btn {
+
+        width: 48px;
+        height: 48px;
+
+        flex-basis: 48px;
+
+        background: #087f72;
+
+        font-size: 19px;
+
+        box-shadow:
+            0 6px 16px rgba(8,127,114,0.17);
+    }
+
+    #munaChat .input-note {
+
+        margin-top: 7px;
+
+        font-size: 9.5px;
+
+        color: #8a9591;
+    }
+
+
+    /* =====================================================
+       SUPPORT CARDS
+    ===================================================== */
+
+    .muna-support-section {
+
+        width: calc(100% - 355px);
+
+        margin: 25px 0 0;
+
+        padding: 10px 0 35px;
+    }
+
+    .support-heading h2 {
+
+        font-size: 29px;
+    }
+
+    .support-heading p {
+
+        font-size: 13px;
+    }
+
+    .support-card {
+
+        min-height: 108px;
+
+        padding: 19px;
+
+        border-radius: 18px;
+    }
+
+    .support-card h3 {
+
+        font-size: 14px;
+    }
+
+    .support-card p {
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1350px) {
+
+    #munaChat {
+
+        height: 720px;
+
+        min-height: 720px;
+    }
+
+    #munaWelcome h2 {
+
+        font-size: 42px;
+    }
+
+    #munaChat .message-bubble {
+
+        font-size: 15.5px;
+
+        max-width: 68%;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .muna-content {
+
+        width: 94%;
+
+        padding: 25px 0 45px;
+    }
+
+    #munaWelcome {
+
+        width: 100%;
+
+        padding: 20px 5px 28px;
+    }
+
+    #munaWelcome .mood-section {
+
+        position: static;
+
+        width: 100%;
+
+        margin-top: 30px;
+
+        padding: 22px;
+
+        border-radius: 22px;
+    }
+
+    #munaChat {
+
+        display: flex !important;
+
+        width: 100%;
+
+        height: 650px;
+
+        min-height: 600px;
+
+        margin: 0;
+
+        border-radius: 22px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .muna-content {
+
+        width: 100%;
+
+        padding: 15px 0 30px;
+    }
+
+    #munaWelcome {
+
+        width: 94%;
+
+        margin: auto;
+
+        padding: 20px 5px 25px;
+    }
+
+    #munaWelcome h2 {
+
+        font-size: 30px;
+
+        letter-spacing: -0.3px;
+    }
+
+    #munaWelcome .welcome-description {
+
+        font-size: 13px;
+    }
+
+    #munaWelcome .mood-section {
+
+        padding: 19px;
+
+        border-radius: 20px;
+    }
+
+    #munaWelcome .mood-section h3 {
+
+        font-size: 19px;
+    }
+
+    #munaWelcome .mood-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    #munaWelcome .mood-option {
+
+        min-height: 76px;
+    }
+
+    #munaWelcome .mood-emoji {
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 20px;
+    }
+
+    #munaChat {
+
+        width: 100%;
+
+        height: 620px;
+
+        min-height: 580px;
+
+        border-radius: 0;
+
+        border-left: none;
+        border-right: none;
+    }
+
+    #munaChat .chat-context {
+
+        height: 70px;
+
+        min-height: 70px;
+
+        flex-basis: 70px;
+
+        padding: 9px 13px;
+    }
+
+    #munaChat .context-avatar {
+
+        width: 42px;
+        height: 42px;
+    }
+
+    #munaChat .chat-context-left strong {
+
+        font-size: 15px;
+    }
+
+    #munaChat .chat-context-left span {
+
+        font-size: 10px;
+    }
+
+    #munaChat .muna-messages {
+
+        padding: 22px 13px 18px;
+    }
+
+    #munaChat .message-row.muna .message-avatar {
+
+        width: 31px;
+        height: 31px;
+
+        flex-basis: 31px;
+    }
+
+    #munaChat .message-bubble {
+
+        max-width: 82%;
+
+        padding: 12px 14px 9px;
+
+        font-size: 14px;
+    }
+
+    #munaChat .suggested-prompts {
+
+        padding: 9px;
+
+        overflow-x: auto;
+
+        flex-wrap: nowrap;
+    }
+
+    #munaChat .suggestion-btn {
+
+        flex: 0 0 auto;
+
+        min-height: 36px;
+
+        white-space: nowrap;
+
+        font-size: 10px;
+    }
+
+    #munaChat .muna-input-area {
+
+        padding: 9px 9px 11px;
+    }
+
+    #munaChat .input-wrapper {
+
+        min-height: 54px;
+
+        padding-left: 13px;
+    }
+
+    #munaChat #munaMessageInput {
+
+        font-size: 14px;
+    }
+
+    #munaChat .send-btn {
+
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
+    }
+}
